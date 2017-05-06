@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="business-objects\customer.cs" />
     <Compile Include="business-objects\item.cs" />
+    <Compile Include="business-objects\itemsOrdered.cs" />
     <Compile Include="business-objects\order.cs" />
     <Compile Include="login.cs">
       <SubType>Form</SubType>

@@ -16,3 +16,6 @@ C:\Users\Tajay\documents\visual studio 2013\Projects\adaOrderingSys\adaOrderingS
 C:\Users\Tajay\documents\visual studio 2013\Projects\adaOrderingSys\adaOrderingSys\obj\Debug\adaOrderingSys.login.resources
 C:\Users\Tajay\documents\visual studio 2013\Projects\adaOrderingSys\adaOrderingSys\obj\Debug\adaOrderingSys.Properties.Resources.resources
 C:\Users\Tajay\documents\visual studio 2013\Projects\adaOrderingSys\adaOrderingSys\obj\Debug\adaOrderingSys.csproj.GenerateResource.Cache
+C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\bin\Debug\adaOrderingSys.exe.config
+C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\obj\Debug\adaOrderingSys.exe
+C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\obj\Debug\adaOrderingSys.pdb
