@@ -1,6 +1,6 @@
 ﻿namespace adaOrderingSys
 {
-    partial class login
+    partial class loginForm
     {
         /// <summary>
         /// Required designer variable.

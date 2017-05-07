@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace adaOrderingSys
 {
-    public partial class login : Form
+    public partial class loginForm : Form
     {
-        public login()
+        public loginForm()
         {
             InitializeComponent();
         }
@@ -79,6 +79,7 @@ namespace adaOrderingSys
             this.txtUserName.Size = new System.Drawing.Size(100, 20);
             this.txtUserName.TabIndex = 4;
             this.txtUserName.WordWrap = false;
+            this.txtUserName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(CheckEnter);
             // 
             // txtPassword
             // 
@@ -99,35 +100,53 @@ namespace adaOrderingSys
             this.Controls.Add(this.btnLogin);
             this.Name = "login";
             this.Text = "ADA Ordering System";
-            this.Load += new System.EventHandler(this.login_Load_1);
+            this.Load += new System.EventHandler(this.login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
-        private void login_Load_1(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
-
+            doLogin();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtUserName.Text = null;
+            txtPassword.Text = null;
+        }
+
+        private void CheckEnter(object sender, System.Windows.Forms.KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                doLogin();
+            }
+        }
+
+        private void doLogin()
         {
             try
             {
+                string responseMessage = "";
                 SqlConnection con = new SqlConnection(@"Data Source=LINTON-PC\TAJAYLINTON;Initial Catalog=ADA;User ID=adauser;Password=ADAUser1234");
-                //          SqlConnection con = new SqlConnection(@"Data Source=LINTON-PC\TAJAYLINTON;Initial Catalog=ADA;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False");
+                //SqlConnection con = new SqlConnection(@"Data Source=LINTON-PC\TAJAYLINTON;Initial Catalog=ADA;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False");
                 SqlCommand cmd = new SqlCommand();
-
-                cmd.CommandText = "Select count(*)  from user where userName = " + txtUserName.Text + " AND password = " + txtPassword.Text;
-                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@pLoginName", txtUserName.Text);
+                cmd.Parameters.AddWithValue("@pPassword", txtPassword.Text);
+                cmd.Parameters.Add("@responseMessage ", SqlDbType.NVarChar,250).Direction = ParameterDirection.Output;
+                cmd.CommandText = "[dbo].[uspLogin]";
+                cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Connection = con;
 
                 con.Open();
 
-                int res = Convert.ToInt32(cmd.ExecuteScalar());
+                cmd.ExecuteNonQuery();
+                responseMessage = Convert.ToString(cmd.Parameters["@responseMessage"].Value);
 
                 con.Close();
-                if (res == 1)
+                if (responseMessage == "Login Successful")
                 {
                     this.Hide();
                     main objFormMain = new main();
@@ -139,16 +158,12 @@ namespace adaOrderingSys
                 }
             }
 
-            catch(Exception ex) {
+            catch (Exception ex)
+            {
                 Console.WriteLine("ERROR:" + ex);
             }
 
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            txtUserName.Text = null;
-            txtPassword.Text = null;
-        }
     }
 }
