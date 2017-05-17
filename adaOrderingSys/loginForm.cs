@@ -8,11 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NLog;
 
 namespace adaOrderingSys
 {
+    
     public partial class loginForm : Form
     {
+        private readonly Logger logger = LogManager.GetCurrentClassLogger();
+
         public loginForm()
         {
             InitializeComponent();
@@ -25,6 +29,7 @@ namespace adaOrderingSys
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(loginForm));
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.lblUserName = new System.Windows.Forms.Label();
@@ -45,6 +50,7 @@ namespace adaOrderingSys
             // 
             // btnClear
             // 
+            this.btnClear.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClear.Location = new System.Drawing.Point(179, 137);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
@@ -74,31 +80,40 @@ namespace adaOrderingSys
             // txtUserName
             // 
             this.txtUserName.AcceptsTab = true;
+            this.txtUserName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.txtUserName.Location = new System.Drawing.Point(154, 34);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(100, 20);
             this.txtUserName.TabIndex = 4;
             this.txtUserName.WordWrap = false;
-            this.txtUserName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(CheckEnter);
+            this.txtUserName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CheckEnter);
             // 
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(154, 82);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.PasswordChar = 'x';
             this.txtPassword.Size = new System.Drawing.Size(100, 20);
             this.txtPassword.TabIndex = 5;
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CheckEnter);
             // 
-            // login
+            // loginForm
             // 
-            this.ClientSize = new System.Drawing.Size(284, 178);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.CancelButton = this.btnClear;
+            this.ClientSize = new System.Drawing.Size(284, 176);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnLogin);
-            this.Name = "login";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "loginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ADA Ordering System";
             this.Load += new System.EventHandler(this.login_Load);
             this.ResumeLayout(false);
@@ -123,44 +138,48 @@ namespace adaOrderingSys
             {
                 doLogin();
             }
+            
         }
 
-        private void doLogin()
-        {
-            try
-            {
-                string responseMessage = "";
-                SqlConnection con = new SqlConnection(@"Data Source=LINTON-PC\TAJAYLINTON;Initial Catalog=ADA;User ID=adauser;Password=ADAUser1234");
-                //SqlConnection con = new SqlConnection(@"Data Source=LINTON-PC\TAJAYLINTON;Initial Catalog=ADA;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False");
-                SqlCommand cmd = new SqlCommand();
-                cmd.Parameters.AddWithValue("@pLoginName", txtUserName.Text);
-                cmd.Parameters.AddWithValue("@pPassword", txtPassword.Text);
-                cmd.Parameters.Add("@responseMessage ", SqlDbType.NVarChar,250).Direction = ParameterDirection.Output;
-                cmd.CommandText = "[dbo].[uspLogin]";
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Connection = con;
-
-                con.Open();
-
-                cmd.ExecuteNonQuery();
-                responseMessage = Convert.ToString(cmd.Parameters["@responseMessage"].Value);
-
-                con.Close();
-                if (responseMessage == "Login Successful")
-                {
-                    this.Hide();
-                    main objFormMain = new main();
-                    objFormMain.Show();
+        private void doLogin() {
+            try {
+                if (txtUserName.Text == "" || txtPassword.Text == "") {
+                    MessageBox.Show("Enter username and password!");
                 }
-                else
-                {
-                    MessageBox.Show("Incorrect credentials. Try Again");
+                else {
+                    string responseMessage = "";
+                    SqlConnection con = new SqlConnection(@"Data Source=LINTON-PC\TAJAYLINTON;Initial Catalog=ADA;User ID=adauser;Password=ADAUser1234");
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Parameters.AddWithValue("@pLoginName", txtUserName.Text);
+                    cmd.Parameters.AddWithValue("@pPassword", txtPassword.Text);
+                    cmd.Parameters.Add("@responseMessage ", SqlDbType.NVarChar, 250).Direction = ParameterDirection.Output;
+                    cmd.CommandText = "[dbo].[uspLogin]";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Connection = con;
+
+                    con.Open();
+
+                    responseMessage = Convert.ToString(cmd.ExecuteScalar());
+
+                    con.Close();
+
+                    logger.Info("respone message - " + responseMessage);
+
+                    if (responseMessage == "Login successful") {
+                        this.Hide();
+                        main objFormMain = new main();
+                        objFormMain.Show();
+                    }
+                    else {
+                        MessageBox.Show("Incorrect credentials. Try Again");
+                    }
                 }
             }
 
-            catch (Exception ex)
-            {
-                Console.WriteLine("ERROR:" + ex);
+            catch (Exception ex) {
+                logger.Error(ex);
+                MessageBox.Show("ERROR:" + "Please contact system admin");
+
             }
 
         }
