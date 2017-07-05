@@ -16,8 +16,8 @@ namespace adaOrderingSys
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new loginForm());
-            Application.Run(new main());
+            Application.Run(new loginForm());
+            //Application.Run(new main());
         }
     }
 }

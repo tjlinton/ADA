@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NLog;
+using adaOrderingSys.business_objects;
 
 namespace adaOrderingSys
 {
@@ -142,44 +143,40 @@ namespace adaOrderingSys
         }
 
         private void doLogin() {
-            try {
-                if (txtUserName.Text == "" || txtPassword.Text == "") {
+            try
+            {
+                if (txtUserName.Text == "" || txtPassword.Text == "")
+                {
                     MessageBox.Show("Enter username and password!");
                 }
-                else {
-                    string responseMessage = "";
-                    SqlConnection con = new SqlConnection(@"Data Source=LINTON-PC\TAJAYLINTON;Initial Catalog=ADA;User ID=adauser;Password=ADAUser1234");
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.Parameters.AddWithValue("@pLoginName", txtUserName.Text);
-                    cmd.Parameters.AddWithValue("@pPassword", txtPassword.Text);
-                    cmd.Parameters.Add("@responseMessage ", SqlDbType.NVarChar, 250).Direction = ParameterDirection.Output;
-                    cmd.CommandText = "[dbo].[uspLogin]";
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Connection = con;
+                else
+                {
+                    User user = new User();
 
-                    con.Open();
+                    int response = user.loginUser(txtUserName.Text, txtPassword.Text);
 
-                    responseMessage = Convert.ToString(cmd.ExecuteScalar());
-
-                    con.Close();
-
-                    logger.Info("respone message - " + responseMessage);
-
-                    if (responseMessage == "Login successful") {
-                        this.Hide();
-                        main objFormMain = new main();
-                        objFormMain.Show();
-                    }
-                    else {
-                        MessageBox.Show("Incorrect credentials. Try Again");
+                    switch (response)
+                    {
+                        case 0:
+                            logger.Info("User: " + txtUserName.Text + " successfully logged in");
+                            this.Hide();
+                            main objFormMain = new main();
+                            objFormMain.Show();
+                            break;
+                        case -1:
+                            logger.Warn("Unable to log in user " + txtUserName.Text);
+                            MessageBox.Show("Incorrect credentials. Try Again");
+                            break;
+                        case 1:
+                            MessageBox.Show("ERROR:" + "Please contact system admin");
+                            break;
                     }
                 }
             }
-
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 logger.Error(ex);
                 MessageBox.Show("ERROR:" + "Please contact system admin");
-
             }
 
         }

@@ -30,18 +30,29 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
-            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.aDADataSet = new adaOrderingSys.ADADataSet();
-            this.customerTableAdapter = new adaOrderingSys.ADADataSetTableAdapters.customerTableAdapter();
             this.btnNewOrder = new System.Windows.Forms.Button();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.btnNewProduct = new System.Windows.Forms.Button();
             this.btnViewInventory = new System.Windows.Forms.Button();
             this.btnAddCustomer = new System.Windows.Forms.Button();
-            this.pnlAddCustomer = new System.Windows.Forms.Panel();
+            this.pnlMainII = new System.Windows.Forms.Panel();
             this.btnBack = new System.Windows.Forms.Button();
+            this.pnlProductInfo = new System.Windows.Forms.Panel();
+            this.lblDollar = new System.Windows.Forms.Label();
+            this.txtUnitPrice = new System.Windows.Forms.TextBox();
+            this.lblUnitPrice = new System.Windows.Forms.Label();
+            this.btnClearProduct = new System.Windows.Forms.Button();
+            this.btnSubmitProduct = new System.Windows.Forms.Button();
+            this.txtQuantity = new System.Windows.Forms.TextBox();
+            this.lblQuantity = new System.Windows.Forms.Label();
+            this.txtProductDescription = new System.Windows.Forms.RichTextBox();
+            this.txtProductName = new System.Windows.Forms.TextBox();
+            this.lblProductName = new System.Windows.Forms.Label();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.txtProductID = new System.Windows.Forms.TextBox();
+            this.lblProductID = new System.Windows.Forms.Label();
             this.pnlCustInfo = new System.Windows.Forms.Panel();
-            this.btnClear = new System.Windows.Forms.Button();
+            this.btnClearCustomer = new System.Windows.Forms.Button();
             this.btnSubmitCust = new System.Windows.Forms.Button();
             this.txtContactPerson = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,30 +62,24 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtBusinessName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.aDADataSet = new adaOrderingSys.ADADataSet();
             this.errorProviderBusninessName = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderTelephone = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderTxtProductID = new System.Windows.Forms.ErrorProvider(this.components);
+            this.customerTableAdapter = new adaOrderingSys.ADADataSetTableAdapters.customerTableAdapter();
+            this.errorProviderUnitPrice = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pnlMain.SuspendLayout();
+            this.pnlMainII.SuspendLayout();
+            this.pnlProductInfo.SuspendLayout();
+            this.pnlCustInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aDADataSet)).BeginInit();
-            this.pnlMain.SuspendLayout();
-            this.pnlAddCustomer.SuspendLayout();
-            this.pnlCustInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderBusninessName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTelephone)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTxtProductID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderUnitPrice)).BeginInit();
             this.SuspendLayout();
-            // 
-            // customerBindingSource
-            // 
-            this.customerBindingSource.DataMember = "customer";
-            this.customerBindingSource.DataSource = this.aDADataSet;
-            // 
-            // aDADataSet
-            // 
-            this.aDADataSet.DataSetName = "ADADataSet";
-            this.aDADataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // customerTableAdapter
-            // 
-            this.customerTableAdapter.ClearBeforeFill = true;
             // 
             // btnNewOrder
             // 
@@ -167,16 +172,17 @@
             this.btnAddCustomer.UseVisualStyleBackColor = false;
             this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
             // 
-            // pnlAddCustomer
+            // pnlMainII
             // 
-            this.pnlAddCustomer.Controls.Add(this.btnBack);
-            this.pnlAddCustomer.Controls.Add(this.pnlCustInfo);
-            this.pnlAddCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlAddCustomer.Location = new System.Drawing.Point(0, 0);
-            this.pnlAddCustomer.Name = "pnlAddCustomer";
-            this.pnlAddCustomer.Size = new System.Drawing.Size(1102, 446);
-            this.pnlAddCustomer.TabIndex = 10;
-            this.pnlAddCustomer.Visible = false;
+            this.pnlMainII.Controls.Add(this.btnBack);
+            this.pnlMainII.Controls.Add(this.pnlProductInfo);
+            this.pnlMainII.Controls.Add(this.pnlCustInfo);
+            this.pnlMainII.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMainII.Location = new System.Drawing.Point(0, 0);
+            this.pnlMainII.Name = "pnlMainII";
+            this.pnlMainII.Size = new System.Drawing.Size(1104, 446);
+            this.pnlMainII.TabIndex = 10;
+            this.pnlMainII.Visible = false;
             // 
             // btnBack
             // 
@@ -192,10 +198,162 @@
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // pnlProductInfo
+            // 
+            this.pnlProductInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlProductInfo.Controls.Add(this.lblDollar);
+            this.pnlProductInfo.Controls.Add(this.txtUnitPrice);
+            this.pnlProductInfo.Controls.Add(this.lblUnitPrice);
+            this.pnlProductInfo.Controls.Add(this.btnClearProduct);
+            this.pnlProductInfo.Controls.Add(this.btnSubmitProduct);
+            this.pnlProductInfo.Controls.Add(this.txtQuantity);
+            this.pnlProductInfo.Controls.Add(this.lblQuantity);
+            this.pnlProductInfo.Controls.Add(this.txtProductDescription);
+            this.pnlProductInfo.Controls.Add(this.txtProductName);
+            this.pnlProductInfo.Controls.Add(this.lblProductName);
+            this.pnlProductInfo.Controls.Add(this.lblDescription);
+            this.pnlProductInfo.Controls.Add(this.txtProductID);
+            this.pnlProductInfo.Controls.Add(this.lblProductID);
+            this.pnlProductInfo.Font = new System.Drawing.Font("Verdana", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnlProductInfo.Location = new System.Drawing.Point(176, 51);
+            this.pnlProductInfo.Name = "pnlProductInfo";
+            this.pnlProductInfo.Size = new System.Drawing.Size(678, 381);
+            this.pnlProductInfo.TabIndex = 2;
+            // 
+            // lblDollar
+            // 
+            this.lblDollar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblDollar.AutoSize = true;
+            this.lblDollar.Location = new System.Drawing.Point(195, 267);
+            this.lblDollar.Name = "lblDollar";
+            this.lblDollar.Size = new System.Drawing.Size(22, 23);
+            this.lblDollar.TabIndex = 26;
+            this.lblDollar.Text = "$";
+            // 
+            // txtUnitPrice
+            // 
+            this.txtUnitPrice.Location = new System.Drawing.Point(223, 260);
+            this.txtUnitPrice.Name = "txtUnitPrice";
+            this.txtUnitPrice.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtUnitPrice.Size = new System.Drawing.Size(75, 30);
+            this.txtUnitPrice.TabIndex = 25;
+            this.txtUnitPrice.Text = "0.00";
+            this.txtUnitPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUnitPrice_KeyPress);
+            this.txtUnitPrice.Validating += new System.ComponentModel.CancelEventHandler(this.txtUnitPrice_Validating);
+            // 
+            // lblUnitPrice
+            // 
+            this.lblUnitPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblUnitPrice.AutoSize = true;
+            this.lblUnitPrice.Location = new System.Drawing.Point(78, 267);
+            this.lblUnitPrice.Name = "lblUnitPrice";
+            this.lblUnitPrice.Size = new System.Drawing.Size(102, 23);
+            this.lblUnitPrice.TabIndex = 24;
+            this.lblUnitPrice.Text = "Unit Price";
+            // 
+            // btnClearProduct
+            // 
+            this.btnClearProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnClearProduct.CausesValidation = false;
+            this.btnClearProduct.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClearProduct.ForeColor = System.Drawing.Color.Gold;
+            this.btnClearProduct.Location = new System.Drawing.Point(261, 323);
+            this.btnClearProduct.Name = "btnClearProduct";
+            this.btnClearProduct.Size = new System.Drawing.Size(101, 45);
+            this.btnClearProduct.TabIndex = 23;
+            this.btnClearProduct.Text = "Clear";
+            this.btnClearProduct.UseVisualStyleBackColor = false;
+            this.btnClearProduct.Click += new System.EventHandler(this.btnClearProduct_Click);
+            // 
+            // btnSubmitProduct
+            // 
+            this.btnSubmitProduct.BackColor = System.Drawing.Color.Green;
+            this.btnSubmitProduct.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSubmitProduct.ForeColor = System.Drawing.Color.Gold;
+            this.btnSubmitProduct.Location = new System.Drawing.Point(125, 323);
+            this.btnSubmitProduct.Name = "btnSubmitProduct";
+            this.btnSubmitProduct.Size = new System.Drawing.Size(101, 45);
+            this.btnSubmitProduct.TabIndex = 22;
+            this.btnSubmitProduct.Text = "Submit";
+            this.btnSubmitProduct.UseVisualStyleBackColor = false;
+            this.btnSubmitProduct.Click += new System.EventHandler(this.btnSubmitProduct_Click);
+            // 
+            // txtQuantity
+            // 
+            this.txtQuantity.Location = new System.Drawing.Point(223, 209);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtQuantity.Size = new System.Drawing.Size(75, 30);
+            this.txtQuantity.TabIndex = 20;
+            this.txtQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantity_KeyPress);
+            // 
+            // lblQuantity
+            // 
+            this.lblQuantity.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblQuantity.AutoSize = true;
+            this.lblQuantity.Location = new System.Drawing.Point(78, 216);
+            this.lblQuantity.Name = "lblQuantity";
+            this.lblQuantity.Size = new System.Drawing.Size(91, 23);
+            this.lblQuantity.TabIndex = 19;
+            this.lblQuantity.Text = "Quantity";
+            // 
+            // txtProductDescription
+            // 
+            this.txtProductDescription.Location = new System.Drawing.Point(223, 94);
+            this.txtProductDescription.Name = "txtProductDescription";
+            this.txtProductDescription.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.txtProductDescription.Size = new System.Drawing.Size(290, 96);
+            this.txtProductDescription.TabIndex = 18;
+            this.txtProductDescription.Text = "";
+            // 
+            // txtProductName
+            // 
+            this.txtProductName.Location = new System.Drawing.Point(223, 53);
+            this.txtProductName.Name = "txtProductName";
+            this.txtProductName.Size = new System.Drawing.Size(216, 30);
+            this.txtProductName.TabIndex = 17;
+            // 
+            // lblProductName
+            // 
+            this.lblProductName.AutoSize = true;
+            this.lblProductName.Font = new System.Drawing.Font("Verdana", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductName.Location = new System.Drawing.Point(74, 57);
+            this.lblProductName.Name = "lblProductName";
+            this.lblProductName.Size = new System.Drawing.Size(143, 23);
+            this.lblProductName.TabIndex = 16;
+            this.lblProductName.Text = "Product Name";
+            // 
+            // lblDescription
+            // 
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.Font = new System.Drawing.Font("Verdana", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescription.Location = new System.Drawing.Point(78, 146);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(119, 23);
+            this.lblDescription.TabIndex = 14;
+            this.lblDescription.Text = "Description";
+            // 
+            // txtProductID
+            // 
+            this.txtProductID.Location = new System.Drawing.Point(223, 14);
+            this.txtProductID.Name = "txtProductID";
+            this.txtProductID.Size = new System.Drawing.Size(216, 30);
+            this.txtProductID.TabIndex = 1;
+            this.txtProductID.Validating += new System.ComponentModel.CancelEventHandler(this.txtProductID_Validating);
+            // 
+            // lblProductID
+            // 
+            this.lblProductID.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblProductID.AutoSize = true;
+            this.lblProductID.Location = new System.Drawing.Point(78, 8);
+            this.lblProductID.Name = "lblProductID";
+            this.lblProductID.Size = new System.Drawing.Size(112, 23);
+            this.lblProductID.TabIndex = 0;
+            this.lblProductID.Text = "Product ID";
+            // 
             // pnlCustInfo
             // 
-            this.pnlCustInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pnlCustInfo.Controls.Add(this.btnClear);
+            this.pnlCustInfo.Controls.Add(this.btnClearCustomer);
             this.pnlCustInfo.Controls.Add(this.btnSubmitCust);
             this.pnlCustInfo.Controls.Add(this.txtContactPerson);
             this.pnlCustInfo.Controls.Add(this.label2);
@@ -206,24 +364,24 @@
             this.pnlCustInfo.Controls.Add(this.txtBusinessName);
             this.pnlCustInfo.Controls.Add(this.label1);
             this.pnlCustInfo.Font = new System.Drawing.Font("Verdana", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlCustInfo.Location = new System.Drawing.Point(278, 39);
+            this.pnlCustInfo.Location = new System.Drawing.Point(179, 51);
             this.pnlCustInfo.Name = "pnlCustInfo";
-            this.pnlCustInfo.Size = new System.Drawing.Size(558, 395);
+            this.pnlCustInfo.Size = new System.Drawing.Size(675, 384);
             this.pnlCustInfo.TabIndex = 1;
             // 
-            // btnClear
+            // btnClearCustomer
             // 
-            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnClear.CausesValidation = false;
-            this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClear.ForeColor = System.Drawing.Color.Gold;
-            this.btnClear.Location = new System.Drawing.Point(261, 323);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(101, 45);
-            this.btnClear.TabIndex = 23;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = false;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            this.btnClearCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnClearCustomer.CausesValidation = false;
+            this.btnClearCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClearCustomer.ForeColor = System.Drawing.Color.Gold;
+            this.btnClearCustomer.Location = new System.Drawing.Point(261, 323);
+            this.btnClearCustomer.Name = "btnClearCustomer";
+            this.btnClearCustomer.Size = new System.Drawing.Size(101, 45);
+            this.btnClearCustomer.TabIndex = 24;
+            this.btnClearCustomer.Text = "Clear";
+            this.btnClearCustomer.UseVisualStyleBackColor = false;
+            this.btnClearCustomer.Click += new System.EventHandler(this.btnClearCustomer_Click);
             // 
             // btnSubmitCust
             // 
@@ -250,7 +408,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 210);
+            this.label2.Location = new System.Drawing.Point(4, 207);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(153, 23);
             this.label2.TabIndex = 19;
@@ -271,7 +429,6 @@
             this.txtTelephoneNo.Name = "txtTelephoneNo";
             this.txtTelephoneNo.Size = new System.Drawing.Size(216, 30);
             this.txtTelephoneNo.TabIndex = 17;
-            this.txtTelephoneNo.TextChanged += new System.EventHandler(this.txtTelephoneNo_TextChanged);
             this.txtTelephoneNo.Validating += new System.ComponentModel.CancelEventHandler(this.txtTelephoneNo_Validating);
             // 
             // label9
@@ -305,11 +462,21 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 15);
+            this.label1.Location = new System.Drawing.Point(4, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(155, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "Business Name";
+            // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataMember = "customer";
+            this.customerBindingSource.DataSource = this.aDADataSet;
+            // 
+            // aDADataSet
+            // 
+            this.aDADataSet.DataSetName = "ADADataSet";
+            this.aDADataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // errorProviderBusninessName
             // 
@@ -319,15 +486,27 @@
             // 
             this.errorProviderTelephone.BlinkRate = 1;
             this.errorProviderTelephone.ContainerControl = this;
-            this.errorProviderTelephone.RightToLeftChanged += new System.EventHandler(this.txtTelephoneNo_TextChanged);
+            // 
+            // errorProviderTxtProductID
+            // 
+            this.errorProviderTxtProductID.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderTxtProductID.ContainerControl = this;
+            // 
+            // customerTableAdapter
+            // 
+            this.customerTableAdapter.ClearBeforeFill = true;
+            // 
+            // errorProviderUnitPrice
+            // 
+            this.errorProviderUnitPrice.ContainerControl = this;
             // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1102, 446);
-            this.Controls.Add(this.pnlAddCustomer);
+            this.ClientSize = new System.Drawing.Size(1104, 446);
+            this.Controls.Add(this.pnlMainII);
             this.Controls.Add(this.pnlMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -335,29 +514,30 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "- Inventory Management";
             this.Load += new System.EventHandler(this.main_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aDADataSet)).EndInit();
             this.pnlMain.ResumeLayout(false);
-            this.pnlAddCustomer.ResumeLayout(false);
+            this.pnlMainII.ResumeLayout(false);
+            this.pnlProductInfo.ResumeLayout(false);
+            this.pnlProductInfo.PerformLayout();
             this.pnlCustInfo.ResumeLayout(false);
             this.pnlCustInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aDADataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderBusninessName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTelephone)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTxtProductID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderUnitPrice)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private ADADataSet aDADataSet;
-        private System.Windows.Forms.BindingSource customerBindingSource;
-        private ADADataSetTableAdapters.customerTableAdapter customerTableAdapter;
         private System.Windows.Forms.Button btnNewOrder;
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.Button btnNewProduct;
         private System.Windows.Forms.Button btnViewInventory;
         private System.Windows.Forms.Button btnAddCustomer;
-        private System.Windows.Forms.Panel pnlAddCustomer;
+        private System.Windows.Forms.Panel pnlMainII;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Panel pnlCustInfo;
         private System.Windows.Forms.RichTextBox txtAddress;
@@ -368,10 +548,29 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtContactPerson;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnSubmitCust;
         private System.Windows.Forms.ErrorProvider errorProviderBusninessName;
         private System.Windows.Forms.ErrorProvider errorProviderTelephone;
+        private System.Windows.Forms.Panel pnlProductInfo;
+        private System.Windows.Forms.Button btnClearProduct;
+        private System.Windows.Forms.Button btnSubmitProduct;
+        private System.Windows.Forms.TextBox txtQuantity;
+        private System.Windows.Forms.Label lblQuantity;
+        private System.Windows.Forms.RichTextBox txtProductDescription;
+        private System.Windows.Forms.TextBox txtProductName;
+        private System.Windows.Forms.Label lblProductName;
+        private System.Windows.Forms.Label lblDescription;
+        private System.Windows.Forms.TextBox txtProductID;
+        private System.Windows.Forms.Label lblProductID;
+        private System.Windows.Forms.TextBox txtUnitPrice;
+        private System.Windows.Forms.Label lblUnitPrice;
+        private System.Windows.Forms.Label lblDollar;
+        private System.Windows.Forms.ErrorProvider errorProviderTxtProductID;
+        private System.Windows.Forms.Button btnClearCustomer;
+        private ADADataSet aDADataSet;
+        private System.Windows.Forms.BindingSource customerBindingSource;
+        private ADADataSetTableAdapters.customerTableAdapter customerTableAdapter;
+        private System.Windows.Forms.ErrorProvider errorProviderUnitPrice;
 
     }
 }

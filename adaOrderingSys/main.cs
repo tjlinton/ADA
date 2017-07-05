@@ -10,13 +10,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NLog;
 using System.Text.RegularExpressions;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace adaOrderingSys
 {
     public partial class main : Form
     {
-
+        
         private readonly Logger logger = LogManager.GetCurrentClassLogger();
+        
+        //-----------------
+        //  Constants 
+        //-----------------
 
         public main()
         {
@@ -26,13 +32,114 @@ namespace adaOrderingSys
         private void main_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'aDADataSet.customer' table. You can move, or remove it, as needed.
+            this.customerTableAdapter.Fill(this.aDADataSet.customer);
             this.pnlMain.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pnlAddCustomer.Visible = false;
+            this.pnlMainII.Hide();
         }
+
+        //--------------------------------------------------------------------------
+        //  Validating Events
+        //--------------------------------------------------------------------------
+        private void txtProductID_Validating(object sender, CancelEventArgs e)
+        {
+            string text = txtProductID.Text.Trim();
+            if (text == null || text == "")
+            {
+                errorProviderTxtProductID.SetError(txtProductID, "Please enter a product ID");
+            }
+            else
+            {
+                errorProviderTxtProductID.SetError(txtProductID, "");
+            }
+        }
+
+        void txtTelephoneNo_Validating(object sender, CancelEventArgs e)
+        {
+            string text = txtTelephoneNo.Text.Replace("-", "").Replace(" ", "");
+            Regex reg = new Regex(@"^\b(\d{7}|\d{10})\b");
+
+            //text entered must be a phone number
+            if (!reg.IsMatch(text))
+            {
+                errorProviderTelephone.SetError(txtTelephoneNo, "Must be a phone number");
+                txtTelephoneNo.ForeColor = System.Drawing.ColorTranslator.FromHtml("#B4010A");
+                //e.Cancel = true;
+                return;
+            }
+            //Phone number is valid
+            errorProviderTelephone.SetError(txtTelephoneNo, "");
+            txtTelephoneNo.ForeColor = System.Drawing.ColorTranslator.FromHtml("#080808");
+        }
+
+        private void txtUnitPrice_Validating(object sender, CancelEventArgs e)
+        {   
+            Regex priceReg = new Regex(@"^((\d+)|(\d+\.\d{2}))$");
+            if (!priceReg.IsMatch(txtUnitPrice.Text))
+            {
+                errorProviderUnitPrice.SetError(txtUnitPrice, "Must be a real price");
+                txtUnitPrice.ForeColor = System.Drawing.ColorTranslator.FromHtml("#B4010A");
+            }
+            else
+            {
+                errorProviderUnitPrice.SetError(txtUnitPrice, "");
+                txtUnitPrice.ForeColor = System.Drawing.ColorTranslator.FromHtml("#080808");
+            }
+
+        }
+
+        //---------------------------------------------------------------------------
+        //  Key Press Events
+        //---------------------------------------------------------------------------
+
+        private void txtQuantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+
+            if (!Char.IsDigit(ch) && !Char.IsControl(ch))
+            {
+                e.Handled = true;
+            }       
+        }
+
+        private void txtUnitPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!char.IsControl(ch) && !char.IsDigit(ch) &&  (ch != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((ch == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+
+        }
+
+
+        //-------------------------------------------------------------------------------
+        //  Button Click Events
+        //-------------------------------------------------------------------------------
+
+        private void btnClearProduct_Click(object sender, EventArgs e)
+        {
+            clearForms(this.pnlProductInfo.Controls);
+        }
+
+        private void btnClearCustomer_Click(object sender, EventArgs e)
+        {
+            clearForms(this.pnlCustInfo.Controls);
+        }
+
+        
 
         private void btnNewOrder_Click(object sender, EventArgs e)
         {
-            
+            newOrder new_order = new newOrder();
+            new_order.Show();
+            this.Hide();
+
         }
 
         private void btnViewInventory_Click(object sender, EventArgs e)
@@ -42,57 +149,141 @@ namespace adaOrderingSys
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-            this.pnlMain.Visible = false;
-            this.pnlAddCustomer.Visible = true;
+            this.pnlMain.Hide();
+            this.pnlMainII.Show();
+            this.pnlProductInfo.Hide();
+            
+            this.pnlCustInfo.Show();
         }
 
         private void btnNewProduct_Click(object sender, EventArgs e)
         {
-
+            this.pnlMain.Hide();
+            this.pnlMainII.Show();
+            this.pnlProductInfo.Show();
+            
+            this.pnlCustInfo.Hide();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.pnlAddCustomer.Visible = false;
-            this.pnlMain.Visible = true;
+            this.pnlMainII.Hide();
+            this.pnlMain.Show();
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
             clearForms(this.pnlCustInfo.Controls);
-         }
+        }
+
         private void btnSubmitCust_Click(object sender, EventArgs e)
         {
-            string name, address, telephone, contactPerson;
-            customer cust = new customer();
 
-            name = txtBusinessName.Text;
-            address = txtAddress.Text;
-            telephone = txtTelephoneNo.Text;
-            contactPerson = txtContactPerson.Text;
+            bool isEmpty = areFieldsEmpty(this.pnlCustInfo.Controls); //Check if any textboxes on form are empty
 
-            int result = cust.createCustomer(name, address, telephone, contactPerson);
-
-            switch (result)
+            if (!isEmpty)
             {
-                case 0:
-                    MessageBox.Show("Customer added successfully.");
-                    clearForms(this.pnlCustInfo.Controls);
-                    break;
+                string name, address, telephone, contactPerson;
+                Customer cust = new Customer();
 
-                case 1:
-                    MessageBox.Show("Customer already Exists!");
-                    break;
+                name = txtBusinessName.Text;
+                address = txtAddress.Text;
+                telephone = txtTelephoneNo.Text;
+                contactPerson = txtContactPerson.Text;
 
-                case -1:
-                    MessageBox.Show("An error occured while trying to add customer. Please try again");
-                    break;
+                int result = cust.createCustomer(name, address, telephone, contactPerson);
 
-                default:
-                    MessageBox.Show("A fatal error occured. Please contact system administrator");
-                    break;
+                switch (result)
+                {
+                    case 0:
+                        MessageBox.Show("Customer added successfully.");
+                        clearForms(this.pnlCustInfo.Controls);
+                        break;
 
+                    case 1:
+                        MessageBox.Show("Customer already Exists!");
+                        break;
+
+                    case -1:
+                        MessageBox.Show("An error occured while trying to add customer. Please try again");
+                        break;
+
+                    default:
+                        MessageBox.Show("A fatal error occured. Please contact system administrator");
+                        break;
+
+                }
             }
+            else //One or more text boxes are empty
+            {
+                MessageBox.Show("Please fill in all fields before submitting");
+            }
+        }
+
+        private void btnSubmitProduct_Click(object sender, EventArgs e)
+        {
+            item newProduct = new item();
+
+            bool isEmpty = areFieldsEmpty(this.pnlProductInfo.Controls); //Check if any textbox fields are empty
+            if (!isEmpty)
+            {
+                string pID, pName, pDescription;
+                int pQuantity;
+                Decimal pPrice;
+
+                //Assign text box values to variables
+                pID = txtProductID.Text;
+                pName = txtProductName.Text;
+                pDescription = txtProductDescription.Text;
+                pQuantity = Convert.ToInt32(txtQuantity.Text);
+                pPrice = Convert.ToDecimal(txtUnitPrice.Text);
+
+                int result = newProduct.createItem(pID, pName, pPrice, pDescription, pQuantity);
+                switch (result)
+                {
+                    case 0:
+                        MessageBox.Show("Product added successfully.");
+                        clearForms(this.pnlCustInfo.Controls);
+                        break;
+
+                    case 1:
+                        MessageBox.Show("Product already exists!");
+                        break;
+
+                    case -1:
+                        MessageBox.Show("An error occured while trying to add product. Please try again");
+                        break;
+
+                    default:
+                        MessageBox.Show("A fatal error occured. Please contact system administrator");
+                        break;
+                }
+            }
+            else //one or more fields are empty
+            {
+                MessageBox.Show("Please fill in all product information before submitting");
+            }
+        }
+
+        //--------------------------------------------------------------------
+        //  Custom methods
+        //--------------------------------------------------------------------
+        private bool areFieldsEmpty(Control.ControlCollection controls)
+        {
+            foreach (var c in controls)
+            {
+                if (c is TextBox)
+                {
+                    if (((TextBox)c).Text == null || ((TextBox)c).Text == "")
+                        return true;
+                }
+                else if (c is RichTextBox)
+                {
+                    if (((RichTextBox)c).Text == null || ((RichTextBox)c).Text == "")
+                        return true;
+                }
+            }
+            return false;
         }
 
         private void clearForms(Control.ControlCollection controls)
@@ -104,28 +295,6 @@ namespace adaOrderingSys
                 else if (c is RichTextBox)
                     ((RichTextBox)c).Text = String.Empty;
             }
-        }
-
-        private void txtTelephoneNo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        void txtTelephoneNo_Validating(object sender, CancelEventArgs e)
-        {
-            string text = txtTelephoneNo.Text.Replace("-", "").Replace(" ", "");
-            Regex reg = new Regex(@"^\b(\d{7}|\d{10})\b");
-            //Phone number must be a phone number
-            if (!reg.IsMatch(text))
-            {
-                errorProviderTelephone.SetError(txtTelephoneNo, "Must be a phone number");
-                txtTelephoneNo.ForeColor = System.Drawing.ColorTranslator.FromHtml("#B4010A");
-                //e.Cancel = true;
-                return;
-            }
-            //Phone number is valid
-            errorProviderTelephone.SetError(txtTelephoneNo, "");
-            txtTelephoneNo.ForeColor = System.Drawing.ColorTranslator.FromHtml("#080808");
         }
     }
 }

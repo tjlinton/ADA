@@ -26,7 +26,8 @@ namespace adaOrderingSys.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LINTON-PC\\TAJAYLINTON;Initial Catalog=ADA;User ID=adauser")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LINTON-PC\\TAJAYLINTON;Initial Catalog=ADA;User ID=adauser;Password=AD" +
+            "AUser1234")]
         public string ADAConnectionString {
             get {
                 return ((string)(this["ADAConnectionString"]));

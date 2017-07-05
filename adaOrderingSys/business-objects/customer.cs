@@ -9,7 +9,7 @@ using NLog;
 
 namespace adaOrderingSys.business_objects
 {
-    class customer
+    class Customer
     {
  
         private byte custID { get; set; }
@@ -18,7 +18,7 @@ namespace adaOrderingSys.business_objects
         private string telephone  { get; set; } 
         private string contactPerson  { get; set; }
 
-        public customer() { }
+        public Customer() { }
 
         public int createCustomer(string n, string a, string t, string cP)
         {

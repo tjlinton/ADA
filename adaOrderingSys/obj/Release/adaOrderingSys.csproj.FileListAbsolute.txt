@@ -1,1 +1,13 @@
 C:\Users\Tajay\documents\visual studio 2013\Projects\adaOrderingSys\adaOrderingSys\bin\Release\adaOrderingSys.exe.config
+C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\bin\Release\NLog.config
+C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\bin\Release\adaOrderingSys.exe.config
+C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\bin\Release\adaOrderingSys.exe
+C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\bin\Release\adaOrderingSys.pdb
+C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\bin\Release\NLog.dll
+C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\bin\Release\NLog.xml
+C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\obj\Release\adaOrderingSys.loginForm.resources
+C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\obj\Release\adaOrderingSys.main.resources
+C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\obj\Release\adaOrderingSys.Properties.Resources.resources
+C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\obj\Release\adaOrderingSys.csproj.GenerateResource.Cache
+C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\obj\Release\adaOrderingSys.exe
+C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\obj\Release\adaOrderingSys.pdb

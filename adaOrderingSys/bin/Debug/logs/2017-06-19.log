@@ -1,0 +1,9 @@
+2017-06-19 18:53:05.2598 INFO respone message - Login successful
+2017-06-19 18:53:11.5817 ERROR System.NullReferenceException: Object reference not set to an instance of an object.
+   at adaOrderingSys.newOrder.btnAddRow_Click(Object sender, EventArgs e) in c:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\newOrder.cs:line 36
+2017-06-19 18:53:49.0589 INFO respone message - Login successful
+2017-06-19 18:54:51.2777 ERROR System.NullReferenceException: Object reference not set to an instance of an object.
+   at adaOrderingSys.newOrder.btnAddRow_Click(Object sender, EventArgs e) in c:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\newOrder.cs:line 36
+2017-06-19 19:02:57.9031 INFO respone message - Login successful
+2017-06-19 19:25:46.4310 ERROR System.NullReferenceException: Object reference not set to an instance of an object.
+   at adaOrderingSys.newOrder.btnAddRow_Click(Object sender, EventArgs e) in c:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\newOrder.cs:line 38
