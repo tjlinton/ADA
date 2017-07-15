@@ -57,5 +57,76 @@ namespace adaOrderingSys
                 }
             }
         }
+
+        public string getItemName(int itemID)
+        {
+            var connectionString = ConfigurationManager.ConnectionStrings["ADAConnectionString"].ConnectionString;
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            try
+            {
+                conn.Open();
+
+                string selectQuery = "SELECT itemName from item where itemID = " + itemID;
+                string returnVal;
+
+                SqlCommand cmd = new SqlCommand(selectQuery, conn);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                
+                returnVal = (string)cmd.ExecuteScalar();
+
+                return returnVal;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return "-1";
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                    conn.Dispose();
+                }
+            }
+        }
+
+        public string getItemID(String itemName)
+        {
+            var connectionString = ConfigurationManager.ConnectionStrings["ADAConnectionString"].ConnectionString;
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            try
+            {
+                conn.Open();
+
+                string selectQuery = "SELECT TOP 1 itemID from item where itemName = " + itemName;
+                string returnVal;
+
+                SqlCommand cmd = new SqlCommand(selectQuery, conn);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                returnVal = (string)cmd.ExecuteScalar();
+
+                return returnVal;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return "-1";
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                    conn.Dispose();
+                }
+            }
+
+        }
     }
 }

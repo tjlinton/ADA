@@ -23,23 +23,18 @@ namespace adaOrderingSys
         {
             InitializeComponent();
             this.pnlAddOrder.Show();
+            this.dgv_Order.Columns["clmn_ID"].Width = 100;
+            this.dgv_Order.Columns["clmn_ItemName"].Width = 150;
+            this.dgv_Order.Columns["clmn_CustName"].Width = 150;
+            this.dgv_Order.Columns["clmn_UnitPrice"].Width = 50;
+            this.dgv_Order.Columns["clmn_TotalCost"].Width = 50;
+
         }
         private void btnAddRow_Click(object sender, EventArgs e)
         {
             try
             {
-                
-                DataTable dt = getAllItems();
-                Console.WriteLine(dt.Select());
-                //for (int i = 0; i < this.gv_itemsOrdered.Rows.Count; i++)
-                //{
-                //    DataGridViewComboBoxColumn column = (DataGridViewComboBoxColumn)this.gv_itemsOrdered.Columns["Item Name"];
-                //    foreach (DataRow row in dt.Rows)
-                //    {
-                //        column.Items.Add(row);
-                //    }
-                //}
-                // this.gv_itemsOrdered.Columns["gv_ColumnItemName"].DataPropertyName = dt.column
+
             }
             catch (Exception ex)
             {
@@ -51,58 +46,18 @@ namespace adaOrderingSys
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    int selectedRows = this.gv_itemsOrdered.SelectedRows.Count;
-            //    while (selectedRows > 0)
-            //    {
-            //        this.gv_itemsOrdered.Rows.RemoveAt(this.gv_itemsOrdered.SelectedRows[0].Index);
-            //        selectedRows --;
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    logger.Error(ex);
-            //    MessageBox.Show("There was an error deleting the selected row(s). Please try again");
-            //}
+            
         }
 
         private void btnClearGV_Click(object sender, EventArgs e)
         {
-            //this.gv_itemsOrdered.Rows.Clear();
+            
         }
 
         private void btnSubmitGV_Click(object sender, EventArgs e)
         { 
         }
 
-        private DataTable getAllItems()
-        {
-            DataTable dt = new DataTable();
-            DataSet ds = new DataSet();
-
-            var connectionString = ConfigurationManager.ConnectionStrings["ADAConnectionString"].ConnectionString;
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-
-                    using (SqlCommand cmd = new SqlCommand(SELECT_ALL_ITEMS, conn))
-                    {
-                        SqlDataAdapter adapter = new SqlDataAdapter();
-                        adapter.SelectCommand = cmd;
-                        adapter.Fill(ds);
-
-                        dt = ds.Tables[0];
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                logger.Error(ex);
-            }
-            return dt;
-        }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -115,12 +70,17 @@ namespace adaOrderingSys
         {
             // TODO: This line of code loads data into the 'aDADataSet.customer' table. You can move, or remove it, as needed.
             this.customerTableAdapter.Fill(this.aDADataSet.customer);
-
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private List<string> bindItemList()
         {
+            return new List<string>();
+        }
 
+        private void btn_Clear_Click(object sender, EventArgs e)
+        {
+            this.ddl_Customer.SelectedIndex = 0;
+            th
         }
     }
 }

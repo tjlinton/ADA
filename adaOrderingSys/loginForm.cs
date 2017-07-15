@@ -139,7 +139,6 @@ namespace adaOrderingSys
             {
                 doLogin();
             }
-            
         }
 
         private void doLogin() {
@@ -152,7 +151,6 @@ namespace adaOrderingSys
                 else
                 {
                     User user = new User();
-
                     int response = user.loginUser(txtUserName.Text, txtPassword.Text);
 
                     switch (response)
@@ -178,8 +176,6 @@ namespace adaOrderingSys
                 logger.Error(ex);
                 MessageBox.Show("ERROR:" + "Please contact system admin");
             }
-
         }
-
     }
 }
