@@ -11,58 +11,116 @@ namespace adaOrderingSys.business_objects
 {
     class Customer
     {
- 
+        private readonly Logger logger = LogManager.GetCurrentClassLogger();
+
         private byte custID { get; set; }
-        private string name  { get; set; }
-        private string address  { get; set; }
-        private string telephone  { get; set; } 
-        private string contactPerson  { get; set; }
+        private string name { get; set; }
+        private string address { get; set; }
+        private string telephone { get; set; }
+        private string contactPerson { get; set; }
 
         public Customer() { }
 
         public int createCustomer(string n, string a, string t, string cP)
         {
             var connectionString = ConfigurationManager.ConnectionStrings["ADAConnectionString"].ConnectionString;
-            SqlConnection conn = new SqlConnection(connectionString);
-
-            try
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                conn.Open();
-
-                string insertProcedure = "[dbo].[usp_AddCustomer]";
-                int returnVal;
-
-                SqlCommand cmd = new SqlCommand(insertProcedure, conn);
-
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@name", n);
-                cmd.Parameters.AddWithValue("@address", a);
-                cmd.Parameters.AddWithValue("@telephone",t);
-                cmd.Parameters.AddWithValue("@contactPerson", cP);
-
-                returnVal = (Int32)cmd.ExecuteScalar();
-
-                return returnVal;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-
-                return -1;
-            }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
+                try
                 {
-                    conn.Close();
-                    conn.Dispose();
+                    conn.Open();
+
+                    string insertProcedure = "[dbo].[usp_AddCustomer]";
+                    int returnVal;
+
+                    SqlCommand cmd = new SqlCommand(insertProcedure, conn);
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@name", n);
+                    cmd.Parameters.AddWithValue("@address", a);
+                    cmd.Parameters.AddWithValue("@telephone", t);
+                    cmd.Parameters.AddWithValue("@contactPerson", cP);
+
+                    returnVal = (Int32)cmd.ExecuteScalar();
+
+                    return returnVal;
+                }
+                catch (Exception e)
+                {
+                    logger.Error(e);
+
+                    return -1;
+                }
+
+            }
+        }
+
+        public List<string> getCustomerNames()
+        {
+            var connectionString = ConfigurationManager.ConnectionStrings["ADAConnectionString"].ConnectionString;
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    logger.Info("Getting customer names");
+                    conn.Open();
+
+                    string selectProcedure = "SELECT custName FROM [dbo].[customer]";
+                    List<string> customers = new List<string>();
+
+                    SqlCommand cmd = new SqlCommand(selectProcedure, conn);
+
+                    cmd.CommandType = CommandType.Text;
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            customers.Add(dr.GetString(0));
+                        }
+                    }
+                    logger.Info("Names successfully receieved");
+                    return customers;
+                }
+                catch (Exception e)
+                {
+                    logger.Error(e);
+                    return null;
                 }
             }
         }
 
-        public string editCustInfo() 
+        public string editCustInfo()
         {
             return "";
+        }
+
+        public string getCustomerLocation(int custID)
+        {
+            var connectionString = ConfigurationManager.ConnectionStrings["ADAConnectionString"].ConnectionString;
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+
+                    string insertProcedure = "SELECT custAddress from customer where custID = @custID";
+
+                    SqlCommand cmd = new SqlCommand(insertProcedure, conn);
+
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Parameters.AddWithValue("@custID", custID);
+
+                    string location = cmd.ExecuteScalar().ToString();
+                    return location;
+                }
+                catch (Exception e)
+                {
+                    logger.Error(e);
+
+                    return "";
+                }
+            }
         }
     }
 }

@@ -1,0 +1,8 @@
+2017-09-23 09:05:13.4710 INFO User: Tajay successfully logged in
+2017-09-23 09:50:37.4948 ERROR System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.String'.
+   at System.Data.SqlClient.SqlBuffer.get_String()
+   at System.Data.SqlClient.SqlDataReader.GetString(Int32 i)
+   at adaOrderingSys.business_objects.ItemsOrdered.getItemsOrderedBasedonOrderID(Int32 orderID) in c:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\business-objects\ItemsOrdered.cs:line 277
+2017-09-23 11:17:01.4883 WARN Unable to log in user TLinton
+2017-09-23 11:17:07.4221 INFO User: Tajay successfully logged in
+2017-09-23 11:19:38.9406 INFO User: Tajay successfully logged in

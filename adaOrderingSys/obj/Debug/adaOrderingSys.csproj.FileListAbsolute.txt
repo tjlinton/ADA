@@ -30,3 +30,7 @@ C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrder
 C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\obj\Debug\adaOrderingSys.exe
 C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\obj\Debug\adaOrderingSys.pdb
 C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\obj\Debug\adaOrderingSys.newOrder.resources
+C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\obj\Debug\adaOrderingSys.SummaryForm.resources
+C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\obj\Debug\adaOrderingSys.ViewOrders.resources
+C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\obj\Debug\adaOrderingSys.csproj.ResolveComReference.cache
+C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\obj\Debug\adaOrderingSys.OrderedItemsPopUp.resources

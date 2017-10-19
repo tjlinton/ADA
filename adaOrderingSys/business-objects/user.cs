@@ -22,35 +22,31 @@ namespace adaOrderingSys.business_objects
         public int loginUser(string uName, string pword)
         {
             var connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["ADAConnectionString"].ConnectionString;
-            SqlConnection con = new SqlConnection(connectionString);
-            int returnVal;
-
-            try
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
-                SqlCommand cmd = new SqlCommand();
-                cmd.Parameters.AddWithValue("@pLoginName", uName);
-                cmd.Parameters.AddWithValue("@pPassword", pword);
-                cmd.Parameters.Add("@returnVal ", SqlDbType.Int).Direction = ParameterDirection.Output;
-                cmd.CommandText = "[dbo].[uspLogin]";
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Connection = con;
+                try
+                {
+                    int returnVal;
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Parameters.AddWithValue("@pLoginName", uName);
+                    cmd.Parameters.AddWithValue("@pPassword", pword);
+                    cmd.Parameters.Add("@returnVal ", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.CommandText = "[dbo].[uspLogin]";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Connection = con;
 
-                con.Open();
+                    con.Open();
 
-                returnVal = (int)cmd.ExecuteScalar();
-            }
-            catch (Exception e)
-            {
-                logger.Error(e);
-                returnVal = 1;
-            }
+                    returnVal = (int)cmd.ExecuteScalar();
 
-            finally
-            {
-                con.Close();
-                con.Dispose();
+                    return returnVal;
+                }
+                catch (Exception e)
+                {
+                    logger.Error(e);
+                    return 1;
+                }
             }
-            return returnVal;
         }
     }
 }

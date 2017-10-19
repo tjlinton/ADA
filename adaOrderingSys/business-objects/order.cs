@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -11,50 +12,148 @@ namespace adaOrderingSys.business_objects
 {
     class Order
     {
+        private readonly Logger logger = LogManager.GetCurrentClassLogger();
+
         private int orderID { get; set; }
         private int custID { get; set; }
-        private string truckNo { get; set; }
-        private bool isFulfilled {get; set;}
+        private string custName { get; set; }
+        public DateTime orderDate { get; private set; }
+        private bool isFullfilled { get; set; }
+        private decimal totalPrice { get; set; }
+        public ItemsOrdered itemsOrdered { get; private set; }
+        private int summaryID { get; set; }
+        private string location { get; set; }
+        private int additionals { get; set; }
 
-        public Order() { }
-
-        public int insertOrder(int custID, string tNo, bool isFulfilled )
+        public List<KeyValuePair<int, string>> getCustNameBasedOnOrderDate(DateTime orderDate)
         {
             var connectionString = ConfigurationManager.ConnectionStrings["ADAConnectionString"].ConnectionString;
-            SqlConnection conn = new SqlConnection(connectionString);
-
-            try
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                conn.Open();
-
-                string insertProcedure = "[dbo].[usp_createOrder]";
-                int returnVal;
-
-                SqlCommand cmd = new SqlCommand(insertProcedure, conn);
-
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@custID", custID);
-                cmd.Parameters.AddWithValue("@truckNo", tNo);
-                cmd.Parameters.AddWithValue("@isFulFilled", isFulfilled);
-
-                returnVal = (Int32)cmd.ExecuteScalar();
-
-                return returnVal;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                return -1;
-            }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
+                try
                 {
-                    // cleanup
-                    conn.Close();
-                    conn.Dispose();
+                    conn.Open();
+
+                    string selectProcedure = "[dbo].[usp_CustNameBasedOnOrderDate]";
+                    List<KeyValuePair<int, string>> orderDetails = new List<KeyValuePair<int, string>>();
+
+                    SqlCommand cmd = new SqlCommand(selectProcedure, conn);
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@year", orderDate.Year);
+                    cmd.Parameters.AddWithValue("@month", orderDate.Month);
+                    cmd.Parameters.AddWithValue("@day", orderDate.Day);
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            orderDetails.Add(
+                                new KeyValuePair<int, string>(dr.GetInt32(0), dr.GetString(1))
+                                );
+                        }
+                    }
+
+                    return orderDetails;
+                }
+                catch (Exception e)
+                {
+                    logger.Error(e);
+                    return null;
                 }
             }
         }
+
+        public List<KeyValuePair<int, string>> getCustNameBasedOnOrderDate()
+        {
+            var connectionString = ConfigurationManager.ConnectionStrings["ADAConnectionString"].ConnectionString;
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+
+                    string selectProcedure = "[dbo].[usp_getUnfulfilledOrders]";
+                    List<KeyValuePair<int, string>> orderDetails = new List<KeyValuePair<int, string>>();
+
+                    SqlCommand cmd = new SqlCommand(selectProcedure, conn);
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            orderDetails.Add(
+                                new KeyValuePair<int, string>(dr.GetInt32(0), dr.GetString(1))
+                                );
+                        }
+                    }
+
+                    return orderDetails;
+                }
+                catch (Exception e)
+                {
+                    logger.Error(e);
+                    return null;
+                }
+            }
+        }
+
+        public string getOrderLocation(int orderID)
+        {
+            var connectionString = ConfigurationManager.ConnectionStrings["ADAConnectionString"].ConnectionString;
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    logger.Info("Retrieving order location");
+                    conn.Open();
+
+                    string selectProcedure = "SELECT location FROM [dbo].[order] where orderID = " + orderID;
+                    string location;
+
+                    SqlCommand cmd = new SqlCommand(selectProcedure, conn);
+
+                    cmd.CommandType = CommandType.Text;
+
+                    location = Convert.ToString(cmd.ExecuteScalar());
+                    logger.Info("Location is: " + location);
+                    return location;
+                }
+                catch (Exception e)
+                {
+                    logger.Error("Could not retrieve order location: " + e);
+                    return null;
+                }
+            }
+        }
+
+        public int deleteOrder(int orderID)
+        {
+            int returnVal;
+            var connectionString = ConfigurationManager.ConnectionStrings["ADAConnectionString"].ConnectionString;
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string deleteProcedure = "[dbo].[usp_DeleteOrder]";
+                    SqlCommand cmd = new SqlCommand(deleteProcedure, conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@orderID", orderID);
+
+                    returnVal = (int)cmd.ExecuteScalar();
+
+                }
+                catch (Exception e)
+                {
+                    returnVal = -1;
+                    logger.Error(e);
+                }
+            }
+            return returnVal;
+        }
+
     }
 }

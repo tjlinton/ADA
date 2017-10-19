@@ -1,0 +1,254 @@
+2017-10-17 19:19:47.0067 INFO User: Tajay successfully logged in
+2017-10-17 19:36:44.0007 INFO Attempting to create new order.
+2017-10-17 19:36:44.0347 INFO Created order: 18
+2017-10-17 19:36:44.0893 INFO New orderd created successfully with ID 18
+2017-10-17 19:40:54.1681 INFO Attempting to create new order.
+2017-10-17 19:40:54.1881 INFO Created order: 19
+2017-10-17 19:40:54.2822 INFO New orderd created successfully with ID 19
+2017-10-17 19:41:14.6771 INFO Retrieving order location
+2017-10-17 19:41:14.7857 INFO Location is: Lot 132 Charlemont, Linstead
+2017-10-17 19:41:14.7967 INFO Getting customer names
+2017-10-17 19:41:14.8127 INFO Names successfully receieved
+2017-10-17 19:41:22.0833 INFO Retrieving order location
+2017-10-17 19:41:22.1279 INFO Location is: 
+2017-10-17 19:41:22.1359 INFO Getting customer names
+2017-10-17 19:41:22.1359 INFO Names successfully receieved
+2017-10-17 19:41:22.2669 ERROR System.Data.DuplicateNameException: A column named 'itemID' already belongs to this DataTable.
+   at System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   at System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   at System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   at System.Data.DataColumnCollection.Add(String columnName, Type type)
+   at adaOrderingSys.ViewOrders.populateDataTable(Int32 orderID) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\ViewOrders.cs:line 199
+2017-10-17 19:41:25.1088 INFO Retrieving order location
+2017-10-17 19:41:25.1088 INFO Location is: 
+2017-10-17 19:41:25.1218 INFO Getting customer names
+2017-10-17 19:41:25.1218 INFO Names successfully receieved
+2017-10-17 19:41:25.1498 ERROR System.Data.DuplicateNameException: A column named 'itemID' already belongs to this DataTable.
+   at System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   at System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   at System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   at System.Data.DataColumnCollection.Add(String columnName, Type type)
+   at adaOrderingSys.ViewOrders.populateDataTable(Int32 orderID) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\ViewOrders.cs:line 199
+2017-10-17 19:41:29.3443 INFO Retrieving order location
+2017-10-17 19:41:29.3443 INFO Location is: 
+2017-10-17 19:41:29.3583 INFO Getting customer names
+2017-10-17 19:41:29.3583 INFO Names successfully receieved
+2017-10-17 19:41:29.3889 ERROR System.Data.DuplicateNameException: A column named 'itemID' already belongs to this DataTable.
+   at System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   at System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   at System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   at System.Data.DataColumnCollection.Add(String columnName, Type type)
+   at adaOrderingSys.ViewOrders.populateDataTable(Int32 orderID) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\ViewOrders.cs:line 199
+2017-10-17 19:41:36.4691 INFO Retrieving order location
+2017-10-17 19:41:36.4691 INFO Location is: Lot 132 Charlemont, Linstead
+2017-10-17 19:41:36.4831 INFO Getting customer names
+2017-10-17 19:41:36.5695 INFO Names successfully receieved
+2017-10-17 19:41:36.5925 ERROR System.Data.DuplicateNameException: A column named 'itemID' already belongs to this DataTable.
+   at System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   at System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   at System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   at System.Data.DataColumnCollection.Add(String columnName, Type type)
+   at adaOrderingSys.ViewOrders.populateDataTable(Int32 orderID) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\ViewOrders.cs:line 199
+2017-10-17 19:42:19.3128 INFO Retrieving order location
+2017-10-17 19:42:19.3128 INFO Location is: 
+2017-10-17 19:42:19.3308 INFO Getting customer names
+2017-10-17 19:42:19.3424 INFO Names successfully receieved
+2017-10-17 19:42:19.3714 ERROR System.Data.DuplicateNameException: A column named 'itemID' already belongs to this DataTable.
+   at System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   at System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   at System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   at System.Data.DataColumnCollection.Add(String columnName, Type type)
+   at adaOrderingSys.ViewOrders.populateDataTable(Int32 orderID) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\ViewOrders.cs:line 199
+2017-10-17 19:42:34.4189 INFO Retrieving order location
+2017-10-17 19:42:34.4189 INFO Location is: 
+2017-10-17 19:42:34.4344 INFO Getting customer names
+2017-10-17 19:42:34.4344 INFO Names successfully receieved
+2017-10-17 19:42:34.4664 ERROR System.Data.DuplicateNameException: A column named 'itemID' already belongs to this DataTable.
+   at System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   at System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   at System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   at System.Data.DataColumnCollection.Add(String columnName, Type type)
+   at adaOrderingSys.ViewOrders.populateDataTable(Int32 orderID) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\ViewOrders.cs:line 199
+2017-10-17 19:42:38.8893 INFO Retrieving order location
+2017-10-17 19:42:38.8893 INFO Location is: Lot 132 Charlemont, Linstead
+2017-10-17 19:42:38.9064 INFO Getting customer names
+2017-10-17 19:42:38.9064 INFO Names successfully receieved
+2017-10-17 19:42:38.9405 ERROR System.Data.DuplicateNameException: A column named 'itemID' already belongs to this DataTable.
+   at System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   at System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   at System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   at System.Data.DataColumnCollection.Add(String columnName, Type type)
+   at adaOrderingSys.ViewOrders.populateDataTable(Int32 orderID) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\ViewOrders.cs:line 199
+2017-10-17 19:42:39.4853 INFO Retrieving order location
+2017-10-17 19:42:39.4853 INFO Location is: Lot 132 Charlemont, Linstead
+2017-10-17 19:42:39.4993 INFO Getting customer names
+2017-10-17 19:42:39.4993 INFO Names successfully receieved
+2017-10-17 19:42:39.5291 ERROR System.Data.DuplicateNameException: A column named 'itemID' already belongs to this DataTable.
+   at System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   at System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   at System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   at System.Data.DataColumnCollection.Add(String columnName, Type type)
+   at adaOrderingSys.ViewOrders.populateDataTable(Int32 orderID) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\ViewOrders.cs:line 199
+2017-10-17 19:42:40.5885 INFO Retrieving order location
+2017-10-17 19:42:40.5955 INFO Location is: 
+2017-10-17 19:42:40.5955 INFO Getting customer names
+2017-10-17 19:42:40.6125 INFO Names successfully receieved
+2017-10-17 19:42:40.6329 ERROR System.Data.DuplicateNameException: A column named 'itemID' already belongs to this DataTable.
+   at System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   at System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   at System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   at System.Data.DataColumnCollection.Add(String columnName, Type type)
+   at adaOrderingSys.ViewOrders.populateDataTable(Int32 orderID) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\ViewOrders.cs:line 199
+2017-10-17 19:42:43.1748 INFO Retrieving order location
+2017-10-17 19:42:43.1748 INFO Location is: Lot 132 Charlemont, Linstead
+2017-10-17 19:42:43.1928 INFO Getting customer names
+2017-10-17 19:42:43.2008 INFO Names successfully receieved
+2017-10-17 19:42:43.2218 ERROR System.Data.DuplicateNameException: A column named 'itemID' already belongs to this DataTable.
+   at System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   at System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   at System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   at System.Data.DataColumnCollection.Add(String columnName, Type type)
+   at adaOrderingSys.ViewOrders.populateDataTable(Int32 orderID) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\ViewOrders.cs:line 199
+2017-10-17 19:42:44.7553 INFO Retrieving order location
+2017-10-17 19:42:44.7623 INFO Location is: 
+2017-10-17 19:42:44.7623 INFO Getting customer names
+2017-10-17 19:42:44.7623 INFO Names successfully receieved
+2017-10-17 19:42:44.7961 ERROR System.Data.DuplicateNameException: A column named 'itemID' already belongs to this DataTable.
+   at System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   at System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   at System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   at System.Data.DataColumnCollection.Add(String columnName, Type type)
+   at adaOrderingSys.ViewOrders.populateDataTable(Int32 orderID) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\ViewOrders.cs:line 199
+2017-10-17 19:42:46.4049 INFO Retrieving order location
+2017-10-17 19:42:46.4049 INFO Location is: Lot 132 Charlemont, Linstead
+2017-10-17 19:42:46.4209 INFO Getting customer names
+2017-10-17 19:42:46.4209 INFO Names successfully receieved
+2017-10-17 19:42:46.4549 ERROR System.Data.DuplicateNameException: A column named 'itemID' already belongs to this DataTable.
+   at System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   at System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   at System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   at System.Data.DataColumnCollection.Add(String columnName, Type type)
+   at adaOrderingSys.ViewOrders.populateDataTable(Int32 orderID) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\ViewOrders.cs:line 199
+2017-10-17 19:43:18.3336 INFO Retrieving order location
+2017-10-17 19:43:18.3476 INFO Location is: 
+2017-10-17 19:43:18.3566 INFO Getting customer names
+2017-10-17 19:43:18.3566 INFO Names successfully receieved
+2017-10-17 19:43:18.3896 ERROR System.Data.DuplicateNameException: A column named 'itemID' already belongs to this DataTable.
+   at System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   at System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   at System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   at System.Data.DataColumnCollection.Add(String columnName, Type type)
+   at adaOrderingSys.ViewOrders.populateDataTable(Int32 orderID) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\ViewOrders.cs:line 199
+2017-10-17 19:43:19.7468 INFO Retrieving order location
+2017-10-17 19:43:19.7468 INFO Location is: Lot 132 Charlemont, Linstead
+2017-10-17 19:43:19.7614 INFO Getting customer names
+2017-10-17 19:43:19.7614 INFO Names successfully receieved
+2017-10-17 19:43:19.7904 ERROR System.Data.DuplicateNameException: A column named 'itemID' already belongs to this DataTable.
+   at System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   at System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   at System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   at System.Data.DataColumnCollection.Add(String columnName, Type type)
+   at adaOrderingSys.ViewOrders.populateDataTable(Int32 orderID) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\ViewOrders.cs:line 199
+2017-10-17 19:45:01.1804 INFO User: Tajay successfully logged in
+2017-10-17 19:45:06.3581 INFO Retrieving order location
+2017-10-17 19:45:06.3581 INFO Location is: 
+2017-10-17 19:45:06.3791 INFO Getting customer names
+2017-10-17 19:45:06.3881 INFO Names successfully receieved
+2017-10-17 19:45:13.3930 INFO Retrieving order location
+2017-10-17 19:45:13.4030 INFO Location is: Lot 132 Charlemont, Linstead
+2017-10-17 19:45:13.4030 INFO Getting customer names
+2017-10-17 19:45:13.4291 INFO Names successfully receieved
+2017-10-17 19:45:13.4886 ERROR System.Data.DuplicateNameException: A column named 'itemID' already belongs to this DataTable.
+   at System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   at System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   at System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   at System.Data.DataColumnCollection.Add(String columnName, Type type)
+   at adaOrderingSys.ViewOrders.populateDataTable(Int32 orderID) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\ViewOrders.cs:line 200
+2017-10-17 19:45:14.2326 INFO Retrieving order location
+2017-10-17 19:45:14.2326 INFO Location is: Lot 132 Charlemont, Linstead
+2017-10-17 19:45:14.2521 INFO Getting customer names
+2017-10-17 19:45:14.2521 INFO Names successfully receieved
+2017-10-17 19:45:14.2911 ERROR System.Data.DuplicateNameException: A column named 'itemID' already belongs to this DataTable.
+   at System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   at System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   at System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   at System.Data.DataColumnCollection.Add(String columnName, Type type)
+   at adaOrderingSys.ViewOrders.populateDataTable(Int32 orderID) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\ViewOrders.cs:line 200
+2017-10-17 19:45:15.1615 INFO Retrieving order location
+2017-10-17 19:45:15.1705 INFO Location is: 
+2017-10-17 19:45:15.1705 INFO Getting customer names
+2017-10-17 19:45:15.1836 INFO Names successfully receieved
+2017-10-17 19:45:15.2102 ERROR System.Data.DuplicateNameException: A column named 'itemID' already belongs to this DataTable.
+   at System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   at System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   at System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   at System.Data.DataColumnCollection.Add(String columnName, Type type)
+   at adaOrderingSys.ViewOrders.populateDataTable(Int32 orderID) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\ViewOrders.cs:line 200
+2017-10-17 19:45:16.4085 INFO Retrieving order location
+2017-10-17 19:45:16.4085 INFO Location is: Lot 132 Charlemont, Linstead
+2017-10-17 19:45:16.4245 INFO Getting customer names
+2017-10-17 19:45:16.4245 INFO Names successfully receieved
+2017-10-17 19:45:16.4535 ERROR System.Data.DuplicateNameException: A column named 'itemID' already belongs to this DataTable.
+   at System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   at System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   at System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   at System.Data.DataColumnCollection.Add(String columnName, Type type)
+   at adaOrderingSys.ViewOrders.populateDataTable(Int32 orderID) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\ViewOrders.cs:line 200
+2017-10-17 19:45:18.8381 INFO Retrieving order location
+2017-10-17 19:45:18.8491 INFO Location is: 
+2017-10-17 19:45:18.8571 INFO Getting customer names
+2017-10-17 19:45:18.8571 INFO Names successfully receieved
+2017-10-17 19:45:18.8944 ERROR System.Data.DuplicateNameException: A column named 'itemID' already belongs to this DataTable.
+   at System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   at System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   at System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   at System.Data.DataColumnCollection.Add(String columnName, Type type)
+   at adaOrderingSys.ViewOrders.populateDataTable(Int32 orderID) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\ViewOrders.cs:line 200
+2017-10-17 19:45:20.1756 INFO Retrieving order location
+2017-10-17 19:45:20.1856 INFO Location is: 
+2017-10-17 19:45:20.1856 INFO Getting customer names
+2017-10-17 19:45:20.2036 INFO Names successfully receieved
+2017-10-17 19:45:20.2289 ERROR System.Data.DuplicateNameException: A column named 'itemID' already belongs to this DataTable.
+   at System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   at System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   at System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   at System.Data.DataColumnCollection.Add(String columnName, Type type)
+   at adaOrderingSys.ViewOrders.populateDataTable(Int32 orderID) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\ViewOrders.cs:line 200
+2017-10-17 19:45:40.7043 INFO Retrieving order location
+2017-10-17 19:45:40.7153 INFO Location is: Lot 132 Charlemont, Linstead
+2017-10-17 19:45:40.7153 INFO Getting customer names
+2017-10-17 19:45:40.7353 INFO Names successfully receieved
+2017-10-17 19:46:34.9705 ERROR System.Data.DuplicateNameException: A column named 'itemID' already belongs to this DataTable.
+   at System.Data.DataColumnCollection.RegisterColumnName(String name, DataColumn column)
+   at System.Data.DataColumnCollection.BaseAdd(DataColumn column)
+   at System.Data.DataColumnCollection.AddAt(Int32 index, DataColumn column)
+   at System.Data.DataColumnCollection.Add(String columnName, Type type)
+   at adaOrderingSys.ViewOrders.populateDataTable(Int32 orderID)
+2017-10-17 19:46:39.2570 INFO Retrieving order location
+2017-10-17 19:46:39.2706 INFO Location is: 
+2017-10-17 19:46:39.2796 INFO Getting customer names
+2017-10-17 19:46:39.2796 INFO Names successfully receieved
+2017-10-17 19:46:56.0359 INFO Retrieving order location
+2017-10-17 19:46:56.0449 INFO Location is: Lot 132 Charlemont, Linstead
+2017-10-17 19:46:56.0449 INFO Getting customer names
+2017-10-17 19:46:56.0629 INFO Names successfully receieved
+2017-10-17 19:47:04.9376 INFO Retrieving order location
+2017-10-17 19:47:04.9481 INFO Location is: 
+2017-10-17 19:47:04.9481 INFO Getting customer names
+2017-10-17 19:47:04.9481 INFO Names successfully receieved
+2017-10-17 19:47:06.0694 INFO Retrieving order location
+2017-10-17 19:47:06.0804 INFO Location is: Lot 132 Charlemont, Linstead
+2017-10-17 19:47:06.0804 INFO Getting customer names
+2017-10-17 19:47:06.0964 INFO Names successfully receieved
+2017-10-17 19:47:07.1819 INFO Retrieving order location
+2017-10-17 19:47:07.1979 INFO Location is: 
+2017-10-17 19:47:07.2059 INFO Getting customer names
+2017-10-17 19:47:07.2059 INFO Names successfully receieved
+2017-10-17 19:47:08.6172 INFO Retrieving order location
+2017-10-17 19:47:08.6252 INFO Location is: Lot 132 Charlemont, Linstead
+2017-10-17 19:47:08.6252 INFO Getting customer names
+2017-10-17 19:47:08.6417 INFO Names successfully receieved
+2017-10-17 19:47:22.5264 INFO Retrieving order location
+2017-10-17 19:47:22.5264 INFO Location is: 
+2017-10-17 19:47:22.5464 INFO Getting customer names
+2017-10-17 19:47:22.5464 INFO Names successfully receieved

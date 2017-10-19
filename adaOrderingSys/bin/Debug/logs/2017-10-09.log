@@ -1,0 +1,27 @@
+2017-10-09 07:41:11.0424 INFO User: Tajay successfully logged in
+2017-10-09 07:41:17.8184 ERROR System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.Collections.ArrayList.get_Item(Int32 index)
+   at System.Windows.Forms.DataGridViewRowCollection.SharedRow(Int32 rowIndex)
+   at System.Windows.Forms.DataGridViewRowCollection.get_Item(Int32 index)
+   at adaOrderingSys.OrderedItemsPopUp.populateDataGridView(List`1 itemsOrdered) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\OrderedItemsPopUp.cs:line 36
+2017-10-09 07:41:27.7860 ERROR System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.Collections.ArrayList.get_Item(Int32 index)
+   at System.Windows.Forms.DataGridViewRowCollection.SharedRow(Int32 rowIndex)
+   at System.Windows.Forms.DataGridViewRowCollection.get_Item(Int32 index)
+   at adaOrderingSys.OrderedItemsPopUp.populateDataGridView(List`1 itemsOrdered) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\OrderedItemsPopUp.cs:line 36
+2017-10-09 07:46:44.6495 INFO User: Tajay successfully logged in
+2017-10-09 07:49:10.2183 ERROR System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.Collections.ArrayList.get_Item(Int32 index)
+   at System.Windows.Forms.DataGridViewRowCollection.SharedRow(Int32 rowIndex)
+   at System.Windows.Forms.DataGridViewRowCollection.get_Item(Int32 index)
+   at adaOrderingSys.OrderedItemsPopUp.populateDataGridView(List`1 itemsOrdered) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\OrderedItemsPopUp.cs:line 36
+2017-10-09 21:11:20.5068 INFO User: Tajay successfully logged in
+2017-10-09 21:12:27.4633 ERROR System.ArgumentException: Column named clmn_Quantity cannot be found.
+Parameter name: columnName
+   at System.Windows.Forms.DataGridViewCellCollection.get_Item(String columnName)
+   at adaOrderingSys.OrderedItemsPopUp.populateDataGridView(List`1 itemsOrdered) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\OrderedItemsPopUp.cs:line 39
+2017-10-09 21:15:55.4172 INFO User: Tajay successfully logged in
+2017-10-09 21:29:27.5082 INFO User: Tajay successfully logged in

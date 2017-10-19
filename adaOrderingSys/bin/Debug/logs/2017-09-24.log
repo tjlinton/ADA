@@ -1,0 +1,48 @@
+2017-09-24 16:12:09.5005 INFO User: Tajay successfully logged in
+2017-09-24 16:15:22.5041 INFO User: Tajay successfully logged in
+2017-09-24 16:34:07.1162 INFO User: Tajay successfully logged in
+2017-09-24 20:01:51.1693 INFO User: Tajay successfully logged in
+2017-09-24 20:05:49.8834 INFO User: Tajay successfully logged in
+2017-09-24 20:18:17.1872 INFO User: Tajay successfully logged in
+2017-09-24 20:19:48.6156 INFO User: Tajay successfully logged in
+2017-09-24 20:20:41.8416 INFO User: Tajay successfully logged in
+2017-09-24 20:55:27.3747 INFO User: Tajay successfully logged in
+2017-09-24 20:55:33.2238 INFO Retrieving order location
+2017-09-24 20:55:33.3534 INFO Location is: Pmore
+2017-09-24 20:55:33.3764 INFO Getting customer names
+2017-09-24 20:55:33.3904 INFO Names successfully receieved
+2017-09-24 21:21:36.9977 INFO User: Tajay successfully logged in
+2017-09-24 21:21:43.3976 INFO Retrieving order location
+2017-09-24 21:21:43.4636 INFO Location is: Pmore
+2017-09-24 21:21:43.4636 INFO Getting customer names
+2017-09-24 21:21:43.4882 INFO Names successfully receieved
+2017-09-24 21:46:28.9695 INFO Attempting to create new order.
+2017-09-24 21:46:29.3389 INFO Created order: 2
+2017-09-24 21:46:29.4820 INFO New orderd created successfully with ID 2
+2017-09-24 21:46:34.6973 INFO Retrieving order location
+2017-09-24 21:46:34.7628 INFO Location is: Pmore
+2017-09-24 21:46:34.7628 INFO Getting customer names
+2017-09-24 21:46:34.7818 INFO Names successfully receieved
+2017-09-24 21:47:50.0113 INFO Retrieving order location
+2017-09-24 21:47:50.0583 INFO Location is: Pmore
+2017-09-24 21:47:50.0583 INFO Getting customer names
+2017-09-24 21:47:50.0773 INFO Names successfully receieved
+2017-09-24 21:59:15.8483 INFO User: Tajay successfully logged in
+2017-09-24 21:59:18.8439 INFO Retrieving order location
+2017-09-24 21:59:18.8980 INFO Location is: Pmore
+2017-09-24 21:59:18.9480 INFO Getting customer names
+2017-09-24 21:59:18.9850 INFO Names successfully receieved
+2017-09-24 22:00:37.4381 INFO User: Tajay successfully logged in
+2017-09-24 22:00:40.6702 INFO Retrieving order location
+2017-09-24 22:00:40.6882 INFO Location is: Pmore
+2017-09-24 22:00:40.6962 INFO Getting customer names
+2017-09-24 22:00:40.7382 INFO Names successfully receieved
+2017-09-24 22:05:13.6961 INFO User: Tajay successfully logged in
+2017-09-24 22:07:45.9014 INFO User: Tajay successfully logged in
+2017-09-24 22:11:18.0207 INFO User: Tajay successfully logged in
+2017-09-24 22:13:49.0347 INFO User: Tajay successfully logged in
+2017-09-24 22:15:40.4849 INFO Retrieving order location
+2017-09-24 22:15:40.5289 INFO Location is: Pmore
+2017-09-24 22:15:40.5379 INFO Getting customer names
+2017-09-24 22:15:40.5569 INFO Names successfully receieved
+2017-09-24 22:25:12.4029 INFO User: Tajay successfully logged in

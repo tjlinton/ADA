@@ -1,0 +1,9 @@
+2017-09-21 04:52:48.0328 INFO User: Tajay successfully logged in
+2017-09-21 05:55:39.6506 INFO User: Tajay successfully logged in
+2017-09-21 05:56:25.9532 INFO Attempting to create new order.
+2017-09-21 05:56:26.1214 INFO Created order: 1
+2017-09-21 05:56:26.1592 INFO New orderd created successfully with ID 1
+2017-09-21 05:56:37.3105 ERROR System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.String'.
+   at System.Data.SqlClient.SqlBuffer.get_String()
+   at System.Data.SqlClient.SqlDataReader.GetString(Int32 i)
+   at adaOrderingSys.business_objects.ItemsOrdered.getItemsOrderedBasedonOrderID(Int32 orderID) in c:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\business-objects\ItemsOrdered.cs:line 277
