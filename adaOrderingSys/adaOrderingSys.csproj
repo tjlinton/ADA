@@ -64,6 +64,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ADAItemDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="AddNewItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewItem.Designer.cs">
+      <DependentUpon>AddNewItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="business-objects\Constants.cs" />
     <Compile Include="business-objects\Customer.cs" />
     <Compile Include="business-objects\Item.cs" />
     <Compile Include="business-objects\ItemsOrdered.cs" />
@@ -108,6 +115,9 @@
     <Compile Include="ViewOrders.Designer.cs">
       <DependentUpon>ViewOrders.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddNewItem.resx">
+      <DependentUpon>AddNewItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="loginForm.resx">
       <DependentUpon>loginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -212,15 +222,6 @@
       <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
       <VersionMajor>8</VersionMajor>
       <VersionMinor>6</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>primary</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-    <COMReference Include="VBIDE">
-      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
-      <VersionMajor>5</VersionMajor>
-      <VersionMinor>3</VersionMinor>
       <Lcid>0</Lcid>
       <WrapperTool>primary</WrapperTool>
       <Isolated>False</Isolated>

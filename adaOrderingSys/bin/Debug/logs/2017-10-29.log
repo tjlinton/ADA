@@ -1,0 +1,24 @@
+2017-10-29 02:19:08.9830 INFO User: Tajay successfully logged in
+2017-10-29 02:21:42.6024 INFO Retrieving order location
+2017-10-29 02:21:42.6124 INFO Location successfully retrieved
+2017-10-29 02:21:42.6124 INFO Getting customer names
+2017-10-29 02:21:42.6314 INFO Names successfully receieved
+2017-10-29 02:21:44.7592 INFO Retrieving order location
+2017-10-29 02:21:44.7592 INFO Location successfully retrieved
+2017-10-29 02:21:44.7702 INFO Getting customer names
+2017-10-29 02:21:44.7702 INFO Names successfully receieved
+2017-10-29 02:28:15.0975 INFO User: Tajay successfully logged in
+2017-10-29 02:28:20.9964 INFO Retrieving order location
+2017-10-29 02:28:21.0044 INFO Location successfully retrieved
+2017-10-29 02:28:21.0044 INFO Getting customer names
+2017-10-29 02:28:21.0204 INFO Names successfully receieved
+2017-10-29 08:46:01.4803 WARN Unable to log in user Taja. Incorrect credentials enterred
+2017-10-29 08:46:08.7133 INFO User: Tajay successfully logged in
+2017-10-29 08:46:16.9729 INFO Retrieving order location
+2017-10-29 08:46:16.9729 INFO Location successfully retrieved
+2017-10-29 08:46:16.9880 INFO Getting customer names
+2017-10-29 08:46:16.9880 INFO Names successfully receieved
+2017-10-29 08:46:18.2465 INFO Retrieving order location
+2017-10-29 08:46:18.2535 INFO Location successfully retrieved
+2017-10-29 08:46:18.2535 INFO Getting customer names
+2017-10-29 08:46:18.2705 INFO Names successfully receieved

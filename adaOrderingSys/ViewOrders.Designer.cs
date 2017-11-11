@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewOrders));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.list_Orders = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbl_OrderID = new System.Windows.Forms.Label();
@@ -54,6 +55,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.list_Orders);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.label1);
@@ -66,6 +68,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(964, 554);
             this.panel1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(539, 494);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 37);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Add";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // list_Orders
             // 
@@ -86,12 +97,11 @@
             this.groupBox1.Controls.Add(this.lbl_Location);
             this.groupBox1.Controls.Add(this.lbl_Customer);
             this.groupBox1.Controls.Add(this.dgvItemsOrdered);
-            this.groupBox1.Location = new System.Drawing.Point(218, 124);
+            this.groupBox1.Location = new System.Drawing.Point(218, 109);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(691, 364);
+            this.groupBox1.Size = new System.Drawing.Size(691, 379);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
             // 
             // lbl_OrderID
             // 
@@ -106,7 +116,7 @@
             // 
             this.txtGrandTotal.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtGrandTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGrandTotal.Location = new System.Drawing.Point(594, 320);
+            this.txtGrandTotal.Location = new System.Drawing.Point(595, 61);
             this.txtGrandTotal.Name = "txtGrandTotal";
             this.txtGrandTotal.ReadOnly = true;
             this.txtGrandTotal.Size = new System.Drawing.Size(76, 26);
@@ -116,7 +126,7 @@
             // 
             this.lblGrandTotal.AutoSize = true;
             this.lblGrandTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGrandTotal.Location = new System.Drawing.Point(577, 278);
+            this.lblGrandTotal.Location = new System.Drawing.Point(577, 23);
             this.lblGrandTotal.Name = "lblGrandTotal";
             this.lblGrandTotal.Size = new System.Drawing.Size(108, 24);
             this.lblGrandTotal.TabIndex = 20;
@@ -124,7 +134,7 @@
             // 
             // rtxtLocation
             // 
-            this.rtxtLocation.Location = new System.Drawing.Point(156, 65);
+            this.rtxtLocation.Location = new System.Drawing.Point(176, 61);
             this.rtxtLocation.Name = "rtxtLocation";
             this.rtxtLocation.Size = new System.Drawing.Size(147, 38);
             this.rtxtLocation.TabIndex = 16;
@@ -133,7 +143,7 @@
             // cb_Customer
             // 
             this.cb_Customer.FormattingEnabled = true;
-            this.cb_Customer.Location = new System.Drawing.Point(156, 19);
+            this.cb_Customer.Location = new System.Drawing.Point(176, 24);
             this.cb_Customer.Name = "cb_Customer";
             this.cb_Customer.Size = new System.Drawing.Size(147, 21);
             this.cb_Customer.TabIndex = 15;
@@ -142,7 +152,7 @@
             // lbl_Location
             // 
             this.lbl_Location.AutoSize = true;
-            this.lbl_Location.Location = new System.Drawing.Point(99, 79);
+            this.lbl_Location.Location = new System.Drawing.Point(84, 76);
             this.lbl_Location.Name = "lbl_Location";
             this.lbl_Location.Size = new System.Drawing.Size(48, 13);
             this.lbl_Location.TabIndex = 14;
@@ -151,7 +161,7 @@
             // lbl_Customer
             // 
             this.lbl_Customer.AutoSize = true;
-            this.lbl_Customer.Location = new System.Drawing.Point(99, 26);
+            this.lbl_Customer.Location = new System.Drawing.Point(84, 27);
             this.lbl_Customer.Name = "lbl_Customer";
             this.lbl_Customer.Size = new System.Drawing.Size(51, 13);
             this.lbl_Customer.TabIndex = 12;
@@ -160,12 +170,15 @@
             // dgvItemsOrdered
             // 
             this.dgvItemsOrdered.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvItemsOrdered.Location = new System.Drawing.Point(28, 136);
+            this.dgvItemsOrdered.Location = new System.Drawing.Point(26, 127);
             this.dgvItemsOrdered.Name = "dgvItemsOrdered";
-            this.dgvItemsOrdered.Size = new System.Drawing.Size(545, 210);
+            this.dgvItemsOrdered.Size = new System.Drawing.Size(643, 235);
             this.dgvItemsOrdered.TabIndex = 4;
+            this.dgvItemsOrdered.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvItemsOrdered_CellValidating);
             this.dgvItemsOrdered.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemsOrdered_CellValueChanged);
+            this.dgvItemsOrdered.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvItemsOrdered_DataError);
             this.dgvItemsOrdered.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvItemsOrdered_RowsRemoved);
+            this.dgvItemsOrdered.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgvItemsOrdered_KeyPress);
             // 
             // label1
             // 
@@ -179,7 +192,7 @@
             // 
             // btn_DeleteOrder
             // 
-            this.btn_DeleteOrder.Location = new System.Drawing.Point(527, 494);
+            this.btn_DeleteOrder.Location = new System.Drawing.Point(458, 494);
             this.btn_DeleteOrder.Name = "btn_DeleteOrder";
             this.btn_DeleteOrder.Size = new System.Drawing.Size(75, 37);
             this.btn_DeleteOrder.TabIndex = 9;
@@ -189,7 +202,7 @@
             // 
             // btn_UpdateOrder
             // 
-            this.btn_UpdateOrder.Location = new System.Drawing.Point(435, 494);
+            this.btn_UpdateOrder.Location = new System.Drawing.Point(377, 494);
             this.btn_UpdateOrder.Name = "btn_UpdateOrder";
             this.btn_UpdateOrder.Size = new System.Drawing.Size(75, 37);
             this.btn_UpdateOrder.TabIndex = 5;
@@ -232,6 +245,7 @@
             this.ClientSize = new System.Drawing.Size(964, 554);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "ViewOrders";
             this.Text = "ViewOrders";
             this.panel1.ResumeLayout(false);
@@ -262,5 +276,6 @@
         private System.Windows.Forms.ListBox list_Orders;
         private System.Windows.Forms.ToolTip ViewOrdersToolTip;
         private System.Windows.Forms.Label lbl_OrderID;
+        private System.Windows.Forms.Button button1;
     }
 }

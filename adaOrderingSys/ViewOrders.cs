@@ -11,6 +11,7 @@ using adaOrderingSys.business_objects;
 using NLog;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace adaOrderingSys
 {
@@ -35,15 +36,6 @@ namespace adaOrderingSys
             InitializeComponent();
             this.dateTimePicker1.Value = DateTime.Now;
             setItems();
-        }
-
-        void clearControls()
-        {
-            cb_Customer.DataSource = null; ;
-            rtxtLocation.Text = "";
-            dgvItemsOrdered.DataSource = null;
-            lbl_OrderID.Text = null;
-            txtGrandTotal.Text = null;
         }
 
         /*******************************************************************
@@ -102,8 +94,10 @@ namespace adaOrderingSys
 
                     foreach (DataGridViewRow row in dgvItemsOrdered.Rows)
                     {
-                        grandTotal += Convert.ToDouble(row.Cells["totalCost"].Value);
+                        grandTotal += Convert.ToDouble(row.Cells[Constants.TOTALCOST_COLUMN].Value);
                     }
+
+                    this.dgvItemsOrdered.Columns[Constants.TOTALCOST_COLUMN].ReadOnly = true;
 
                     txtGrandTotal.Text = grandTotal.ToString();
 
@@ -156,7 +150,7 @@ namespace adaOrderingSys
         }
 
         /***********************************************************************
-         *                      VALUE CHANGED EVENTS
+         *                      Other Control EVENTS
          ***********************************************************************/
 
         private void cb_Customer_SelectedIndexChanged(object sender, EventArgs e)
@@ -164,14 +158,78 @@ namespace adaOrderingSys
         }
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            clearControls();
-            setItems();
+            clearControls(); //Empty previous values
+            setItems(); //Set the new ones based on date picked
         }
         private void dgvItemsOrdered_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
             setGrandTotal();
         }
 
+        private void dgvItemsOrdered_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            String column = "";
+            try
+            {
+                string changedValue;
+                int totalQuantity=0, quantity;
+                string itemID = dgvItemsOrdered.Rows[e.RowIndex].Cells[Constants.ITEMID_COLUMN].Value.ToString();
+
+                if (e.ColumnIndex == dgvItemsOrdered.Columns[Constants.QUANTITY_COLUMN].Index)
+                {
+                    column = Constants.QUANTITY_COLUMN;
+                    changedValue = dgvItemsOrdered.Rows[e.RowIndex].Cells[Constants.QUANTITY_COLUMN].Value.ToString();
+                    totalQuantity = Convert.ToInt32(changedValue);
+                }
+                else if (e.ColumnIndex == this.dgvItemsOrdered.Columns[Constants.ADDITIONALS_COLUMN].Index)
+                {
+                    column = Constants.ADDITIONALS_COLUMN;
+                    changedValue = dgvItemsOrdered.Rows[e.RowIndex].Cells[Constants.ADDITIONALS_COLUMN].Value.ToString();
+                    int  cellValue = Convert.ToInt32(changedValue);
+                    totalQuantity = cellValue +  Convert.ToInt32(dgvItemsOrdered.Rows[e.RowIndex].Cells[Constants.QUANTITY_COLUMN].Value);
+                }
+
+                if (column != "")
+                {
+                    quantity = new Item().compareQuantity(totalQuantity, dgvItemsOrdered.Rows[e.RowIndex].Cells[Constants.ITEMID_COLUMN].Value.ToString(), lbl_OrderID.Text);
+
+                    //Check if the amount entered is enough. If a number less than zero is returned then that indicates the amount exceeded
+                    if (quantity < 0)
+                    {
+                        // Add the exceeded amount (which will be a negative number) to the quantity entered.
+                        // This gives you the amount remaining
+                        dgvItemsOrdered.Rows[e.RowIndex].Cells[column].ErrorText = "Only " + (quantity + totalQuantity) + " remaining.";
+                        return;
+                    }
+
+                    dgvItemsOrdered.Rows[e.RowIndex].Cells[column].ErrorText = "";
+                    setUpdateCmd(e, column, itemID);
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+                MessageBox.Show("An unexpected error occured.");
+            }
+        }
+
+        private void btn_UpdateOrder_MouseHover(object sender, EventArgs e)
+        {
+            ViewOrdersToolTip.Show("Update order with your changes", btn_UpdateOrder);
+        }
+
+        private void dgvItemsOrdered_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Console.Write("Got here");
+        }
+
+        private void dgvItemsOrdered_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+        }
+
+        /// ------------------------------------------------------------------------------------------
+        /// Custome Functions
+        /// ------------------------------------------------------------------------------------------
         private void setItems()
         {
             List<KeyValuePair<int, string>> listItems = new Order().getCustNameBasedOnOrderDate(dateTimePicker1.Value);
@@ -187,9 +245,60 @@ namespace adaOrderingSys
             }
         }
 
-        private void btn_UpdateOrder_MouseHover(object sender, EventArgs e)
+        private void setUpdateCmd(DataGridViewCellEventArgs e, String column, string itemID)
         {
-            ViewOrdersToolTip.Show("Update order with your changes", btn_UpdateOrder);
+            try
+            {
+                if (e.ColumnIndex == this.dgvItemsOrdered.Columns[column].Index)
+                {
+                    string cellValue = dgvItemsOrdered.Rows[e.RowIndex].Cells[column].Value.ToString();
+
+                    string pattern = @"\d+";
+                    Regex r = new Regex(pattern, RegexOptions.IgnoreCase);
+
+                    Match m = r.Match(cellValue);
+
+                    if (!m.Success)
+                    {
+                        this.dgvItemsOrdered.Rows[e.RowIndex].Cells[column].Value = "";
+                        this.dgvItemsOrdered.Rows[e.RowIndex].Cells[column].Selected = true;
+                        MessageBox.Show("Value must be a number");
+                        return;
+                    }
+
+                    if (column.Equals(Constants.QUANTITY_COLUMN))
+                    {
+                        if (Convert.ToInt32(cellValue) <= 0)
+                        {
+                            this.dgvItemsOrdered.Rows[e.ColumnIndex].Cells[Constants.QUANTITY_COLUMN].Selected = true;
+                            MessageBox.Show("quantity cannot be less than or equal to zero.");
+                            return;
+                        }
+
+                        decimal unitPrice = Convert.ToDecimal(dgvItemsOrdered.Rows[e.RowIndex].Cells[Constants.UNITPRICE_COLUMN].Value);
+                        decimal totalPrice = unitPrice * Convert.ToInt32(dgvItemsOrdered.Rows[e.RowIndex].Cells[Constants.QUANTITY_COLUMN].Value);
+
+                        //Open column for editing
+                        dgvItemsOrdered.Columns[Constants.TOTALCOST_COLUMN].ReadOnly = false;
+                        dgvItemsOrdered.Rows[e.RowIndex].Cells[Constants.TOTALCOST_COLUMN].Value = totalPrice;
+                        dgvItemsOrdered.Columns[Constants.TOTALCOST_COLUMN].ReadOnly = true; // Close it, we don't want users to input values
+                    }
+
+                    SqlCommand cmd = new SqlCommand(@"UPDATE orddered_items SET " + column + " = @" + column + " WHERE orderID = @orderID AND itemID = @itemID", conn);
+                    cmd.Parameters.AddWithValue("@itemID", itemID);
+                    cmd.Parameters.AddWithValue("@" + column, cellValue);
+                    cmd.Parameters.AddWithValue("@itemID", lbl_OrderID.Text);
+
+                    adapter.UpdateCommand = cmd;
+
+                    setGrandTotal();
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+                MessageBox.Show("An error occured. Please try again");
+            }
         }
 
         private DataTable populateDataTable(int orderID)
@@ -198,13 +307,14 @@ namespace adaOrderingSys
             {
                 dt = new DataTable();
                 //Create the datable columns in accordance to what is in the table in the db
-                dt.Columns.Add("itemID", typeof(string)).ReadOnly = true;
-                dt.Columns.Add("itemName", typeof(string)).ReadOnly = true;
-                dt.Columns.Add("quantity", typeof(int));
-                dt.Columns.Add("totalCost", typeof(decimal)).ReadOnly = true;
-                dt.Columns.Add("additionals", typeof(int));
+                dt.Columns.Add(Constants.ITEMID_COLUMN, typeof(string)).ReadOnly = true;
+                dt.Columns.Add(Constants.ITEMNAME_COLUMN, typeof(string)).ReadOnly = true;
+                dt.Columns.Add(Constants.QUANTITY_COLUMN, typeof(int));
+                dt.Columns.Add(Constants.UNITPRICE_COLUMN, typeof(decimal)).ReadOnly = true;
+                dt.Columns.Add(Constants.TOTALCOST_COLUMN, typeof(decimal));
+                dt.Columns.Add(Constants.ADDITIONALS_COLUMN, typeof(int));
 
-                dt.PrimaryKey = new DataColumn[] { dt.Columns["itemID"] };
+                dt.PrimaryKey = new DataColumn[] { dt.Columns[Constants.ITEMID_COLUMN] };
 
                 SqlCommand cmd = new SqlCommand("[dbo].[usp_GetOrderedItemsFromOrderID]", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -248,6 +358,7 @@ namespace adaOrderingSys
 
                         default: //Rowcount will be returned if order was successful. This could be any positive integer
                             MessageBox.Show("Order successfully deleted");
+                            logger.Info("Order successfully deleted");
                             break;
                     }
 
@@ -277,31 +388,54 @@ namespace adaOrderingSys
             txtGrandTotal.Text = grandTotal == 0 ? "" : grandTotal.ToString();
         }
 
-        private void dgvItemsOrdered_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        void clearControls()
         {
-            if (dgvItemsOrdered.Rows.Count > 1) {
-                if (e.ColumnIndex == this.dgvItemsOrdered.Columns["quantity"].Index)
+            cb_Customer.DataSource = null; ;
+            rtxtLocation.Text = "";
+            dgvItemsOrdered.DataSource = null;
+            lbl_OrderID.Text = null;
+            txtGrandTotal.Text = null;
+        }
+
+        private bool HasErrorText()
+        {
+            bool hasErrorText = false;
+            //replace this.dataGridView1 with the name of your datagridview control
+            foreach (DataGridViewRow row in this.dgvItemsOrdered.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
                 {
-                    string cellValue = dgvItemsOrdered.Rows[e.RowIndex].Cells["quantity"].Value.ToString();
-
-                    if (Convert.ToInt32(cellValue) <= 0)
+                    if (cell.ErrorText.Length > 0)
                     {
-                        this.dgvItemsOrdered.Rows[e.ColumnIndex].Cells["quantity"].Selected = true;
-                        MessageBox.Show("quantity cannot be less than or equal to zero.");
-                        return;
+                        hasErrorText = true;
+                        break;
                     }
-
-                    SqlCommand cmd = new SqlCommand(@"UPDATE ordered_items
-                                                    SET quantity = @quantity
-                                                    WHERE orderID = @orderID 
-                                                    AND itemID = @itemID", conn);
-
-                    string itemID = dgvItemsOrdered.Rows[e.RowIndex].Cells["itemID"].Value.ToString();
-                    cmd.Parameters.AddWithValue("@itemID", itemID);
-
-                    adapter.UpdateCommand = cmd;
                 }
+                if (hasErrorText)
+                    break;
             }
+
+            return hasErrorText;
+        }
+
+        private void dgvItemsOrdered_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            string column;
+            if (e.ColumnIndex == dgvItemsOrdered.Columns[Constants.QUANTITY_COLUMN].Index)
+            {
+                column = Constants.QUANTITY_COLUMN;
+            }
+            else if (e.ColumnIndex == dgvItemsOrdered.Columns[Constants.ADDITIONALS_COLUMN].Index)
+            {
+                column = Constants.ADDITIONALS_COLUMN;
+            }
+            else { return; }
+
+            dgvItemsOrdered.Rows[e.RowIndex].Cells[column].Selected = true;
+            //dgvItemsOrdered.Rows[e.RowIndex].Cells[column].ErrorText = "Value must be a number";
+            MessageBox.Show("Value must be a whole number");
+            //e.Cancel = true;
+            return;
         }
     }
 }

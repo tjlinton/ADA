@@ -64,6 +64,7 @@
             this.txtProductID = new System.Windows.Forms.TextBox();
             this.lblProductID = new System.Windows.Forms.Label();
             this.pnl_ViewInventory = new System.Windows.Forms.Panel();
+            this.btn_SubmitItemChanges = new System.Windows.Forms.Button();
             this.dgv_Items = new System.Windows.Forms.DataGridView();
             this.clmn_ItemID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmn_ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,7 +83,6 @@
             this.errorProviderUnitPrice = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderProductName = new System.Windows.Forms.ErrorProvider(this.components);
             this.itemTableAdapter = new adaOrderingSys.ADAItemDataSetTableAdapters.itemTableAdapter();
-            this.btn_SubmitItemChanges = new System.Windows.Forms.Button();
             this.pnlMain.SuspendLayout();
             this.pnlMainII.SuspendLayout();
             this.pnlCustInfo.SuspendLayout();
@@ -528,6 +528,19 @@
             this.pnl_ViewInventory.Size = new System.Drawing.Size(720, 394);
             this.pnl_ViewInventory.TabIndex = 27;
             // 
+            // btn_SubmitItemChanges
+            // 
+            this.btn_SubmitItemChanges.BackColor = System.Drawing.Color.Green;
+            this.btn_SubmitItemChanges.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_SubmitItemChanges.ForeColor = System.Drawing.Color.Gold;
+            this.btn_SubmitItemChanges.Location = new System.Drawing.Point(281, 339);
+            this.btn_SubmitItemChanges.Name = "btn_SubmitItemChanges";
+            this.btn_SubmitItemChanges.Size = new System.Drawing.Size(101, 45);
+            this.btn_SubmitItemChanges.TabIndex = 23;
+            this.btn_SubmitItemChanges.Text = "Submit";
+            this.btn_SubmitItemChanges.UseVisualStyleBackColor = false;
+            this.btn_SubmitItemChanges.Click += new System.EventHandler(this.btn_SubmitItemChanges_Click);
+            // 
             // dgv_Items
             // 
             this.dgv_Items.AutoGenerateColumns = false;
@@ -640,19 +653,6 @@
             // itemTableAdapter
             // 
             this.itemTableAdapter.ClearBeforeFill = true;
-            // 
-            // btn_SubmitItemChanges
-            // 
-            this.btn_SubmitItemChanges.BackColor = System.Drawing.Color.Green;
-            this.btn_SubmitItemChanges.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_SubmitItemChanges.ForeColor = System.Drawing.Color.Gold;
-            this.btn_SubmitItemChanges.Location = new System.Drawing.Point(281, 339);
-            this.btn_SubmitItemChanges.Name = "btn_SubmitItemChanges";
-            this.btn_SubmitItemChanges.Size = new System.Drawing.Size(101, 45);
-            this.btn_SubmitItemChanges.TabIndex = 23;
-            this.btn_SubmitItemChanges.Text = "Submit";
-            this.btn_SubmitItemChanges.UseVisualStyleBackColor = false;
-            this.btn_SubmitItemChanges.Click += new System.EventHandler(this.btn_SubmitItemChanges_Click);
             // 
             // main
             // 

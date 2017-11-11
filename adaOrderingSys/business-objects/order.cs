@@ -118,7 +118,7 @@ namespace adaOrderingSys.business_objects
                     cmd.CommandType = CommandType.Text;
 
                     location = Convert.ToString(cmd.ExecuteScalar());
-                    logger.Info("Location is: " + location);
+                    logger.Info("Location successfully retrieved");
                     return location;
                 }
                 catch (Exception e)
@@ -137,6 +137,7 @@ namespace adaOrderingSys.business_objects
             {
                 try
                 {
+                    logger.Info("attempting to delete order " + orderID + ".");
                     conn.Open();
                     string deleteProcedure = "[dbo].[usp_DeleteOrder]";
                     SqlCommand cmd = new SqlCommand(deleteProcedure, conn);

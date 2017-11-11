@@ -104,7 +104,7 @@ namespace adaOrderingSys.business_objects
                 {
                     conn.Open();
 
-                    string insertProcedure = "SELECT custAddress from customer where custID = @custID";
+                    string insertProcedure = "SELECT [custAddress] from customer where custID = @custID";
 
                     SqlCommand cmd = new SqlCommand(insertProcedure, conn);
 

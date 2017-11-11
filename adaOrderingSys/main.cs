@@ -65,13 +65,13 @@ namespace adaOrderingSys
             if (!reg.IsMatch(text))
             {
                 errorProviderTelephone.SetError(txtTelephoneNo, "Must be a phone number");
-                txtTelephoneNo.ForeColor = System.Drawing.ColorTranslator.FromHtml("#B4010A");
+                txtTelephoneNo.ForeColor = ColorTranslator.FromHtml("#B4010A");
                 //e.Cancel = true;
                 return;
             }
             //Phone number is valid
             errorProviderTelephone.SetError(txtTelephoneNo, "");
-            txtTelephoneNo.ForeColor = System.Drawing.ColorTranslator.FromHtml("#080808");
+            txtTelephoneNo.ForeColor = ColorTranslator.FromHtml("#080808");
         }
 
         private void txtUnitPrice_Validating(object sender, CancelEventArgs e)

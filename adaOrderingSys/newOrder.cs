@@ -37,7 +37,7 @@ namespace adaOrderingSys
             this.customerTableAdapter.Fill(this.aDADataSet.customer);
 
             // Set dropdownlist items to blank object
-            this.ddl_Customer.SelectedIndex = -1; 
+            this.ddl_Customer.SelectedIndex = -1;
             this.ddl_Item.SelectedIndex = -1;
         }
 
@@ -57,7 +57,7 @@ namespace adaOrderingSys
         private void btnSubmitGV_Click(object sender, EventArgs e)
         {
             ep_Quantity.SetError(txt_Quantity, "");
-           
+
             if (this.dgv_Order.RowCount == 1) //Compare to 1 because there is always an empty column
             {
                 MessageBox.Show("Please fill in order details before submitting");
@@ -76,7 +76,7 @@ namespace adaOrderingSys
                 List<int> additionals = new List<int>();
                 List<decimal> totalItemCost = new List<decimal>();
                 int salesNo = Convert.ToInt32(numeric_SalesNo.Value);
-                
+
                 Decimal totalCost = Convert.ToDecimal(this.txtGrandTotal.Text);
                 int rowCount = this.dgv_Order.RowCount - 1;
                 for (int k = 0; k < rowCount; k++)
@@ -89,7 +89,7 @@ namespace adaOrderingSys
                 }
 
                 //execute insert items ordered
-                int insertResult = items.insertItemsOrdered(custID, itemID, quantity, totalItemCost, totalCost, rtxt_Location.Text,additionals,salesNo,rowCount);
+                int insertResult = items.insertItemsOrdered(custID, itemID, quantity, totalItemCost, totalCost, rtxt_Location.Text, additionals, salesNo, rowCount);
                 switch (insertResult)
                 {
                     case 0:
@@ -151,7 +151,7 @@ namespace adaOrderingSys
                     int rowCount = this.dgv_Order.RowCount;
                     if (rowCount > 1)
                     {
-                        int itemIndex = getItemIndexIfAlreadyAdded(this.ddl_Item.SelectedValue.ToString(),rowCount);
+                        int itemIndex = getItemIndexIfAlreadyAdded(this.ddl_Item.SelectedValue.ToString(), rowCount);
 
                         if (itemIndex >= 0)
                         {
@@ -229,7 +229,7 @@ namespace adaOrderingSys
             this.txt_Quantity.Text = "";
             this.numeric_Additionals.Value = 0;
         }
-    
+
         /// ===========================================================================
         ///                      Combobox Selected Index Changed
         /// ===========================================================================
@@ -242,8 +242,9 @@ namespace adaOrderingSys
                 if (dgv_Order.RowCount > 1)
                 {
                     int rowCount = this.dgv_Order.RowCount - 1;
-                    for (int i=0; i < rowCount; i++ ) {
-                        dgv_Order.Rows[i].Cells["clmn_CustName"].Value = this.ddl_Customer.Text;                        
+                    for (int i = 0; i < rowCount; i++)
+                    {
+                        dgv_Order.Rows[i].Cells["clmn_CustName"].Value = this.ddl_Customer.Text;
                     }
                 }
 
@@ -256,6 +257,9 @@ namespace adaOrderingSys
         {
             if (ddl_Customer.SelectedIndex != -1)
             {
+                txt_Quantity.Clear();
+                ep_Quantity.SetError(txt_Quantity, "");
+                numeric_Additionals.Value = 0;
                 ep_Item.SetError(ddl_Item, "");
             }
         }
@@ -271,40 +275,26 @@ namespace adaOrderingSys
                 grandTotal = grandTotal + Convert.ToDouble(row.Cells["clmn_TotalCost"].Value);
             }
 
-            txtGrandTotal.Text =  grandTotal.ToString();
+            txtGrandTotal.Text = grandTotal.ToString();
         }
 
         private bool isQuantityEnough(int quantity, string itemID)
         {
             try
             {
-                var connectionString = ConfigurationManager.ConnectionStrings["ADAConnectionString"].ConnectionString;
-                using (SqlConnection conn = new SqlConnection(connectionString))
+                int returnValue = new Item().compareQuantity(quantity, itemID);
+
+                switch (returnValue)
                 {
-                    conn.Open();
+                    case -1:
+                        return true;
 
-                    string query = "[dbo].[usp_CompareItemQuantity]";
+                    case -2: //SQL Statement returned -2 which suggests an error occured when executing
+                        throw new Exception("SQL error occured");
 
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    cmd.Parameters.AddWithValue("@quantity", quantity);
-                    cmd.Parameters.AddWithValue("@itemID", itemID);
-
-                    int returnValue = (Int32)cmd.ExecuteScalar();
-
-                    switch (returnValue)
-                    {
-                        case -1:
-                            return true;
-
-                        case -2: //SQL Statement returned -2 which suggests an error occured when executing
-                            throw new Exception("SQL error occured");
-
-                        default:
-                            ep_Quantity.SetError(txt_Quantity, "Only " + returnValue + " items remaining");
-                            return false;
-                    }
+                    default:
+                        ep_Quantity.SetError(txt_Quantity, "Only " + returnValue + " items remaining");
+                        return false;
                 }
             }
             catch (Exception e)
@@ -386,7 +376,7 @@ namespace adaOrderingSys
                 int column = e.ColumnIndex;
                 int row = e.RowIndex;
                 int j;
-                
+
                 string cellValue = this.dgv_Order.Rows[row].Cells["clmn_Quantity"].Value.ToString();
                 if (!Int32.TryParse(cellValue, out j))
                 {
@@ -408,6 +398,6 @@ namespace adaOrderingSys
                     setGrandTotal();
                 }
             }
-        }   
+        }
     }
 }

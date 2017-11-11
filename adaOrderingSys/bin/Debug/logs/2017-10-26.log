@@ -1,0 +1,54 @@
+2017-10-26 05:52:42.9301 INFO Retrieving order location
+2017-10-26 05:52:42.9641 INFO Location successfully retrieved
+2017-10-26 05:52:42.9741 INFO Getting customer names
+2017-10-26 05:52:42.9741 INFO Names successfully receieved
+2017-10-26 05:57:26.6459 INFO User: Tajay successfully logged in
+2017-10-26 05:57:33.8019 INFO Retrieving order location
+2017-10-26 05:57:33.8019 INFO Location successfully retrieved
+2017-10-26 05:57:33.8189 INFO Getting customer names
+2017-10-26 05:57:33.8189 INFO Names successfully receieved
+2017-10-26 06:00:03.8349 INFO User: Tajay successfully logged in
+2017-10-26 06:00:09.6351 INFO Retrieving order location
+2017-10-26 06:00:09.6864 INFO Location successfully retrieved
+2017-10-26 06:00:09.7124 INFO Getting customer names
+2017-10-26 06:00:09.7264 INFO Names successfully receieved
+2017-10-26 06:11:20.3959 INFO User: Tajay successfully logged in
+2017-10-26 06:11:29.9317 INFO Retrieving order location
+2017-10-26 06:11:29.9317 INFO Location successfully retrieved
+2017-10-26 06:11:29.9457 INFO Getting customer names
+2017-10-26 06:11:29.9457 INFO Names successfully receieved
+2017-10-26 07:14:04.3705 INFO User: Tajay successfully logged in
+2017-10-26 07:14:37.7983 INFO Retrieving order location
+2017-10-26 07:14:37.7983 INFO Location successfully retrieved
+2017-10-26 07:14:37.8153 INFO Getting customer names
+2017-10-26 07:14:37.8153 INFO Names successfully receieved
+2017-10-26 07:14:44.8522 ERROR System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at adaOrderingSys.ViewOrders.dgvItemsOrdered_CellValidating(Object sender, DataGridViewCellValidatingEventArgs e) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\ViewOrders.cs:line 212
+2017-10-26 07:15:05.4057 INFO User: Tajay successfully logged in
+2017-10-26 07:15:13.4209 INFO Retrieving order location
+2017-10-26 07:15:13.4379 INFO Location successfully retrieved
+2017-10-26 07:15:13.4469 INFO Getting customer names
+2017-10-26 07:15:13.4559 INFO Names successfully receieved
+2017-10-26 07:17:10.6916 ERROR System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at adaOrderingSys.ViewOrders.dgvItemsOrdered_CellValidating(Object sender, DataGridViewCellValidatingEventArgs e) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\ViewOrders.cs:line 212
+2017-10-26 07:43:30.0143 INFO User: Tajay successfully logged in
+2017-10-26 07:43:34.6288 INFO Retrieving order location
+2017-10-26 07:43:34.6448 INFO Location successfully retrieved
+2017-10-26 07:43:34.6448 INFO Getting customer names
+2017-10-26 07:43:34.7529 INFO Names successfully receieved
+2017-10-26 07:48:24.6243 INFO User: Tajay successfully logged in
+2017-10-26 07:49:27.1477 INFO Retrieving order location
+2017-10-26 07:49:27.1597 INFO Location successfully retrieved
+2017-10-26 07:49:27.2618 INFO Getting customer names
+2017-10-26 07:49:27.2718 INFO Names successfully receieved
+2017-10-26 07:54:14.8670 INFO User: Tajay successfully logged in
+2017-10-26 07:54:39.2319 INFO Retrieving order location
+2017-10-26 07:54:39.2460 INFO Location successfully retrieved
+2017-10-26 07:54:39.2550 INFO Getting customer names
+2017-10-26 07:54:39.2710 INFO Names successfully receieved

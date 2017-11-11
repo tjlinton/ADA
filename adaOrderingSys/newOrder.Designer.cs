@@ -43,6 +43,8 @@ namespace adaOrderingSys
             this.aDADataSet = new adaOrderingSys.ADADataSet();
             this.txtGrandTotal = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btn_Clear = new System.Windows.Forms.Button();
+            this.btn_Add = new System.Windows.Forms.Button();
             this.numeric_Additionals = new System.Windows.Forms.NumericUpDown();
             this.lbl_Additionals = new System.Windows.Forms.Label();
             this.txt_Quantity = new System.Windows.Forms.TextBox();
@@ -52,11 +54,17 @@ namespace adaOrderingSys
             this.itemBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.aDADataSet1 = new adaOrderingSys.ADADataSet1();
             this.lblGrandTotal = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btn_Clear = new System.Windows.Forms.Button();
-            this.btn_Add = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgv_Order = new System.Windows.Forms.DataGridView();
+            this.clmn_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmn_ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmn_CustName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmn_Location = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmn_SalesNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmn_Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmn_Additionals = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmn_UnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmn_TotalCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnClearGV = new System.Windows.Forms.Button();
             this.btnSubmitGV = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -68,15 +76,6 @@ namespace adaOrderingSys
             this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ep_Item = new System.Windows.Forms.ErrorProvider(this.components);
             this.ep_Customer = new System.Windows.Forms.ErrorProvider(this.components);
-            this.clmn_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmn_ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmn_CustName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmn_Location = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmn_SalesNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmn_Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmn_Additionals = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmn_UnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmn_TotalCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlAddOrder.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numeric_SalesNo)).BeginInit();
@@ -86,7 +85,6 @@ namespace adaOrderingSys
             ((System.ComponentModel.ISupportInitialize)(this.numeric_Additionals)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aDADataSet1)).BeginInit();
-            this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Order)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aDADataSetBindingSource)).BeginInit();
@@ -103,7 +101,6 @@ namespace adaOrderingSys
             this.pnlAddOrder.Controls.Add(this.txtGrandTotal);
             this.pnlAddOrder.Controls.Add(this.groupBox3);
             this.pnlAddOrder.Controls.Add(this.lblGrandTotal);
-            this.pnlAddOrder.Controls.Add(this.groupBox2);
             this.pnlAddOrder.Controls.Add(this.groupBox1);
             this.pnlAddOrder.Controls.Add(this.btnClearGV);
             this.pnlAddOrder.Controls.Add(this.btnSubmitGV);
@@ -210,6 +207,8 @@ namespace adaOrderingSys
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btn_Clear);
+            this.groupBox3.Controls.Add(this.btn_Add);
             this.groupBox3.Controls.Add(this.numeric_Additionals);
             this.groupBox3.Controls.Add(this.lbl_Additionals);
             this.groupBox3.Controls.Add(this.txt_Quantity);
@@ -218,9 +217,29 @@ namespace adaOrderingSys
             this.groupBox3.Controls.Add(this.ddl_Item);
             this.groupBox3.Location = new System.Drawing.Point(469, 47);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(359, 133);
+            this.groupBox3.Size = new System.Drawing.Size(318, 196);
             this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
+            // 
+            // btn_Clear
+            // 
+            this.btn_Clear.Location = new System.Drawing.Point(175, 153);
+            this.btn_Clear.Name = "btn_Clear";
+            this.btn_Clear.Size = new System.Drawing.Size(75, 30);
+            this.btn_Clear.TabIndex = 18;
+            this.btn_Clear.Text = "Clear";
+            this.btn_Clear.UseVisualStyleBackColor = true;
+            this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click);
+            // 
+            // btn_Add
+            // 
+            this.btn_Add.Location = new System.Drawing.Point(81, 153);
+            this.btn_Add.Name = "btn_Add";
+            this.btn_Add.Size = new System.Drawing.Size(75, 29);
+            this.btn_Add.TabIndex = 17;
+            this.btn_Add.Text = "Add";
+            this.btn_Add.UseVisualStyleBackColor = true;
+            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
             // numeric_Additionals
             // 
@@ -276,7 +295,7 @@ namespace adaOrderingSys
             this.ddl_Item.FormattingEnabled = true;
             this.ddl_Item.Location = new System.Drawing.Point(129, 19);
             this.ddl_Item.Name = "ddl_Item";
-            this.ddl_Item.Size = new System.Drawing.Size(212, 21);
+            this.ddl_Item.Size = new System.Drawing.Size(173, 21);
             this.ddl_Item.TabIndex = 3;
             this.ddl_Item.ValueMember = "itemID";
             this.ddl_Item.SelectedIndexChanged += new System.EventHandler(this.ddl_Item_SelectedIndexChanged);
@@ -300,36 +319,6 @@ namespace adaOrderingSys
             this.lblGrandTotal.Size = new System.Drawing.Size(108, 24);
             this.lblGrandTotal.TabIndex = 18;
             this.lblGrandTotal.Text = "Grand Total";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.btn_Clear);
-            this.groupBox2.Controls.Add(this.btn_Add);
-            this.groupBox2.Location = new System.Drawing.Point(469, 194);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(208, 49);
-            this.groupBox2.TabIndex = 15;
-            this.groupBox2.TabStop = false;
-            // 
-            // btn_Clear
-            // 
-            this.btn_Clear.Location = new System.Drawing.Point(104, 13);
-            this.btn_Clear.Name = "btn_Clear";
-            this.btn_Clear.Size = new System.Drawing.Size(75, 30);
-            this.btn_Clear.TabIndex = 7;
-            this.btn_Clear.Text = "Clear";
-            this.btn_Clear.UseVisualStyleBackColor = true;
-            this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click);
-            // 
-            // btn_Add
-            // 
-            this.btn_Add.Location = new System.Drawing.Point(10, 13);
-            this.btn_Add.Name = "btn_Add";
-            this.btn_Add.Size = new System.Drawing.Size(75, 29);
-            this.btn_Add.TabIndex = 6;
-            this.btn_Add.Text = "Add";
-            this.btn_Add.UseVisualStyleBackColor = true;
-            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
             // groupBox1
             // 
@@ -360,6 +349,63 @@ namespace adaOrderingSys
             this.dgv_Order.TabIndex = 8;
             this.dgv_Order.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Order_CellValueChanged);
             this.dgv_Order.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgv_Order_RowsRemoved);
+            // 
+            // clmn_ID
+            // 
+            this.clmn_ID.HeaderText = "ID";
+            this.clmn_ID.Name = "clmn_ID";
+            this.clmn_ID.ReadOnly = true;
+            this.clmn_ID.Width = 60;
+            // 
+            // clmn_ItemName
+            // 
+            this.clmn_ItemName.HeaderText = "Item Name";
+            this.clmn_ItemName.Name = "clmn_ItemName";
+            this.clmn_ItemName.ReadOnly = true;
+            // 
+            // clmn_CustName
+            // 
+            this.clmn_CustName.HeaderText = "Customer Name";
+            this.clmn_CustName.Name = "clmn_CustName";
+            this.clmn_CustName.ReadOnly = true;
+            this.clmn_CustName.Width = 120;
+            // 
+            // clmn_Location
+            // 
+            this.clmn_Location.HeaderText = "Location";
+            this.clmn_Location.Name = "clmn_Location";
+            // 
+            // clmn_SalesNo
+            // 
+            this.clmn_SalesNo.HeaderText = "Sales #";
+            this.clmn_SalesNo.Name = "clmn_SalesNo";
+            this.clmn_SalesNo.Width = 45;
+            // 
+            // clmn_Quantity
+            // 
+            this.clmn_Quantity.HeaderText = "Quantity";
+            this.clmn_Quantity.Name = "clmn_Quantity";
+            this.clmn_Quantity.Width = 50;
+            // 
+            // clmn_Additionals
+            // 
+            this.clmn_Additionals.HeaderText = "Additionals";
+            this.clmn_Additionals.Name = "clmn_Additionals";
+            this.clmn_Additionals.Width = 60;
+            // 
+            // clmn_UnitPrice
+            // 
+            this.clmn_UnitPrice.HeaderText = "Unit Price";
+            this.clmn_UnitPrice.Name = "clmn_UnitPrice";
+            this.clmn_UnitPrice.ReadOnly = true;
+            this.clmn_UnitPrice.Width = 52;
+            // 
+            // clmn_TotalCost
+            // 
+            this.clmn_TotalCost.HeaderText = "Total Cost";
+            this.clmn_TotalCost.Name = "clmn_TotalCost";
+            this.clmn_TotalCost.ReadOnly = true;
+            this.clmn_TotalCost.Width = 60;
             // 
             // btnClearGV
             // 
@@ -436,63 +482,6 @@ namespace adaOrderingSys
             // 
             this.ep_Customer.ContainerControl = this;
             // 
-            // clmn_ID
-            // 
-            this.clmn_ID.HeaderText = "ID";
-            this.clmn_ID.Name = "clmn_ID";
-            this.clmn_ID.ReadOnly = true;
-            this.clmn_ID.Width = 60;
-            // 
-            // clmn_ItemName
-            // 
-            this.clmn_ItemName.HeaderText = "Item Name";
-            this.clmn_ItemName.Name = "clmn_ItemName";
-            this.clmn_ItemName.ReadOnly = true;
-            // 
-            // clmn_CustName
-            // 
-            this.clmn_CustName.HeaderText = "Customer Name";
-            this.clmn_CustName.Name = "clmn_CustName";
-            this.clmn_CustName.ReadOnly = true;
-            this.clmn_CustName.Width = 120;
-            // 
-            // clmn_Location
-            // 
-            this.clmn_Location.HeaderText = "Location";
-            this.clmn_Location.Name = "clmn_Location";
-            // 
-            // clmn_SalesNo
-            // 
-            this.clmn_SalesNo.HeaderText = "Sales #";
-            this.clmn_SalesNo.Name = "clmn_SalesNo";
-            this.clmn_SalesNo.Width = 45;
-            // 
-            // clmn_Quantity
-            // 
-            this.clmn_Quantity.HeaderText = "Quantity";
-            this.clmn_Quantity.Name = "clmn_Quantity";
-            this.clmn_Quantity.Width = 50;
-            // 
-            // clmn_Additionals
-            // 
-            this.clmn_Additionals.HeaderText = "Additionals";
-            this.clmn_Additionals.Name = "clmn_Additionals";
-            this.clmn_Additionals.Width = 60;
-            // 
-            // clmn_UnitPrice
-            // 
-            this.clmn_UnitPrice.HeaderText = "Unit Price";
-            this.clmn_UnitPrice.Name = "clmn_UnitPrice";
-            this.clmn_UnitPrice.ReadOnly = true;
-            this.clmn_UnitPrice.Width = 52;
-            // 
-            // clmn_TotalCost
-            // 
-            this.clmn_TotalCost.HeaderText = "Total Cost";
-            this.clmn_TotalCost.Name = "clmn_TotalCost";
-            this.clmn_TotalCost.ReadOnly = true;
-            this.clmn_TotalCost.Width = 60;
-            // 
             // newOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -516,7 +505,6 @@ namespace adaOrderingSys
             ((System.ComponentModel.ISupportInitialize)(this.numeric_Additionals)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aDADataSet1)).EndInit();
-            this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Order)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aDADataSetBindingSource)).EndInit();
@@ -547,9 +535,6 @@ namespace adaOrderingSys
         private DataGridView dgv_Order;
         private TextBox txt_Quantity;
         private Label label1;
-        private GroupBox groupBox2;
-        private Button btn_Clear;
-        private Button btn_Add;
         private GroupBox groupBox3;
         private Button btnBack;
         private ADADataSet1 aDADataSet1;
@@ -576,5 +561,7 @@ namespace adaOrderingSys
         private DataGridViewTextBoxColumn clmn_Additionals;
         private DataGridViewTextBoxColumn clmn_UnitPrice;
         private DataGridViewTextBoxColumn clmn_TotalCost;
+        private Button btn_Clear;
+        private Button btn_Add;
     }
 }

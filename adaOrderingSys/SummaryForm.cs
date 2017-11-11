@@ -103,7 +103,7 @@ namespace adaOrderingSys
             }
         }
 
-        public void createLoadingSheet(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        private void createLoadingSheet(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             //this prints the loading sheet
             try
@@ -134,7 +134,7 @@ namespace adaOrderingSys
                 StringFormat sf = new StringFormat();
                 sf.LineAlignment = StringAlignment.Center;
                 sf.Alignment = StringAlignment.Center;
-                graphic.DrawString("LOADING SHEET".PadLeft(25), headerFont, new SolidBrush(Color.Black), startX, startY);
+                graphic.DrawString(Constants.LOADING_SHEET_HEADER.PadLeft(25), headerFont, new SolidBrush(Color.Black), startX, startY);
                 string top =
                     "Lic #:_____   " +
                     "Date: " + DateTime.Today.ToString("dd/MM/yyyy") + "   " +
@@ -148,6 +148,8 @@ namespace adaOrderingSys
 
                 int count = 0;
 
+                //Summary statement.
+                //TODO: This should be placed after all items have been added to the loading sheet
                 graphic.DrawString("Summary", boldFont, new SolidBrush(Color.Black), endX, startY + endOffset);
                 endOffset += (int)fontHeight;
 
@@ -161,7 +163,7 @@ namespace adaOrderingSys
                     int ID = Convert.ToInt32(details[0].Trim());
                     List<KeyValuePair<int, string>> itemAndQuantity = new ItemsOrdered().getOrderedItemNameAndQuantity(ID);
 
-                    if (count <= 45)
+                    if (count <= Constants.MAX_LOADING_SHEET_COLUMN)
                     {
                         graphic.DrawString(details[1].Trim(), new Font("Courier New", 10, FontStyle.Bold), new SolidBrush(Color.Black), startX, startY + offset);
                         offset += (int)fontHeight;
@@ -235,9 +237,9 @@ namespace adaOrderingSys
                 //graphic.DrawString(bottom, courier, Brushes.Black,
                 //e.MarginBounds.Right, e.MarginBounds.Bottom - sz.Height);
 
-                e.HasMorePages = true;
+                //e.HasMorePages = true;
 
-                graphic.DrawString("New Page", font, new SolidBrush(Color.Black), 10, 20);
+                //graphic.DrawString("New Page", font, new SolidBrush(Color.Black), 10, 20);
 
             }
             catch (Exception ex)

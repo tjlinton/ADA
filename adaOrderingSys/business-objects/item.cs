@@ -46,7 +46,7 @@ namespace adaOrderingSys
                     cmd.Parameters.AddWithValue("@desc", pDescription);
                     cmd.Parameters.AddWithValue("@quantity", quantity);
 
-                    returnVal = (int)cmd.ExecuteScalar() ;
+                    returnVal = (int)cmd.ExecuteScalar();
                     //returnVal = cmd.ExecuteNonQuery();
 
                     return returnVal;
@@ -62,49 +62,13 @@ namespace adaOrderingSys
         public string getItemName(int itemID)
         {
             var connectionString = ConfigurationManager.ConnectionStrings["ADAConnectionString"].ConnectionString;
-            SqlConnection conn = new SqlConnection(connectionString);
-
-            try
-            {
-                conn.Open();
-
-                string selectQuery = "SELECT itemName from item where itemID = " + itemID;
-                string returnVal;
-
-                SqlCommand cmd = new SqlCommand(selectQuery, conn);
-
-                cmd.CommandType = CommandType.Text;
-
-                returnVal = (string)cmd.ExecuteScalar();
-
-                return returnVal;
-            }
-            catch (Exception e)
-            {
-                logger.Error(e);
-                return "-1";
-            }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
-                {
-                    conn.Close();
-                    conn.Dispose();
-                }
-            }
-        }
-
-        public string getItemID(String itemName)
-        {
-            var connectionString = ConfigurationManager.ConnectionStrings["ADAConnectionString"].ConnectionString;
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
+            using (SqlConnection conn = new SqlConnection(connectionString)) {
 
                 try
                 {
                     conn.Open();
 
-                    string selectQuery = "SELECT itemID from item where itemName = " + itemName;
+                    string selectQuery = "SELECT itemName from item where itemID = " + itemID;
                     string returnVal;
 
                     SqlCommand cmd = new SqlCommand(selectQuery, conn);
@@ -123,26 +87,56 @@ namespace adaOrderingSys
             }
         }
 
-        public double getUnitPrice(String itemID)
+        public string getItemID(String itemName)
         {
             var connectionString = ConfigurationManager.ConnectionStrings["ADAConnectionString"].ConnectionString;
-            using (SqlConnection conn = new SqlConnection(connectionString)) { 
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
 
                 try
                 {
                     conn.Open();
 
-                    string selectQuery = "SELECT price from item where itemID = '" + itemID + "'";
+                    string selectQuery = "SELECT itemID from item where itemName = @itemName";
+                    string returnVal;
+
+                    SqlCommand cmd = new SqlCommand(selectQuery, conn);
+                    cmd.Parameters.AddWithValue("@itemName", itemName);
+                    cmd.CommandType = CommandType.Text;
+
+                    returnVal = (string)cmd.ExecuteScalar();
+
+                    return returnVal;
+                }
+                catch (Exception e)
+                {
+                    logger.Error(e);
+                    return "-1";
+                }
+            }
+        }
+
+        public double getUnitPrice(String itemID)
+        {
+            var connectionString = ConfigurationManager.ConnectionStrings["ADAConnectionString"].ConnectionString;
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+
+                try
+                {
+                    conn.Open();
+
+                    string selectQuery = "SELECT price from item where itemID = @itemID";
                     Decimal returnVal;
                     double price;
 
                     SqlCommand cmd = new SqlCommand(selectQuery, conn);
-
+                    cmd.Parameters.AddWithValue("@itemID", itemID);
                     cmd.CommandType = CommandType.Text;
 
                     returnVal = (Decimal)cmd.ExecuteScalar();
 
-                    price = Convert.ToDouble(returnVal); 
+                    price = Convert.ToDouble(returnVal);
 
                     return price;
                 }
@@ -151,6 +145,61 @@ namespace adaOrderingSys
                     logger.Error(e);
                     return -1;
                 }
+            }
+        }
+
+        public int compareQuantity(int quantity, string itemID)
+        {
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["ADAConnectionString"].ConnectionString;
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string query = "[dbo].[usp_CompareItemQuantity]";
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@quantity", quantity);
+                    cmd.Parameters.AddWithValue("@itemID", itemID);
+
+                    return (Int32)cmd.ExecuteScalar();
+                }
+            }
+            catch (Exception e)
+            {
+                logger.Error(e);
+                return -2;
+            }
+        }
+
+        public int compareQuantity(int quantity, string itemID, string orderID)
+        {
+            try
+            {
+                var connectionString = ConfigurationManager.ConnectionStrings["ADAConnectionString"].ConnectionString;
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string query = "[dbo].[usp_CompareItemQuantityFromOrder]";
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@quantity", quantity);
+                    cmd.Parameters.AddWithValue("@itemID", itemID);
+                    cmd.Parameters.AddWithValue("@orderID", Convert.ToInt32(orderID));
+
+                    return (Int32)cmd.ExecuteScalar();
+                }
+            }
+            catch (Exception e)
+            {
+                logger.Error(e);
+                return 1;
             }
         }
     }
