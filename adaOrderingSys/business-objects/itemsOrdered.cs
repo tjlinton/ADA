@@ -74,6 +74,13 @@ namespace adaOrderingSys.business_objects
             this._qtyOrdered = quantity;
             this._additionals = additionals;
         }
+
+        public ItemsOrdered(String itemName, int quantity, int additionals)
+        {
+            this._itemName = itemName;
+            this._qtyOrdered = quantity;
+            this._additionals = additionals;
+        }
             
         // public int insertItemsOrdered(int orderID, List<string> itemID)
         //{
@@ -148,7 +155,7 @@ namespace adaOrderingSys.business_objects
 
         public int insertItemsOrdered(int custID, List<string>itemID, List<int>quantity, List<decimal>totalItemCost, Decimal totalCost, string location, List<int> additionals, int salesNo, int rowCount)
         {
-            int orderID;
+            int orderID=0;
             var connectionString = ConfigurationManager.ConnectionStrings["ADAConnectionString"].ConnectionString;
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -185,7 +192,7 @@ namespace adaOrderingSys.business_objects
                         throw new Exception("Error occured. Oder could not be created.");
                     }
 
-                    logger.Info("Created order: " + orderID);
+                    //logger.Info("Created order: " + orderID);
 
                     int insertReturnedVal = 0, updateReturnedVal = 0, insertedRowCount = 0;
 
@@ -201,8 +208,8 @@ namespace adaOrderingSys.business_objects
                         updateCmd.Parameters.AddWithValue("@quantity", quantity[i]);
                         updateCmd.Parameters.AddWithValue("@itemID", itemID[i]);
 
-                        insertReturnedVal = (Int32)insertCmd.ExecuteScalar(); //If insert was successful, 1 should be returned
-                        updateReturnedVal = (Int32)updateCmd.ExecuteScalar();
+                        insertReturnedVal = (int)insertCmd.ExecuteScalar(); //If insert was successful, 1 should be returned
+                        updateReturnedVal = (int)updateCmd.ExecuteScalar(); //If update was successful, 1 should be returned
 
                         if (insertReturnedVal < 0 || updateReturnedVal < 0)
                         {
@@ -229,10 +236,13 @@ namespace adaOrderingSys.business_objects
 
                 catch (Exception ex)
                 {
+                    logger.Error("Could not create order");
                     logger.Error(ex);
                     try
                     {
+                        logger.Info("Attempting rollback of order " + orderID);
                         transaction.Rollback();
+                        logger.Info("Rollback successful");
                         return -1;
                     }
                     catch (Exception ex2)
@@ -241,7 +251,7 @@ namespace adaOrderingSys.business_objects
                         // on the server that would cause the rollback to fail, such as
                         // a closed connection.
 
-                        logger.Info("Rollback Exception Type: {0}", ex2.GetType());
+                        logger.Error("Rollback Exception Type: {0}", ex2.GetType());
                         logger.Error("  Message: {0}", ex2.Message);
 
                         return -2;
@@ -257,6 +267,7 @@ namespace adaOrderingSys.business_objects
             {
                 try
                 {
+                    logger.Info("Fetching Item names and quantity for order " + orderID);
                     conn.Open();
 
                     string selectProcedure = "[dbo].[usp_OrderedItemsAndQuantity]";
@@ -277,6 +288,46 @@ namespace adaOrderingSys.business_objects
                         }
                     }
 
+                    return orderDetails;
+                }
+                catch (Exception e)
+                {
+                    logger.Error(e);
+                    return null;
+                }
+            }
+        }
+
+        public List<ItemsOrdered> getOrderedItemsQuantityAndAdditionals(int orderID)
+        {
+            var connectionString = ConfigurationManager.ConnectionStrings["ADAConnectionString"].ConnectionString;
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    logger.Info(" Getting item name, quantity and additionals from " + orderID);
+                    conn.Open();
+
+                    string selectProcedure = "[dbo].[usp_GetOrderedItemsQuantityAndAdditionalsFromOrderID]";
+                    List<ItemsOrdered> orderDetails = new List<ItemsOrdered>();
+
+                    SqlCommand cmd = new SqlCommand(selectProcedure, conn);
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@orderID", orderID);
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            orderDetails.Add(new ItemsOrdered(
+                                dr.GetString(0),
+                                dr.GetInt32(1),
+                                dr.GetInt32(2)
+                                ));
+                        }
+                    }
+                    logger.Info("Success"); 
                     return orderDetails;
                 }
                 catch (Exception e)

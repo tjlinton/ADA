@@ -23,5 +23,9 @@ namespace adaOrderingSys.business_objects
         public static int LOADING_SHEET_MAX = 100; //maximum number of lines in one loading sheet
         public static int MAX_LOADING_SHEET_COLUMN = 45;
         public static string LOADING_SHEET_HEADER = "LOADING SHEET";
+        public static string LOADING_SHEET_SPACER = "   ";
+
+        //Messages
+        public static string OUT_OF_STOCK_MSG = "Out of stock";
     }
 }

@@ -110,12 +110,12 @@ namespace adaOrderingSys.business_objects
                     logger.Info("Retrieving order location");
                     conn.Open();
 
-                    string selectProcedure = "SELECT location FROM [dbo].[order] where orderID = " + orderID;
+                    string selectProcedure = "[dbo].[usp_GetCustLocationFromOrderID]";
                     string location;
 
                     SqlCommand cmd = new SqlCommand(selectProcedure, conn);
-
-                    cmd.CommandType = CommandType.Text;
+                    cmd.Parameters.AddWithValue("@orderID", orderID);
+                    cmd.CommandType = CommandType.StoredProcedure;
 
                     location = Convert.ToString(cmd.ExecuteScalar());
                     logger.Info("Location successfully retrieved");
@@ -155,6 +155,8 @@ namespace adaOrderingSys.business_objects
             }
             return returnVal;
         }
+
+
 
     }
 }

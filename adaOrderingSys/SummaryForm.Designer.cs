@@ -33,13 +33,16 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.pnl_Step1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSelectAll = new System.Windows.Forms.Button();
             this.lbl_OrderList = new System.Windows.Forms.Label();
             this.lbl_Driver = new System.Windows.Forms.Label();
             this.btnSubmitCust = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtDriver = new System.Windows.Forms.TextBox();
             this.lbl_LicenseNo = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtLicenseNo = new System.Windows.Forms.TextBox();
+            this.lblLocation = new System.Windows.Forms.Label();
+            this.txtLocation = new System.Windows.Forms.TextBox();
             this.pnl_Step1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -80,19 +83,32 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblLocation);
+            this.groupBox1.Controls.Add(this.txtLocation);
+            this.groupBox1.Controls.Add(this.btnSelectAll);
             this.groupBox1.Controls.Add(this.lbl_OrderList);
             this.groupBox1.Controls.Add(this.lbl_Driver);
             this.groupBox1.Controls.Add(this.btnSubmitCust);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtDriver);
             this.groupBox1.Controls.Add(this.lbl_LicenseNo);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtLicenseNo);
             this.groupBox1.Controls.Add(this.cbl_Orders);
-            this.groupBox1.Location = new System.Drawing.Point(80, 86);
+            this.groupBox1.Location = new System.Drawing.Point(80, 50);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(538, 349);
+            this.groupBox1.Size = new System.Drawing.Size(538, 441);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
+            // 
+            // btnSelectAll
+            // 
+            this.btnSelectAll.Location = new System.Drawing.Point(115, 340);
+            this.btnSelectAll.Name = "btnSelectAll";
+            this.btnSelectAll.Size = new System.Drawing.Size(75, 23);
+            this.btnSelectAll.TabIndex = 26;
+            this.btnSelectAll.Text = "Select All";
+            this.btnSelectAll.UseVisualStyleBackColor = true;
+            this.btnSelectAll.Click += new System.EventHandler(this.btnSelectAll_Click);
             // 
             // lbl_OrderList
             // 
@@ -107,7 +123,7 @@
             // lbl_Driver
             // 
             this.lbl_Driver.AutoSize = true;
-            this.lbl_Driver.Location = new System.Drawing.Point(285, 211);
+            this.lbl_Driver.Location = new System.Drawing.Point(285, 195);
             this.lbl_Driver.Name = "lbl_Driver";
             this.lbl_Driver.Size = new System.Drawing.Size(41, 13);
             this.lbl_Driver.TabIndex = 7;
@@ -133,12 +149,12 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 24;
             // 
-            // textBox2
+            // txtDriver
             // 
-            this.textBox2.Location = new System.Drawing.Point(345, 204);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(130, 20);
-            this.textBox2.TabIndex = 6;
+            this.txtDriver.Location = new System.Drawing.Point(345, 195);
+            this.txtDriver.Name = "txtDriver";
+            this.txtDriver.Size = new System.Drawing.Size(130, 20);
+            this.txtDriver.TabIndex = 6;
             // 
             // lbl_LicenseNo
             // 
@@ -150,13 +166,29 @@
             this.lbl_LicenseNo.Text = "Lic #: ";
             this.lbl_LicenseNo.UseCompatibleTextRendering = true;
             // 
-            // textBox1
+            // txtLicenseNo
             // 
-            this.textBox1.Location = new System.Drawing.Point(345, 151);
-            this.textBox1.MaxLength = 6;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(76, 20);
-            this.textBox1.TabIndex = 4;
+            this.txtLicenseNo.Location = new System.Drawing.Point(345, 151);
+            this.txtLicenseNo.MaxLength = 6;
+            this.txtLicenseNo.Name = "txtLicenseNo";
+            this.txtLicenseNo.Size = new System.Drawing.Size(76, 20);
+            this.txtLicenseNo.TabIndex = 4;
+            // 
+            // lblLocation
+            // 
+            this.lblLocation.AutoSize = true;
+            this.lblLocation.Location = new System.Drawing.Point(285, 238);
+            this.lblLocation.Name = "lblLocation";
+            this.lblLocation.Size = new System.Drawing.Size(51, 13);
+            this.lblLocation.TabIndex = 28;
+            this.lblLocation.Text = "Location:";
+            // 
+            // txtLocation
+            // 
+            this.txtLocation.Location = new System.Drawing.Point(345, 238);
+            this.txtLocation.Name = "txtLocation";
+            this.txtLocation.Size = new System.Drawing.Size(130, 20);
+            this.txtLocation.TabIndex = 27;
             // 
             // SummaryForm
             // 
@@ -184,9 +216,12 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lbl_Driver;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtDriver;
         private System.Windows.Forms.Label lbl_LicenseNo;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtLicenseNo;
         private System.Windows.Forms.Label lbl_OrderList;
+        private System.Windows.Forms.Button btnSelectAll;
+        private System.Windows.Forms.Label lblLocation;
+        private System.Windows.Forms.TextBox txtLocation;
     }
 }

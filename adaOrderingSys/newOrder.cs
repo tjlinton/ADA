@@ -293,7 +293,16 @@ namespace adaOrderingSys
                         throw new Exception("SQL error occured");
 
                     default:
-                        ep_Quantity.SetError(txt_Quantity, "Only " + returnValue + " items remaining");
+                        if (returnValue == 0)
+                        {
+                            //Show that we're out of stock
+                            ep_Quantity.SetError(txt_Quantity, Constants.OUT_OF_STOCK_MSG);
+                        }
+                        else
+                        {
+                            //Show the number of items left
+                            ep_Quantity.SetError(txt_Quantity, "Only " + returnValue + " items remaining");
+                        }
                         return false;
                 }
             }
@@ -329,7 +338,10 @@ namespace adaOrderingSys
             if (!Char.IsDigit(ch) && !Char.IsControl(ch))
             {
                 e.Handled = true;
-                ep_Quantity.SetError(txt_Quantity, "Please enter a number");
+                if (txt_Quantity.Text == "")
+                {
+                    ep_Quantity.SetError(txt_Quantity, "Please enter a number");
+                }
                 return;
             }
             ep_Quantity.SetError(txt_Quantity, "");
