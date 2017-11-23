@@ -33,6 +33,10 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.pnl_Step1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnDown = new System.Windows.Forms.Button();
+            this.btnUp = new System.Windows.Forms.Button();
+            this.lblLocation = new System.Windows.Forms.Label();
+            this.txtLocation = new System.Windows.Forms.TextBox();
             this.btnSelectAll = new System.Windows.Forms.Button();
             this.lbl_OrderList = new System.Windows.Forms.Label();
             this.lbl_Driver = new System.Windows.Forms.Label();
@@ -41,8 +45,6 @@
             this.txtDriver = new System.Windows.Forms.TextBox();
             this.lbl_LicenseNo = new System.Windows.Forms.Label();
             this.txtLicenseNo = new System.Windows.Forms.TextBox();
-            this.lblLocation = new System.Windows.Forms.Label();
-            this.txtLocation = new System.Windows.Forms.TextBox();
             this.pnl_Step1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -51,10 +53,11 @@
             // 
             this.cbl_Orders.CheckOnClick = true;
             this.cbl_Orders.FormattingEnabled = true;
-            this.cbl_Orders.Location = new System.Drawing.Point(51, 45);
+            this.cbl_Orders.Location = new System.Drawing.Point(17, 45);
             this.cbl_Orders.Name = "cbl_Orders";
             this.cbl_Orders.Size = new System.Drawing.Size(199, 289);
             this.cbl_Orders.TabIndex = 3;
+            this.cbl_Orders.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cbl_Orders_MouseClick);
             this.cbl_Orders.DoubleClick += new System.EventHandler(this.cbl_Orders_DoubleClick);
             // 
             // btnBack
@@ -83,6 +86,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnDown);
+            this.groupBox1.Controls.Add(this.btnUp);
             this.groupBox1.Controls.Add(this.lblLocation);
             this.groupBox1.Controls.Add(this.txtLocation);
             this.groupBox1.Controls.Add(this.btnSelectAll);
@@ -96,13 +101,49 @@
             this.groupBox1.Controls.Add(this.cbl_Orders);
             this.groupBox1.Location = new System.Drawing.Point(80, 50);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(538, 441);
+            this.groupBox1.Size = new System.Drawing.Size(585, 441);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             // 
+            // btnDown
+            // 
+            this.btnDown.Location = new System.Drawing.Point(222, 183);
+            this.btnDown.Name = "btnDown";
+            this.btnDown.Size = new System.Drawing.Size(34, 23);
+            this.btnDown.TabIndex = 30;
+            this.btnDown.Text = "▼";
+            this.btnDown.UseVisualStyleBackColor = true;
+            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
+            // 
+            // btnUp
+            // 
+            this.btnUp.Location = new System.Drawing.Point(222, 153);
+            this.btnUp.Name = "btnUp";
+            this.btnUp.Size = new System.Drawing.Size(34, 23);
+            this.btnUp.TabIndex = 29;
+            this.btnUp.Text = "▲";
+            this.btnUp.UseVisualStyleBackColor = true;
+            this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
+            // 
+            // lblLocation
+            // 
+            this.lblLocation.AutoSize = true;
+            this.lblLocation.Location = new System.Drawing.Point(336, 238);
+            this.lblLocation.Name = "lblLocation";
+            this.lblLocation.Size = new System.Drawing.Size(51, 13);
+            this.lblLocation.TabIndex = 28;
+            this.lblLocation.Text = "Location:";
+            // 
+            // txtLocation
+            // 
+            this.txtLocation.Location = new System.Drawing.Point(393, 235);
+            this.txtLocation.Name = "txtLocation";
+            this.txtLocation.Size = new System.Drawing.Size(130, 20);
+            this.txtLocation.TabIndex = 27;
+            // 
             // btnSelectAll
             // 
-            this.btnSelectAll.Location = new System.Drawing.Point(115, 340);
+            this.btnSelectAll.Location = new System.Drawing.Point(75, 340);
             this.btnSelectAll.Name = "btnSelectAll";
             this.btnSelectAll.Size = new System.Drawing.Size(75, 23);
             this.btnSelectAll.TabIndex = 26;
@@ -123,7 +164,7 @@
             // lbl_Driver
             // 
             this.lbl_Driver.AutoSize = true;
-            this.lbl_Driver.Location = new System.Drawing.Point(285, 195);
+            this.lbl_Driver.Location = new System.Drawing.Point(336, 195);
             this.lbl_Driver.Name = "lbl_Driver";
             this.lbl_Driver.Size = new System.Drawing.Size(41, 13);
             this.lbl_Driver.TabIndex = 7;
@@ -134,7 +175,7 @@
             this.btnSubmitCust.BackColor = System.Drawing.Color.Green;
             this.btnSubmitCust.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSubmitCust.ForeColor = System.Drawing.Color.Gold;
-            this.btnSubmitCust.Location = new System.Drawing.Point(363, 276);
+            this.btnSubmitCust.Location = new System.Drawing.Point(393, 277);
             this.btnSubmitCust.Name = "btnSubmitCust";
             this.btnSubmitCust.Size = new System.Drawing.Size(92, 45);
             this.btnSubmitCust.TabIndex = 23;
@@ -144,14 +185,14 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(292, 109);
+            this.dateTimePicker1.Location = new System.Drawing.Point(339, 109);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 24;
             // 
             // txtDriver
             // 
-            this.txtDriver.Location = new System.Drawing.Point(345, 195);
+            this.txtDriver.Location = new System.Drawing.Point(393, 195);
             this.txtDriver.Name = "txtDriver";
             this.txtDriver.Size = new System.Drawing.Size(130, 20);
             this.txtDriver.TabIndex = 6;
@@ -159,7 +200,7 @@
             // lbl_LicenseNo
             // 
             this.lbl_LicenseNo.AutoSize = true;
-            this.lbl_LicenseNo.Location = new System.Drawing.Point(292, 154);
+            this.lbl_LicenseNo.Location = new System.Drawing.Point(339, 154);
             this.lbl_LicenseNo.Name = "lbl_LicenseNo";
             this.lbl_LicenseNo.Size = new System.Drawing.Size(34, 17);
             this.lbl_LicenseNo.TabIndex = 5;
@@ -168,27 +209,11 @@
             // 
             // txtLicenseNo
             // 
-            this.txtLicenseNo.Location = new System.Drawing.Point(345, 151);
+            this.txtLicenseNo.Location = new System.Drawing.Point(393, 154);
             this.txtLicenseNo.MaxLength = 6;
             this.txtLicenseNo.Name = "txtLicenseNo";
             this.txtLicenseNo.Size = new System.Drawing.Size(76, 20);
             this.txtLicenseNo.TabIndex = 4;
-            // 
-            // lblLocation
-            // 
-            this.lblLocation.AutoSize = true;
-            this.lblLocation.Location = new System.Drawing.Point(285, 238);
-            this.lblLocation.Name = "lblLocation";
-            this.lblLocation.Size = new System.Drawing.Size(51, 13);
-            this.lblLocation.TabIndex = 28;
-            this.lblLocation.Text = "Location:";
-            // 
-            // txtLocation
-            // 
-            this.txtLocation.Location = new System.Drawing.Point(345, 238);
-            this.txtLocation.Name = "txtLocation";
-            this.txtLocation.Size = new System.Drawing.Size(130, 20);
-            this.txtLocation.TabIndex = 27;
             // 
             // SummaryForm
             // 
@@ -223,5 +248,7 @@
         private System.Windows.Forms.Button btnSelectAll;
         private System.Windows.Forms.Label lblLocation;
         private System.Windows.Forms.TextBox txtLocation;
+        private System.Windows.Forms.Button btnDown;
+        private System.Windows.Forms.Button btnUp;
     }
 }

@@ -18,6 +18,10 @@ namespace adaOrderingSys
     public partial class SummaryForm : Form
     {
         private readonly Logger logger = LogManager.GetCurrentClassLogger();
+        private List<string> checkedItems = new List<string>();
+        private bool lastPage;
+        private int pageNo;
+        List<KeyValuePair<int, string>> summaryList = null;
         public SummaryForm()
         {
             InitializeComponent();
@@ -59,10 +63,17 @@ namespace adaOrderingSys
                 PrintPreviewDialog printPrvDlg = new PrintPreviewDialog();
                 PrintDocument printDocument = new PrintDocument();
 
+                for (int i = 0; i < cbl_Orders.CheckedItems.Count; i++)
+                {
+                    checkedItems.Add(cbl_Orders.CheckedItems[i].ToString());
+                }
+                pageNo = 1;
+                lastPage = false;
+                summaryList = new List<KeyValuePair<int, string>>();
                 printDialog.Document = printDocument;
                 printPrvDlg.Document = printDocument;
                 //add an event handler that will do the printing
-                printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(createLoadingSheet);
+                printDocument.PrintPage += new PrintPageEventHandler(createLoadingSheet);
                 if (MessageBox.Show("Show preview?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     printPrvDlg.PrintPreviewControl.Zoom = 100 / 100f; //Zoom is calculated as a ratio
@@ -107,7 +118,7 @@ namespace adaOrderingSys
             }
         }
 
-        private void createLoadingSheet(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        private void createLoadingSheet(object sender, PrintPageEventArgs e)
         {
             //this prints the loading sheet
             try
@@ -123,168 +134,190 @@ namespace adaOrderingSys
                 int startX = 5, middleX = 300, endX = 580,
                     startY = 10, offset = 40, middleOffset, endOffset;
 
-                graphic.DrawString(Constants.LOADING_SHEET_HEADER.PadLeft(25), headerFont, new SolidBrush(Color.Black), startX, startY);
-                //Sub heading of loading sheet
-                string top = txtLicenseNo.Text == "" ? "Lic #:_____" + Constants.LOADING_SHEET_SPACER : 
-                    "Lic #:" + txtLicenseNo.Text + Constants.LOADING_SHEET_SPACER; //License number
-                top += "Date: " + DateTime.Today.ToString("dd/MM/yyyy") + Constants.LOADING_SHEET_SPACER; //Date for the 
-                top += txtDriver.Text == "" ? "Driver:_____________" + Constants.LOADING_SHEET_SPACER :
-                    "Driver:" + txtDriver.Text + Constants.LOADING_SHEET_SPACER; //Driver for the loading sheet
-                top += txtLocation.Text == "" ? "Location:_____________" + Constants.LOADING_SHEET_SPACER :
-                    "Location:" + txtLocation.Text + Constants.LOADING_SHEET_SPACER; //Location to be delivered to 
+                if (pageNo == 1)
+                {
+                    graphic.DrawString(Constants.LOADING_SHEET_HEADER.PadLeft(25), headerFont, new SolidBrush(Color.Black), startX, startY);
+                    //Sub heading of loading sheet
+                    string top = txtLicenseNo.Text == "" ? "Lic #:_____" + Constants.LOADING_SHEET_SPACER :
+                        "Lic #:" + txtLicenseNo.Text + Constants.LOADING_SHEET_SPACER; //License number
+                    top += "Date: " + DateTime.Today.ToString("dd/MM/yyyy") + Constants.LOADING_SHEET_SPACER; //Date for the 
+                    top += txtDriver.Text == "" ? "Driver:_____________" + Constants.LOADING_SHEET_SPACER :
+                        "Driver:" + txtDriver.Text + Constants.LOADING_SHEET_SPACER; //Driver for the loading sheet
+                    top += txtLocation.Text == "" ? "Location:_____________" + Constants.LOADING_SHEET_SPACER :
+                        "Location:" + txtLocation.Text + Constants.LOADING_SHEET_SPACER; //Location to be delivered to 
 
-                graphic.DrawString(top, topFont, new SolidBrush(Color.Black), startX, startY + (offset + 10));
-                offset = offset + (int)headerFont.GetHeight() + 10; //make the spacing consistent
+                    graphic.DrawString(top, topFont, new SolidBrush(Color.Black), startX, startY + (offset + 10));
+                    offset = offset + (int)headerFont.GetHeight() + 10; //make the spacing consistent
+
+                }
                 middleOffset = offset;
                 endOffset = offset;
 
+                int initalOffset = offset;
+
                 int count = 0;
 
-                List<KeyValuePair<int, string>> summaryList = new List<KeyValuePair<int, string>>();
-
-                foreach (var order in cbl_Orders.CheckedItems)
+                if (!lastPage)
                 {
-                     
-                    //Add each customer's order to the List
-                    String[] details = order.ToString().Split('|');
-                    int id = Convert.ToInt32(details[0].Trim());
-                    List<ItemsOrdered> itemQuantityAndAdditionals = new ItemsOrdered().getOrderedItemsQuantityAndAdditionals(id);
-                    string location = new Order().getOrderLocation(id);
-                    if (location != null && location !="")
+                    for (int l = checkedItems.Count - 1; l >= 0; l--)
                     {
-                        location = " - " + location;
-                        if (location.Length > 12)
+                        string order = checkedItems[l];
+                        checkedItems.RemoveAt(l);
+                        //Add each customer's order to the List
+                        string[] details = order.Split('|');
+                        int id = Convert.ToInt32(details[0].Trim());
+                        List<ItemsOrdered> itemQuantityAndAdditionals = new ItemsOrdered().getOrderedItemsQuantityAndAdditionals(id);
+                        string location = new Order().getOrderLocation(id);
+                        if (location != null && location != "")
                         {
-                            location = location.Substring(0, 12).Trim();
-                            location += "...";
+                            location = " - " + location;
+                            if (location.Length > 12)
+                            {
+                                location = location.Substring(0, 12).Trim();
+                                location += "...";
+                            }
                         }
-                    }
 
-                    //TODO: think about making this shit less repetitive
-                    if (count <= Constants.MAX_LOADING_SHEET_COLUMN)
-                    {
-                        graphic.DrawString(details[1].Trim() + location, boldFont, new SolidBrush(Color.Black), startX, startY + offset);
-                        offset += (int)fontHeight;
-                        int length = itemQuantityAndAdditionals.Count;
-                        for (int i = 0; i < length; i++)
+                        //TODO: think about making this shit less repetitive
+                        if (count <= Constants.MAX_LOADING_SHEET_COLUMN)
                         {
-                            string quantity = itemQuantityAndAdditionals[i].qtyOrdered.ToString();
-                            string item = itemQuantityAndAdditionals[i].itemName;
-                            int additionals = itemQuantityAndAdditionals[i].additionals;
-                            string drawItem = additionals == 0 ? "  " + quantity + " " + item :
-                                "  " + quantity + "+" + additionals + " " + item;
-                            graphic.DrawString(drawItem, font, new SolidBrush(Color.Black), startX, startY + offset);
-                            count++;
+                            graphic.DrawString(details[1].Trim() + location, boldFont, new SolidBrush(Color.Black), startX, startY + offset);
                             offset += (int)fontHeight;
-                            int index = isItemInList(summaryList, itemQuantityAndAdditionals[i].itemName);
-                            //Add to the summary list
-                            if (summaryList.Count > 0 && index >= 0)
+                            int length = itemQuantityAndAdditionals.Count;
+                            for (int i = 0; i < length; i++)
                             {
-                                int thisQuantity = itemQuantityAndAdditionals[i].qtyOrdered + 
-                                                   itemQuantityAndAdditionals[i].additionals + 
-                                                   summaryList[index].Key;
+                                string quantity = itemQuantityAndAdditionals[i].qtyOrdered.ToString();
+                                string item = itemQuantityAndAdditionals[i].itemName;
+                                int additionals = itemQuantityAndAdditionals[i].additionals;
+                                string drawItem = additionals == 0 ? "  " + quantity + " " + item :
+                                    "  " + quantity + "+" + additionals + " " + item;
+                                graphic.DrawString(drawItem, font, new SolidBrush(Color.Black), startX, startY + offset);
+                                count++;
+                                offset += (int)fontHeight;
+                                int index = isItemInList(summaryList, itemQuantityAndAdditionals[i].itemName);
+                                //Add to the summary list
+                                if (summaryList.Count > 0 && index >= 0)
+                                {
+                                    int thisQuantity = itemQuantityAndAdditionals[i].qtyOrdered +
+                                                       itemQuantityAndAdditionals[i].additionals +
+                                                       summaryList[index].Key;
 
-                                string thisItem = itemQuantityAndAdditionals[i].itemName;
-                                summaryList[index] = new KeyValuePair<int, string>(thisQuantity, thisItem);
+                                    string thisItem = itemQuantityAndAdditionals[i].itemName;
+                                    summaryList[index] = new KeyValuePair<int, string>(thisQuantity, thisItem);
 
+                                }
+                                else
+                                {
+                                    int thisQuantity = itemQuantityAndAdditionals[i].qtyOrdered + itemQuantityAndAdditionals[i].additionals;
+                                    summaryList.Add(new KeyValuePair<int, string>(thisQuantity, itemQuantityAndAdditionals[i].itemName));
+                                }
                             }
-                            else
-                            {
-                                int thisQuantity = itemQuantityAndAdditionals[i].qtyOrdered + itemQuantityAndAdditionals[i].additionals;
-                                summaryList.Add(new KeyValuePair<int,string>(thisQuantity, itemQuantityAndAdditionals[i].itemName));
-                            }
-                        }
-                        offset += 15;
-                        count++;
-                    }
-                    else if (count <= Constants.MAX_LOADING_SHEET_COLUMN * 2)//Move over to middle of the page
-                    {
-                        graphic.DrawString(details[1].Trim() + location, boldFont, new SolidBrush(Color.Black), middleX, startY + middleOffset);
-                        middleOffset += (int)fontHeight;
-                        int length = itemQuantityAndAdditionals.Count;
-                        for (int i = 0; i < length; i++)
-                        {
-                            string quantity = itemQuantityAndAdditionals[i].qtyOrdered.ToString();
-                            string item = itemQuantityAndAdditionals[i].itemName;
-                            int additionals = itemQuantityAndAdditionals[i].additionals;
-                            string drawItem = additionals == 0 ? "  " + quantity + " " + item :
-                                "  " + quantity + "+" + additionals + " " + item;
-                            graphic.DrawString(drawItem, font,
-                                new SolidBrush(Color.Black), middleX, startY + middleOffset);
+                            offset += 15;
                             count++;
+                        }
+                        else if (count <= (Constants.MAX_LOADING_SHEET_COLUMN * 2))//Move over to middle of the page
+                        {
+                            graphic.DrawString(details[1].Trim() + location, boldFont, new SolidBrush(Color.Black), middleX, startY + middleOffset);
                             middleOffset += (int)fontHeight;
-
-                            int index = isItemInList(summaryList, itemQuantityAndAdditionals[i].itemName);
-
-                            //Add to the summary list
-                            if (summaryList.Count > 0 && index >= 0)
+                            int length = itemQuantityAndAdditionals.Count;
+                            for (int i = 0; i < length; i++)
                             {
-                                int thisQuantity = itemQuantityAndAdditionals[i].qtyOrdered +
-                                                   itemQuantityAndAdditionals[i].additionals +
-                                                   summaryList[index].Key;
+                                string quantity = itemQuantityAndAdditionals[i].qtyOrdered.ToString();
+                                string item = itemQuantityAndAdditionals[i].itemName;
+                                int additionals = itemQuantityAndAdditionals[i].additionals;
+                                string drawItem = additionals == 0 ? "  " + quantity + " " + item :
+                                    "  " + quantity + "+" + additionals + " " + item;
+                                graphic.DrawString(drawItem, font,
+                                    new SolidBrush(Color.Black), middleX, startY + middleOffset);
+                                count++;
+                                middleOffset += (int)fontHeight;
 
-                                string thisItem = itemQuantityAndAdditionals[i].itemName;
-                                summaryList[index] = new KeyValuePair<int, string>(thisQuantity, thisItem);
+                                int index = isItemInList(summaryList, itemQuantityAndAdditionals[i].itemName);
 
+                                //Add to the summary list
+                                if (summaryList.Count > 0 && index >= 0)
+                                {
+                                    int thisQuantity = itemQuantityAndAdditionals[i].qtyOrdered +
+                                                       itemQuantityAndAdditionals[i].additionals +
+                                                       summaryList[index].Key;
+
+                                    string thisItem = itemQuantityAndAdditionals[i].itemName;
+                                    summaryList[index] = new KeyValuePair<int, string>(thisQuantity, thisItem);
+
+                                }
+                                else
+                                {
+                                    int thisQuantity = itemQuantityAndAdditionals[i].qtyOrdered + itemQuantityAndAdditionals[i].additionals;
+                                    summaryList.Add(new KeyValuePair<int, string>(thisQuantity, itemQuantityAndAdditionals[i].itemName));
+                                }
                             }
-                            else
-                            {
-                                int thisQuantity = itemQuantityAndAdditionals[i].qtyOrdered + itemQuantityAndAdditionals[i].additionals;
-                                summaryList.Add(new KeyValuePair<int, string>(thisQuantity, itemQuantityAndAdditionals[i].itemName));
-                            }
-                        }
-                        middleOffset += 15;
-                        count++;
-                    }
-                    else if (count <= Constants.MAX_LOADING_SHEET_COLUMN * 3) //Move over to last column of the page
-                    {
-
-                        graphic.DrawString(details[1].Trim() + location, boldFont, new SolidBrush(Color.Black), endX, startY + endOffset);
-                        endOffset += (int)fontHeight;
-                        int length = itemQuantityAndAdditionals.Count;
-                        for (int i = 0; i < length; i++)
-                        {
-                            string quantity = itemQuantityAndAdditionals[i].qtyOrdered.ToString();
-                            string item = itemQuantityAndAdditionals[i].itemName;
-                            int additionals = itemQuantityAndAdditionals[i].additionals;
-                            string drawItem = additionals == 0 ? "  " + quantity + " " + item :
-                                "  " + quantity + "+" + additionals + " " + item;
-                            graphic.DrawString(drawItem, font, new SolidBrush(Color.Black), endX, startY + endOffset);
+                            middleOffset += 15;
                             count++;
-                            endOffset += (int)fontHeight;
-
-                            int index = isItemInList(summaryList, itemQuantityAndAdditionals[i].itemName);
-
-                            //Add to the summary list
-                            if (summaryList.Count > 0 && index >= 0)
-                            {
-                                int thisQuantity = itemQuantityAndAdditionals[i].qtyOrdered +
-                                                   itemQuantityAndAdditionals[i].additionals +
-                                                   summaryList[index].Key;
-
-                                string thisItem = itemQuantityAndAdditionals[i].itemName;
-                                summaryList[index] = new KeyValuePair<int, string>(thisQuantity, thisItem);
-
-                            }
-                            else
-                            {
-                                int thisQuantity = itemQuantityAndAdditionals[i].qtyOrdered + itemQuantityAndAdditionals[i].additionals;
-                                summaryList.Add(new KeyValuePair<int, string>(thisQuantity, itemQuantityAndAdditionals[i].itemName));
-                            }
                         }
-                        endOffset += 15;
-                        count++;
+                        else if (count <= Constants.MAX_LOADING_SHEET_COLUMN * 3) //Move over to last column of the page
+                        {
+
+                            graphic.DrawString(details[1].Trim() + location, boldFont, new SolidBrush(Color.Black), endX, startY + endOffset);
+                            endOffset += (int)fontHeight;
+                            int length = itemQuantityAndAdditionals.Count;
+                            for (int i = 0; i < length; i++)
+                            {
+                                string quantity = itemQuantityAndAdditionals[i].qtyOrdered.ToString();
+                                string item = itemQuantityAndAdditionals[i].itemName;
+                                int additionals = itemQuantityAndAdditionals[i].additionals;
+                                string drawItem = additionals == 0 ? "  " + quantity + " " + item :
+                                    "  " + quantity + "+" + additionals + " " + item;
+                                graphic.DrawString(drawItem, font, new SolidBrush(Color.Black), endX, startY + endOffset);
+                                count++;
+                                endOffset += (int)fontHeight;
+
+                                int index = isItemInList(summaryList, itemQuantityAndAdditionals[i].itemName);
+
+                                //Add to the summary list
+                                if (summaryList.Count > 0 && index >= 0)
+                                {
+                                    int thisQuantity = itemQuantityAndAdditionals[i].qtyOrdered +
+                                                       itemQuantityAndAdditionals[i].additionals +
+                                                       summaryList[index].Key;
+
+                                    string thisItem = itemQuantityAndAdditionals[i].itemName;
+                                    summaryList[index] = new KeyValuePair<int, string>(thisQuantity, thisItem);
+
+                                }
+                                else
+                                {
+                                    int thisQuantity = itemQuantityAndAdditionals[i].qtyOrdered + itemQuantityAndAdditionals[i].additionals;
+                                    summaryList.Add(new KeyValuePair<int, string>(thisQuantity, itemQuantityAndAdditionals[i].itemName));
+                                }
+                            }
+                            endOffset += 15;
+                            count++;
+                        }
+                        else
+                        {
+                            e.HasMorePages = true;
+                            pageNo++;
+                            return;
+                        }
                     }
                 }
 
                 //Summary statement.
-                graphic.DrawString("Summary", boldFont, new SolidBrush(Color.Black), endX, startY + endOffset);
+                if (count + (summaryList.Count *3) > Constants.MAX_LOADING_SHEET_COLUMN)
+                {
+                    e.HasMorePages = true;
+                    pageNo++;
+                    lastPage = true;
+                    return;
+                }
+                int currentX = lastPage ? startX : endX; 
+                graphic.DrawString("Summary", boldFont, new SolidBrush(Color.Black), currentX, startY + endOffset);
                 endOffset += (int)fontHeight;
 
                 for (int j = 0; j < summaryList.Count; j++)
                 {
                     string summaryItem = summaryList[j].Key + " " + summaryList[j].Value;
-                    graphic.DrawString(summaryItem, topFont, new SolidBrush(Color.Black), endX, startY + endOffset);
+                    graphic.DrawString(summaryItem, topFont, new SolidBrush(Color.Black), currentX, startY + endOffset);
                     endOffset += (int)fontHeight;
                 }
             }
@@ -366,10 +399,68 @@ namespace adaOrderingSys
 
         private void btnSelectAll_Click(object sender, EventArgs e)
         {
-            for (int i=0; i < cbl_Orders.Items.Count; i++)
+            for (int i = 0; i < cbl_Orders.Items.Count; i++)
             {
-                cbl_Orders.SetItemChecked(i,true);         
+                cbl_Orders.SetItemChecked(i, true);
             }
+        }
+
+        private void btnUp_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int index = cbl_Orders.SelectedIndex;
+                if (index == -1 || index == 0)
+                    return;
+                int prevIndex = index - 1;
+                bool isChecked = cbl_Orders.GetItemChecked(index);
+                string temp = cbl_Orders.Items[index].ToString();
+                cbl_Orders.Items.RemoveAt(index);
+
+                //cbl_Orders.Items[prevIndex] = cbl_Orders.Items[index];
+                cbl_Orders.Items.Insert(prevIndex, temp);
+                cbl_Orders.SelectedIndex = prevIndex;
+                if (isChecked)
+                {
+                    cbl_Orders.SetItemChecked(prevIndex, true);
+                }
+            }
+            catch ( Exception ex)
+            {
+                logger.Error(ex);
+            }
+        }
+
+        private void btnDown_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int index = cbl_Orders.SelectedIndex;
+
+                if (index == cbl_Orders.Items.Count - 1 || index == -1)
+                    return;
+
+                int nextIndex = index + 1;
+
+                bool isChecked = cbl_Orders.GetItemChecked(index);
+                string temp = cbl_Orders.Items[index].ToString();
+                cbl_Orders.Items.RemoveAt(index);
+                cbl_Orders.Items.Insert(nextIndex, temp);
+                cbl_Orders.SelectedIndex = nextIndex;
+                if (isChecked)
+                {
+                    cbl_Orders.SetItemChecked(nextIndex, true);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+            }
+        }
+
+        private void cbl_Orders_MouseClick(object sender, MouseEventArgs e)
+        {
         }
     }
 }

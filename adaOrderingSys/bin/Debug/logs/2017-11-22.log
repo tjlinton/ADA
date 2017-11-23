@@ -1,0 +1,2239 @@
+2017-11-22 00:07:11.1255 INFO User: Tajay successfully logged in
+2017-11-22 00:07:28.8868 INFO Attempting to create new order.
+2017-11-22 00:07:28.9673 INFO New orderd created successfully with ID 58
+2017-11-22 00:07:36.6214 INFO  Getting item name, quantity and additionals from 58
+2017-11-22 00:07:36.6398 INFO Success
+2017-11-22 00:07:36.6488 INFO Retrieving order location
+2017-11-22 00:07:36.6488 INFO Location successfully retrieved
+2017-11-22 00:07:36.6730 INFO  Getting item name, quantity and additionals from 57
+2017-11-22 00:07:36.6830 INFO Success
+2017-11-22 00:07:36.6830 INFO Retrieving order location
+2017-11-22 00:07:36.6830 INFO Location successfully retrieved
+2017-11-22 00:07:36.7030 INFO  Getting item name, quantity and additionals from 56
+2017-11-22 00:07:36.7170 INFO Success
+2017-11-22 00:07:36.7170 INFO Retrieving order location
+2017-11-22 00:07:36.7315 INFO Location successfully retrieved
+2017-11-22 00:07:36.7415 INFO  Getting item name, quantity and additionals from 55
+2017-11-22 00:07:36.7415 INFO Success
+2017-11-22 00:07:36.7415 INFO Retrieving order location
+2017-11-22 00:07:36.7615 INFO Location successfully retrieved
+2017-11-22 00:07:36.7615 INFO  Getting item name, quantity and additionals from 54
+2017-11-22 00:07:36.7615 INFO Success
+2017-11-22 00:07:36.7615 INFO Retrieving order location
+2017-11-22 00:07:36.7815 INFO Location successfully retrieved
+2017-11-22 00:07:36.7915 INFO  Getting item name, quantity and additionals from 53
+2017-11-22 00:07:36.7915 INFO Success
+2017-11-22 00:07:36.7915 INFO Retrieving order location
+2017-11-22 00:07:36.8140 INFO Location successfully retrieved
+2017-11-22 00:07:36.8140 INFO  Getting item name, quantity and additionals from 52
+2017-11-22 00:07:36.8215 INFO Success
+2017-11-22 00:07:36.8215 INFO Retrieving order location
+2017-11-22 00:07:36.8215 INFO Location successfully retrieved
+2017-11-22 00:07:36.8415 INFO  Getting item name, quantity and additionals from 51
+2017-11-22 00:07:36.8515 INFO Success
+2017-11-22 00:07:36.8515 INFO Retrieving order location
+2017-11-22 00:07:36.8515 INFO Location successfully retrieved
+2017-11-22 00:07:36.8716 INFO  Getting item name, quantity and additionals from 50
+2017-11-22 00:07:36.9516 INFO Success
+2017-11-22 00:07:36.9716 INFO Retrieving order location
+2017-11-22 00:07:36.9716 INFO Location successfully retrieved
+2017-11-22 00:07:36.9816 INFO  Getting item name, quantity and additionals from 49
+2017-11-22 00:07:36.9916 INFO Success
+2017-11-22 00:07:36.9916 INFO Retrieving order location
+2017-11-22 00:07:36.9916 INFO Location successfully retrieved
+2017-11-22 00:07:37.0126 INFO  Getting item name, quantity and additionals from 48
+2017-11-22 00:07:37.0126 INFO Success
+2017-11-22 00:07:37.0126 INFO Retrieving order location
+2017-11-22 00:07:37.0316 INFO Location successfully retrieved
+2017-11-22 00:07:37.0416 INFO  Getting item name, quantity and additionals from 47
+2017-11-22 00:07:37.0416 INFO Success
+2017-11-22 00:07:37.0416 INFO Retrieving order location
+2017-11-22 00:07:37.0616 INFO Location successfully retrieved
+2017-11-22 00:07:37.0716 INFO  Getting item name, quantity and additionals from 46
+2017-11-22 00:07:37.0716 INFO Success
+2017-11-22 00:07:37.1616 INFO Retrieving order location
+2017-11-22 00:07:37.2516 INFO Location successfully retrieved
+2017-11-22 00:07:37.3216 INFO  Getting item name, quantity and additionals from 45
+2017-11-22 00:07:37.3216 INFO Success
+2017-11-22 00:07:37.3216 INFO Retrieving order location
+2017-11-22 00:07:37.3416 INFO Location successfully retrieved
+2017-11-22 00:07:37.3816 INFO  Getting item name, quantity and additionals from 44
+2017-11-22 00:07:37.3916 INFO Success
+2017-11-22 00:07:37.3916 INFO Retrieving order location
+2017-11-22 00:07:37.4016 INFO Location successfully retrieved
+2017-11-22 00:07:37.4146 INFO  Getting item name, quantity and additionals from 43
+2017-11-22 00:07:37.4146 INFO Success
+2017-11-22 00:07:37.4146 INFO Retrieving order location
+2017-11-22 00:07:37.4317 INFO Location successfully retrieved
+2017-11-22 00:07:37.4317 INFO  Getting item name, quantity and additionals from 42
+2017-11-22 00:07:37.4317 INFO Success
+2017-11-22 00:07:37.4517 INFO Retrieving order location
+2017-11-22 00:07:37.4617 INFO Location successfully retrieved
+2017-11-22 00:07:37.4617 INFO  Getting item name, quantity and additionals from 41
+2017-11-22 00:07:37.4817 INFO Success
+2017-11-22 00:07:37.4817 INFO Retrieving order location
+2017-11-22 00:07:37.4917 INFO Location successfully retrieved
+2017-11-22 00:07:37.4917 INFO  Getting item name, quantity and additionals from 40
+2017-11-22 00:07:37.4917 INFO Success
+2017-11-22 00:07:37.5162 INFO Retrieving order location
+2017-11-22 00:07:37.5162 INFO Location successfully retrieved
+2017-11-22 00:07:37.5162 INFO  Getting item name, quantity and additionals from 39
+2017-11-22 00:07:37.5317 INFO Success
+2017-11-22 00:07:37.5417 INFO Retrieving order location
+2017-11-22 00:07:37.5417 INFO Location successfully retrieved
+2017-11-22 00:07:37.5417 INFO  Getting item name, quantity and additionals from 38
+2017-11-22 00:07:37.5617 INFO Success
+2017-11-22 00:07:37.5617 INFO Retrieving order location
+2017-11-22 00:07:37.5717 INFO Location successfully retrieved
+2017-11-22 00:07:37.5717 INFO  Getting item name, quantity and additionals from 37
+2017-11-22 00:07:37.5717 INFO Success
+2017-11-22 00:07:37.5917 INFO Retrieving order location
+2017-11-22 00:07:37.5917 INFO Location successfully retrieved
+2017-11-22 00:07:37.6017 INFO  Getting item name, quantity and additionals from 36
+2017-11-22 00:07:37.6017 INFO Success
+2017-11-22 00:07:37.6187 INFO Retrieving order location
+2017-11-22 00:07:37.6187 INFO Location successfully retrieved
+2017-11-22 00:07:37.6187 INFO  Getting item name, quantity and additionals from 35
+2017-11-22 00:07:37.6187 INFO Success
+2017-11-22 00:07:37.6417 INFO Retrieving order location
+2017-11-22 00:07:37.6517 INFO Location successfully retrieved
+2017-11-22 00:07:37.6517 INFO  Getting item name, quantity and additionals from 33
+2017-11-22 00:07:37.6517 INFO Success
+2017-11-22 00:07:37.6717 INFO Retrieving order location
+2017-11-22 00:07:37.6917 INFO Location successfully retrieved
+2017-11-22 00:07:37.6917 INFO  Getting item name, quantity and additionals from 28
+2017-11-22 00:07:37.7017 INFO Success
+2017-11-22 00:07:37.7153 INFO Retrieving order location
+2017-11-22 00:07:37.7153 INFO Location successfully retrieved
+2017-11-22 00:07:37.7153 INFO  Getting item name, quantity and additionals from 27
+2017-11-22 00:07:37.7318 INFO Success
+2017-11-22 00:07:37.7418 INFO Retrieving order location
+2017-11-22 00:07:37.7418 INFO Location successfully retrieved
+2017-11-22 00:07:37.7418 INFO  Getting item name, quantity and additionals from 26
+2017-11-22 00:07:37.7618 INFO Success
+2017-11-22 00:07:37.7786 INFO Retrieving order location
+2017-11-22 00:07:37.7916 INFO Location successfully retrieved
+2017-11-22 00:07:37.7916 INFO  Getting item name, quantity and additionals from 25
+2017-11-22 00:07:37.8101 INFO Success
+2017-11-22 00:07:37.8196 INFO Retrieving order location
+2017-11-22 00:07:37.8196 INFO Location successfully retrieved
+2017-11-22 00:07:37.8196 INFO  Getting item name, quantity and additionals from 24
+2017-11-22 00:07:37.8397 INFO Success
+2017-11-22 00:07:37.8532 INFO Retrieving order location
+2017-11-22 00:07:37.8532 INFO Location successfully retrieved
+2017-11-22 00:07:37.8742 INFO  Getting item name, quantity and additionals from 23
+2017-11-22 00:07:37.8842 INFO Success
+2017-11-22 00:07:37.8842 INFO Retrieving order location
+2017-11-22 00:07:37.9012 INFO Location successfully retrieved
+2017-11-22 00:07:37.9012 INFO  Getting item name, quantity and additionals from 22
+2017-11-22 00:07:37.9143 INFO Success
+2017-11-22 00:07:37.9143 INFO Retrieving order location
+2017-11-22 00:07:37.9143 INFO Location successfully retrieved
+2017-11-22 00:07:37.9318 INFO  Getting item name, quantity and additionals from 21
+2017-11-22 00:07:37.9318 INFO Success
+2017-11-22 00:07:37.9318 INFO Retrieving order location
+2017-11-22 00:07:37.9518 INFO Location successfully retrieved
+2017-11-22 00:07:37.9518 INFO  Getting item name, quantity and additionals from 19
+2017-11-22 00:07:37.9618 INFO Success
+2017-11-22 00:07:37.9618 INFO Retrieving order location
+2017-11-22 00:07:37.9618 INFO Location successfully retrieved
+2017-11-22 00:07:38.1419 INFO  Getting item name, quantity and additionals from 18
+2017-11-22 00:07:38.1519 INFO Success
+2017-11-22 00:07:38.1519 INFO Retrieving order location
+2017-11-22 00:07:38.1719 INFO Location successfully retrieved
+2017-11-22 00:07:38.1819 INFO  Getting item name, quantity and additionals from 17
+2017-11-22 00:07:38.1819 INFO Success
+2017-11-22 00:07:38.1819 INFO Retrieving order location
+2017-11-22 00:07:38.1819 INFO Location successfully retrieved
+2017-11-22 07:13:43.3537 INFO User: Tajay successfully logged in
+2017-11-22 07:13:50.0817 INFO  Getting item name, quantity and additionals from 58
+2017-11-22 07:13:50.1346 INFO Success
+2017-11-22 07:13:50.1346 INFO Retrieving order location
+2017-11-22 07:13:50.1503 INFO Location successfully retrieved
+2017-11-22 07:13:50.1659 INFO  Getting item name, quantity and additionals from 57
+2017-11-22 07:13:50.1659 INFO Success
+2017-11-22 07:13:50.1815 INFO Retrieving order location
+2017-11-22 07:13:50.1815 INFO Location successfully retrieved
+2017-11-22 07:13:50.1971 INFO  Getting item name, quantity and additionals from 56
+2017-11-22 07:13:50.2128 INFO Success
+2017-11-22 07:13:50.2309 INFO Retrieving order location
+2017-11-22 07:13:50.2309 INFO Location successfully retrieved
+2017-11-22 07:13:50.2309 INFO  Getting item name, quantity and additionals from 55
+2017-11-22 07:13:50.2503 INFO Success
+2017-11-22 07:13:50.2503 INFO Retrieving order location
+2017-11-22 07:13:50.2659 INFO Location successfully retrieved
+2017-11-22 07:13:50.2816 INFO  Getting item name, quantity and additionals from 54
+2017-11-22 07:13:50.2816 INFO Success
+2017-11-22 07:13:50.2972 INFO Retrieving order location
+2017-11-22 07:13:50.2972 INFO Location successfully retrieved
+2017-11-22 07:13:50.3128 INFO  Getting item name, quantity and additionals from 53
+2017-11-22 07:13:50.3128 INFO Success
+2017-11-22 07:13:50.3295 INFO Retrieving order location
+2017-11-22 07:13:50.3350 INFO Location successfully retrieved
+2017-11-22 07:13:50.3350 INFO  Getting item name, quantity and additionals from 52
+2017-11-22 07:13:50.3506 INFO Success
+2017-11-22 07:13:50.3506 INFO Retrieving order location
+2017-11-22 07:13:50.3506 INFO Location successfully retrieved
+2017-11-22 07:13:50.3662 INFO  Getting item name, quantity and additionals from 51
+2017-11-22 07:13:50.3662 INFO Success
+2017-11-22 07:13:50.3818 INFO Retrieving order location
+2017-11-22 07:13:50.3975 INFO Location successfully retrieved
+2017-11-22 07:13:50.3975 INFO  Getting item name, quantity and additionals from 50
+2017-11-22 07:13:50.4322 INFO Success
+2017-11-22 07:13:50.4322 INFO Retrieving order location
+2017-11-22 07:13:50.4322 INFO Location successfully retrieved
+2017-11-22 07:13:50.4509 INFO  Getting item name, quantity and additionals from 49
+2017-11-22 07:13:50.4509 INFO Success
+2017-11-22 07:13:50.4665 INFO Retrieving order location
+2017-11-22 07:13:50.4665 INFO Location successfully retrieved
+2017-11-22 07:13:50.4821 INFO  Getting item name, quantity and additionals from 48
+2017-11-22 07:13:50.4821 INFO Success
+2017-11-22 07:13:50.4977 INFO Retrieving order location
+2017-11-22 07:13:50.4977 INFO Location successfully retrieved
+2017-11-22 07:13:50.5134 INFO  Getting item name, quantity and additionals from 47
+2017-11-22 07:13:50.5134 INFO Success
+2017-11-22 07:13:50.5320 INFO Retrieving order location
+2017-11-22 07:13:50.5320 INFO Location successfully retrieved
+2017-11-22 07:13:50.5320 INFO  Getting item name, quantity and additionals from 46
+2017-11-22 07:13:50.5511 INFO Success
+2017-11-22 07:13:50.5511 INFO Retrieving order location
+2017-11-22 07:13:50.5668 INFO Location successfully retrieved
+2017-11-22 07:13:50.5668 INFO  Getting item name, quantity and additionals from 45
+2017-11-22 07:13:50.5824 INFO Success
+2017-11-22 07:13:50.5824 INFO Retrieving order location
+2017-11-22 07:13:50.5980 INFO Location successfully retrieved
+2017-11-22 07:13:50.6136 INFO  Getting item name, quantity and additionals from 44
+2017-11-22 07:13:50.6343 INFO Success
+2017-11-22 07:13:50.6343 INFO Retrieving order location
+2017-11-22 07:13:50.6343 INFO Location successfully retrieved
+2017-11-22 07:13:50.6514 INFO  Getting item name, quantity and additionals from 43
+2017-11-22 07:13:50.6670 INFO Success
+2017-11-22 07:13:50.6670 INFO Retrieving order location
+2017-11-22 07:13:50.6827 INFO Location successfully retrieved
+2017-11-22 07:13:50.6827 INFO  Getting item name, quantity and additionals from 42
+2017-11-22 07:13:50.6983 INFO Success
+2017-11-22 07:13:50.6983 INFO Retrieving order location
+2017-11-22 07:13:50.7139 INFO Location successfully retrieved
+2017-11-22 07:13:50.7139 INFO  Getting item name, quantity and additionals from 41
+2017-11-22 07:13:50.7311 INFO Success
+2017-11-22 07:13:50.7311 INFO Retrieving order location
+2017-11-22 07:13:50.7311 INFO Location successfully retrieved
+2017-11-22 07:13:50.7517 INFO  Getting item name, quantity and additionals from 40
+2017-11-22 07:13:50.7517 INFO Success
+2017-11-22 07:13:50.7673 INFO Retrieving order location
+2017-11-22 07:13:50.7673 INFO Location successfully retrieved
+2017-11-22 07:13:50.7829 INFO  Getting item name, quantity and additionals from 39
+2017-11-22 07:13:50.7829 INFO Success
+2017-11-22 07:13:50.7829 INFO Retrieving order location
+2017-11-22 07:13:50.7986 INFO Location successfully retrieved
+2017-11-22 07:13:50.8142 INFO  Getting item name, quantity and additionals from 38
+2017-11-22 07:13:50.8142 INFO Success
+2017-11-22 07:13:50.8363 INFO Retrieving order location
+2017-11-22 07:13:50.8363 INFO Location successfully retrieved
+2017-11-22 07:13:50.8520 INFO  Getting item name, quantity and additionals from 37
+2017-11-22 07:13:50.8520 INFO Success
+2017-11-22 07:13:50.8676 INFO Retrieving order location
+2017-11-22 07:13:50.8676 INFO Location successfully retrieved
+2017-11-22 07:13:50.8832 INFO  Getting item name, quantity and additionals from 36
+2017-11-22 07:13:50.8832 INFO Success
+2017-11-22 07:13:50.8989 INFO Retrieving order location
+2017-11-22 07:13:50.8989 INFO Location successfully retrieved
+2017-11-22 07:13:50.8989 INFO  Getting item name, quantity and additionals from 35
+2017-11-22 07:13:50.9145 INFO Success
+2017-11-22 07:13:50.9145 INFO Retrieving order location
+2017-11-22 07:13:50.9366 INFO Location successfully retrieved
+2017-11-22 07:13:50.9366 INFO  Getting item name, quantity and additionals from 33
+2017-11-22 07:13:50.9522 INFO Success
+2017-11-22 07:13:50.9522 INFO Retrieving order location
+2017-11-22 07:13:50.9679 INFO Location successfully retrieved
+2017-11-22 07:13:50.9679 INFO  Getting item name, quantity and additionals from 28
+2017-11-22 07:13:50.9835 INFO Success
+2017-11-22 07:13:50.9835 INFO Retrieving order location
+2017-11-22 07:13:50.9991 INFO Location successfully retrieved
+2017-11-22 07:13:50.9991 INFO  Getting item name, quantity and additionals from 27
+2017-11-22 07:13:51.0148 INFO Success
+2017-11-22 07:13:51.0148 INFO Retrieving order location
+2017-11-22 07:13:51.0369 INFO Location successfully retrieved
+2017-11-22 07:13:51.0369 INFO  Getting item name, quantity and additionals from 26
+2017-11-22 07:13:51.0525 INFO Success
+2017-11-22 07:13:51.0525 INFO Retrieving order location
+2017-11-22 07:13:51.0682 INFO Location successfully retrieved
+2017-11-22 07:13:51.0682 INFO  Getting item name, quantity and additionals from 25
+2017-11-22 07:13:51.0838 INFO Success
+2017-11-22 07:13:51.0994 INFO Retrieving order location
+2017-11-22 07:13:51.0994 INFO Location successfully retrieved
+2017-11-22 07:13:51.0994 INFO  Getting item name, quantity and additionals from 24
+2017-11-22 07:13:51.1150 INFO Success
+2017-11-22 07:13:51.1150 INFO Retrieving order location
+2017-11-22 07:13:51.1372 INFO Location successfully retrieved
+2017-11-22 07:13:51.1372 INFO  Getting item name, quantity and additionals from 23
+2017-11-22 07:13:51.1528 INFO Success
+2017-11-22 07:13:51.1528 INFO Retrieving order location
+2017-11-22 07:13:51.1684 INFO Location successfully retrieved
+2017-11-22 07:13:51.1684 INFO  Getting item name, quantity and additionals from 22
+2017-11-22 07:13:51.1841 INFO Success
+2017-11-22 07:13:51.1841 INFO Retrieving order location
+2017-11-22 07:13:51.1997 INFO Location successfully retrieved
+2017-11-22 07:13:51.1997 INFO  Getting item name, quantity and additionals from 21
+2017-11-22 07:13:51.2153 INFO Success
+2017-11-22 07:13:51.2374 INFO Retrieving order location
+2017-11-22 07:13:51.2531 INFO Location successfully retrieved
+2017-11-22 07:13:51.2687 INFO  Getting item name, quantity and additionals from 19
+2017-11-22 07:13:51.2687 INFO Success
+2017-11-22 07:13:51.2843 INFO Retrieving order location
+2017-11-22 07:13:51.2999 INFO Location successfully retrieved
+2017-11-22 07:13:51.4849 INFO  Getting item name, quantity and additionals from 18
+2017-11-22 07:13:51.5005 INFO Success
+2017-11-22 07:13:51.5005 INFO Retrieving order location
+2017-11-22 07:13:51.5161 INFO Location successfully retrieved
+2017-11-22 07:13:51.5161 INFO  Getting item name, quantity and additionals from 17
+2017-11-22 07:13:51.5373 INFO Success
+2017-11-22 07:13:51.5383 INFO Retrieving order location
+2017-11-22 07:13:51.5383 INFO Location successfully retrieved
+2017-11-22 07:41:22.3723 INFO User: Tajay successfully logged in
+2017-11-22 07:52:05.2636 INFO User: Tajay successfully logged in
+2017-11-22 07:55:38.4145 INFO User: Tajay successfully logged in
+2017-11-22 07:56:56.5441 INFO User: Tajay successfully logged in
+2017-11-22 08:06:13.4935 INFO User: Tajay successfully logged in
+2017-11-22 08:14:44.5879 INFO User: Tajay successfully logged in
+2017-11-22 08:21:09.4993 INFO User: Tajay successfully logged in
+2017-11-22 08:30:21.6229 INFO User: Tajay successfully logged in
+2017-11-22 08:35:08.4921 INFO User: Tajay successfully logged in
+2017-11-22 08:45:07.8716 INFO User: Tajay successfully logged in
+2017-11-22 08:47:05.4977 INFO User: Tajay successfully logged in
+2017-11-22 08:47:32.2921 INFO  Getting item name, quantity and additionals from 57
+2017-11-22 08:47:32.3372 INFO Success
+2017-11-22 08:47:32.3372 INFO Retrieving order location
+2017-11-22 08:47:32.3602 INFO Location successfully retrieved
+2017-11-22 08:47:32.3687 INFO  Getting item name, quantity and additionals from 56
+2017-11-22 08:47:32.3687 INFO Success
+2017-11-22 08:47:32.3882 INFO Retrieving order location
+2017-11-22 08:47:32.4032 INFO Location successfully retrieved
+2017-11-22 08:47:32.4132 INFO  Getting item name, quantity and additionals from 55
+2017-11-22 08:47:32.4132 INFO Success
+2017-11-22 08:47:32.4132 INFO Retrieving order location
+2017-11-22 08:47:32.4352 INFO Location successfully retrieved
+2017-11-22 08:47:32.4352 INFO  Getting item name, quantity and additionals from 54
+2017-11-22 08:47:32.4502 INFO Success
+2017-11-22 08:47:32.4502 INFO Retrieving order location
+2017-11-22 08:47:32.4652 INFO Location successfully retrieved
+2017-11-22 08:47:32.4652 INFO  Getting item name, quantity and additionals from 53
+2017-11-22 08:47:32.4813 INFO Success
+2017-11-22 08:47:32.4813 INFO Retrieving order location
+2017-11-22 08:47:32.4983 INFO Location successfully retrieved
+2017-11-22 08:47:32.4983 INFO  Getting item name, quantity and additionals from 52
+2017-11-22 08:47:32.5133 INFO Success
+2017-11-22 08:47:32.5133 INFO Retrieving order location
+2017-11-22 08:47:32.5273 INFO Location successfully retrieved
+2017-11-22 08:47:32.5273 INFO  Getting item name, quantity and additionals from 51
+2017-11-22 08:47:32.5443 INFO Success
+2017-11-22 08:47:32.5443 INFO Retrieving order location
+2017-11-22 08:47:32.5643 INFO Location successfully retrieved
+2017-11-22 08:47:32.5738 INFO  Getting item name, quantity and additionals from 50
+2017-11-22 08:47:32.5738 INFO Success
+2017-11-22 08:47:32.5883 INFO Retrieving order location
+2017-11-22 08:47:32.5883 INFO Location successfully retrieved
+2017-11-22 08:47:32.6053 INFO  Getting item name, quantity and additionals from 49
+2017-11-22 08:47:32.6053 INFO Success
+2017-11-22 08:47:32.6203 INFO Retrieving order location
+2017-11-22 08:47:32.6203 INFO Location successfully retrieved
+2017-11-22 08:47:32.6353 INFO  Getting item name, quantity and additionals from 48
+2017-11-22 08:47:32.6353 INFO Success
+2017-11-22 08:47:32.6504 INFO Retrieving order location
+2017-11-22 08:47:32.6504 INFO Location successfully retrieved
+2017-11-22 08:47:32.6684 INFO  Getting item name, quantity and additionals from 47
+2017-11-22 08:47:32.6684 INFO Success
+2017-11-22 08:47:32.6834 INFO Retrieving order location
+2017-11-22 08:47:32.6834 INFO Location successfully retrieved
+2017-11-22 08:47:32.6984 INFO  Getting item name, quantity and additionals from 46
+2017-11-22 08:47:32.6984 INFO Success
+2017-11-22 08:47:32.7134 INFO Retrieving order location
+2017-11-22 08:47:32.7134 INFO Location successfully retrieved
+2017-11-22 08:47:32.7284 INFO  Getting item name, quantity and additionals from 45
+2017-11-22 08:47:32.7284 INFO Success
+2017-11-22 08:47:32.7424 INFO Retrieving order location
+2017-11-22 08:47:32.7424 INFO Location successfully retrieved
+2017-11-22 08:47:32.7594 INFO  Getting item name, quantity and additionals from 44
+2017-11-22 08:47:32.7594 INFO Success
+2017-11-22 08:47:32.7789 INFO Retrieving order location
+2017-11-22 08:47:32.7925 INFO Location successfully retrieved
+2017-11-22 08:47:32.7925 INFO  Getting item name, quantity and additionals from 43
+2017-11-22 08:47:32.8105 INFO Success
+2017-11-22 08:47:32.8105 INFO Retrieving order location
+2017-11-22 08:47:32.8255 INFO Location successfully retrieved
+2017-11-22 08:47:32.8255 INFO  Getting item name, quantity and additionals from 42
+2017-11-22 08:47:32.8405 INFO Success
+2017-11-22 08:47:32.8405 INFO Retrieving order location
+2017-11-22 08:47:32.8545 INFO Location successfully retrieved
+2017-11-22 08:47:32.8545 INFO  Getting item name, quantity and additionals from 41
+2017-11-22 08:47:32.8725 INFO Success
+2017-11-22 08:47:32.8725 INFO Retrieving order location
+2017-11-22 08:47:32.8885 INFO Location successfully retrieved
+2017-11-22 08:47:32.8885 INFO  Getting item name, quantity and additionals from 40
+2017-11-22 08:47:32.9045 INFO Success
+2017-11-22 08:47:32.9045 INFO Retrieving order location
+2017-11-22 08:47:32.9195 INFO Location successfully retrieved
+2017-11-22 08:47:32.9195 INFO  Getting item name, quantity and additionals from 39
+2017-11-22 08:47:32.9345 INFO Success
+2017-11-22 08:47:32.9345 INFO Retrieving order location
+2017-11-22 08:47:32.9495 INFO Location successfully retrieved
+2017-11-22 08:47:32.9495 INFO  Getting item name, quantity and additionals from 38
+2017-11-22 08:47:32.9655 INFO Success
+2017-11-22 08:47:32.9655 INFO Retrieving order location
+2017-11-22 08:47:32.9806 INFO Location successfully retrieved
+2017-11-22 08:47:32.9916 INFO  Getting item name, quantity and additionals from 37
+2017-11-22 08:47:32.9916 INFO Success
+2017-11-22 08:47:33.0176 INFO Retrieving order location
+2017-11-22 08:47:33.0256 INFO Location successfully retrieved
+2017-11-22 08:47:33.0256 INFO  Getting item name, quantity and additionals from 36
+2017-11-22 08:47:33.0406 INFO Success
+2017-11-22 08:47:33.0406 INFO Retrieving order location
+2017-11-22 08:47:33.0546 INFO Location successfully retrieved
+2017-11-22 08:47:33.0546 INFO  Getting item name, quantity and additionals from 35
+2017-11-22 08:47:33.0696 INFO Success
+2017-11-22 08:47:33.0696 INFO Retrieving order location
+2017-11-22 08:47:33.0696 INFO Location successfully retrieved
+2017-11-22 08:47:33.0926 INFO  Getting item name, quantity and additionals from 33
+2017-11-22 08:47:33.0926 INFO Success
+2017-11-22 08:47:33.1076 INFO Retrieving order location
+2017-11-22 08:47:33.1076 INFO Location successfully retrieved
+2017-11-22 08:47:33.1216 INFO  Getting item name, quantity and additionals from 28
+2017-11-22 08:47:33.1216 INFO Success
+2017-11-22 08:47:33.1366 INFO Retrieving order location
+2017-11-22 08:47:33.1366 INFO Location successfully retrieved
+2017-11-22 08:47:33.1516 INFO  Getting item name, quantity and additionals from 27
+2017-11-22 08:47:33.1516 INFO Success
+2017-11-22 08:47:33.1656 INFO Retrieving order location
+2017-11-22 08:47:33.1656 INFO Location successfully retrieved
+2017-11-22 08:47:33.1806 INFO  Getting item name, quantity and additionals from 26
+2017-11-22 08:47:33.1806 INFO Success
+2017-11-22 08:47:33.1956 INFO Retrieving order location
+2017-11-22 08:47:33.1956 INFO Location successfully retrieved
+2017-11-22 08:47:33.2126 INFO  Getting item name, quantity and additionals from 24
+2017-11-22 08:47:33.2126 INFO Success
+2017-11-22 08:47:33.2326 INFO Retrieving order location
+2017-11-22 08:47:33.2326 INFO Location successfully retrieved
+2017-11-22 08:47:33.2476 INFO  Getting item name, quantity and additionals from 23
+2017-11-22 08:47:33.2476 INFO Success
+2017-11-22 08:47:33.2627 INFO Retrieving order location
+2017-11-22 08:47:33.2627 INFO Location successfully retrieved
+2017-11-22 08:47:33.2772 INFO  Getting item name, quantity and additionals from 22
+2017-11-22 08:47:33.2772 INFO Success
+2017-11-22 08:47:33.2927 INFO Retrieving order location
+2017-11-22 08:47:33.2927 INFO Location successfully retrieved
+2017-11-22 08:47:33.3117 INFO  Getting item name, quantity and additionals from 21
+2017-11-22 08:47:33.3197 INFO Success
+2017-11-22 08:47:33.3197 INFO Retrieving order location
+2017-11-22 08:47:33.3397 INFO Location successfully retrieved
+2017-11-22 08:47:33.3397 INFO  Getting item name, quantity and additionals from 19
+2017-11-22 08:47:33.3557 INFO Success
+2017-11-22 08:47:33.3557 INFO Retrieving order location
+2017-11-22 08:47:33.3737 INFO Location successfully retrieved
+2017-11-22 08:47:33.3737 INFO  Getting item name, quantity and additionals from 18
+2017-11-22 08:47:33.3898 INFO Success
+2017-11-22 08:47:33.3978 INFO Retrieving order location
+2017-11-22 08:47:33.3978 INFO Location successfully retrieved
+2017-11-22 08:47:33.5929 INFO  Getting item name, quantity and additionals from 17
+2017-11-22 08:47:33.6029 INFO Success
+2017-11-22 08:47:33.6029 INFO Retrieving order location
+2017-11-22 08:47:33.6179 INFO Location successfully retrieved
+2017-11-22 08:47:33.6179 INFO  Getting item name, quantity and additionals from 25
+2017-11-22 08:47:33.6389 INFO Success
+2017-11-22 08:47:33.6489 INFO Retrieving order location
+2017-11-22 08:47:33.6489 INFO Location successfully retrieved
+2017-11-22 08:47:33.6649 INFO  Getting item name, quantity and additionals from 58
+2017-11-22 08:47:33.6649 INFO Success
+2017-11-22 08:47:33.6804 INFO Retrieving order location
+2017-11-22 08:47:33.6804 INFO Location successfully retrieved
+2017-11-22 09:19:22.6950 INFO User: Tajay successfully logged in
+2017-11-22 09:19:32.6248 INFO Retrieving order location
+2017-11-22 09:19:32.6628 INFO Location successfully retrieved
+2017-11-22 09:19:32.6738 INFO Getting customer names
+2017-11-22 09:19:32.6883 INFO Names successfully receieved
+2017-11-22 09:19:36.2639 INFO attempting to delete order 57.
+2017-11-22 09:19:37.8790 INFO Order successfully deleted
+2017-11-22 09:19:41.9050 INFO Retrieving order location
+2017-11-22 09:19:41.9173 INFO Location successfully retrieved
+2017-11-22 09:19:41.9293 INFO Getting customer names
+2017-11-22 09:19:41.9293 INFO Names successfully receieved
+2017-11-22 09:21:29.1813 ERROR System.InvalidOperationException: Dynamic SQL generation is not supported against multiple base tables.
+   at System.Data.Common.DbDataAdapter.UpdatingRowStatusErrors(RowUpdatingEventArgs rowUpdatedEvent, DataRow dataRow)
+   at System.Data.Common.DbDataAdapter.Update(DataRow[] dataRows, DataTableMapping tableMapping)
+   at System.Data.Common.DbDataAdapter.UpdateFromDataTable(DataTable dataTable, DataTableMapping tableMapping)
+   at System.Data.Common.DbDataAdapter.Update(DataTable dataTable)
+   at adaOrderingSys.ViewOrders.btn_UpdateOrder_Click(Object sender, EventArgs e) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\ViewOrders.cs:line 127
+2017-11-22 09:21:29.8013 ERROR System.InvalidOperationException: Dynamic SQL generation is not supported against multiple base tables.
+   at System.Data.Common.DbDataAdapter.UpdatingRowStatusErrors(RowUpdatingEventArgs rowUpdatedEvent, DataRow dataRow)
+   at System.Data.Common.DbDataAdapter.Update(DataRow[] dataRows, DataTableMapping tableMapping)
+   at System.Data.Common.DbDataAdapter.UpdateFromDataTable(DataTable dataTable, DataTableMapping tableMapping)
+   at System.Data.Common.DbDataAdapter.Update(DataTable dataTable)
+   at adaOrderingSys.ViewOrders.btn_UpdateOrder_Click(Object sender, EventArgs e) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\ViewOrders.cs:line 127
+2017-11-22 09:22:00.2133 ERROR System.InvalidOperationException: Dynamic SQL generation is not supported against multiple base tables.
+   at System.Data.Common.DbDataAdapter.UpdatingRowStatusErrors(RowUpdatingEventArgs rowUpdatedEvent, DataRow dataRow)
+   at System.Data.Common.DbDataAdapter.Update(DataRow[] dataRows, DataTableMapping tableMapping)
+   at System.Data.Common.DbDataAdapter.UpdateFromDataTable(DataTable dataTable, DataTableMapping tableMapping)
+   at System.Data.Common.DbDataAdapter.Update(DataTable dataTable)
+   at adaOrderingSys.ViewOrders.btn_UpdateOrder_Click(Object sender, EventArgs e) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\ViewOrders.cs:line 127
+2017-11-22 09:22:27.2354 INFO User: Tajay successfully logged in
+2017-11-22 18:39:03.8112 WARN Unable to log in user Tajay. Incorrect credentials enterred
+2017-11-22 18:39:08.5380 INFO User: Tajay successfully logged in
+2017-11-22 18:39:31.0512 INFO  Getting item name, quantity and additionals from 58
+2017-11-22 18:39:31.1068 INFO Success
+2017-11-22 18:39:31.1218 INFO Retrieving order location
+2017-11-22 18:39:31.1379 INFO Location successfully retrieved
+2017-11-22 18:39:31.1518 INFO  Getting item name, quantity and additionals from 56
+2017-11-22 18:39:31.1723 INFO Success
+2017-11-22 18:39:31.1843 INFO Retrieving order location
+2017-11-22 18:39:31.1968 INFO Location successfully retrieved
+2017-11-22 18:39:31.1968 INFO  Getting item name, quantity and additionals from 55
+2017-11-22 18:39:31.2169 INFO Success
+2017-11-22 18:39:31.2259 INFO Retrieving order location
+2017-11-22 18:39:31.2259 INFO Location successfully retrieved
+2017-11-22 18:39:31.2449 INFO  Getting item name, quantity and additionals from 54
+2017-11-22 18:39:31.2569 INFO Success
+2017-11-22 18:39:31.2569 INFO Retrieving order location
+2017-11-22 18:39:31.2784 INFO Location successfully retrieved
+2017-11-22 18:39:31.2784 INFO  Getting item name, quantity and additionals from 53
+2017-11-22 18:39:31.2989 INFO Success
+2017-11-22 18:39:31.3079 INFO Retrieving order location
+2017-11-22 18:39:31.3079 INFO Location successfully retrieved
+2017-11-22 18:39:31.3309 INFO  Getting item name, quantity and additionals from 52
+2017-11-22 18:39:31.3419 INFO Success
+2017-11-22 18:39:31.3559 INFO Retrieving order location
+2017-11-22 18:39:31.3559 INFO Location successfully retrieved
+2017-11-22 18:39:31.3754 INFO  Getting item name, quantity and additionals from 51
+2017-11-22 18:39:31.3857 INFO Success
+2017-11-22 18:39:31.3857 INFO Retrieving order location
+2017-11-22 18:39:31.4057 INFO Location successfully retrieved
+2017-11-22 18:39:31.4177 INFO  Getting item name, quantity and additionals from 50
+2017-11-22 18:39:31.4177 INFO Success
+2017-11-22 18:39:31.4357 INFO Retrieving order location
+2017-11-22 18:39:31.4477 INFO Location successfully retrieved
+2017-11-22 18:39:31.4477 INFO  Getting item name, quantity and additionals from 49
+2017-11-22 18:39:31.4698 INFO Success
+2017-11-22 18:39:31.4788 INFO Retrieving order location
+2017-11-22 18:39:31.4788 INFO Location successfully retrieved
+2017-11-22 18:39:31.4968 INFO  Getting item name, quantity and additionals from 48
+2017-11-22 18:39:31.4968 INFO Success
+2017-11-22 18:39:31.5138 INFO Retrieving order location
+2017-11-22 18:39:31.5258 INFO Location successfully retrieved
+2017-11-22 18:39:31.5258 INFO  Getting item name, quantity and additionals from 47
+2017-11-22 18:39:31.5448 INFO Success
+2017-11-22 18:39:31.5538 INFO Retrieving order location
+2017-11-22 18:39:31.5538 INFO Location successfully retrieved
+2017-11-22 18:39:31.5783 INFO  Getting item name, quantity and additionals from 46
+2017-11-22 18:39:31.5868 INFO Success
+2017-11-22 18:39:31.5868 INFO Retrieving order location
+2017-11-22 18:39:31.6059 INFO Location successfully retrieved
+2017-11-22 18:39:31.6059 INFO  Getting item name, quantity and additionals from 45
+2017-11-22 18:39:31.6239 INFO Success
+2017-11-22 18:39:31.6319 INFO Retrieving order location
+2017-11-22 18:39:31.6319 INFO Location successfully retrieved
+2017-11-22 18:39:31.6539 INFO  Getting item name, quantity and additionals from 44
+2017-11-22 18:39:31.6649 INFO Success
+2017-11-22 18:39:31.6649 INFO Retrieving order location
+2017-11-22 18:39:31.6844 INFO Location successfully retrieved
+2017-11-22 18:39:31.6844 INFO  Getting item name, quantity and additionals from 43
+2017-11-22 18:39:31.7049 INFO Success
+2017-11-22 18:39:31.7129 INFO Retrieving order location
+2017-11-22 18:39:31.7129 INFO Location successfully retrieved
+2017-11-22 18:39:31.7309 INFO  Getting item name, quantity and additionals from 42
+2017-11-22 18:39:31.7309 INFO Success
+2017-11-22 18:39:31.7479 INFO Retrieving order location
+2017-11-22 18:39:31.7599 INFO Location successfully retrieved
+2017-11-22 18:39:31.7744 INFO  Getting item name, quantity and additionals from 41
+2017-11-22 18:39:31.7744 INFO Success
+2017-11-22 18:39:31.7949 INFO Retrieving order location
+2017-11-22 18:39:31.8050 INFO Location successfully retrieved
+2017-11-22 18:39:31.8050 INFO  Getting item name, quantity and additionals from 37
+2017-11-22 18:39:31.8280 INFO Success
+2017-11-22 18:39:31.8350 INFO Retrieving order location
+2017-11-22 18:39:31.8350 INFO Location successfully retrieved
+2017-11-22 18:39:31.8550 INFO  Getting item name, quantity and additionals from 36
+2017-11-22 18:39:31.8550 INFO Success
+2017-11-22 18:39:31.8715 INFO Retrieving order location
+2017-11-22 18:39:31.8830 INFO Location successfully retrieved
+2017-11-22 18:39:31.8830 INFO  Getting item name, quantity and additionals from 35
+2017-11-22 18:39:31.8990 INFO Success
+2017-11-22 18:39:31.8990 INFO Retrieving order location
+2017-11-22 18:39:31.9150 INFO Location successfully retrieved
+2017-11-22 18:39:31.9150 INFO  Getting item name, quantity and additionals from 33
+2017-11-22 18:39:31.9310 INFO Success
+2017-11-22 18:39:31.9310 INFO Retrieving order location
+2017-11-22 18:39:31.9470 INFO Location successfully retrieved
+2017-11-22 18:39:31.9470 INFO  Getting item name, quantity and additionals from 28
+2017-11-22 18:39:31.9650 INFO Success
+2017-11-22 18:39:31.9761 INFO Retrieving order location
+2017-11-22 18:39:31.9761 INFO Location successfully retrieved
+2017-11-22 18:39:32.0001 INFO  Getting item name, quantity and additionals from 27
+2017-11-22 18:39:32.0081 INFO Success
+2017-11-22 18:39:32.0081 INFO Retrieving order location
+2017-11-22 18:39:32.0241 INFO Location successfully retrieved
+2017-11-22 18:39:32.0241 INFO  Getting item name, quantity and additionals from 26
+2017-11-22 18:39:32.0411 INFO Success
+2017-11-22 18:39:32.0411 INFO Retrieving order location
+2017-11-22 18:39:32.0571 INFO Location successfully retrieved
+2017-11-22 18:39:32.0571 INFO  Getting item name, quantity and additionals from 25
+2017-11-22 18:39:32.0776 INFO Success
+2017-11-22 18:39:32.0851 INFO Retrieving order location
+2017-11-22 18:39:32.0851 INFO Location successfully retrieved
+2017-11-22 18:39:32.1072 INFO  Getting item name, quantity and additionals from 24
+2017-11-22 18:39:32.1192 INFO Success
+2017-11-22 18:39:32.1192 INFO Retrieving order location
+2017-11-22 18:39:32.1362 INFO Location successfully retrieved
+2017-11-22 18:39:32.1362 INFO  Getting item name, quantity and additionals from 23
+2017-11-22 18:39:32.1532 INFO Success
+2017-11-22 18:39:32.1632 INFO Retrieving order location
+2017-11-22 18:39:32.1632 INFO Location successfully retrieved
+2017-11-22 18:39:32.1847 INFO  Getting item name, quantity and additionals from 22
+2017-11-22 18:39:32.2022 INFO Success
+2017-11-22 18:39:32.2152 INFO Retrieving order location
+2017-11-22 18:39:32.2292 INFO Location successfully retrieved
+2017-11-22 18:39:32.2292 INFO  Getting item name, quantity and additionals from 21
+2017-11-22 18:39:32.2502 INFO Success
+2017-11-22 18:39:32.2612 INFO Retrieving order location
+2017-11-22 18:39:32.2738 INFO Location successfully retrieved
+2017-11-22 18:39:32.2738 INFO  Getting item name, quantity and additionals from 19
+2017-11-22 18:39:32.2968 INFO Success
+2017-11-22 18:39:32.3048 INFO Retrieving order location
+2017-11-22 18:39:32.3048 INFO Location successfully retrieved
+2017-11-22 18:39:32.3218 INFO  Getting item name, quantity and additionals from 18
+2017-11-22 18:39:32.3218 INFO Success
+2017-11-22 18:39:32.3383 INFO Retrieving order location
+2017-11-22 18:39:32.3383 INFO Location successfully retrieved
+2017-11-22 18:39:32.5395 INFO  Getting item name, quantity and additionals from 17
+2017-11-22 18:39:32.5395 INFO Success
+2017-11-22 18:39:32.5565 INFO Retrieving order location
+2017-11-22 18:39:32.5565 INFO Location successfully retrieved
+2017-11-22 18:39:57.2118 INFO  Getting item name, quantity and additionals from 58
+2017-11-22 18:39:57.2268 INFO Success
+2017-11-22 18:39:57.2268 INFO Retrieving order location
+2017-11-22 18:39:57.2459 INFO Location successfully retrieved
+2017-11-22 18:39:57.2459 INFO  Getting item name, quantity and additionals from 56
+2017-11-22 18:39:57.2642 INFO Success
+2017-11-22 18:39:57.2642 INFO Retrieving order location
+2017-11-22 18:39:57.2822 INFO Location successfully retrieved
+2017-11-22 18:39:57.2922 INFO  Getting item name, quantity and additionals from 55
+2017-11-22 18:39:57.2922 INFO Success
+2017-11-22 18:39:57.3112 INFO Retrieving order location
+2017-11-22 18:39:57.3202 INFO Location successfully retrieved
+2017-11-22 18:39:57.3202 INFO  Getting item name, quantity and additionals from 54
+2017-11-22 18:39:57.3382 INFO Success
+2017-11-22 18:39:57.3382 INFO Retrieving order location
+2017-11-22 18:39:57.3569 INFO Location successfully retrieved
+2017-11-22 18:39:57.3569 INFO  Getting item name, quantity and additionals from 53
+2017-11-22 18:39:57.3739 INFO Success
+2017-11-22 18:39:57.3839 INFO Retrieving order location
+2017-11-22 18:39:57.3839 INFO Location successfully retrieved
+2017-11-22 18:39:57.4019 INFO  Getting item name, quantity and additionals from 52
+2017-11-22 18:39:57.4179 INFO Success
+2017-11-22 18:39:57.4179 INFO Retrieving order location
+2017-11-22 18:39:57.4354 INFO Location successfully retrieved
+2017-11-22 18:39:57.4354 INFO  Getting item name, quantity and additionals from 51
+2017-11-22 18:39:57.4534 INFO Success
+2017-11-22 18:39:57.4624 INFO Retrieving order location
+2017-11-22 18:39:57.4905 INFO Location successfully retrieved
+2017-11-22 18:39:57.4995 INFO  Getting item name, quantity and additionals from 50
+2017-11-22 18:39:57.5105 INFO Success
+2017-11-22 18:39:57.5105 INFO Retrieving order location
+2017-11-22 18:39:57.5285 INFO Location successfully retrieved
+2017-11-22 18:39:57.5285 INFO  Getting item name, quantity and additionals from 49
+2017-11-22 18:39:57.5485 INFO Success
+2017-11-22 18:39:57.5585 INFO Retrieving order location
+2017-11-22 18:39:57.5585 INFO Location successfully retrieved
+2017-11-22 18:39:57.5775 INFO  Getting item name, quantity and additionals from 48
+2017-11-22 18:39:57.5865 INFO Success
+2017-11-22 18:39:57.5865 INFO Retrieving order location
+2017-11-22 18:39:57.6115 INFO Location successfully retrieved
+2017-11-22 18:39:57.6235 INFO  Getting item name, quantity and additionals from 47
+2017-11-22 18:39:57.6365 INFO Success
+2017-11-22 18:39:57.6365 INFO Retrieving order location
+2017-11-22 18:39:57.6546 INFO Location successfully retrieved
+2017-11-22 18:39:57.6646 INFO  Getting item name, quantity and additionals from 46
+2017-11-22 18:39:57.6646 INFO Success
+2017-11-22 18:39:57.6866 INFO Retrieving order location
+2017-11-22 18:39:57.6956 INFO Location successfully retrieved
+2017-11-22 18:39:57.6956 INFO  Getting item name, quantity and additionals from 45
+2017-11-22 18:39:57.7236 INFO Success
+2017-11-22 18:39:57.7356 INFO Retrieving order location
+2017-11-22 18:39:57.7461 INFO Location successfully retrieved
+2017-11-22 18:39:57.7461 INFO  Getting item name, quantity and additionals from 44
+2017-11-22 18:39:57.7663 INFO Success
+2017-11-22 18:39:57.7763 INFO Retrieving order location
+2017-11-22 18:39:57.7763 INFO Location successfully retrieved
+2017-11-22 18:39:57.7953 INFO  Getting item name, quantity and additionals from 43
+2017-11-22 18:39:57.8073 INFO Success
+2017-11-22 18:39:57.8203 INFO Retrieving order location
+2017-11-22 18:39:57.8203 INFO Location successfully retrieved
+2017-11-22 18:39:57.8478 INFO  Getting item name, quantity and additionals from 42
+2017-11-22 18:39:57.8608 INFO Success
+2017-11-22 18:39:57.8698 INFO Retrieving order location
+2017-11-22 18:39:57.8698 INFO Location successfully retrieved
+2017-11-22 18:39:57.8929 INFO  Getting item name, quantity and additionals from 41
+2017-11-22 18:39:57.9059 INFO Success
+2017-11-22 18:39:57.9159 INFO Retrieving order location
+2017-11-22 18:39:57.9159 INFO Location successfully retrieved
+2017-11-22 18:39:57.9374 INFO  Getting item name, quantity and additionals from 37
+2017-11-22 18:39:57.9469 INFO Success
+2017-11-22 18:39:57.9469 INFO Retrieving order location
+2017-11-22 18:39:57.9649 INFO Location successfully retrieved
+2017-11-22 18:39:57.9649 INFO  Getting item name, quantity and additionals from 36
+2017-11-22 18:39:57.9839 INFO Success
+2017-11-22 18:39:57.9929 INFO Retrieving order location
+2017-11-22 18:39:57.9929 INFO Location successfully retrieved
+2017-11-22 18:39:58.0129 INFO  Getting item name, quantity and additionals from 33
+2017-11-22 18:39:58.0289 INFO Success
+2017-11-22 18:39:58.0289 INFO Retrieving order location
+2017-11-22 18:39:58.0510 INFO Location successfully retrieved
+2017-11-22 18:39:58.0620 INFO  Getting item name, quantity and additionals from 28
+2017-11-22 18:39:58.0730 INFO Success
+2017-11-22 18:39:58.0880 INFO Retrieving order location
+2017-11-22 18:39:58.0880 INFO Location successfully retrieved
+2017-11-22 18:39:58.1060 INFO  Getting item name, quantity and additionals from 27
+2017-11-22 18:39:58.1170 INFO Success
+2017-11-22 18:39:58.1170 INFO Retrieving order location
+2017-11-22 18:39:58.1400 INFO Location successfully retrieved
+2017-11-22 18:39:58.1510 INFO  Getting item name, quantity and additionals from 26
+2017-11-22 18:39:58.1510 INFO Success
+2017-11-22 18:39:58.1721 INFO Retrieving order location
+2017-11-22 18:39:58.1821 INFO Location successfully retrieved
+2017-11-22 18:39:58.1821 INFO  Getting item name, quantity and additionals from 25
+2017-11-22 18:39:58.2041 INFO Success
+2017-11-22 18:39:58.2151 INFO Retrieving order location
+2017-11-22 18:39:58.2271 INFO Location successfully retrieved
+2017-11-22 18:39:58.2421 INFO  Getting item name, quantity and additionals from 24
+2017-11-22 18:39:58.2621 INFO Success
+2017-11-22 18:39:58.2731 INFO Retrieving order location
+2017-11-22 18:39:58.2731 INFO Location successfully retrieved
+2017-11-22 18:39:58.2971 INFO  Getting item name, quantity and additionals from 23
+2017-11-22 18:39:58.3101 INFO Success
+2017-11-22 18:39:58.3211 INFO Retrieving order location
+2017-11-22 18:39:58.3351 INFO Location successfully retrieved
+2017-11-22 18:39:58.3522 INFO  Getting item name, quantity and additionals from 22
+2017-11-22 18:39:58.3522 INFO Success
+2017-11-22 18:39:58.3812 INFO Retrieving order location
+2017-11-22 18:39:58.3942 INFO Location successfully retrieved
+2017-11-22 18:39:58.4072 INFO  Getting item name, quantity and additionals from 21
+2017-11-22 18:39:58.4222 INFO Success
+2017-11-22 18:39:58.4357 INFO Retrieving order location
+2017-11-22 18:39:58.4522 INFO Location successfully retrieved
+2017-11-22 18:39:58.4672 INFO  Getting item name, quantity and additionals from 19
+2017-11-22 18:39:58.4782 INFO Success
+2017-11-22 18:39:58.4782 INFO Retrieving order location
+2017-11-22 18:39:58.4983 INFO Location successfully retrieved
+2017-11-22 18:39:58.5123 INFO  Getting item name, quantity and additionals from 18
+2017-11-22 18:39:58.5123 INFO Success
+2017-11-22 18:39:58.5333 INFO Retrieving order location
+2017-11-22 18:39:58.5443 INFO Location successfully retrieved
+2017-11-22 18:39:58.5543 INFO  Getting item name, quantity and additionals from 17
+2017-11-22 18:39:58.5543 INFO Success
+2017-11-22 18:39:58.5803 INFO Retrieving order location
+2017-11-22 18:39:58.5923 INFO Location successfully retrieved
+2017-11-22 18:43:49.5568 INFO User: Tajay successfully logged in
+2017-11-22 18:44:03.4663 INFO  Getting item name, quantity and additionals from 58
+2017-11-22 18:44:03.5173 INFO Success
+2017-11-22 18:44:03.5313 INFO Retrieving order location
+2017-11-22 18:44:03.5473 INFO Location successfully retrieved
+2017-11-22 18:44:03.5643 INFO  Getting item name, quantity and additionals from 56
+2017-11-22 18:44:03.5804 INFO Success
+2017-11-22 18:44:03.5964 INFO Retrieving order location
+2017-11-22 18:44:03.6144 INFO Location successfully retrieved
+2017-11-22 18:44:03.6279 INFO  Getting item name, quantity and additionals from 55
+2017-11-22 18:44:03.6405 INFO Success
+2017-11-22 18:44:03.6521 INFO Retrieving order location
+2017-11-22 18:44:03.6641 INFO Location successfully retrieved
+2017-11-22 18:44:03.6641 INFO  Getting item name, quantity and additionals from 54
+2017-11-22 18:44:03.6871 INFO Success
+2017-11-22 18:44:03.7011 INFO Retrieving order location
+2017-11-22 18:44:03.7141 INFO Location successfully retrieved
+2017-11-22 18:44:03.7141 INFO  Getting item name, quantity and additionals from 53
+2017-11-22 18:44:03.7361 INFO Success
+2017-11-22 18:44:03.7466 INFO Retrieving order location
+2017-11-22 18:44:03.7596 INFO Location successfully retrieved
+2017-11-22 18:44:03.7596 INFO  Getting item name, quantity and additionals from 52
+2017-11-22 18:44:03.7817 INFO Success
+2017-11-22 18:44:03.7957 INFO Retrieving order location
+2017-11-22 18:44:03.8087 INFO Location successfully retrieved
+2017-11-22 18:44:03.8247 INFO  Getting item name, quantity and additionals from 51
+2017-11-22 18:44:03.8362 INFO Success
+2017-11-22 18:44:03.8362 INFO Retrieving order location
+2017-11-22 18:44:03.8607 INFO Location successfully retrieved
+2017-11-22 18:44:03.8717 INFO  Getting item name, quantity and additionals from 50
+2017-11-22 18:44:03.8827 INFO Success
+2017-11-22 18:44:03.8827 INFO Retrieving order location
+2017-11-22 18:44:03.9077 INFO Location successfully retrieved
+2017-11-22 18:44:03.9197 INFO  Getting item name, quantity and additionals from 49
+2017-11-22 18:44:03.9312 INFO Success
+2017-11-22 18:44:03.9312 INFO Retrieving order location
+2017-11-22 18:44:03.9524 INFO Location successfully retrieved
+2017-11-22 18:44:03.9654 INFO  Getting item name, quantity and additionals from 48
+2017-11-22 18:44:03.9764 INFO Success
+2017-11-22 18:44:03.9764 INFO Retrieving order location
+2017-11-22 18:44:04.0024 INFO Location successfully retrieved
+2017-11-22 18:44:04.0154 INFO  Getting item name, quantity and additionals from 47
+2017-11-22 18:44:04.0329 INFO Success
+2017-11-22 18:44:04.0469 INFO Retrieving order location
+2017-11-22 18:44:04.0579 INFO Location successfully retrieved
+2017-11-22 18:44:04.0579 INFO  Getting item name, quantity and additionals from 46
+2017-11-22 18:44:04.0839 INFO Success
+2017-11-22 18:44:04.0950 INFO Retrieving order location
+2017-11-22 18:44:04.1060 INFO Location successfully retrieved
+2017-11-22 18:44:04.1210 INFO  Getting item name, quantity and additionals from 45
+2017-11-22 18:44:04.1210 INFO Success
+2017-11-22 18:44:04.1440 INFO Retrieving order location
+2017-11-22 18:44:04.1550 INFO Location successfully retrieved
+2017-11-22 18:44:04.1680 INFO  Getting item name, quantity and additionals from 44
+2017-11-22 18:44:04.1790 INFO Success
+2017-11-22 18:44:04.1790 INFO Retrieving order location
+2017-11-22 18:44:04.2000 INFO Location successfully retrieved
+2017-11-22 18:44:04.2140 INFO  Getting item name, quantity and additionals from 43
+2017-11-22 18:44:04.2140 INFO Success
+2017-11-22 18:44:04.2401 INFO Retrieving order location
+2017-11-22 18:44:04.2511 INFO Location successfully retrieved
+2017-11-22 18:44:04.2621 INFO  Getting item name, quantity and additionals from 42
+2017-11-22 18:44:04.2731 INFO Success
+2017-11-22 18:44:04.2731 INFO Retrieving order location
+2017-11-22 18:44:04.2941 INFO Location successfully retrieved
+2017-11-22 18:44:04.3051 INFO  Getting item name, quantity and additionals from 41
+2017-11-22 18:44:04.3051 INFO Success
+2017-11-22 18:44:04.3286 INFO Retrieving order location
+2017-11-22 18:44:04.3391 INFO Location successfully retrieved
+2017-11-22 18:44:04.3391 INFO  Getting item name, quantity and additionals from 38
+2017-11-22 18:44:04.3611 INFO Success
+2017-11-22 18:44:04.3721 INFO Retrieving order location
+2017-11-22 18:44:04.3831 INFO Location successfully retrieved
+2017-11-22 18:44:04.3831 INFO  Getting item name, quantity and additionals from 35
+2017-11-22 18:44:04.4061 INFO Success
+2017-11-22 18:44:04.4172 INFO Retrieving order location
+2017-11-22 18:44:04.4322 INFO Location successfully retrieved
+2017-11-22 18:44:04.4482 INFO  Getting item name, quantity and additionals from 33
+2017-11-22 18:44:04.4632 INFO Success
+2017-11-22 18:44:04.4632 INFO Retrieving order location
+2017-11-22 18:44:04.4852 INFO Location successfully retrieved
+2017-11-22 18:44:04.5002 INFO  Getting item name, quantity and additionals from 27
+2017-11-22 18:44:04.5132 INFO Success
+2017-11-22 18:44:04.5262 INFO Retrieving order location
+2017-11-22 18:44:04.5413 INFO Location successfully retrieved
+2017-11-22 18:44:04.5413 INFO  Getting item name, quantity and additionals from 26
+2017-11-22 18:44:04.5653 INFO Success
+2017-11-22 18:44:04.5763 INFO Retrieving order location
+2017-11-22 18:44:04.5883 INFO Location successfully retrieved
+2017-11-22 18:44:04.6043 INFO  Getting item name, quantity and additionals from 25
+2017-11-22 18:44:04.6213 INFO Success
+2017-11-22 18:44:04.6213 INFO Retrieving order location
+2017-11-22 18:44:04.6473 INFO Location successfully retrieved
+2017-11-22 18:44:04.6643 INFO  Getting item name, quantity and additionals from 24
+2017-11-22 18:44:04.6863 INFO Success
+2017-11-22 18:44:04.7003 INFO Retrieving order location
+2017-11-22 18:44:04.7133 INFO Location successfully retrieved
+2017-11-22 18:44:04.7314 INFO  Getting item name, quantity and additionals from 23
+2017-11-22 18:44:04.7419 INFO Success
+2017-11-22 18:44:04.7419 INFO Retrieving order location
+2017-11-22 18:44:04.7669 INFO Location successfully retrieved
+2017-11-22 18:44:04.7789 INFO  Getting item name, quantity and additionals from 22
+2017-11-22 18:44:04.7909 INFO Success
+2017-11-22 18:44:04.7909 INFO Retrieving order location
+2017-11-22 18:44:04.8129 INFO Location successfully retrieved
+2017-11-22 18:44:04.8239 INFO  Getting item name, quantity and additionals from 21
+2017-11-22 18:44:04.8239 INFO Success
+2017-11-22 18:44:04.8445 INFO Retrieving order location
+2017-11-22 18:44:04.8565 INFO Location successfully retrieved
+2017-11-22 18:44:04.8695 INFO  Getting item name, quantity and additionals from 19
+2017-11-22 18:44:04.8845 INFO Success
+2017-11-22 18:44:04.8995 INFO Retrieving order location
+2017-11-22 18:44:04.9145 INFO Location successfully retrieved
+2017-11-22 18:44:04.9145 INFO  Getting item name, quantity and additionals from 18
+2017-11-22 18:44:04.9400 INFO Success
+2017-11-22 18:44:04.9525 INFO Retrieving order location
+2017-11-22 18:44:04.9625 INFO Location successfully retrieved
+2017-11-22 18:44:04.9625 INFO  Getting item name, quantity and additionals from 17
+2017-11-22 18:44:04.9876 INFO Success
+2017-11-22 18:44:04.9986 INFO Retrieving order location
+2017-11-22 18:44:05.0116 INFO Location successfully retrieved
+2017-11-22 18:45:33.6571 INFO User: Tajay successfully logged in
+2017-11-22 18:45:43.2558 INFO  Getting item name, quantity and additionals from 58
+2017-11-22 18:45:43.3078 INFO Success
+2017-11-22 18:45:43.3248 INFO Retrieving order location
+2017-11-22 18:45:43.3508 INFO Location successfully retrieved
+2017-11-22 18:45:43.3728 INFO  Getting item name, quantity and additionals from 56
+2017-11-22 18:45:43.3848 INFO Success
+2017-11-22 18:45:43.3848 INFO Retrieving order location
+2017-11-22 18:45:43.4089 INFO Location successfully retrieved
+2017-11-22 18:45:43.4219 INFO  Getting item name, quantity and additionals from 55
+2017-11-22 18:45:43.4369 INFO Success
+2017-11-22 18:45:43.4479 INFO Retrieving order location
+2017-11-22 18:45:43.4479 INFO Location successfully retrieved
+2017-11-22 18:45:43.4729 INFO  Getting item name, quantity and additionals from 54
+2017-11-22 18:45:43.4889 INFO Success
+2017-11-22 18:45:43.4999 INFO Retrieving order location
+2017-11-22 18:45:43.5114 INFO Location successfully retrieved
+2017-11-22 18:45:43.5279 INFO  Getting item name, quantity and additionals from 53
+2017-11-22 18:45:43.5410 INFO Success
+2017-11-22 18:45:43.5590 INFO Retrieving order location
+2017-11-22 18:45:43.5710 INFO Location successfully retrieved
+2017-11-22 18:45:43.5860 INFO  Getting item name, quantity and additionals from 52
+2017-11-22 18:45:43.5860 INFO Success
+2017-11-22 18:45:43.6090 INFO Retrieving order location
+2017-11-22 18:45:43.6200 INFO Location successfully retrieved
+2017-11-22 18:45:43.6200 INFO  Getting item name, quantity and additionals from 51
+2017-11-22 18:45:43.6460 INFO Success
+2017-11-22 18:45:43.6590 INFO Retrieving order location
+2017-11-22 18:45:43.6700 INFO Location successfully retrieved
+2017-11-22 18:45:43.6810 INFO  Getting item name, quantity and additionals from 50
+2017-11-22 18:45:43.6810 INFO Success
+2017-11-22 18:45:43.7066 INFO Retrieving order location
+2017-11-22 18:45:43.7211 INFO Location successfully retrieved
+2017-11-22 18:45:43.7361 INFO  Getting item name, quantity and additionals from 49
+2017-11-22 18:45:43.7561 INFO Success
+2017-11-22 18:45:43.7731 INFO Retrieving order location
+2017-11-22 18:45:43.7901 INFO Location successfully retrieved
+2017-11-22 18:45:43.7901 INFO  Getting item name, quantity and additionals from 48
+2017-11-22 18:45:43.8191 INFO Success
+2017-11-22 18:45:43.8341 INFO Retrieving order location
+2017-11-22 18:45:43.8502 INFO Location successfully retrieved
+2017-11-22 18:45:43.8642 INFO  Getting item name, quantity and additionals from 47
+2017-11-22 18:45:43.8802 INFO Success
+2017-11-22 18:45:43.8922 INFO Retrieving order location
+2017-11-22 18:45:43.9062 INFO Location successfully retrieved
+2017-11-22 18:45:43.9202 INFO  Getting item name, quantity and additionals from 46
+2017-11-22 18:45:43.9362 INFO Success
+2017-11-22 18:45:43.9502 INFO Retrieving order location
+2017-11-22 18:45:43.9692 INFO Location successfully retrieved
+2017-11-22 18:45:43.9862 INFO  Getting item name, quantity and additionals from 45
+2017-11-22 18:45:44.0007 INFO Success
+2017-11-22 18:45:44.0108 INFO Retrieving order location
+2017-11-22 18:45:44.0108 INFO Location successfully retrieved
+2017-11-22 18:45:44.0343 INFO  Getting item name, quantity and additionals from 44
+2017-11-22 18:45:44.0463 INFO Success
+2017-11-22 18:45:44.0563 INFO Retrieving order location
+2017-11-22 18:45:44.0563 INFO Location successfully retrieved
+2017-11-22 18:45:44.0773 INFO  Getting item name, quantity and additionals from 43
+2017-11-22 18:45:44.0893 INFO Success
+2017-11-22 18:45:44.0893 INFO Retrieving order location
+2017-11-22 18:45:44.1108 INFO Location successfully retrieved
+2017-11-22 18:45:44.1213 INFO  Getting item name, quantity and additionals from 42
+2017-11-22 18:45:44.1323 INFO Success
+2017-11-22 18:45:44.1323 INFO Retrieving order location
+2017-11-22 18:45:44.1533 INFO Location successfully retrieved
+2017-11-22 18:45:44.1653 INFO  Getting item name, quantity and additionals from 38
+2017-11-22 18:45:44.1653 INFO Success
+2017-11-22 18:45:44.1934 INFO Retrieving order location
+2017-11-22 18:45:44.2064 INFO Location successfully retrieved
+2017-11-22 18:45:44.2184 INFO  Getting item name, quantity and additionals from 33
+2017-11-22 18:45:44.2284 INFO Success
+2017-11-22 18:45:44.2284 INFO Retrieving order location
+2017-11-22 18:45:44.2504 INFO Location successfully retrieved
+2017-11-22 18:45:44.2614 INFO  Getting item name, quantity and additionals from 28
+2017-11-22 18:45:44.2764 INFO Success
+2017-11-22 18:45:44.2894 INFO Retrieving order location
+2017-11-22 18:45:44.2894 INFO Location successfully retrieved
+2017-11-22 18:45:44.3165 INFO  Getting item name, quantity and additionals from 27
+2017-11-22 18:45:44.3295 INFO Success
+2017-11-22 18:45:44.3445 INFO Retrieving order location
+2017-11-22 18:45:44.3555 INFO Location successfully retrieved
+2017-11-22 18:45:44.3675 INFO  Getting item name, quantity and additionals from 26
+2017-11-22 18:45:44.3825 INFO Success
+2017-11-22 18:45:44.4010 INFO Retrieving order location
+2017-11-22 18:45:44.4165 INFO Location successfully retrieved
+2017-11-22 18:45:44.4315 INFO  Getting item name, quantity and additionals from 25
+2017-11-22 18:45:44.4535 INFO Success
+2017-11-22 18:45:44.4645 INFO Retrieving order location
+2017-11-22 18:45:44.4645 INFO Location successfully retrieved
+2017-11-22 18:45:44.4805 INFO  Getting item name, quantity and additionals from 24
+2017-11-22 18:45:44.4925 INFO Success
+2017-11-22 18:45:44.5076 INFO Retrieving order location
+2017-11-22 18:45:44.5076 INFO Location successfully retrieved
+2017-11-22 18:45:44.5336 INFO  Getting item name, quantity and additionals from 23
+2017-11-22 18:45:44.5446 INFO Success
+2017-11-22 18:45:44.5546 INFO Retrieving order location
+2017-11-22 18:45:44.5546 INFO Location successfully retrieved
+2017-11-22 18:45:44.5766 INFO  Getting item name, quantity and additionals from 22
+2017-11-22 18:45:44.5876 INFO Success
+2017-11-22 18:45:44.6021 INFO Retrieving order location
+2017-11-22 18:45:44.6187 INFO Location successfully retrieved
+2017-11-22 18:45:44.6187 INFO  Getting item name, quantity and additionals from 21
+2017-11-22 18:45:44.6447 INFO Success
+2017-11-22 18:45:44.6557 INFO Retrieving order location
+2017-11-22 18:45:44.6727 INFO Location successfully retrieved
+2017-11-22 18:45:44.6837 INFO  Getting item name, quantity and additionals from 19
+2017-11-22 18:45:44.6987 INFO Success
+2017-11-22 18:45:44.6987 INFO Retrieving order location
+2017-11-22 18:45:44.7197 INFO Location successfully retrieved
+2017-11-22 18:45:44.7317 INFO  Getting item name, quantity and additionals from 18
+2017-11-22 18:45:44.7437 INFO Success
+2017-11-22 18:45:44.7437 INFO Retrieving order location
+2017-11-22 18:45:44.7687 INFO Location successfully retrieved
+2017-11-22 18:45:44.7817 INFO  Getting item name, quantity and additionals from 17
+2017-11-22 18:45:44.7947 INFO Success
+2017-11-22 18:45:44.8053 INFO Retrieving order location
+2017-11-22 18:45:44.8238 INFO Location successfully retrieved
+2017-11-22 18:46:24.4095 INFO User: Tajay successfully logged in
+2017-11-22 18:46:39.0855 INFO  Getting item name, quantity and additionals from 24
+2017-11-22 18:46:39.1361 INFO Success
+2017-11-22 18:46:39.1506 INFO Retrieving order location
+2017-11-22 18:46:39.1676 INFO Location successfully retrieved
+2017-11-22 18:47:14.0803 INFO  Getting item name, quantity and additionals from 58
+2017-11-22 18:47:14.0948 INFO Success
+2017-11-22 18:47:14.1108 INFO Retrieving order location
+2017-11-22 18:47:14.1278 INFO Location successfully retrieved
+2017-11-22 18:47:14.1438 INFO  Getting item name, quantity and additionals from 56
+2017-11-22 18:47:14.1578 INFO Success
+2017-11-22 18:47:14.1729 INFO Retrieving order location
+2017-11-22 18:47:14.1884 INFO Location successfully retrieved
+2017-11-22 18:47:14.2029 INFO  Getting item name, quantity and additionals from 55
+2017-11-22 18:47:14.2179 INFO Success
+2017-11-22 18:47:14.2179 INFO Retrieving order location
+2017-11-22 18:47:14.2319 INFO Location successfully retrieved
+2017-11-22 18:47:14.2489 INFO  Getting item name, quantity and additionals from 54
+2017-11-22 18:47:14.2619 INFO Success
+2017-11-22 18:47:14.2619 INFO Retrieving order location
+2017-11-22 18:47:14.2804 INFO Location successfully retrieved
+2017-11-22 18:47:14.2894 INFO  Getting item name, quantity and additionals from 53
+2017-11-22 18:47:14.2894 INFO Success
+2017-11-22 18:47:14.3100 INFO Retrieving order location
+2017-11-22 18:47:14.3250 INFO Location successfully retrieved
+2017-11-22 18:47:14.3250 INFO  Getting item name, quantity and additionals from 52
+2017-11-22 18:47:14.3440 INFO Success
+2017-11-22 18:47:14.3530 INFO Retrieving order location
+2017-11-22 18:47:14.3530 INFO Location successfully retrieved
+2017-11-22 18:47:14.3780 INFO  Getting item name, quantity and additionals from 51
+2017-11-22 18:47:14.3895 INFO Success
+2017-11-22 18:47:14.3990 INFO Retrieving order location
+2017-11-22 18:47:14.3990 INFO Location successfully retrieved
+2017-11-22 18:47:14.4220 INFO  Getting item name, quantity and additionals from 50
+2017-11-22 18:47:14.4400 INFO Success
+2017-11-22 18:47:14.4500 INFO Retrieving order location
+2017-11-22 18:47:14.4690 INFO Location successfully retrieved
+2017-11-22 18:47:14.4831 INFO  Getting item name, quantity and additionals from 49
+2017-11-22 18:47:14.4961 INFO Success
+2017-11-22 18:47:14.5081 INFO Retrieving order location
+2017-11-22 18:47:14.5081 INFO Location successfully retrieved
+2017-11-22 18:47:14.5301 INFO  Getting item name, quantity and additionals from 48
+2017-11-22 18:47:14.5411 INFO Success
+2017-11-22 18:47:14.5411 INFO Retrieving order location
+2017-11-22 18:47:14.5621 INFO Location successfully retrieved
+2017-11-22 18:47:14.5731 INFO  Getting item name, quantity and additionals from 47
+2017-11-22 18:47:14.5731 INFO Success
+2017-11-22 18:47:14.5951 INFO Retrieving order location
+2017-11-22 18:47:14.6072 INFO Location successfully retrieved
+2017-11-22 18:47:14.6172 INFO  Getting item name, quantity and additionals from 46
+2017-11-22 18:47:14.6172 INFO Success
+2017-11-22 18:47:14.6392 INFO Retrieving order location
+2017-11-22 18:47:14.6532 INFO Location successfully retrieved
+2017-11-22 18:47:14.6662 INFO  Getting item name, quantity and additionals from 45
+2017-11-22 18:47:14.6817 INFO Success
+2017-11-22 18:47:14.6817 INFO Retrieving order location
+2017-11-22 18:47:14.7032 INFO Location successfully retrieved
+2017-11-22 18:47:14.7162 INFO  Getting item name, quantity and additionals from 44
+2017-11-22 18:47:14.7162 INFO Success
+2017-11-22 18:47:14.7342 INFO Retrieving order location
+2017-11-22 18:47:14.7442 INFO Location successfully retrieved
+2017-11-22 18:47:14.7442 INFO  Getting item name, quantity and additionals from 43
+2017-11-22 18:47:14.7642 INFO Success
+2017-11-22 18:47:14.7848 INFO Retrieving order location
+2017-11-22 18:47:14.7928 INFO Location successfully retrieved
+2017-11-22 18:47:14.7928 INFO  Getting item name, quantity and additionals from 42
+2017-11-22 18:47:14.8112 INFO Success
+2017-11-22 18:47:14.8112 INFO Retrieving order location
+2017-11-22 18:47:14.8272 INFO Location successfully retrieved
+2017-11-22 18:47:14.8272 INFO  Getting item name, quantity and additionals from 41
+2017-11-22 18:47:14.8422 INFO Success
+2017-11-22 18:47:14.8422 INFO Retrieving order location
+2017-11-22 18:47:14.8572 INFO Location successfully retrieved
+2017-11-22 18:47:14.8682 INFO  Getting item name, quantity and additionals from 40
+2017-11-22 18:47:14.8823 INFO Success
+2017-11-22 18:47:14.8823 INFO Retrieving order location
+2017-11-22 18:47:14.9003 INFO Location successfully retrieved
+2017-11-22 18:47:14.9003 INFO  Getting item name, quantity and additionals from 39
+2017-11-22 18:47:14.9193 INFO Success
+2017-11-22 18:47:14.9193 INFO Retrieving order location
+2017-11-22 18:47:14.9333 INFO Location successfully retrieved
+2017-11-22 18:47:14.9333 INFO  Getting item name, quantity and additionals from 38
+2017-11-22 18:47:14.9493 INFO Success
+2017-11-22 18:47:14.9493 INFO Retrieving order location
+2017-11-22 18:47:14.9643 INFO Location successfully retrieved
+2017-11-22 18:47:14.9643 INFO  Getting item name, quantity and additionals from 36
+2017-11-22 18:47:14.9813 INFO Success
+2017-11-22 18:47:14.9813 INFO Retrieving order location
+2017-11-22 18:47:14.9969 INFO Location successfully retrieved
+2017-11-22 18:47:14.9969 INFO  Getting item name, quantity and additionals from 35
+2017-11-22 18:47:15.0139 INFO Success
+2017-11-22 18:47:15.0139 INFO Retrieving order location
+2017-11-22 18:47:15.0299 INFO Location successfully retrieved
+2017-11-22 18:47:15.0299 INFO  Getting item name, quantity and additionals from 33
+2017-11-22 18:47:15.0459 INFO Success
+2017-11-22 18:47:15.0539 INFO Retrieving order location
+2017-11-22 18:47:15.0539 INFO Location successfully retrieved
+2017-11-22 18:47:15.0699 INFO  Getting item name, quantity and additionals from 26
+2017-11-22 18:47:15.0699 INFO Success
+2017-11-22 18:47:15.0909 INFO Retrieving order location
+2017-11-22 18:47:15.1055 INFO Location successfully retrieved
+2017-11-22 18:47:15.1055 INFO  Getting item name, quantity and additionals from 25
+2017-11-22 18:47:15.1245 INFO Success
+2017-11-22 18:47:15.1345 INFO Retrieving order location
+2017-11-22 18:47:15.1345 INFO Location successfully retrieved
+2017-11-22 18:47:15.1525 INFO  Getting item name, quantity and additionals from 22
+2017-11-22 18:47:15.1525 INFO Success
+2017-11-22 18:47:15.1675 INFO Retrieving order location
+2017-11-22 18:47:15.1675 INFO Location successfully retrieved
+2017-11-22 18:47:15.1835 INFO  Getting item name, quantity and additionals from 21
+2017-11-22 18:47:15.1835 INFO Success
+2017-11-22 18:47:15.1997 INFO Retrieving order location
+2017-11-22 18:47:15.1997 INFO Location successfully retrieved
+2017-11-22 18:47:15.2157 INFO  Getting item name, quantity and additionals from 19
+2017-11-22 18:47:15.2277 INFO Success
+2017-11-22 18:47:15.2277 INFO Retrieving order location
+2017-11-22 18:47:15.2487 INFO Location successfully retrieved
+2017-11-22 18:47:15.2577 INFO  Getting item name, quantity and additionals from 18
+2017-11-22 18:47:15.2577 INFO Success
+2017-11-22 18:47:15.2757 INFO Retrieving order location
+2017-11-22 18:47:15.2757 INFO Location successfully retrieved
+2017-11-22 18:47:15.2967 INFO  Getting item name, quantity and additionals from 17
+2017-11-22 18:47:15.3087 INFO Success
+2017-11-22 18:47:15.3087 INFO Retrieving order location
+2017-11-22 18:47:15.3267 INFO Location successfully retrieved
+2017-11-22 18:47:15.3387 INFO  Getting item name, quantity and additionals from 24
+2017-11-22 18:47:15.3387 INFO Success
+2017-11-22 18:47:15.3557 INFO Retrieving order location
+2017-11-22 18:47:15.3557 INFO Location successfully retrieved
+2017-11-22 18:48:04.6995 INFO User: Tajay successfully logged in
+2017-11-22 18:48:12.3340 INFO  Getting item name, quantity and additionals from 58
+2017-11-22 18:48:12.3801 INFO Success
+2017-11-22 18:48:12.3941 INFO Retrieving order location
+2017-11-22 18:48:12.4081 INFO Location successfully retrieved
+2017-11-22 18:48:12.4211 INFO  Getting item name, quantity and additionals from 56
+2017-11-22 18:48:12.4351 INFO Success
+2017-11-22 18:48:12.4491 INFO Retrieving order location
+2017-11-22 18:48:12.4682 INFO Location successfully retrieved
+2017-11-22 18:48:12.4817 INFO  Getting item name, quantity and additionals from 55
+2017-11-22 18:48:12.4817 INFO Success
+2017-11-22 18:48:12.5017 INFO Retrieving order location
+2017-11-22 18:48:12.5117 INFO Location successfully retrieved
+2017-11-22 18:48:12.5247 INFO  Getting item name, quantity and additionals from 54
+2017-11-22 18:48:12.5247 INFO Success
+2017-11-22 18:48:12.5487 INFO Retrieving order location
+2017-11-22 18:48:12.5582 INFO Location successfully retrieved
+2017-11-22 18:48:12.5582 INFO  Getting item name, quantity and additionals from 53
+2017-11-22 18:48:12.5773 INFO Success
+2017-11-22 18:48:12.5873 INFO Retrieving order location
+2017-11-22 18:48:12.5873 INFO Location successfully retrieved
+2017-11-22 18:48:12.6073 INFO  Getting item name, quantity and additionals from 52
+2017-11-22 18:48:12.6183 INFO Success
+2017-11-22 18:48:12.6183 INFO Retrieving order location
+2017-11-22 18:48:12.6373 INFO Location successfully retrieved
+2017-11-22 18:48:12.6373 INFO  Getting item name, quantity and additionals from 51
+2017-11-22 18:48:12.6598 INFO Success
+2017-11-22 18:48:12.6715 INFO Retrieving order location
+2017-11-22 18:48:12.6835 INFO Location successfully retrieved
+2017-11-22 18:48:12.6835 INFO  Getting item name, quantity and additionals from 50
+2017-11-22 18:48:12.7075 INFO Success
+2017-11-22 18:48:12.7195 INFO Retrieving order location
+2017-11-22 18:48:12.7305 INFO Location successfully retrieved
+2017-11-22 18:48:12.7305 INFO  Getting item name, quantity and additionals from 49
+2017-11-22 18:48:12.7505 INFO Success
+2017-11-22 18:48:12.7596 INFO Retrieving order location
+2017-11-22 18:48:12.7596 INFO Location successfully retrieved
+2017-11-22 18:48:12.7780 INFO  Getting item name, quantity and additionals from 48
+2017-11-22 18:48:12.7780 INFO Success
+2017-11-22 18:48:12.7960 INFO Retrieving order location
+2017-11-22 18:48:12.8050 INFO Location successfully retrieved
+2017-11-22 18:48:12.8050 INFO  Getting item name, quantity and additionals from 47
+2017-11-22 18:48:12.8240 INFO Success
+2017-11-22 18:48:12.8240 INFO Retrieving order location
+2017-11-22 18:48:12.8420 INFO Location successfully retrieved
+2017-11-22 18:48:12.8510 INFO  Getting item name, quantity and additionals from 46
+2017-11-22 18:48:12.8510 INFO Success
+2017-11-22 18:48:12.8690 INFO Retrieving order location
+2017-11-22 18:48:12.8830 INFO Location successfully retrieved
+2017-11-22 18:48:12.8830 INFO  Getting item name, quantity and additionals from 45
+2017-11-22 18:48:12.9050 INFO Success
+2017-11-22 18:48:12.9180 INFO Retrieving order location
+2017-11-22 18:48:12.9180 INFO Location successfully retrieved
+2017-11-22 18:48:12.9371 INFO  Getting item name, quantity and additionals from 44
+2017-11-22 18:48:12.9461 INFO Success
+2017-11-22 18:48:12.9461 INFO Retrieving order location
+2017-11-22 18:48:12.9641 INFO Location successfully retrieved
+2017-11-22 18:48:12.9641 INFO  Getting item name, quantity and additionals from 43
+2017-11-22 18:48:12.9831 INFO Success
+2017-11-22 18:48:12.9921 INFO Retrieving order location
+2017-11-22 18:48:12.9921 INFO Location successfully retrieved
+2017-11-22 18:48:13.0111 INFO  Getting item name, quantity and additionals from 42
+2017-11-22 18:48:13.0111 INFO Success
+2017-11-22 18:48:13.0291 INFO Retrieving order location
+2017-11-22 18:48:13.0381 INFO Location successfully retrieved
+2017-11-22 18:48:13.0381 INFO  Getting item name, quantity and additionals from 41
+2017-11-22 18:48:13.0581 INFO Success
+2017-11-22 18:48:13.0581 INFO Retrieving order location
+2017-11-22 18:48:13.0772 INFO Location successfully retrieved
+2017-11-22 18:48:13.0852 INFO  Getting item name, quantity and additionals from 40
+2017-11-22 18:48:13.0852 INFO Success
+2017-11-22 18:48:13.1082 INFO Retrieving order location
+2017-11-22 18:48:13.1222 INFO Location successfully retrieved
+2017-11-22 18:48:13.1332 INFO  Getting item name, quantity and additionals from 39
+2017-11-22 18:48:13.1332 INFO Success
+2017-11-22 18:48:13.1502 INFO Retrieving order location
+2017-11-22 18:48:13.1502 INFO Location successfully retrieved
+2017-11-22 18:48:13.1712 INFO  Getting item name, quantity and additionals from 38
+2017-11-22 18:48:13.1822 INFO Success
+2017-11-22 18:48:13.1822 INFO Retrieving order location
+2017-11-22 18:48:13.2002 INFO Location successfully retrieved
+2017-11-22 18:48:13.2002 INFO  Getting item name, quantity and additionals from 37
+2017-11-22 18:48:13.2182 INFO Success
+2017-11-22 18:48:13.2272 INFO Retrieving order location
+2017-11-22 18:48:13.2272 INFO Location successfully retrieved
+2017-11-22 18:48:13.2443 INFO  Getting item name, quantity and additionals from 36
+2017-11-22 18:48:13.2443 INFO Success
+2017-11-22 18:48:13.2663 INFO Retrieving order location
+2017-11-22 18:48:13.2743 INFO Location successfully retrieved
+2017-11-22 18:48:13.2743 INFO  Getting item name, quantity and additionals from 35
+2017-11-22 18:48:13.2943 INFO Success
+2017-11-22 18:48:13.2943 INFO Retrieving order location
+2017-11-22 18:48:13.3143 INFO Location successfully retrieved
+2017-11-22 18:48:13.3233 INFO  Getting item name, quantity and additionals from 33
+2017-11-22 18:48:13.3373 INFO Success
+2017-11-22 18:48:13.3373 INFO Retrieving order location
+2017-11-22 18:48:13.3583 INFO Location successfully retrieved
+2017-11-22 18:48:13.3669 INFO  Getting item name, quantity and additionals from 28
+2017-11-22 18:48:13.3669 INFO Success
+2017-11-22 18:48:13.3904 INFO Retrieving order location
+2017-11-22 18:48:13.4004 INFO Location successfully retrieved
+2017-11-22 18:48:13.4004 INFO  Getting item name, quantity and additionals from 27
+2017-11-22 18:48:13.4194 INFO Success
+2017-11-22 18:48:13.4304 INFO Retrieving order location
+2017-11-22 18:48:13.4304 INFO Location successfully retrieved
+2017-11-22 18:48:13.4504 INFO  Getting item name, quantity and additionals from 26
+2017-11-22 18:48:13.4619 INFO Success
+2017-11-22 18:48:13.4619 INFO Retrieving order location
+2017-11-22 18:48:13.4794 INFO Location successfully retrieved
+2017-11-22 18:48:13.4794 INFO  Getting item name, quantity and additionals from 25
+2017-11-22 18:48:13.4994 INFO Success
+2017-11-22 18:48:13.5134 INFO Retrieving order location
+2017-11-22 18:48:13.5274 INFO Location successfully retrieved
+2017-11-22 18:48:13.5384 INFO  Getting item name, quantity and additionals from 24
+2017-11-22 18:48:13.5580 INFO Success
+2017-11-22 18:48:13.5705 INFO Retrieving order location
+2017-11-22 18:48:13.5705 INFO Location successfully retrieved
+2017-11-22 18:48:13.5945 INFO  Getting item name, quantity and additionals from 23
+2017-11-22 18:48:13.6055 INFO Success
+2017-11-22 18:48:13.6055 INFO Retrieving order location
+2017-11-22 18:48:13.6255 INFO Location successfully retrieved
+2017-11-22 18:48:13.6335 INFO  Getting item name, quantity and additionals from 22
+2017-11-22 18:48:13.6335 INFO Success
+2017-11-22 18:48:13.6550 INFO Retrieving order location
+2017-11-22 18:48:13.6645 INFO Location successfully retrieved
+2017-11-22 18:48:13.6645 INFO  Getting item name, quantity and additionals from 21
+2017-11-22 18:48:13.6866 INFO Success
+2017-11-22 18:48:13.6996 INFO Retrieving order location
+2017-11-22 18:48:13.6996 INFO Location successfully retrieved
+2017-11-22 18:48:13.7176 INFO  Getting item name, quantity and additionals from 19
+2017-11-22 18:48:13.7266 INFO Success
+2017-11-22 18:48:13.7266 INFO Retrieving order location
+2017-11-22 18:48:13.7526 INFO Location successfully retrieved
+2017-11-22 18:48:13.7651 INFO  Getting item name, quantity and additionals from 18
+2017-11-22 18:48:13.7736 INFO Success
+2017-11-22 18:48:13.7736 INFO Retrieving order location
+2017-11-22 18:48:13.7916 INFO Location successfully retrieved
+2017-11-22 18:48:13.7916 INFO  Getting item name, quantity and additionals from 17
+2017-11-22 18:48:13.8116 INFO Success
+2017-11-22 18:48:13.8216 INFO Retrieving order location
+2017-11-22 18:48:13.8216 INFO Location successfully retrieved
+2017-11-22 18:48:53.1410 INFO User: Tajay successfully logged in
+2017-11-22 18:59:04.4792 INFO User: Tajay successfully logged in
+2017-11-22 18:59:13.6033 INFO  Getting item name, quantity and additionals from 58
+2017-11-22 18:59:13.7094 INFO Success
+2017-11-22 18:59:13.7204 INFO Retrieving order location
+2017-11-22 18:59:13.7304 INFO Location successfully retrieved
+2017-11-22 18:59:13.7434 INFO  Getting item name, quantity and additionals from 56
+2017-11-22 18:59:13.7434 INFO Success
+2017-11-22 18:59:13.7629 INFO Retrieving order location
+2017-11-22 18:59:13.7744 INFO Location successfully retrieved
+2017-11-22 18:59:13.7744 INFO  Getting item name, quantity and additionals from 55
+2017-11-22 18:59:13.7954 INFO Success
+2017-11-22 18:59:13.7954 INFO Retrieving order location
+2017-11-22 18:59:13.8134 INFO Location successfully retrieved
+2017-11-22 18:59:13.8264 INFO  Getting item name, quantity and additionals from 54
+2017-11-22 18:59:13.8374 INFO Success
+2017-11-22 18:59:13.8374 INFO Retrieving order location
+2017-11-22 18:59:13.8565 INFO Location successfully retrieved
+2017-11-22 18:59:13.8565 INFO  Getting item name, quantity and additionals from 53
+2017-11-22 18:59:13.8741 INFO Success
+2017-11-22 18:59:13.8841 INFO Retrieving order location
+2017-11-22 18:59:13.8841 INFO Location successfully retrieved
+2017-11-22 18:59:13.9041 INFO  Getting item name, quantity and additionals from 52
+2017-11-22 18:59:13.9181 INFO Success
+2017-11-22 18:59:13.9331 INFO Retrieving order location
+2017-11-22 18:59:13.9331 INFO Location successfully retrieved
+2017-11-22 18:59:13.9526 INFO  Getting item name, quantity and additionals from 51
+2017-11-22 18:59:13.9651 INFO Success
+2017-11-22 18:59:13.9866 INFO Retrieving order location
+2017-11-22 18:59:13.9946 INFO Location successfully retrieved
+2017-11-22 18:59:14.0076 INFO  Getting item name, quantity and additionals from 50
+2017-11-22 18:59:14.0076 INFO Success
+2017-11-22 18:59:14.0266 INFO Retrieving order location
+2017-11-22 18:59:14.0266 INFO Location successfully retrieved
+2017-11-22 18:59:14.0447 INFO  Getting item name, quantity and additionals from 49
+2017-11-22 18:59:14.0542 INFO Success
+2017-11-22 18:59:14.0542 INFO Retrieving order location
+2017-11-22 18:59:14.0727 INFO Location successfully retrieved
+2017-11-22 18:59:14.0727 INFO  Getting item name, quantity and additionals from 48
+2017-11-22 18:59:14.0927 INFO Success
+2017-11-22 18:59:14.1017 INFO Retrieving order location
+2017-11-22 18:59:14.1017 INFO Location successfully retrieved
+2017-11-22 18:59:14.1247 INFO  Getting item name, quantity and additionals from 47
+2017-11-22 18:59:14.1387 INFO Success
+2017-11-22 18:59:14.1487 INFO Retrieving order location
+2017-11-22 18:59:14.1487 INFO Location successfully retrieved
+2017-11-22 18:59:14.1688 INFO  Getting item name, quantity and additionals from 46
+2017-11-22 18:59:14.1688 INFO Success
+2017-11-22 18:59:14.1868 INFO Retrieving order location
+2017-11-22 18:59:14.1978 INFO Location successfully retrieved
+2017-11-22 18:59:14.1978 INFO  Getting item name, quantity and additionals from 45
+2017-11-22 18:59:14.2178 INFO Success
+2017-11-22 18:59:14.2268 INFO Retrieving order location
+2017-11-22 18:59:14.2268 INFO Location successfully retrieved
+2017-11-22 18:59:14.2478 INFO  Getting item name, quantity and additionals from 44
+2017-11-22 18:59:14.2573 INFO Success
+2017-11-22 18:59:14.2573 INFO Retrieving order location
+2017-11-22 18:59:14.2768 INFO Location successfully retrieved
+2017-11-22 18:59:14.2768 INFO  Getting item name, quantity and additionals from 43
+2017-11-22 18:59:14.2978 INFO Success
+2017-11-22 18:59:14.3068 INFO Retrieving order location
+2017-11-22 18:59:14.3068 INFO Location successfully retrieved
+2017-11-22 18:59:14.3238 INFO  Getting item name, quantity and additionals from 42
+2017-11-22 18:59:14.3359 INFO Success
+2017-11-22 18:59:14.3359 INFO Retrieving order location
+2017-11-22 18:59:14.3604 INFO Location successfully retrieved
+2017-11-22 18:59:14.3699 INFO  Getting item name, quantity and additionals from 41
+2017-11-22 18:59:14.3699 INFO Success
+2017-11-22 18:59:14.3869 INFO Retrieving order location
+2017-11-22 18:59:14.3869 INFO Location successfully retrieved
+2017-11-22 18:59:14.4039 INFO  Getting item name, quantity and additionals from 40
+2017-11-22 18:59:14.4039 INFO Success
+2017-11-22 18:59:14.4229 INFO Retrieving order location
+2017-11-22 18:59:14.4309 INFO Location successfully retrieved
+2017-11-22 18:59:14.4309 INFO  Getting item name, quantity and additionals from 39
+2017-11-22 18:59:14.4479 INFO Success
+2017-11-22 18:59:14.4479 INFO Retrieving order location
+2017-11-22 18:59:14.4670 INFO Location successfully retrieved
+2017-11-22 18:59:14.4760 INFO  Getting item name, quantity and additionals from 38
+2017-11-22 18:59:14.4760 INFO Success
+2017-11-22 18:59:14.4950 INFO Retrieving order location
+2017-11-22 18:59:14.4950 INFO Location successfully retrieved
+2017-11-22 18:59:14.5130 INFO  Getting item name, quantity and additionals from 37
+2017-11-22 18:59:14.5130 INFO Success
+2017-11-22 18:59:14.5310 INFO Retrieving order location
+2017-11-22 18:59:14.5400 INFO Location successfully retrieved
+2017-11-22 18:59:14.5400 INFO  Getting item name, quantity and additionals from 36
+2017-11-22 18:59:14.5660 INFO Success
+2017-11-22 18:59:14.5780 INFO Retrieving order location
+2017-11-22 18:59:14.5860 INFO Location successfully retrieved
+2017-11-22 18:59:14.5860 INFO  Getting item name, quantity and additionals from 35
+2017-11-22 18:59:14.6040 INFO Success
+2017-11-22 18:59:14.6040 INFO Retrieving order location
+2017-11-22 18:59:14.6240 INFO Location successfully retrieved
+2017-11-22 18:59:14.6330 INFO  Getting item name, quantity and additionals from 33
+2017-11-22 18:59:14.6330 INFO Success
+2017-11-22 18:59:14.6561 INFO Retrieving order location
+2017-11-22 18:59:14.6651 INFO Location successfully retrieved
+2017-11-22 18:59:14.6651 INFO  Getting item name, quantity and additionals from 28
+2017-11-22 18:59:14.6851 INFO Success
+2017-11-22 18:59:14.6851 INFO Retrieving order location
+2017-11-22 18:59:14.7031 INFO Location successfully retrieved
+2017-11-22 18:59:14.7121 INFO  Getting item name, quantity and additionals from 27
+2017-11-22 18:59:14.7121 INFO Success
+2017-11-22 18:59:14.7341 INFO Retrieving order location
+2017-11-22 18:59:14.7461 INFO Location successfully retrieved
+2017-11-22 18:59:14.7461 INFO  Getting item name, quantity and additionals from 26
+2017-11-22 18:59:14.7672 INFO Success
+2017-11-22 18:59:14.7812 INFO Retrieving order location
+2017-11-22 18:59:14.7942 INFO Location successfully retrieved
+2017-11-22 18:59:14.7942 INFO  Getting item name, quantity and additionals from 25
+2017-11-22 18:59:14.8142 INFO Success
+2017-11-22 18:59:14.8252 INFO Retrieving order location
+2017-11-22 18:59:14.8252 INFO Location successfully retrieved
+2017-11-22 18:59:14.8442 INFO  Getting item name, quantity and additionals from 24
+2017-11-22 18:59:14.8537 INFO Success
+2017-11-22 18:59:14.8537 INFO Retrieving order location
+2017-11-22 18:59:14.8712 INFO Location successfully retrieved
+2017-11-22 18:59:14.8712 INFO  Getting item name, quantity and additionals from 23
+2017-11-22 18:59:14.8892 INFO Success
+2017-11-22 18:59:14.8892 INFO Retrieving order location
+2017-11-22 18:59:14.9072 INFO Location successfully retrieved
+2017-11-22 18:59:14.9162 INFO  Getting item name, quantity and additionals from 22
+2017-11-22 18:59:14.9162 INFO Success
+2017-11-22 18:59:14.9343 INFO Retrieving order location
+2017-11-22 18:59:14.9453 INFO Location successfully retrieved
+2017-11-22 18:59:14.9453 INFO  Getting item name, quantity and additionals from 21
+2017-11-22 18:59:14.9653 INFO Success
+2017-11-22 18:59:14.9653 INFO Retrieving order location
+2017-11-22 18:59:14.9853 INFO Location successfully retrieved
+2017-11-22 18:59:14.9943 INFO  Getting item name, quantity and additionals from 19
+2017-11-22 18:59:15.0073 INFO Success
+2017-11-22 18:59:15.0073 INFO Retrieving order location
+2017-11-22 18:59:15.0283 INFO Location successfully retrieved
+2017-11-22 18:59:15.0283 INFO  Getting item name, quantity and additionals from 18
+2017-11-22 18:59:15.0463 INFO Success
+2017-11-22 18:59:15.0553 INFO Retrieving order location
+2017-11-22 18:59:15.0553 INFO Location successfully retrieved
+2017-11-22 18:59:15.2695 INFO  Getting item name, quantity and additionals from 17
+2017-11-22 18:59:15.2815 INFO Success
+2017-11-22 18:59:15.2895 INFO Retrieving order location
+2017-11-22 18:59:15.2895 INFO Location successfully retrieved
+2017-11-22 19:00:34.8683 INFO  Getting item name, quantity and additionals from 55
+2017-11-22 19:00:34.8863 INFO Success
+2017-11-22 19:00:34.8983 INFO Retrieving order location
+2017-11-22 19:00:34.9133 INFO Location successfully retrieved
+2017-11-22 19:00:34.9133 INFO  Getting item name, quantity and additionals from 54
+2017-11-22 19:00:34.9383 INFO Success
+2017-11-22 19:00:34.9499 INFO Retrieving order location
+2017-11-22 19:00:34.9694 INFO Location successfully retrieved
+2017-11-22 19:00:34.9794 INFO  Getting item name, quantity and additionals from 53
+2017-11-22 19:00:34.9924 INFO Success
+2017-11-22 19:00:34.9924 INFO Retrieving order location
+2017-11-22 19:00:35.0184 INFO Location successfully retrieved
+2017-11-22 19:00:35.0294 INFO  Getting item name, quantity and additionals from 52
+2017-11-22 19:00:35.0424 INFO Success
+2017-11-22 19:00:35.0424 INFO Retrieving order location
+2017-11-22 19:00:35.0594 INFO Location successfully retrieved
+2017-11-22 19:00:35.0594 INFO  Getting item name, quantity and additionals from 51
+2017-11-22 19:00:35.0774 INFO Success
+2017-11-22 19:00:35.0864 INFO Retrieving order location
+2017-11-22 19:00:35.0864 INFO Location successfully retrieved
+2017-11-22 19:00:35.1035 INFO  Getting item name, quantity and additionals from 56
+2017-11-22 19:00:35.1035 INFO Success
+2017-11-22 19:00:35.1215 INFO Retrieving order location
+2017-11-22 19:00:35.1325 INFO Location successfully retrieved
+2017-11-22 19:00:35.1325 INFO  Getting item name, quantity and additionals from 50
+2017-11-22 19:00:35.1520 INFO Success
+2017-11-22 19:00:35.1520 INFO Retrieving order location
+2017-11-22 19:00:35.1705 INFO Location successfully retrieved
+2017-11-22 19:00:35.1815 INFO  Getting item name, quantity and additionals from 49
+2017-11-22 19:00:35.1815 INFO Success
+2017-11-22 19:00:35.1995 INFO Retrieving order location
+2017-11-22 19:00:35.1995 INFO Location successfully retrieved
+2017-11-22 19:00:35.2195 INFO  Getting item name, quantity and additionals from 48
+2017-11-22 19:00:35.2325 INFO Success
+2017-11-22 19:00:35.2440 INFO Retrieving order location
+2017-11-22 19:00:35.2440 INFO Location successfully retrieved
+2017-11-22 19:00:35.2624 INFO  Getting item name, quantity and additionals from 47
+2017-11-22 19:00:35.2624 INFO Success
+2017-11-22 19:00:35.2814 INFO Retrieving order location
+2017-11-22 19:00:35.2904 INFO Location successfully retrieved
+2017-11-22 19:00:35.2904 INFO  Getting item name, quantity and additionals from 46
+2017-11-22 19:00:35.3094 INFO Success
+2017-11-22 19:00:35.3094 INFO Retrieving order location
+2017-11-22 19:00:35.3264 INFO Location successfully retrieved
+2017-11-22 19:00:35.3354 INFO  Getting item name, quantity and additionals from 44
+2017-11-22 19:00:35.3354 INFO Success
+2017-11-22 19:00:35.3565 INFO Retrieving order location
+2017-11-22 19:00:35.3565 INFO Location successfully retrieved
+2017-11-22 19:00:35.3755 INFO  Getting item name, quantity and additionals from 58
+2017-11-22 19:00:35.3845 INFO Success
+2017-11-22 19:00:35.3845 INFO Retrieving order location
+2017-11-22 19:00:35.4035 INFO Location successfully retrieved
+2017-11-22 19:00:35.4035 INFO  Getting item name, quantity and additionals from 45
+2017-11-22 19:00:35.4215 INFO Success
+2017-11-22 19:00:35.4305 INFO Retrieving order location
+2017-11-22 19:00:35.4305 INFO Location successfully retrieved
+2017-11-22 19:00:35.4525 INFO  Getting item name, quantity and additionals from 43
+2017-11-22 19:00:35.4665 INFO Success
+2017-11-22 19:00:35.4785 INFO Retrieving order location
+2017-11-22 19:00:35.4785 INFO Location successfully retrieved
+2017-11-22 19:00:35.5006 INFO  Getting item name, quantity and additionals from 42
+2017-11-22 19:00:35.5096 INFO Success
+2017-11-22 19:00:35.5096 INFO Retrieving order location
+2017-11-22 19:00:35.5286 INFO Location successfully retrieved
+2017-11-22 19:00:35.5286 INFO  Getting item name, quantity and additionals from 41
+2017-11-22 19:00:35.5476 INFO Success
+2017-11-22 19:00:35.5556 INFO Retrieving order location
+2017-11-22 19:00:35.5556 INFO Location successfully retrieved
+2017-11-22 19:00:35.5726 INFO  Getting item name, quantity and additionals from 40
+2017-11-22 19:00:35.5726 INFO Success
+2017-11-22 19:00:35.5896 INFO Retrieving order location
+2017-11-22 19:00:35.5896 INFO Location successfully retrieved
+2017-11-22 19:00:35.6086 INFO  Getting item name, quantity and additionals from 39
+2017-11-22 19:00:35.6176 INFO Success
+2017-11-22 19:00:35.6176 INFO Retrieving order location
+2017-11-22 19:00:35.6346 INFO Location successfully retrieved
+2017-11-22 19:00:35.6346 INFO  Getting item name, quantity and additionals from 38
+2017-11-22 19:00:35.6537 INFO Success
+2017-11-22 19:00:35.6677 INFO Retrieving order location
+2017-11-22 19:00:35.6807 INFO Location successfully retrieved
+2017-11-22 19:00:35.6807 INFO  Getting item name, quantity and additionals from 37
+2017-11-22 19:00:35.7007 INFO Success
+2017-11-22 19:00:35.7127 INFO Retrieving order location
+2017-11-22 19:00:35.7127 INFO Location successfully retrieved
+2017-11-22 19:00:35.7297 INFO  Getting item name, quantity and additionals from 36
+2017-11-22 19:00:35.7297 INFO Success
+2017-11-22 19:00:35.7477 INFO Retrieving order location
+2017-11-22 19:00:35.7477 INFO Location successfully retrieved
+2017-11-22 19:00:35.7647 INFO  Getting item name, quantity and additionals from 35
+2017-11-22 19:00:35.7737 INFO Success
+2017-11-22 19:00:35.7737 INFO Retrieving order location
+2017-11-22 19:00:35.7927 INFO Location successfully retrieved
+2017-11-22 19:00:35.7927 INFO  Getting item name, quantity and additionals from 33
+2017-11-22 19:00:35.8097 INFO Success
+2017-11-22 19:00:35.8097 INFO Retrieving order location
+2017-11-22 19:00:35.8268 INFO Location successfully retrieved
+2017-11-22 19:00:35.8268 INFO  Getting item name, quantity and additionals from 28
+2017-11-22 19:00:35.8438 INFO Success
+2017-11-22 19:00:35.8523 INFO Retrieving order location
+2017-11-22 19:00:35.8523 INFO Location successfully retrieved
+2017-11-22 19:00:35.8768 INFO  Getting item name, quantity and additionals from 27
+2017-11-22 19:00:35.8898 INFO Success
+2017-11-22 19:00:35.8988 INFO Retrieving order location
+2017-11-22 19:00:35.8988 INFO Location successfully retrieved
+2017-11-22 19:00:35.9178 INFO  Getting item name, quantity and additionals from 26
+2017-11-22 19:00:35.9338 INFO Success
+2017-11-22 19:00:35.9453 INFO Retrieving order location
+2017-11-22 19:00:35.9453 INFO Location successfully retrieved
+2017-11-22 19:00:35.9649 INFO  Getting item name, quantity and additionals from 25
+2017-11-22 19:00:35.9649 INFO Success
+2017-11-22 19:00:35.9849 INFO Retrieving order location
+2017-11-22 19:00:35.9939 INFO Location successfully retrieved
+2017-11-22 19:00:35.9939 INFO  Getting item name, quantity and additionals from 24
+2017-11-22 19:00:36.0119 INFO Success
+2017-11-22 19:00:36.0119 INFO Retrieving order location
+2017-11-22 19:00:36.0329 INFO Location successfully retrieved
+2017-11-22 19:00:36.0439 INFO  Getting item name, quantity and additionals from 23
+2017-11-22 19:00:36.0439 INFO Success
+2017-11-22 19:00:36.0619 INFO Retrieving order location
+2017-11-22 19:00:36.0749 INFO Location successfully retrieved
+2017-11-22 19:00:36.0879 INFO  Getting item name, quantity and additionals from 22
+2017-11-22 19:00:36.1049 INFO Success
+2017-11-22 19:00:36.1049 INFO Retrieving order location
+2017-11-22 19:00:36.1269 INFO Location successfully retrieved
+2017-11-22 19:00:36.1359 INFO  Getting item name, quantity and additionals from 21
+2017-11-22 19:00:36.1359 INFO Success
+2017-11-22 19:00:36.1540 INFO Retrieving order location
+2017-11-22 19:00:36.1540 INFO Location successfully retrieved
+2017-11-22 19:00:36.1720 INFO  Getting item name, quantity and additionals from 19
+2017-11-22 19:00:36.1810 INFO Success
+2017-11-22 19:00:36.1810 INFO Retrieving order location
+2017-11-22 19:00:36.1990 INFO Location successfully retrieved
+2017-11-22 19:00:36.1990 INFO  Getting item name, quantity and additionals from 18
+2017-11-22 19:00:36.2170 INFO Success
+2017-11-22 19:00:36.2170 INFO Retrieving order location
+2017-11-22 19:00:36.2330 INFO Location successfully retrieved
+2017-11-22 19:00:36.4235 INFO  Getting item name, quantity and additionals from 17
+2017-11-22 19:00:36.4335 INFO Success
+2017-11-22 19:00:36.4451 INFO Retrieving order location
+2017-11-22 19:00:36.4451 INFO Location successfully retrieved
+2017-11-22 19:01:29.5067 INFO  Getting item name, quantity and additionals from 55
+2017-11-22 19:01:29.5196 INFO Success
+2017-11-22 19:01:29.5296 INFO Retrieving order location
+2017-11-22 19:01:29.5406 INFO Location successfully retrieved
+2017-11-22 19:01:29.5406 INFO  Getting item name, quantity and additionals from 54
+2017-11-22 19:01:29.5596 INFO Success
+2017-11-22 19:01:29.5596 INFO Retrieving order location
+2017-11-22 19:01:29.5786 INFO Location successfully retrieved
+2017-11-22 19:01:29.5876 INFO  Getting item name, quantity and additionals from 53
+2017-11-22 19:01:29.5876 INFO Success
+2017-11-22 19:01:29.6092 INFO Retrieving order location
+2017-11-22 19:01:29.6175 INFO Location successfully retrieved
+2017-11-22 19:01:29.6175 INFO  Getting item name, quantity and additionals from 52
+2017-11-22 19:01:29.6345 INFO Success
+2017-11-22 19:01:29.6345 INFO Retrieving order location
+2017-11-22 19:01:29.6515 INFO Location successfully retrieved
+2017-11-22 19:01:29.6515 INFO  Getting item name, quantity and additionals from 51
+2017-11-22 19:01:29.6685 INFO Success
+2017-11-22 19:01:29.6795 INFO Retrieving order location
+2017-11-22 19:01:29.6795 INFO Location successfully retrieved
+2017-11-22 19:01:29.7010 INFO  Getting item name, quantity and additionals from 56
+2017-11-22 19:01:29.7010 INFO Success
+2017-11-22 19:01:29.7181 INFO Retrieving order location
+2017-11-22 19:01:29.7261 INFO Location successfully retrieved
+2017-11-22 19:01:29.7261 INFO  Getting item name, quantity and additionals from 50
+2017-11-22 19:01:29.7451 INFO Success
+2017-11-22 19:01:29.7451 INFO Retrieving order location
+2017-11-22 19:01:29.7621 INFO Location successfully retrieved
+2017-11-22 19:01:29.7621 INFO  Getting item name, quantity and additionals from 49
+2017-11-22 19:01:29.7791 INFO Success
+2017-11-22 19:01:29.7791 INFO Retrieving order location
+2017-11-22 19:01:29.7952 INFO Location successfully retrieved
+2017-11-22 19:01:29.7952 INFO  Getting item name, quantity and additionals from 48
+2017-11-22 19:01:29.8132 INFO Success
+2017-11-22 19:01:29.8202 INFO Retrieving order location
+2017-11-22 19:01:29.8202 INFO Location successfully retrieved
+2017-11-22 19:01:29.8362 INFO  Getting item name, quantity and additionals from 47
+2017-11-22 19:01:29.8362 INFO Success
+2017-11-22 19:01:29.8522 INFO Retrieving order location
+2017-11-22 19:01:29.8522 INFO Location successfully retrieved
+2017-11-22 19:01:29.8692 INFO  Getting item name, quantity and additionals from 46
+2017-11-22 19:01:29.8692 INFO Success
+2017-11-22 19:01:29.8882 INFO Retrieving order location
+2017-11-22 19:01:29.8882 INFO Location successfully retrieved
+2017-11-22 19:01:29.9073 INFO  Getting item name, quantity and additionals from 44
+2017-11-22 19:01:29.9174 INFO Success
+2017-11-22 19:01:29.9174 INFO Retrieving order location
+2017-11-22 19:01:29.9334 INFO Location successfully retrieved
+2017-11-22 19:01:29.9334 INFO  Getting item name, quantity and additionals from 58
+2017-11-22 19:01:29.9494 INFO Success
+2017-11-22 19:01:29.9494 INFO Retrieving order location
+2017-11-22 19:01:29.9644 INFO Location successfully retrieved
+2017-11-22 19:01:29.9644 INFO  Getting item name, quantity and additionals from 45
+2017-11-22 19:01:29.9814 INFO Success
+2017-11-22 19:01:29.9814 INFO Retrieving order location
+2017-11-22 19:01:29.9980 INFO Location successfully retrieved
+2017-11-22 19:01:29.9980 INFO  Getting item name, quantity and additionals from 43
+2017-11-22 19:01:30.0140 INFO Success
+2017-11-22 19:01:30.0140 INFO Retrieving order location
+2017-11-22 19:01:30.0300 INFO Location successfully retrieved
+2017-11-22 19:01:30.0300 INFO  Getting item name, quantity and additionals from 42
+2017-11-22 19:01:30.0460 INFO Success
+2017-11-22 19:01:30.0540 INFO Retrieving order location
+2017-11-22 19:01:30.0540 INFO Location successfully retrieved
+2017-11-22 19:01:30.0540 INFO  Getting item name, quantity and additionals from 41
+2017-11-22 19:01:30.0790 INFO Success
+2017-11-22 19:01:30.0870 INFO Retrieving order location
+2017-11-22 19:01:30.0870 INFO Location successfully retrieved
+2017-11-22 19:01:30.1060 INFO  Getting item name, quantity and additionals from 40
+2017-11-22 19:01:30.1181 INFO Success
+2017-11-22 19:01:30.1181 INFO Retrieving order location
+2017-11-22 19:01:30.1341 INFO Location successfully retrieved
+2017-11-22 19:01:30.1341 INFO  Getting item name, quantity and additionals from 39
+2017-11-22 19:01:30.1491 INFO Success
+2017-11-22 19:01:30.1491 INFO Retrieving order location
+2017-11-22 19:01:30.1641 INFO Location successfully retrieved
+2017-11-22 19:01:30.1641 INFO  Getting item name, quantity and additionals from 38
+2017-11-22 19:01:30.1791 INFO Success
+2017-11-22 19:01:30.1791 INFO Retrieving order location
+2017-11-22 19:01:30.1791 INFO Location successfully retrieved
+2017-11-22 19:01:30.2011 INFO  Getting item name, quantity and additionals from 37
+2017-11-22 19:01:30.2011 INFO Success
+2017-11-22 19:01:30.2157 INFO Retrieving order location
+2017-11-22 19:01:30.2157 INFO Location successfully retrieved
+2017-11-22 19:01:30.2307 INFO  Getting item name, quantity and additionals from 36
+2017-11-22 19:01:30.2307 INFO Success
+2017-11-22 19:01:30.2467 INFO Retrieving order location
+2017-11-22 19:01:30.2467 INFO Location successfully retrieved
+2017-11-22 19:01:30.2607 INFO  Getting item name, quantity and additionals from 35
+2017-11-22 19:01:30.2607 INFO Success
+2017-11-22 19:01:30.2757 INFO Retrieving order location
+2017-11-22 19:01:30.2757 INFO Location successfully retrieved
+2017-11-22 19:01:30.2897 INFO  Getting item name, quantity and additionals from 33
+2017-11-22 19:01:30.2897 INFO Success
+2017-11-22 19:01:30.3052 INFO Retrieving order location
+2017-11-22 19:01:30.3052 INFO Location successfully retrieved
+2017-11-22 19:01:30.3229 INFO  Getting item name, quantity and additionals from 28
+2017-11-22 19:01:30.3229 INFO Success
+2017-11-22 19:01:30.3459 INFO Retrieving order location
+2017-11-22 19:01:30.3579 INFO Location successfully retrieved
+2017-11-22 19:01:30.3689 INFO  Getting item name, quantity and additionals from 27
+2017-11-22 19:01:30.3689 INFO Success
+2017-11-22 19:01:30.3879 INFO Retrieving order location
+2017-11-22 19:01:30.3879 INFO Location successfully retrieved
+2017-11-22 19:01:30.4049 INFO  Getting item name, quantity and additionals from 26
+2017-11-22 19:01:30.4134 INFO Success
+2017-11-22 19:01:30.4134 INFO Retrieving order location
+2017-11-22 19:01:30.4304 INFO Location successfully retrieved
+2017-11-22 19:01:30.4304 INFO  Getting item name, quantity and additionals from 25
+2017-11-22 19:01:30.4495 INFO Success
+2017-11-22 19:01:30.4495 INFO Retrieving order location
+2017-11-22 19:01:30.4685 INFO Location successfully retrieved
+2017-11-22 19:01:30.4765 INFO  Getting item name, quantity and additionals from 24
+2017-11-22 19:01:30.4765 INFO Success
+2017-11-22 19:01:30.4965 INFO Retrieving order location
+2017-11-22 19:01:30.4965 INFO Location successfully retrieved
+2017-11-22 19:01:30.5135 INFO  Getting item name, quantity and additionals from 23
+2017-11-22 19:01:30.5255 INFO Success
+2017-11-22 19:01:30.5255 INFO Retrieving order location
+2017-11-22 19:01:30.5475 INFO Location successfully retrieved
+2017-11-22 19:01:30.5635 INFO  Getting item name, quantity and additionals from 22
+2017-11-22 19:01:30.5805 INFO Success
+2017-11-22 19:01:30.5915 INFO Retrieving order location
+2017-11-22 19:01:30.6020 INFO Location successfully retrieved
+2017-11-22 19:01:30.6020 INFO  Getting item name, quantity and additionals from 21
+2017-11-22 19:01:30.6216 INFO Success
+2017-11-22 19:01:30.6326 INFO Retrieving order location
+2017-11-22 19:01:30.6326 INFO Location successfully retrieved
+2017-11-22 19:01:30.6526 INFO  Getting item name, quantity and additionals from 19
+2017-11-22 19:01:30.6646 INFO Success
+2017-11-22 19:01:30.6646 INFO Retrieving order location
+2017-11-22 19:01:30.6846 INFO Location successfully retrieved
+2017-11-22 19:01:30.6956 INFO  Getting item name, quantity and additionals from 18
+2017-11-22 19:01:30.6956 INFO Success
+2017-11-22 19:01:30.7143 INFO Retrieving order location
+2017-11-22 19:01:30.7143 INFO Location successfully retrieved
+2017-11-22 19:01:30.9134 INFO  Getting item name, quantity and additionals from 17
+2017-11-22 19:01:30.9134 INFO Success
+2017-11-22 19:01:30.9344 INFO Retrieving order location
+2017-11-22 19:01:30.9344 INFO Location successfully retrieved
+2017-11-22 19:02:04.6806 INFO  Getting item name, quantity and additionals from 55
+2017-11-22 19:02:04.6957 INFO Success
+2017-11-22 19:02:04.6957 INFO Retrieving order location
+2017-11-22 19:02:04.7207 INFO Location successfully retrieved
+2017-11-22 19:02:04.7317 INFO  Getting item name, quantity and additionals from 54
+2017-11-22 19:02:04.7457 INFO Success
+2017-11-22 19:02:04.7457 INFO Retrieving order location
+2017-11-22 19:02:04.7687 INFO Location successfully retrieved
+2017-11-22 19:02:04.7837 INFO  Getting item name, quantity and additionals from 53
+2017-11-22 19:02:04.7957 INFO Success
+2017-11-22 19:02:04.8057 INFO Retrieving order location
+2017-11-22 19:02:04.8057 INFO Location successfully retrieved
+2017-11-22 19:02:04.8267 INFO  Getting item name, quantity and additionals from 52
+2017-11-22 19:02:04.8407 INFO Success
+2017-11-22 19:02:04.8407 INFO Retrieving order location
+2017-11-22 19:02:04.8638 INFO Location successfully retrieved
+2017-11-22 19:02:04.8638 INFO  Getting item name, quantity and additionals from 51
+2017-11-22 19:02:04.8768 INFO Success
+2017-11-22 19:02:04.8898 INFO Retrieving order location
+2017-11-22 19:02:04.8998 INFO Location successfully retrieved
+2017-11-22 19:02:04.8998 INFO  Getting item name, quantity and additionals from 56
+2017-11-22 19:02:04.9188 INFO Success
+2017-11-22 19:02:04.9188 INFO Retrieving order location
+2017-11-22 19:02:04.9368 INFO Location successfully retrieved
+2017-11-22 19:02:04.9468 INFO  Getting item name, quantity and additionals from 50
+2017-11-22 19:02:04.9468 INFO Success
+2017-11-22 19:02:04.9678 INFO Retrieving order location
+2017-11-22 19:02:04.9788 INFO Location successfully retrieved
+2017-11-22 19:02:04.9788 INFO  Getting item name, quantity and additionals from 49
+2017-11-22 19:02:04.9999 INFO Success
+2017-11-22 19:02:05.0089 INFO Retrieving order location
+2017-11-22 19:02:05.0089 INFO Location successfully retrieved
+2017-11-22 19:02:05.0269 INFO  Getting item name, quantity and additionals from 48
+2017-11-22 19:02:05.0389 INFO Success
+2017-11-22 19:02:05.0389 INFO Retrieving order location
+2017-11-22 19:02:05.0614 INFO Location successfully retrieved
+2017-11-22 19:02:05.0709 INFO  Getting item name, quantity and additionals from 47
+2017-11-22 19:02:05.0859 INFO Success
+2017-11-22 19:02:05.0859 INFO Retrieving order location
+2017-11-22 19:02:05.1069 INFO Location successfully retrieved
+2017-11-22 19:02:05.1069 INFO  Getting item name, quantity and additionals from 46
+2017-11-22 19:02:05.1259 INFO Success
+2017-11-22 19:02:05.1349 INFO Retrieving order location
+2017-11-22 19:02:05.1349 INFO Location successfully retrieved
+2017-11-22 19:02:05.1544 INFO  Getting item name, quantity and additionals from 44
+2017-11-22 19:02:05.1635 INFO Success
+2017-11-22 19:02:05.1635 INFO Retrieving order location
+2017-11-22 19:02:05.1850 INFO Location successfully retrieved
+2017-11-22 19:02:05.1950 INFO  Getting item name, quantity and additionals from 58
+2017-11-22 19:02:05.1950 INFO Success
+2017-11-22 19:02:05.2140 INFO Retrieving order location
+2017-11-22 19:02:05.2140 INFO Location successfully retrieved
+2017-11-22 19:02:05.2320 INFO  Getting item name, quantity and additionals from 45
+2017-11-22 19:02:05.2440 INFO Success
+2017-11-22 19:02:05.2440 INFO Retrieving order location
+2017-11-22 19:02:05.2640 INFO Location successfully retrieved
+2017-11-22 19:02:05.2740 INFO  Getting item name, quantity and additionals from 43
+2017-11-22 19:02:05.2740 INFO Success
+2017-11-22 19:02:05.2980 INFO Retrieving order location
+2017-11-22 19:02:05.3071 INFO Location successfully retrieved
+2017-11-22 19:02:05.3071 INFO  Getting item name, quantity and additionals from 42
+2017-11-22 19:02:05.3271 INFO Success
+2017-11-22 19:02:05.3361 INFO Retrieving order location
+2017-11-22 19:02:05.3361 INFO Location successfully retrieved
+2017-11-22 19:02:05.3531 INFO  Getting item name, quantity and additionals from 41
+2017-11-22 19:02:05.3531 INFO Success
+2017-11-22 19:02:05.3711 INFO Retrieving order location
+2017-11-22 19:02:05.3711 INFO Location successfully retrieved
+2017-11-22 19:02:05.3911 INFO  Getting item name, quantity and additionals from 39
+2017-11-22 19:02:05.4031 INFO Success
+2017-11-22 19:02:05.4131 INFO Retrieving order location
+2017-11-22 19:02:05.4131 INFO Location successfully retrieved
+2017-11-22 19:02:05.4321 INFO  Getting item name, quantity and additionals from 38
+2017-11-22 19:02:05.4321 INFO Success
+2017-11-22 19:02:05.4491 INFO Retrieving order location
+2017-11-22 19:02:05.4491 INFO Location successfully retrieved
+2017-11-22 19:02:05.4702 INFO  Getting item name, quantity and additionals from 40
+2017-11-22 19:02:05.4812 INFO Success
+2017-11-22 19:02:05.4812 INFO Retrieving order location
+2017-11-22 19:02:05.5022 INFO Location successfully retrieved
+2017-11-22 19:02:05.5142 INFO  Getting item name, quantity and additionals from 37
+2017-11-22 19:02:05.5242 INFO Success
+2017-11-22 19:02:05.5242 INFO Retrieving order location
+2017-11-22 19:02:05.5402 INFO Location successfully retrieved
+2017-11-22 19:02:05.5402 INFO  Getting item name, quantity and additionals from 36
+2017-11-22 19:02:05.5587 INFO Success
+2017-11-22 19:02:05.5587 INFO Retrieving order location
+2017-11-22 19:02:05.5752 INFO Location successfully retrieved
+2017-11-22 19:02:05.5752 INFO  Getting item name, quantity and additionals from 35
+2017-11-22 19:02:05.5933 INFO Success
+2017-11-22 19:02:05.6013 INFO Retrieving order location
+2017-11-22 19:02:05.6013 INFO Location successfully retrieved
+2017-11-22 19:02:05.6183 INFO  Getting item name, quantity and additionals from 33
+2017-11-22 19:02:05.6183 INFO Success
+2017-11-22 19:02:05.6353 INFO Retrieving order location
+2017-11-22 19:02:05.6353 INFO Location successfully retrieved
+2017-11-22 19:02:05.6533 INFO  Getting item name, quantity and additionals from 28
+2017-11-22 19:02:05.6533 INFO Success
+2017-11-22 19:02:05.6703 INFO Retrieving order location
+2017-11-22 19:02:05.6793 INFO Location successfully retrieved
+2017-11-22 19:02:05.6793 INFO  Getting item name, quantity and additionals from 27
+2017-11-22 19:02:05.7063 INFO Success
+2017-11-22 19:02:05.7153 INFO Retrieving order location
+2017-11-22 19:02:05.7153 INFO Location successfully retrieved
+2017-11-22 19:02:05.7353 INFO  Getting item name, quantity and additionals from 26
+2017-11-22 19:02:05.7463 INFO Success
+2017-11-22 19:02:05.7463 INFO Retrieving order location
+2017-11-22 19:02:05.7644 INFO Location successfully retrieved
+2017-11-22 19:02:05.7644 INFO  Getting item name, quantity and additionals from 25
+2017-11-22 19:02:05.7824 INFO Success
+2017-11-22 19:02:05.7914 INFO Retrieving order location
+2017-11-22 19:02:05.7914 INFO Location successfully retrieved
+2017-11-22 19:02:05.8134 INFO  Getting item name, quantity and additionals from 24
+2017-11-22 19:02:05.8244 INFO Success
+2017-11-22 19:02:05.8354 INFO Retrieving order location
+2017-11-22 19:02:05.8354 INFO Location successfully retrieved
+2017-11-22 19:02:05.8554 INFO  Getting item name, quantity and additionals from 23
+2017-11-22 19:02:05.8554 INFO Success
+2017-11-22 19:02:05.8724 INFO Retrieving order location
+2017-11-22 19:02:05.8844 INFO Location successfully retrieved
+2017-11-22 19:02:05.8974 INFO  Getting item name, quantity and additionals from 22
+2017-11-22 19:02:05.9145 INFO Success
+2017-11-22 19:02:05.9145 INFO Retrieving order location
+2017-11-22 19:02:05.9365 INFO Location successfully retrieved
+2017-11-22 19:02:05.9455 INFO  Getting item name, quantity and additionals from 21
+2017-11-22 19:02:05.9455 INFO Success
+2017-11-22 19:02:05.9630 INFO Retrieving order location
+2017-11-22 19:02:05.9630 INFO Location successfully retrieved
+2017-11-22 19:02:05.9833 INFO  Getting item name, quantity and additionals from 19
+2017-11-22 19:02:05.9923 INFO Success
+2017-11-22 19:02:05.9923 INFO Retrieving order location
+2017-11-22 19:02:06.0103 INFO Location successfully retrieved
+2017-11-22 19:02:06.0103 INFO  Getting item name, quantity and additionals from 18
+2017-11-22 19:02:06.0303 INFO Success
+2017-11-22 19:02:06.0393 INFO Retrieving order location
+2017-11-22 19:02:06.0393 INFO Location successfully retrieved
+2017-11-22 19:02:06.2415 INFO  Getting item name, quantity and additionals from 17
+2017-11-22 19:02:06.2415 INFO Success
+2017-11-22 19:02:06.2645 INFO Retrieving order location
+2017-11-22 19:02:06.2735 INFO Location successfully retrieved
+2017-11-22 19:03:07.2686 INFO  Getting item name, quantity and additionals from 55
+2017-11-22 19:03:07.2876 INFO Success
+2017-11-22 19:03:07.3016 INFO Retrieving order location
+2017-11-22 19:03:07.3236 INFO Location successfully retrieved
+2017-11-22 19:03:07.3366 INFO  Getting item name, quantity and additionals from 54
+2017-11-22 19:03:07.3517 INFO Success
+2017-11-22 19:03:07.3517 INFO Retrieving order location
+2017-11-22 19:03:07.3757 INFO Location successfully retrieved
+2017-11-22 19:03:07.3877 INFO  Getting item name, quantity and additionals from 53
+2017-11-22 19:03:07.4047 INFO Success
+2017-11-22 19:03:07.4137 INFO Retrieving order location
+2017-11-22 19:03:07.4137 INFO Location successfully retrieved
+2017-11-22 19:03:07.4352 INFO  Getting item name, quantity and additionals from 52
+2017-11-22 19:03:07.4493 INFO Success
+2017-11-22 19:03:07.4623 INFO Retrieving order location
+2017-11-22 19:03:07.4763 INFO Location successfully retrieved
+2017-11-22 19:03:07.4763 INFO  Getting item name, quantity and additionals from 51
+2017-11-22 19:03:07.4974 INFO Success
+2017-11-22 19:03:07.5074 INFO Retrieving order location
+2017-11-22 19:03:07.5074 INFO Location successfully retrieved
+2017-11-22 19:03:07.5354 INFO  Getting item name, quantity and additionals from 56
+2017-11-22 19:03:07.5479 INFO Success
+2017-11-22 19:03:07.5609 INFO Retrieving order location
+2017-11-22 19:03:07.5699 INFO Location successfully retrieved
+2017-11-22 19:03:07.5699 INFO  Getting item name, quantity and additionals from 50
+2017-11-22 19:03:07.5919 INFO Success
+2017-11-22 19:03:07.6029 INFO Retrieving order location
+2017-11-22 19:03:07.6029 INFO Location successfully retrieved
+2017-11-22 19:03:07.6239 INFO  Getting item name, quantity and additionals from 49
+2017-11-22 19:03:07.6349 INFO Success
+2017-11-22 19:03:07.6349 INFO Retrieving order location
+2017-11-22 19:03:07.6520 INFO Location successfully retrieved
+2017-11-22 19:03:07.6520 INFO  Getting item name, quantity and additionals from 48
+2017-11-22 19:03:07.6700 INFO Success
+2017-11-22 19:03:07.6700 INFO Retrieving order location
+2017-11-22 19:03:07.6880 INFO Location successfully retrieved
+2017-11-22 19:03:07.6970 INFO  Getting item name, quantity and additionals from 47
+2017-11-22 19:03:07.6970 INFO Success
+2017-11-22 19:03:07.7150 INFO Retrieving order location
+2017-11-22 19:03:07.7270 INFO Location successfully retrieved
+2017-11-22 19:03:07.7270 INFO  Getting item name, quantity and additionals from 46
+2017-11-22 19:03:07.7550 INFO Success
+2017-11-22 19:03:07.7670 INFO Retrieving order location
+2017-11-22 19:03:07.7760 INFO Location successfully retrieved
+2017-11-22 19:03:07.7760 INFO  Getting item name, quantity and additionals from 44
+2017-11-22 19:03:07.7940 INFO Success
+2017-11-22 19:03:07.7940 INFO Retrieving order location
+2017-11-22 19:03:07.8140 INFO Location successfully retrieved
+2017-11-22 19:03:07.8231 INFO  Getting item name, quantity and additionals from 58
+2017-11-22 19:03:07.8231 INFO Success
+2017-11-22 19:03:07.8436 INFO Retrieving order location
+2017-11-22 19:03:07.8536 INFO Location successfully retrieved
+2017-11-22 19:03:07.8536 INFO  Getting item name, quantity and additionals from 45
+2017-11-22 19:03:07.8716 INFO Success
+2017-11-22 19:03:07.8716 INFO Retrieving order location
+2017-11-22 19:03:07.8897 INFO Location successfully retrieved
+2017-11-22 19:03:07.8987 INFO  Getting item name, quantity and additionals from 43
+2017-11-22 19:03:07.8987 INFO Success
+2017-11-22 19:03:07.9167 INFO Retrieving order location
+2017-11-22 19:03:07.9167 INFO Location successfully retrieved
+2017-11-22 19:03:07.9382 INFO  Getting item name, quantity and additionals from 41
+2017-11-22 19:03:07.9512 INFO Success
+2017-11-22 19:03:07.9632 INFO Retrieving order location
+2017-11-22 19:03:07.9782 INFO Location successfully retrieved
+2017-11-22 19:03:07.9782 INFO  Getting item name, quantity and additionals from 39
+2017-11-22 19:03:08.0032 INFO Success
+2017-11-22 19:03:08.0182 INFO Retrieving order location
+2017-11-22 19:03:08.0292 INFO Location successfully retrieved
+2017-11-22 19:03:08.0402 INFO  Getting item name, quantity and additionals from 42
+2017-11-22 19:03:08.0402 INFO Success
+2017-11-22 19:03:08.0582 INFO Retrieving order location
+2017-11-22 19:03:08.0582 INFO Location successfully retrieved
+2017-11-22 19:03:08.0753 INFO  Getting item name, quantity and additionals from 38
+2017-11-22 19:03:08.0753 INFO Success
+2017-11-22 19:03:08.0943 INFO Retrieving order location
+2017-11-22 19:03:08.1033 INFO Location successfully retrieved
+2017-11-22 19:03:08.1033 INFO  Getting item name, quantity and additionals from 40
+2017-11-22 19:03:08.1203 INFO Success
+2017-11-22 19:03:08.1203 INFO Retrieving order location
+2017-11-22 19:03:08.1393 INFO Location successfully retrieved
+2017-11-22 19:03:08.1483 INFO  Getting item name, quantity and additionals from 37
+2017-11-22 19:03:08.1483 INFO Success
+2017-11-22 19:03:08.1663 INFO Retrieving order location
+2017-11-22 19:03:08.1663 INFO Location successfully retrieved
+2017-11-22 19:03:08.1893 INFO  Getting item name, quantity and additionals from 36
+2017-11-22 19:03:08.2003 INFO Success
+2017-11-22 19:03:08.2003 INFO Retrieving order location
+2017-11-22 19:03:08.2173 INFO Location successfully retrieved
+2017-11-22 19:03:08.2299 INFO  Getting item name, quantity and additionals from 35
+2017-11-22 19:03:08.2299 INFO Success
+2017-11-22 19:03:08.2474 INFO Retrieving order location
+2017-11-22 19:03:08.2474 INFO Location successfully retrieved
+2017-11-22 19:03:08.2644 INFO  Getting item name, quantity and additionals from 33
+2017-11-22 19:03:08.2734 INFO Success
+2017-11-22 19:03:08.2734 INFO Retrieving order location
+2017-11-22 19:03:08.2934 INFO Location successfully retrieved
+2017-11-22 19:03:08.2934 INFO  Getting item name, quantity and additionals from 28
+2017-11-22 19:03:08.3114 INFO Success
+2017-11-22 19:03:08.3224 INFO Retrieving order location
+2017-11-22 19:03:08.3359 INFO Location successfully retrieved
+2017-11-22 19:03:08.3359 INFO  Getting item name, quantity and additionals from 27
+2017-11-22 19:03:08.3564 INFO Success
+2017-11-22 19:03:08.3664 INFO Retrieving order location
+2017-11-22 19:03:08.3664 INFO Location successfully retrieved
+2017-11-22 19:03:08.3895 INFO  Getting item name, quantity and additionals from 26
+2017-11-22 19:03:08.4035 INFO Success
+2017-11-22 19:03:08.4155 INFO Retrieving order location
+2017-11-22 19:03:08.4155 INFO Location successfully retrieved
+2017-11-22 19:03:08.4370 INFO  Getting item name, quantity and additionals from 25
+2017-11-22 19:03:08.4495 INFO Success
+2017-11-22 19:03:08.4495 INFO Retrieving order location
+2017-11-22 19:03:08.4695 INFO Location successfully retrieved
+2017-11-22 19:03:08.4805 INFO  Getting item name, quantity and additionals from 24
+2017-11-22 19:03:08.4935 INFO Success
+2017-11-22 19:03:08.4935 INFO Retrieving order location
+2017-11-22 19:03:08.5135 INFO Location successfully retrieved
+2017-11-22 19:03:08.5235 INFO  Getting item name, quantity and additionals from 23
+2017-11-22 19:03:08.5235 INFO Success
+2017-11-22 19:03:08.5406 INFO Retrieving order location
+2017-11-22 19:03:08.5406 INFO Location successfully retrieved
+2017-11-22 19:03:08.5606 INFO  Getting item name, quantity and additionals from 22
+2017-11-22 19:03:08.5696 INFO Success
+2017-11-22 19:03:08.5696 INFO Retrieving order location
+2017-11-22 19:03:08.5916 INFO Location successfully retrieved
+2017-11-22 19:03:08.6026 INFO  Getting item name, quantity and additionals from 21
+2017-11-22 19:03:08.6186 INFO Success
+2017-11-22 19:03:08.6186 INFO Retrieving order location
+2017-11-22 19:03:08.6376 INFO Location successfully retrieved
+2017-11-22 19:03:08.6476 INFO  Getting item name, quantity and additionals from 19
+2017-11-22 19:03:08.6476 INFO Success
+2017-11-22 19:03:08.6656 INFO Retrieving order location
+2017-11-22 19:03:08.6656 INFO Location successfully retrieved
+2017-11-22 19:03:08.6856 INFO  Getting item name, quantity and additionals from 18
+2017-11-22 19:03:08.6946 INFO Success
+2017-11-22 19:03:08.6946 INFO Retrieving order location
+2017-11-22 19:03:08.7127 INFO Location successfully retrieved
+2017-11-22 19:03:08.9094 INFO  Getting item name, quantity and additionals from 17
+2017-11-22 19:03:08.9194 INFO Success
+2017-11-22 19:03:08.9289 INFO Retrieving order location
+2017-11-22 19:03:08.9289 INFO Location successfully retrieved
+2017-11-22 19:03:40.8945 INFO  Getting item name, quantity and additionals from 55
+2017-11-22 19:03:40.9065 INFO Success
+2017-11-22 19:03:40.9195 INFO Retrieving order location
+2017-11-22 19:03:40.9385 INFO Location successfully retrieved
+2017-11-22 19:03:40.9495 INFO  Getting item name, quantity and additionals from 54
+2017-11-22 19:03:40.9495 INFO Success
+2017-11-22 19:03:40.9710 INFO Retrieving order location
+2017-11-22 19:03:40.9825 INFO Location successfully retrieved
+2017-11-22 19:03:40.9945 INFO  Getting item name, quantity and additionals from 53
+2017-11-22 19:03:40.9945 INFO Success
+2017-11-22 19:03:41.0186 INFO Retrieving order location
+2017-11-22 19:03:41.0296 INFO Location successfully retrieved
+2017-11-22 19:03:41.0406 INFO  Getting item name, quantity and additionals from 51
+2017-11-22 19:03:41.0406 INFO Success
+2017-11-22 19:03:41.0601 INFO Retrieving order location
+2017-11-22 19:03:41.0746 INFO Location successfully retrieved
+2017-11-22 19:03:41.0896 INFO  Getting item name, quantity and additionals from 56
+2017-11-22 19:03:41.1016 INFO Success
+2017-11-22 19:03:41.1016 INFO Retrieving order location
+2017-11-22 19:03:41.1266 INFO Location successfully retrieved
+2017-11-22 19:03:41.1376 INFO  Getting item name, quantity and additionals from 50
+2017-11-22 19:03:41.1376 INFO Success
+2017-11-22 19:03:41.1566 INFO Retrieving order location
+2017-11-22 19:03:41.1687 INFO Location successfully retrieved
+2017-11-22 19:03:41.1687 INFO  Getting item name, quantity and additionals from 49
+2017-11-22 19:03:41.1877 INFO Success
+2017-11-22 19:03:41.1957 INFO Retrieving order location
+2017-11-22 19:03:41.1957 INFO Location successfully retrieved
+2017-11-22 19:03:41.2147 INFO  Getting item name, quantity and additionals from 48
+2017-11-22 19:03:41.2267 INFO Success
+2017-11-22 19:03:41.2267 INFO Retrieving order location
+2017-11-22 19:03:41.2437 INFO Location successfully retrieved
+2017-11-22 19:03:41.2437 INFO  Getting item name, quantity and additionals from 47
+2017-11-22 19:03:41.2637 INFO Success
+2017-11-22 19:03:41.2637 INFO Retrieving order location
+2017-11-22 19:03:41.2855 INFO Location successfully retrieved
+2017-11-22 19:03:41.2965 INFO  Getting item name, quantity and additionals from 46
+2017-11-22 19:03:41.3115 INFO Success
+2017-11-22 19:03:41.3205 INFO Retrieving order location
+2017-11-22 19:03:41.3205 INFO Location successfully retrieved
+2017-11-22 19:03:41.3385 INFO  Getting item name, quantity and additionals from 44
+2017-11-22 19:03:41.3525 INFO Success
+2017-11-22 19:03:41.3525 INFO Retrieving order location
+2017-11-22 19:03:41.3721 INFO Location successfully retrieved
+2017-11-22 19:03:41.3826 INFO  Getting item name, quantity and additionals from 45
+2017-11-22 19:03:41.3826 INFO Success
+2017-11-22 19:03:41.4006 INFO Retrieving order location
+2017-11-22 19:03:41.4006 INFO Location successfully retrieved
+2017-11-22 19:03:41.4216 INFO  Getting item name, quantity and additionals from 43
+2017-11-22 19:03:41.4306 INFO Success
+2017-11-22 19:03:41.4306 INFO Retrieving order location
+2017-11-22 19:03:41.4486 INFO Location successfully retrieved
+2017-11-22 19:03:41.4486 INFO  Getting item name, quantity and additionals from 41
+2017-11-22 19:03:41.4686 INFO Success
+2017-11-22 19:03:41.4767 INFO Retrieving order location
+2017-11-22 19:03:41.4767 INFO Location successfully retrieved
+2017-11-22 19:03:41.5007 INFO  Getting item name, quantity and additionals from 52
+2017-11-22 19:03:41.5137 INFO Success
+2017-11-22 19:03:41.5247 INFO Retrieving order location
+2017-11-22 19:03:41.5247 INFO Location successfully retrieved
+2017-11-22 19:03:41.5427 INFO  Getting item name, quantity and additionals from 39
+2017-11-22 19:03:41.5427 INFO Success
+2017-11-22 19:03:41.5607 INFO Retrieving order location
+2017-11-22 19:03:41.5607 INFO Location successfully retrieved
+2017-11-22 19:03:41.5777 INFO  Getting item name, quantity and additionals from 42
+2017-11-22 19:03:41.5867 INFO Success
+2017-11-22 19:03:41.5867 INFO Retrieving order location
+2017-11-22 19:03:41.6037 INFO Location successfully retrieved
+2017-11-22 19:03:41.6037 INFO  Getting item name, quantity and additionals from 38
+2017-11-22 19:03:41.6237 INFO Success
+2017-11-22 19:03:41.6237 INFO Retrieving order location
+2017-11-22 19:03:41.6407 INFO Location successfully retrieved
+2017-11-22 19:03:41.6497 INFO  Getting item name, quantity and additionals from 40
+2017-11-22 19:03:41.6497 INFO Success
+2017-11-22 19:03:41.6668 INFO Retrieving order location
+2017-11-22 19:03:41.6668 INFO Location successfully retrieved
+2017-11-22 19:03:41.6838 INFO  Getting item name, quantity and additionals from 37
+2017-11-22 19:03:41.6838 INFO Success
+2017-11-22 19:03:41.7008 INFO Retrieving order location
+2017-11-22 19:03:41.7128 INFO Location successfully retrieved
+2017-11-22 19:03:41.7258 INFO  Getting item name, quantity and additionals from 58
+2017-11-22 19:03:41.7258 INFO Success
+2017-11-22 19:03:41.7458 INFO Retrieving order location
+2017-11-22 19:03:41.7458 INFO Location successfully retrieved
+2017-11-22 19:03:41.7668 INFO  Getting item name, quantity and additionals from 36
+2017-11-22 19:03:41.7758 INFO Success
+2017-11-22 19:03:41.7758 INFO Retrieving order location
+2017-11-22 19:03:41.7928 INFO Location successfully retrieved
+2017-11-22 19:03:41.7928 INFO  Getting item name, quantity and additionals from 33
+2017-11-22 19:03:41.8109 INFO Success
+2017-11-22 19:03:41.8199 INFO Retrieving order location
+2017-11-22 19:03:41.8199 INFO Location successfully retrieved
+2017-11-22 19:03:41.8389 INFO  Getting item name, quantity and additionals from 28
+2017-11-22 19:03:41.8389 INFO Success
+2017-11-22 19:03:41.8571 INFO Retrieving order location
+2017-11-22 19:03:41.8571 INFO Location successfully retrieved
+2017-11-22 19:03:41.8741 INFO  Getting item name, quantity and additionals from 27
+2017-11-22 19:03:41.8831 INFO Success
+2017-11-22 19:03:41.8831 INFO Retrieving order location
+2017-11-22 19:03:41.9021 INFO Location successfully retrieved
+2017-11-22 19:03:41.9131 INFO  Getting item name, quantity and additionals from 35
+2017-11-22 19:03:41.9131 INFO Success
+2017-11-22 19:03:41.9401 INFO Retrieving order location
+2017-11-22 19:03:41.9551 INFO Location successfully retrieved
+2017-11-22 19:03:41.9651 INFO  Getting item name, quantity and additionals from 26
+2017-11-22 19:03:41.9762 INFO Success
+2017-11-22 19:03:41.9762 INFO Retrieving order location
+2017-11-22 19:03:41.9942 INFO Location successfully retrieved
+2017-11-22 19:03:41.9942 INFO  Getting item name, quantity and additionals from 25
+2017-11-22 19:03:42.0142 INFO Success
+2017-11-22 19:03:42.0142 INFO Retrieving order location
+2017-11-22 19:03:42.0332 INFO Location successfully retrieved
+2017-11-22 19:03:42.0462 INFO  Getting item name, quantity and additionals from 24
+2017-11-22 19:03:42.0572 INFO Success
+2017-11-22 19:03:42.0572 INFO Retrieving order location
+2017-11-22 19:03:42.0762 INFO Location successfully retrieved
+2017-11-22 19:03:42.0882 INFO  Getting item name, quantity and additionals from 23
+2017-11-22 19:03:42.0882 INFO Success
+2017-11-22 19:03:42.1092 INFO Retrieving order location
+2017-11-22 19:03:42.1202 INFO Location successfully retrieved
+2017-11-22 19:03:42.1202 INFO  Getting item name, quantity and additionals from 22
+2017-11-22 19:03:42.1402 INFO Success
+2017-11-22 19:03:42.1523 INFO Retrieving order location
+2017-11-22 19:03:42.1653 INFO Location successfully retrieved
+2017-11-22 19:03:42.1653 INFO  Getting item name, quantity and additionals from 21
+2017-11-22 19:03:42.1863 INFO Success
+2017-11-22 19:03:42.1863 INFO Retrieving order location
+2017-11-22 19:03:42.2033 INFO Location successfully retrieved
+2017-11-22 19:03:42.2133 INFO  Getting item name, quantity and additionals from 19
+2017-11-22 19:03:42.2133 INFO Success
+2017-11-22 19:03:42.2313 INFO Retrieving order location
+2017-11-22 19:03:42.2423 INFO Location successfully retrieved
+2017-11-22 19:03:42.2423 INFO  Getting item name, quantity and additionals from 18
+2017-11-22 19:03:42.2608 INFO Success
+2017-11-22 19:03:42.2608 INFO Retrieving order location
+2017-11-22 19:03:42.2784 INFO Location successfully retrieved
+2017-11-22 19:03:42.4774 INFO  Getting item name, quantity and additionals from 17
+2017-11-22 19:03:42.4774 INFO Success
+2017-11-22 19:03:42.4964 INFO Retrieving order location
+2017-11-22 19:03:42.4964 INFO Location successfully retrieved
+2017-11-22 19:05:41.2626 INFO Attempting to create new order.
+2017-11-22 19:05:41.3397 INFO New orderd created successfully with ID 59
+2017-11-22 19:06:17.4335 INFO Attempting to create new order.
+2017-11-22 19:06:17.4655 INFO New orderd created successfully with ID 60
+2017-11-22 19:06:45.2899 INFO Attempting to create new order.
+2017-11-22 19:06:45.3049 INFO New orderd created successfully with ID 61
+2017-11-22 19:06:55.4004 INFO  Getting item name, quantity and additionals from 61
+2017-11-22 19:06:55.4134 INFO Success
+2017-11-22 19:06:55.4134 INFO Retrieving order location
+2017-11-22 19:06:55.4410 INFO Location successfully retrieved
+2017-11-22 19:06:55.4510 INFO  Getting item name, quantity and additionals from 60
+2017-11-22 19:06:55.4641 INFO Success
+2017-11-22 19:06:55.4641 INFO Retrieving order location
+2017-11-22 19:06:55.4871 INFO Location successfully retrieved
+2017-11-22 19:06:55.4991 INFO  Getting item name, quantity and additionals from 59
+2017-11-22 19:06:55.5161 INFO Success
+2017-11-22 19:06:55.5271 INFO Retrieving order location
+2017-11-22 19:06:55.5271 INFO Location successfully retrieved
+2017-11-22 19:06:55.5446 INFO  Getting item name, quantity and additionals from 58
+2017-11-22 19:06:55.5446 INFO Success
+2017-11-22 19:06:55.5626 INFO Retrieving order location
+2017-11-22 19:06:55.5756 INFO Location successfully retrieved
+2017-11-22 19:06:55.5856 INFO  Getting item name, quantity and additionals from 56
+2017-11-22 19:06:55.5856 INFO Success
+2017-11-22 19:06:55.6126 INFO Retrieving order location
+2017-11-22 19:06:55.6231 INFO Location successfully retrieved
+2017-11-22 19:06:55.6332 INFO  Getting item name, quantity and additionals from 55
+2017-11-22 19:06:55.6332 INFO Success
+2017-11-22 19:06:55.6507 INFO Retrieving order location
+2017-11-22 19:06:55.6507 INFO Location successfully retrieved
+2017-11-22 19:06:55.6727 INFO  Getting item name, quantity and additionals from 54
+2017-11-22 19:06:55.6837 INFO Success
+2017-11-22 19:06:55.6837 INFO Retrieving order location
+2017-11-22 19:06:55.7037 INFO Location successfully retrieved
+2017-11-22 19:06:55.7127 INFO  Getting item name, quantity and additionals from 53
+2017-11-22 19:06:55.7127 INFO Success
+2017-11-22 19:06:55.7312 INFO Retrieving order location
+2017-11-22 19:06:55.7312 INFO Location successfully retrieved
+2017-11-22 19:06:55.7493 INFO  Getting item name, quantity and additionals from 52
+2017-11-22 19:06:55.7583 INFO Success
+2017-11-22 19:06:55.7583 INFO Retrieving order location
+2017-11-22 19:06:55.7763 INFO Location successfully retrieved
+2017-11-22 19:06:55.7883 INFO  Getting item name, quantity and additionals from 51
+2017-11-22 19:06:55.7883 INFO Success
+2017-11-22 19:06:55.8113 INFO Retrieving order location
+2017-11-22 19:06:55.8223 INFO Location successfully retrieved
+2017-11-22 19:06:55.8223 INFO  Getting item name, quantity and additionals from 50
+2017-11-22 19:06:55.8418 INFO Success
+2017-11-22 19:06:55.8529 INFO Retrieving order location
+2017-11-22 19:06:55.8529 INFO Location successfully retrieved
+2017-11-22 19:06:55.8709 INFO  Getting item name, quantity and additionals from 49
+2017-11-22 19:06:55.8709 INFO Success
+2017-11-22 19:06:55.8889 INFO Retrieving order location
+2017-11-22 19:06:55.8979 INFO Location successfully retrieved
+2017-11-22 19:06:55.8979 INFO  Getting item name, quantity and additionals from 48
+2017-11-22 19:06:55.9169 INFO Success
+2017-11-22 19:06:55.9169 INFO Retrieving order location
+2017-11-22 19:06:55.9354 INFO Location successfully retrieved
+2017-11-22 19:06:55.9469 INFO  Getting item name, quantity and additionals from 47
+2017-11-22 19:06:55.9469 INFO Success
+2017-11-22 19:06:55.9699 INFO Retrieving order location
+2017-11-22 19:06:55.9799 INFO Location successfully retrieved
+2017-11-22 19:06:55.9919 INFO  Getting item name, quantity and additionals from 46
+2017-11-22 19:06:55.9919 INFO Success
+2017-11-22 19:06:56.0179 INFO Retrieving order location
+2017-11-22 19:06:56.0320 INFO Location successfully retrieved
+2017-11-22 19:06:56.0416 INFO  Getting item name, quantity and additionals from 45
+2017-11-22 19:06:56.0416 INFO Success
+2017-11-22 19:06:56.0616 INFO Retrieving order location
+2017-11-22 19:06:56.0706 INFO Location successfully retrieved
+2017-11-22 19:06:56.0706 INFO  Getting item name, quantity and additionals from 44
+2017-11-22 19:06:56.0926 INFO Success
+2017-11-22 19:06:56.1006 INFO Retrieving order location
+2017-11-22 19:06:56.1006 INFO Location successfully retrieved
+2017-11-22 19:06:56.1206 INFO  Getting item name, quantity and additionals from 43
+2017-11-22 19:06:56.1206 INFO Success
+2017-11-22 19:06:56.1391 INFO Retrieving order location
+2017-11-22 19:06:56.1481 INFO Location successfully retrieved
+2017-11-22 19:06:56.1481 INFO  Getting item name, quantity and additionals from 42
+2017-11-22 19:06:56.1661 INFO Success
+2017-11-22 19:06:56.1661 INFO Retrieving order location
+2017-11-22 19:06:56.1842 INFO Location successfully retrieved
+2017-11-22 19:06:56.1842 INFO  Getting item name, quantity and additionals from 41
+2017-11-22 19:06:56.2062 INFO Success
+2017-11-22 19:06:56.2182 INFO Retrieving order location
+2017-11-22 19:06:56.2297 INFO Location successfully retrieved
+2017-11-22 19:06:56.2297 INFO  Getting item name, quantity and additionals from 40
+2017-11-22 19:06:56.2482 INFO Success
+2017-11-22 19:06:56.2582 INFO Retrieving order location
+2017-11-22 19:06:56.2582 INFO Location successfully retrieved
+2017-11-22 19:06:56.2772 INFO  Getting item name, quantity and additionals from 39
+2017-11-22 19:06:56.2772 INFO Success
+2017-11-22 19:06:56.2952 INFO Retrieving order location
+2017-11-22 19:06:56.3072 INFO Location successfully retrieved
+2017-11-22 19:06:56.3072 INFO  Getting item name, quantity and additionals from 38
+2017-11-22 19:06:56.3267 INFO Success
+2017-11-22 19:06:56.3353 INFO Retrieving order location
+2017-11-22 19:06:56.3353 INFO Location successfully retrieved
+2017-11-22 19:06:56.3533 INFO  Getting item name, quantity and additionals from 37
+2017-11-22 19:06:56.3533 INFO Success
+2017-11-22 19:06:56.3733 INFO Retrieving order location
+2017-11-22 19:06:56.3853 INFO Location successfully retrieved
+2017-11-22 19:06:56.3853 INFO  Getting item name, quantity and additionals from 36
+2017-11-22 19:06:56.4113 INFO Success
+2017-11-22 19:06:56.4243 INFO Retrieving order location
+2017-11-22 19:06:56.4358 INFO Location successfully retrieved
+2017-11-22 19:06:56.4530 INFO  Getting item name, quantity and additionals from 35
+2017-11-22 19:06:56.4680 INFO Success
+2017-11-22 19:06:56.4810 INFO Retrieving order location
+2017-11-22 19:06:56.4940 INFO Location successfully retrieved
+2017-11-22 19:06:56.5070 INFO  Getting item name, quantity and additionals from 33
+2017-11-22 19:06:56.5070 INFO Success
+2017-11-22 19:06:56.5326 INFO Retrieving order location
+2017-11-22 19:06:56.5476 INFO Location successfully retrieved
+2017-11-22 19:06:56.5616 INFO  Getting item name, quantity and additionals from 28
+2017-11-22 19:06:56.5751 INFO Success
+2017-11-22 19:06:56.5872 INFO Retrieving order location
+2017-11-22 19:06:56.5872 INFO Location successfully retrieved
+2017-11-22 19:06:56.6132 INFO  Getting item name, quantity and additionals from 27
+2017-11-22 19:06:56.6262 INFO Success
+2017-11-22 19:06:56.6382 INFO Retrieving order location
+2017-11-22 19:06:56.6518 INFO Location successfully retrieved
+2017-11-22 19:06:56.6653 INFO  Getting item name, quantity and additionals from 26
+2017-11-22 19:06:56.6793 INFO Success
+2017-11-22 19:06:56.6793 INFO Retrieving order location
+2017-11-22 19:06:56.7024 INFO Location successfully retrieved
+2017-11-22 19:06:56.7024 INFO  Getting item name, quantity and additionals from 25
+2017-11-22 19:06:56.7179 INFO Success
+2017-11-22 19:06:56.7259 INFO Retrieving order location
+2017-11-22 19:06:56.7259 INFO Location successfully retrieved
+2017-11-22 19:06:56.7449 INFO  Getting item name, quantity and additionals from 24
+2017-11-22 19:06:56.7449 INFO Success
+2017-11-22 19:06:56.7609 INFO Retrieving order location
+2017-11-22 19:06:56.7609 INFO Location successfully retrieved
+2017-11-22 19:06:56.7759 INFO  Getting item name, quantity and additionals from 23
+2017-11-22 19:06:56.7759 INFO Success
+2017-11-22 19:06:56.7919 INFO Retrieving order location
+2017-11-22 19:06:56.7919 INFO Location successfully retrieved
+2017-11-22 19:06:56.8071 INFO  Getting item name, quantity and additionals from 22
+2017-11-22 19:06:56.8071 INFO Success
+2017-11-22 19:06:56.8221 INFO Retrieving order location
+2017-11-22 19:06:56.8221 INFO Location successfully retrieved
+2017-11-22 19:06:57.0222 INFO  Getting item name, quantity and additionals from 21
+2017-11-22 19:06:57.0302 INFO Success
+2017-11-22 19:06:57.0382 INFO Retrieving order location
+2017-11-22 19:06:57.0382 INFO Location successfully retrieved
+2017-11-22 19:06:57.0542 INFO  Getting item name, quantity and additionals from 19
+2017-11-22 19:06:57.0542 INFO Success
+2017-11-22 19:06:57.0542 INFO Retrieving order location
+2017-11-22 19:06:57.0772 INFO Location successfully retrieved
+2017-11-22 19:06:57.0852 INFO  Getting item name, quantity and additionals from 18
+2017-11-22 19:06:57.0852 INFO Success
+2017-11-22 19:06:57.1047 INFO Retrieving order location
+2017-11-22 19:06:57.1172 INFO Location successfully retrieved
+2017-11-22 19:06:57.1172 INFO  Getting item name, quantity and additionals from 17
+2017-11-22 19:06:57.1355 INFO Success
+2017-11-22 19:06:57.1355 INFO Retrieving order location
+2017-11-22 19:06:57.1515 INFO Location successfully retrieved
