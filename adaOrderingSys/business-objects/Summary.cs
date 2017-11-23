@@ -19,7 +19,7 @@ namespace adaOrderingSys.business_objects
         private List<Order> orders { get; set; }
         private DateTime date { get; set; }
 
-        public int fulfillOrders(List<int> orderID)
+        public int fulfillOrders(List<int> orderID, string licNo, string driver, DateTime date)
         {
             var connectionString = ConfigurationManager.ConnectionStrings["ADAConnectionString"].ConnectionString;
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -38,7 +38,12 @@ namespace adaOrderingSys.business_objects
                     createSummaryCmd.CommandType = CommandType.StoredProcedure;
                     updateCmd.CommandType = CommandType.StoredProcedure;
 
-                    int summaryID = (Int32)createSummaryCmd.ExecuteScalar();
+                    createSummaryCmd.Parameters.AddWithValue("@licenseNo", licNo);
+                    createSummaryCmd.Parameters.AddWithValue("@driver", driver);
+                    createSummaryCmd.Parameters.AddWithValue("@summaryDate", date);
+                    
+
+                    int summaryID = (int)createSummaryCmd.ExecuteScalar();
 
                     if (summaryID <= 0) //Once a summary is created in the db, the ID is more than 0
                     {
@@ -72,6 +77,7 @@ namespace adaOrderingSys.business_objects
                     try
                     {
                         transaction.Rollback(); //Rollback the transaction
+                        logger.Info("Rollback successful");
                         return -1;
                     }
                     catch (Exception ex2)

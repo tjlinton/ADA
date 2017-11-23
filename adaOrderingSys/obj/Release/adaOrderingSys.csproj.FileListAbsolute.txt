@@ -11,3 +11,9 @@ C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrder
 C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\obj\Release\adaOrderingSys.csproj.GenerateResource.Cache
 C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\obj\Release\adaOrderingSys.exe
 C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\obj\Release\adaOrderingSys.pdb
+C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\obj\Release\adaOrderingSys.csprojResolveAssemblyReference.cache
+C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\obj\Release\adaOrderingSys.AddNewItem.resources
+C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\obj\Release\adaOrderingSys.newOrder.resources
+C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\obj\Release\adaOrderingSys.OrderedItemsPopUp.resources
+C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\obj\Release\adaOrderingSys.SummaryForm.resources
+C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\obj\Release\adaOrderingSys.ViewOrders.resources

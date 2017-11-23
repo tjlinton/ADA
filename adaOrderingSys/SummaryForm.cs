@@ -43,11 +43,6 @@ namespace adaOrderingSys
             }
         }
 
-        private void cbl_Orders_DoubleClick(object sender, EventArgs e)
-        {
-            this.showPopUp();
-        }
-
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -57,64 +52,74 @@ namespace adaOrderingSys
 
         private void btnSubmitCust_Click(object sender, EventArgs e)
         {
-            if (cbl_Orders.CheckedItems.Count != 0)
+            try
             {
-                PrintDialog printDialog = new PrintDialog();
-                PrintPreviewDialog printPrvDlg = new PrintPreviewDialog();
-                PrintDocument printDocument = new PrintDocument();
+                if (cbl_Orders.CheckedItems.Count != 0)
+                {
+                    PrintDialog printDialog = new PrintDialog();
+                    PrintPreviewDialog printPrvDlg = new PrintPreviewDialog();
+                    PrintDocument printDocument = new PrintDocument();
 
-                for (int i = 0; i < cbl_Orders.CheckedItems.Count; i++)
-                {
-                    checkedItems.Add(cbl_Orders.CheckedItems[i].ToString());
-                }
-                pageNo = 1;
-                lastPage = false;
-                summaryList = new List<KeyValuePair<int, string>>();
-                printDialog.Document = printDocument;
-                printPrvDlg.Document = printDocument;
-                //add an event handler that will do the printing
-                printDocument.PrintPage += new PrintPageEventHandler(createLoadingSheet);
-                if (MessageBox.Show("Show preview?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    printPrvDlg.PrintPreviewControl.Zoom = 100 / 100f; //Zoom is calculated as a ratio
-                    ((Form)printPrvDlg).WindowState = FormWindowState.Maximized;
-                    printPrvDlg.ShowDialog();
-                    return;
+                    for (int i = 0; i < cbl_Orders.CheckedItems.Count; i++)
+                    {
+                        checkedItems.Add(cbl_Orders.CheckedItems[i].ToString());
+                    }
+                    pageNo = 1;
+                    lastPage = false;
+                    summaryList = new List<KeyValuePair<int, string>>();
+                    printDialog.Document = printDocument;
+                    printPrvDlg.Document = printDocument;
+                    //add an event handler that will do the printing
+                    printDocument.PrintPage += new PrintPageEventHandler(createLoadingSheet);
+                    if (MessageBox.Show("Show preview?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        printPrvDlg.PrintPreviewControl.Zoom = 100 / 100f; //Zoom is calculated as a ratio
+                        ((Form)printPrvDlg).WindowState = FormWindowState.Maximized;
+                        printPrvDlg.ShowDialog();
+                        return;
+                    }
+                    else
+                    {
+                        //Ask user where to print
+                        DialogResult result = printDialog.ShowDialog();
+
+                        if (result == DialogResult.OK)
+                        {
+                            Summary summary = new Summary();
+
+                            List<int> orderIDList = new List<int>();
+
+                            int selectedItems = this.cbl_Orders.CheckedItems.Count;
+
+                            for (int i = 0; i < selectedItems; i++)
+                            {
+                                string[] item = this.cbl_Orders.CheckedItems[i].ToString().Split('|');
+
+                                orderIDList.Add(Int32.Parse(item[0]));
+                            }
+
+                            DateTime datetime = dateTimePicker1.Value;
+                            int submitResponse = summary.fulfillOrders(orderIDList, txtLicenseNo.Text, txtDriver.Text, datetime);
+                            if (submitResponse < 0)
+                            {
+                                throw new Exception("Error submitting Loading sheet");
+                            }
+
+                            printDocument.Print(); //Go ahead and print the doc
+
+                            setItems();
+                        }
+                    }
                 }
                 else
                 {
-                    //Ask user where to print
-                    DialogResult result = printDialog.ShowDialog();
-
-                    if (result == DialogResult.OK)
-                    {
-                        Summary summary = new Summary();
-
-                        List<int> orderIDList = new List<int>();
-
-                        int selectedItems = this.cbl_Orders.CheckedItems.Count;
-
-                        for (int i = 0; i < selectedItems; i++)
-                        {
-                            string[] item = this.cbl_Orders.CheckedItems[i].ToString().Split('|');
-
-                            orderIDList.Add(Int32.Parse(item[0]));
-                        }
-
-                        int submitResponse = summary.fulfillOrders(orderIDList);
-                        if (submitResponse < 0)
-                        {
-                            throw new Exception("Error submitting Loading sheet");
-                        }
-
-                        printDocument.Print(); //Go ahead and print the doc
-                    }
+                    MessageBox.Show("Please select items to add to loading sheet");
+                    return;
                 }
             }
-            else
+            catch (Exception)
             {
-                MessageBox.Show("Please select items to add to loading sheet");
-                return;
+                MessageBox.Show("ERROR: Could not create loading sheet. try again");
             }
         }
 
@@ -374,7 +379,7 @@ namespace adaOrderingSys
         {
             try
             {
-                if (cbl_Orders.SelectedItems != null)
+                if (cbl_Orders.SelectedItems.Count != 0)
                     if (cbl_Orders.SelectedItem.ToString().Length != 0)
                     {
                         string[] orderID = cbl_Orders.SelectedItem.ToString().Split('|'); //Split list item value by pipe char to get order ID
@@ -461,6 +466,16 @@ namespace adaOrderingSys
 
         private void cbl_Orders_MouseClick(object sender, MouseEventArgs e)
         {
+            
+        }
+
+        private void cbl_Orders_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                cbl_Orders.SelectedIndex = cbl_Orders.IndexFromPoint(e.X, e.Y);
+                this.showPopUp();
+            }
         }
     }
 }

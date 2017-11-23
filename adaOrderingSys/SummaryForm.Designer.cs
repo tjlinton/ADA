@@ -51,14 +51,14 @@
             // 
             // cbl_Orders
             // 
-            this.cbl_Orders.CheckOnClick = true;
             this.cbl_Orders.FormattingEnabled = true;
             this.cbl_Orders.Location = new System.Drawing.Point(17, 45);
             this.cbl_Orders.Name = "cbl_Orders";
             this.cbl_Orders.Size = new System.Drawing.Size(199, 289);
             this.cbl_Orders.TabIndex = 3;
+            this.cbl_Orders.ThreeDCheckBoxes = true;
             this.cbl_Orders.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cbl_Orders_MouseClick);
-            this.cbl_Orders.DoubleClick += new System.EventHandler(this.cbl_Orders_DoubleClick);
+            this.cbl_Orders.MouseUp += new System.Windows.Forms.MouseEventHandler(this.cbl_Orders_MouseUp);
             // 
             // btnBack
             // 
