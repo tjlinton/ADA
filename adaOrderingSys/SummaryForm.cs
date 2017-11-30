@@ -60,7 +60,7 @@ namespace adaOrderingSys
                     PrintPreviewDialog printPrvDlg = new PrintPreviewDialog();
                     PrintDocument printDocument = new PrintDocument();
 
-                    for (int i = 0; i < cbl_Orders.CheckedItems.Count; i++)
+                    for (int i = cbl_Orders.CheckedItems.Count-1;  i >= 0; i--)
                     {
                         checkedItems.Add(cbl_Orders.CheckedItems[i].ToString());
                     }
@@ -95,7 +95,7 @@ namespace adaOrderingSys
                             {
                                 string[] item = this.cbl_Orders.CheckedItems[i].ToString().Split('|');
 
-                                orderIDList.Add(Int32.Parse(item[0]));
+                                orderIDList.Add(int.Parse(item[0]));
                             }
 
                             DateTime datetime = dateTimePicker1.Value;
@@ -145,7 +145,7 @@ namespace adaOrderingSys
                     //Sub heading of loading sheet
                     string top = txtLicenseNo.Text == "" ? "Lic #:_____" + Constants.LOADING_SHEET_SPACER :
                         "Lic #:" + txtLicenseNo.Text + Constants.LOADING_SHEET_SPACER; //License number
-                    top += "Date: " + DateTime.Today.ToString("dd/MM/yyyy") + Constants.LOADING_SHEET_SPACER; //Date for the 
+                    top += "Date: " + dateTimePicker1.Value.ToShortDateString() + Constants.LOADING_SHEET_SPACER; //Date for the 
                     top += txtDriver.Text == "" ? "Driver:_____________" + Constants.LOADING_SHEET_SPACER :
                         "Driver:" + txtDriver.Text + Constants.LOADING_SHEET_SPACER; //Driver for the loading sheet
                     top += txtLocation.Text == "" ? "Location:_____________" + Constants.LOADING_SHEET_SPACER :
@@ -183,10 +183,10 @@ namespace adaOrderingSys
                             }
                         }
 
-                        //TODO: think about making this shit less repetitive
+                        //TODO: think about making this less repetitive
                         if (count <= Constants.MAX_LOADING_SHEET_COLUMN)
                         {
-                            graphic.DrawString(details[1].Trim() + location, boldFont, new SolidBrush(Color.Black), startX, startY + offset);
+                            graphic.DrawString(details[0].Trim() + " " + details[1].Trim() + location, boldFont, new SolidBrush(Color.Black), startX, startY + offset);
                             offset += (int)fontHeight;
                             int length = itemQuantityAndAdditionals.Count;
                             for (int i = 0; i < length; i++)
@@ -220,9 +220,9 @@ namespace adaOrderingSys
                             offset += 15;
                             count++;
                         }
-                        else if (count <= (Constants.MAX_LOADING_SHEET_COLUMN * 2))//Move over to middle of the page
+                        else if (count <= (Constants.MAX_LOADING_SHEET_COLUMN * 2)) //Move over to middle of the page
                         {
-                            graphic.DrawString(details[1].Trim() + location, boldFont, new SolidBrush(Color.Black), middleX, startY + middleOffset);
+                            graphic.DrawString(details[0].Trim() + " " + details[1].Trim() + location, boldFont, new SolidBrush(Color.Black), middleX, startY + middleOffset);
                             middleOffset += (int)fontHeight;
                             int length = itemQuantityAndAdditionals.Count;
                             for (int i = 0; i < length; i++)
@@ -262,7 +262,7 @@ namespace adaOrderingSys
                         else if (count <= Constants.MAX_LOADING_SHEET_COLUMN * 3) //Move over to last column of the page
                         {
 
-                            graphic.DrawString(details[1].Trim() + location, boldFont, new SolidBrush(Color.Black), endX, startY + endOffset);
+                            graphic.DrawString(details[0].Trim() + " " +details[1].Trim() + location, boldFont, new SolidBrush(Color.Black), endX, startY + endOffset);
                             endOffset += (int)fontHeight;
                             int length = itemQuantityAndAdditionals.Count;
                             for (int i = 0; i < length; i++)
@@ -308,7 +308,7 @@ namespace adaOrderingSys
                 }
 
                 //Summary statement.
-                if (count + (summaryList.Count *3) > Constants.MAX_LOADING_SHEET_COLUMN)
+                if ((count +summaryList.Count) > (Constants.MAX_LOADING_SHEET_COLUMN * 3))
                 {
                     e.HasMorePages = true;
                     pageNo++;
@@ -476,6 +476,16 @@ namespace adaOrderingSys
                 cbl_Orders.SelectedIndex = cbl_Orders.IndexFromPoint(e.X, e.Y);
                 this.showPopUp();
             }
+        }
+
+        private void btnUp_MouseHover(object sender, EventArgs e)
+        {
+            toolTip.SetToolTip(btnUp, "Move selected item up in the list");
+        }
+
+        private void btnDown_MouseHover(object sender, EventArgs e)
+        {
+            toolTip.SetToolTip(btnDown, "Move selected item down in the list");
         }
     }
 }

@@ -19,10 +19,6 @@ namespace adaOrderingSys
     {
         
         private readonly Logger logger = LogManager.GetCurrentClassLogger();
-        
-        //-----------------
-        //  Constants 
-        //-----------------
 
         public main()
         {
@@ -37,6 +33,7 @@ namespace adaOrderingSys
             this.customerTableAdapter.Fill(this.aDADataSet.customer);
             this.pnlMain.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlMainII.Hide();
+            this.btn_Logout.Show();
         }
 
         //--------------------------------------------------------------------------
@@ -174,6 +171,7 @@ namespace adaOrderingSys
             this.pnlProductInfo.Hide();
             this.pnlCustInfo.Hide();
             this.pnl_ViewInventory.Show();
+            this.btn_Logout.Hide();
 
         }
 
@@ -192,6 +190,7 @@ namespace adaOrderingSys
             this.pnlProductInfo.Hide();
             this.pnl_ViewInventory.Hide();
             this.pnlCustInfo.Show();
+            this.btn_Logout.Hide();
         }
 
         private void btnNewProduct_Click(object sender, EventArgs e)
@@ -201,6 +200,7 @@ namespace adaOrderingSys
             this.pnlProductInfo.Show();
             this.pnl_ViewInventory.Hide();
             this.pnlCustInfo.Hide();
+            this.btn_Logout.Hide();
         }
 
         private void btn_ViewOrders_Click(object sender, EventArgs e)
@@ -222,6 +222,7 @@ namespace adaOrderingSys
         {
             this.pnlMainII.Hide();
             this.pnlMain.Show();
+            this.btn_Logout.Show();
         }
 
 
@@ -276,7 +277,7 @@ namespace adaOrderingSys
             catch (Exception ex)
             {
                 logger.Error(ex);
-                MessageBox.Show("An error occured. Please contact system administrator");
+                MessageBox.Show("An error occured. Please try again");
             }
         }
 
@@ -345,7 +346,7 @@ namespace adaOrderingSys
             catch (Exception ex)
             {
                 logger.Error(ex);
-                MessageBox.Show("An error occured. Please contact system admin.");
+                MessageBox.Show("An error occured. Please try again.");
             }
         }
 
@@ -377,14 +378,35 @@ namespace adaOrderingSys
                 this.Validate();
                 this.itemBindingSource.EndEdit();
                 this.itemTableAdapter.Update(this.aDAItemDataSet.item);
+                MessageBox.Show("Updates successful");
             }
 
             catch (Exception ex)
             {
                 logger.Error(ex);
-                MessageBox.Show("There has been an error updating items. Please contact system admin.");
+                MessageBox.Show("There has been an error updating items. Please try again.");
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
+            {
+                if (Application.OpenForms[i].Name != "main")
+                    Application.OpenForms[i].Hide();
+            }
+
+            this.Hide();
+            loginForm login = new loginForm();
+            login.Show();
+
+        }
+
+        private void btnViewCustomers_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ViewCustomers viewCust = new ViewCustomers();
+            viewCust.Show();
+        }
     }
 }

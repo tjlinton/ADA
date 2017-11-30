@@ -12,7 +12,7 @@ namespace adaOrderingSys.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "12.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -26,8 +26,8 @@ namespace adaOrderingSys.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LINTON-PC\\TAJAYLINTON;Initial Catalog=ADA;User ID=adauser;Password=AD" +
-            "AUser1234")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LINTON-PC\\TAJAYLINTON,1433;Initial Catalog=ADA;User ID=adauser;Passwo" +
+            "rd=ADAUser1234")]
         public string ADAConnectionString {
             get {
                 return ((string)(this["ADAConnectionString"]));

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SummaryForm));
             this.cbl_Orders = new System.Windows.Forms.CheckedListBox();
             this.btnBack = new System.Windows.Forms.Button();
@@ -45,6 +46,7 @@
             this.txtDriver = new System.Windows.Forms.TextBox();
             this.lbl_LicenseNo = new System.Windows.Forms.Label();
             this.txtLicenseNo = new System.Windows.Forms.TextBox();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.pnl_Step1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -114,6 +116,7 @@
             this.btnDown.Text = "▼";
             this.btnDown.UseVisualStyleBackColor = true;
             this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
+            this.btnDown.MouseHover += new System.EventHandler(this.btnDown_MouseHover);
             // 
             // btnUp
             // 
@@ -124,6 +127,7 @@
             this.btnUp.Text = "▲";
             this.btnUp.UseVisualStyleBackColor = true;
             this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
+            this.btnUp.MouseHover += new System.EventHandler(this.btnUp_MouseHover);
             // 
             // lblLocation
             // 
@@ -179,7 +183,7 @@
             this.btnSubmitCust.Name = "btnSubmitCust";
             this.btnSubmitCust.Size = new System.Drawing.Size(92, 45);
             this.btnSubmitCust.TabIndex = 23;
-            this.btnSubmitCust.Text = "Submit";
+            this.btnSubmitCust.Text = "PRINT";
             this.btnSubmitCust.UseVisualStyleBackColor = false;
             this.btnSubmitCust.Click += new System.EventHandler(this.btnSubmitCust_Click);
             // 
@@ -250,5 +254,6 @@
         private System.Windows.Forms.TextBox txtLocation;
         private System.Windows.Forms.Button btnDown;
         private System.Windows.Forms.Button btnUp;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }

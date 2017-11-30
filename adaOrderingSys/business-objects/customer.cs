@@ -23,7 +23,7 @@ namespace adaOrderingSys.business_objects
 
         public int createCustomer(string n, string a, string t, string cP)
         {
-            var connectionString = ConfigurationManager.ConnectionStrings["ADAConnectionString"].ConnectionString;
+            var connectionString = ConfigurationManager.ConnectionStrings[Constants.CONNECTIONSTRINGNAME].ConnectionString;
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 try
@@ -57,7 +57,7 @@ namespace adaOrderingSys.business_objects
 
         public List<string> getCustomerNames()
         {
-            var connectionString = ConfigurationManager.ConnectionStrings["ADAConnectionString"].ConnectionString;
+            var connectionString = ConfigurationManager.ConnectionStrings[Constants.CONNECTIONSTRINGNAME].ConnectionString;
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 try
@@ -97,7 +97,7 @@ namespace adaOrderingSys.business_objects
 
         public string getCustomerLocation(int custID)
         {
-            var connectionString = ConfigurationManager.ConnectionStrings["ADAConnectionString"].ConnectionString;
+            var connectionString = ConfigurationManager.ConnectionStrings[Constants.CONNECTIONSTRINGNAME].ConnectionString;
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 try

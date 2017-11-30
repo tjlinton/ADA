@@ -44,9 +44,13 @@ namespace adaOrderingSys
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            main mainForm = new main();
-            mainForm.Show();
+            if (MessageBox.Show("Are you sure you want to go back?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                this.Hide();
+                main mainForm = new main();
+                mainForm.Show();
+            }
+            
         }
         private void list_Orders_DoubleClick(object sender, EventArgs e)
         {
@@ -86,11 +90,11 @@ namespace adaOrderingSys
                     // Clear grandtotals
                     this.txtGrandTotal.Text = "";
 
-                    this.dgvItemsOrdered.DataSource = null;
+                    dgvItemsOrdered.DataSource = null;
 
                     populateDataTable(orderID);
 
-                    this.dgvItemsOrdered.DataSource = dt;
+                    dgvItemsOrdered.DataSource = dt;
 
                     foreach (DataGridViewRow row in dgvItemsOrdered.Rows)
                     {
@@ -100,7 +104,7 @@ namespace adaOrderingSys
                     this.dgvItemsOrdered.Columns[Constants.TOTALCOST_COLUMN].ReadOnly = true;
 
                     txtGrandTotal.Text = grandTotal.ToString();
-
+                    ViewOrdersToolTip.RemoveAll();
                 }
 
                 catch (Exception ex)
@@ -114,55 +118,64 @@ namespace adaOrderingSys
 
         private void btn_UpdateOrder_Click(object sender, EventArgs e)
         {
-            if (lbl_OrderID.Text != null)
-            {
-                if (dgvItemsOrdered.Rows.Count > 1)
+            if (adapter.DeleteCommand == null && adapter.UpdateCommand == null && adapter.InsertCommand == null) {
+                if (lbl_OrderID.Text != null)
                 {
-                    try
+                    if (dgvItemsOrdered.Rows.Count > 1)
                     {
-                        if (adapter != null)
+                        try
                         {
-                            cmbdbldr = new SqlCommandBuilder(adapter);
+                            if (adapter != null)
+                            {
+                                cmbdbldr = new SqlCommandBuilder(adapter);
+                                adapter.Update(dt);
+                            }
 
-                            adapter.Update(dt);
+                            logger.Info("Updated order " + lbl_OrderID.Text);
+                            MessageBox.Show("Update successful");
+
+                        }
+                        catch (Exception ex)
+                        {
+                            logger.Error(ex);
+                            MessageBox.Show("Something went wrong, we could not update this order");
                         }
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        logger.Error(ex);
-                    }
-                }
-                else
-                {
-                    if (MessageBox.Show("Table is empty, do you wish to delete this order?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-                    {
-                        deleteOrder();
-                    }
+                        if (MessageBox.Show("Table is empty, do you wish to delete this order?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                        {
+                            deleteOrder();
+                        }
 
-                    return;
+                        return;
+                    }
                 }
             }
         }
 
         private void btn_DeleteOrder_Click(object sender, EventArgs e)
         {
-            deleteOrder();
+            if (MessageBox.Show("Are you sure you want to delete this order?", 
+                "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                deleteOrder();
+            }
         }
 
         /***********************************************************************
          *                      Other Control EVENTS
          ***********************************************************************/
 
-        private void cb_Customer_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             clearControls(); //Empty previous values
             setItems(); //Set the new ones based on date picked
+            ViewOrdersToolTip.RemoveAll();
         }
         private void dgvItemsOrdered_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
+            
             setGrandTotal();
         }
 
@@ -220,7 +233,7 @@ namespace adaOrderingSys
 
         private void dgvItemsOrdered_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Console.Write("Got here");
+            //Console.Write("Got here");
         }
 
         private void dgvItemsOrdered_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
@@ -228,7 +241,7 @@ namespace adaOrderingSys
         }
 
         /// ------------------------------------------------------------------------------------------
-        /// Custome Functions
+        /// Custom Functions
         /// ------------------------------------------------------------------------------------------
         private void setItems()
         {
@@ -284,10 +297,13 @@ namespace adaOrderingSys
                         dgvItemsOrdered.Columns[Constants.TOTALCOST_COLUMN].ReadOnly = true; // Close it, we don't want users to input values
                     }
 
-                    SqlCommand cmd = new SqlCommand(@"UPDATE orddered_items SET " + column + " = @" + column + " WHERE orderID = @orderID AND itemID = @itemID", conn);
+                    decimal totalCost = Convert.ToDecimal(dgvItemsOrdered.Rows[e.RowIndex].Cells[Constants.TOTALCOST_COLUMN].Value);
+
+                    SqlCommand cmd = new SqlCommand(@"UPDATE ordered_Items SET " + column + " = @" + column + ", totalCost = @totalCost WHERE orderID = @orderID AND itemID = @itemID", conn);
                     cmd.Parameters.AddWithValue("@itemID", itemID);
                     cmd.Parameters.AddWithValue("@" + column, cellValue);
-                    cmd.Parameters.AddWithValue("@itemID", lbl_OrderID.Text);
+                    cmd.Parameters.AddWithValue("@totalCost", totalCost);
+                    cmd.Parameters.AddWithValue("@orderID", lbl_OrderID.Text);
 
                     adapter.UpdateCommand = cmd;
 
@@ -297,9 +313,30 @@ namespace adaOrderingSys
             catch (Exception ex)
             {
                 logger.Error(ex);
-                MessageBox.Show("An error occured. Please try again");
+                MessageBox.Show(Constants.GENERIC_ERROR);
             }
         }
+
+        private void setDeleteCmd(string itemID, int orderID)
+        { 
+            try
+            {
+                SqlCommand cmd = new SqlCommand(@"DELETE FROM ordered_Items WHERE orderID = @orderID and itemID = @itemID",conn);
+                cmd.Parameters.AddWithValue("orderID", orderID);
+                cmd.Parameters.AddWithValue("itemID", itemID);
+
+                adapter.DeleteCommand = cmd;
+
+                dt.AcceptChanges();
+                adapter.Fill(dt);
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(Constants.GENERIC_ERROR);
+                logger.Error(ex);
+            }
+        } 
 
         private DataTable populateDataTable(int orderID)
         {
@@ -316,7 +353,7 @@ namespace adaOrderingSys
 
                 dt.PrimaryKey = new DataColumn[] { dt.Columns[Constants.ITEMID_COLUMN] };
 
-                SqlCommand cmd = new SqlCommand("[dbo].[usp_GetOrderedItemsFromOrderID]", conn);
+                SqlCommand cmd = new SqlCommand("[dbo].[usp_GetOrderedItemsWithUPFromOrderID]", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@orderID", orderID);
                 adapter.SelectCommand = cmd;
@@ -357,13 +394,12 @@ namespace adaOrderingSys
                             break;
 
                         default: //Rowcount will be returned if order was successful. This could be any positive integer
-                            MessageBox.Show("Order successfully deleted");
                             logger.Info("Order successfully deleted");
+                            clearControls(); // Empty out all relevant controls
+                            setItems(); //Reset listbox items for order selection
+                            MessageBox.Show("Order successfully deleted");
                             break;
                     }
-
-                    clearControls(); // Empty out all relevant controls
-                    setItems(); //Reset listbox items for order selection
                 }
                 catch (Exception ex)
                 {
@@ -400,7 +436,6 @@ namespace adaOrderingSys
         private bool HasErrorText()
         {
             bool hasErrorText = false;
-            //replace this.dataGridView1 with the name of your datagridview control
             foreach (DataGridViewRow row in this.dgvItemsOrdered.Rows)
             {
                 foreach (DataGridViewCell cell in row.Cells)
@@ -436,6 +471,98 @@ namespace adaOrderingSys
             MessageBox.Show("Value must be a whole number");
             //e.Cancel = true;
             return;
+        }
+
+        private void dgvItemsOrdered_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
+        {
+            
+        }
+
+        private void dgvItemsOrdered_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        {
+            if (dgvItemsOrdered.Rows.Count > 1)
+            {
+                try
+                {
+                    string itemID = dgvItemsOrdered.Rows[e.Row.Index].Cells[Constants.ITEMID_COLUMN].Value.ToString();
+                    int orderID = Convert.ToInt32(lbl_OrderID.Text);
+                    setDeleteCmd(itemID, orderID);
+
+                    logger.Info("Successfully deleted " + itemID);
+                }
+
+                catch (Exception ex)
+                {
+                    logger.Error(ex);
+                }
+            }
+            else
+            {
+                if (MessageBox.Show("Table is empty, do you wish to delete this order?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                {
+                    deleteOrder();
+                }
+
+                return;
+            }
+        }
+
+        private void cb_Customer_MouseHover(object sender, EventArgs e)
+        {
+            if (cb_Customer.Items.Count == 0)
+            {
+                ViewOrdersToolTip.SetToolTip(cb_Customer, "Double click an order on the left first");
+            }
+        }
+
+        private void list_Orders_MouseHover(object sender, EventArgs e)
+        {
+            if (list_Orders.Items.Count == 0)
+            {
+                ViewOrdersToolTip.SetToolTip(list_Orders, "No orders found on this date, change date to see orders");
+            }
+        }
+
+        private void list_Orders_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = list_Orders.SelectedIndex;
+            ViewOrdersToolTip.SetToolTip(list_Orders, "Double click to view");
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvItemsOrdered.Rows.Count > 0)
+                {
+                    List<string> addedItems = new List<string>();
+
+                    for (int i=0; i < dgvItemsOrdered.Rows.Count -1; i++)
+                    {
+                        addedItems.Add(dgvItemsOrdered.Rows[i].Cells[Constants.ITEMID_COLUMN].Value.ToString());
+                    }
+
+                    using (AddNewItem newItem = new AddNewItem(addedItems))
+                    {
+                        if (newItem.ShowDialog() == DialogResult.OK)
+                        {
+
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+                MessageBox.Show("An error occured. Please try again");
+            }
+        }
+
+        private void btn_NewOrder_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            newOrder order = new newOrder();
+            order.Show();
         }
     }
 }

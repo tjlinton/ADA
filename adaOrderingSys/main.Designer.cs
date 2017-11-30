@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
             this.btnNewOrder = new System.Windows.Forms.Button();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.btnViewCustomers = new System.Windows.Forms.Button();
             this.btn_ViewOrders = new System.Windows.Forms.Button();
             this.btnCreateSummary = new System.Windows.Forms.Button();
             this.btnNewProduct = new System.Windows.Forms.Button();
@@ -83,6 +84,7 @@
             this.errorProviderUnitPrice = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderProductName = new System.Windows.Forms.ErrorProvider(this.components);
             this.itemTableAdapter = new adaOrderingSys.ADAItemDataSetTableAdapters.itemTableAdapter();
+            this.btn_Logout = new System.Windows.Forms.Button();
             this.pnlMain.SuspendLayout();
             this.pnlMainII.SuspendLayout();
             this.pnlCustInfo.SuspendLayout();
@@ -122,6 +124,7 @@
             // 
             // pnlMain
             // 
+            this.pnlMain.Controls.Add(this.btnViewCustomers);
             this.pnlMain.Controls.Add(this.btn_ViewOrders);
             this.pnlMain.Controls.Add(this.btnCreateSummary);
             this.pnlMain.Controls.Add(this.btnNewProduct);
@@ -130,8 +133,28 @@
             this.pnlMain.Controls.Add(this.btnNewOrder);
             this.pnlMain.Location = new System.Drawing.Point(97, 50);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(928, 345);
+            this.pnlMain.Size = new System.Drawing.Size(928, 416);
             this.pnlMain.TabIndex = 7;
+            // 
+            // btnViewCustomers
+            // 
+            this.btnViewCustomers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnViewCustomers.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnViewCustomers.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnViewCustomers.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
+            this.btnViewCustomers.FlatAppearance.BorderSize = 10;
+            this.btnViewCustomers.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Yellow;
+            this.btnViewCustomers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
+            this.btnViewCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnViewCustomers.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btnViewCustomers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnViewCustomers.Location = new System.Drawing.Point(172, 315);
+            this.btnViewCustomers.Name = "btnViewCustomers";
+            this.btnViewCustomers.Size = new System.Drawing.Size(212, 72);
+            this.btnViewCustomers.TabIndex = 12;
+            this.btnViewCustomers.Text = "View Customers";
+            this.btnViewCustomers.UseVisualStyleBackColor = false;
+            this.btnViewCustomers.Click += new System.EventHandler(this.btnViewCustomers_Click);
             // 
             // btn_ViewOrders
             // 
@@ -260,9 +283,9 @@
             this.pnlCustInfo.Controls.Add(this.txtBusinessName);
             this.pnlCustInfo.Controls.Add(this.label1);
             this.pnlCustInfo.Font = new System.Drawing.Font("Verdana", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlCustInfo.Location = new System.Drawing.Point(242, 69);
+            this.pnlCustInfo.Location = new System.Drawing.Point(204, 69);
             this.pnlCustInfo.Name = "pnlCustInfo";
-            this.pnlCustInfo.Size = new System.Drawing.Size(686, 384);
+            this.pnlCustInfo.Size = new System.Drawing.Size(727, 384);
             this.pnlCustInfo.TabIndex = 1;
             // 
             // btnClearCustomer
@@ -304,7 +327,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 207);
+            this.label2.Location = new System.Drawing.Point(30, 207);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(153, 23);
             this.label2.TabIndex = 19;
@@ -358,7 +381,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 8);
+            this.label1.Location = new System.Drawing.Point(30, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(155, 23);
             this.label1.TabIndex = 0;
@@ -383,14 +406,14 @@
             this.pnlProductInfo.Font = new System.Drawing.Font("Verdana", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlProductInfo.Location = new System.Drawing.Point(201, 75);
             this.pnlProductInfo.Name = "pnlProductInfo";
-            this.pnlProductInfo.Size = new System.Drawing.Size(654, 381);
+            this.pnlProductInfo.Size = new System.Drawing.Size(730, 381);
             this.pnlProductInfo.TabIndex = 2;
             // 
             // lblDollar
             // 
             this.lblDollar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDollar.AutoSize = true;
-            this.lblDollar.Location = new System.Drawing.Point(183, 267);
+            this.lblDollar.Location = new System.Drawing.Point(221, 267);
             this.lblDollar.Name = "lblDollar";
             this.lblDollar.Size = new System.Drawing.Size(22, 23);
             this.lblDollar.TabIndex = 26;
@@ -411,7 +434,7 @@
             // 
             this.lblUnitPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblUnitPrice.AutoSize = true;
-            this.lblUnitPrice.Location = new System.Drawing.Point(66, 267);
+            this.lblUnitPrice.Location = new System.Drawing.Point(104, 267);
             this.lblUnitPrice.Name = "lblUnitPrice";
             this.lblUnitPrice.Size = new System.Drawing.Size(102, 23);
             this.lblUnitPrice.TabIndex = 24;
@@ -457,7 +480,7 @@
             // 
             this.lblQuantity.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblQuantity.AutoSize = true;
-            this.lblQuantity.Location = new System.Drawing.Point(66, 216);
+            this.lblQuantity.Location = new System.Drawing.Point(104, 216);
             this.lblQuantity.Name = "lblQuantity";
             this.lblQuantity.Size = new System.Drawing.Size(91, 23);
             this.lblQuantity.TabIndex = 19;
@@ -512,7 +535,7 @@
             // 
             this.lblProductID.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblProductID.AutoSize = true;
-            this.lblProductID.Location = new System.Drawing.Point(66, 8);
+            this.lblProductID.Location = new System.Drawing.Point(104, 8);
             this.lblProductID.Name = "lblProductID";
             this.lblProductID.Size = new System.Drawing.Size(112, 23);
             this.lblProductID.TabIndex = 0;
@@ -654,12 +677,25 @@
             // 
             this.itemTableAdapter.ClearBeforeFill = true;
             // 
+            // btn_Logout
+            // 
+            this.btn_Logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_Logout.ForeColor = System.Drawing.Color.Gold;
+            this.btn_Logout.Location = new System.Drawing.Point(16, 12);
+            this.btn_Logout.Name = "btn_Logout";
+            this.btn_Logout.Size = new System.Drawing.Size(74, 32);
+            this.btn_Logout.TabIndex = 11;
+            this.btn_Logout.Text = "Logout";
+            this.btn_Logout.UseVisualStyleBackColor = false;
+            this.btn_Logout.Click += new System.EventHandler(this.button1_Click);
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1074, 493);
+            this.Controls.Add(this.btn_Logout);
             this.Controls.Add(this.pnlMainII);
             this.Controls.Add(this.pnlMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -744,6 +780,7 @@
         private System.Windows.Forms.Button btnCreateSummary;
         private System.Windows.Forms.Button btn_ViewOrders;
         private System.Windows.Forms.Button btn_SubmitItemChanges;
-
+        private System.Windows.Forms.Button btn_Logout;
+        private System.Windows.Forms.Button btnViewCustomers;
     }
 }

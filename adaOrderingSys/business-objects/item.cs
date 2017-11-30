@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using adaOrderingSys.business_objects;
 
 namespace adaOrderingSys
 {
@@ -27,7 +28,7 @@ namespace adaOrderingSys
 
         public int createItem(string pID, string pName, Decimal pPrice, string pDescription, int quantity)
         {
-            var connectionString = ConfigurationManager.ConnectionStrings["ADAConnectionString"].ConnectionString;
+            var connectionString = ConfigurationManager.ConnectionStrings[Constants.CONNECTIONSTRINGNAME].ConnectionString;
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 try
@@ -61,7 +62,7 @@ namespace adaOrderingSys
 
         public string getItemName(int itemID)
         {
-            var connectionString = ConfigurationManager.ConnectionStrings["ADAConnectionString"].ConnectionString;
+            var connectionString = ConfigurationManager.ConnectionStrings[Constants.CONNECTIONSTRINGNAME].ConnectionString;
             using (SqlConnection conn = new SqlConnection(connectionString)) {
 
                 try
@@ -89,7 +90,7 @@ namespace adaOrderingSys
 
         public string getItemID(String itemName)
         {
-            var connectionString = ConfigurationManager.ConnectionStrings["ADAConnectionString"].ConnectionString;
+            var connectionString = ConfigurationManager.ConnectionStrings[Constants.CONNECTIONSTRINGNAME].ConnectionString;
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
 
@@ -118,7 +119,7 @@ namespace adaOrderingSys
 
         public double getUnitPrice(String itemID)
         {
-            var connectionString = ConfigurationManager.ConnectionStrings["ADAConnectionString"].ConnectionString;
+            var connectionString = ConfigurationManager.ConnectionStrings[Constants.CONNECTIONSTRINGNAME].ConnectionString;
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
 
@@ -152,7 +153,7 @@ namespace adaOrderingSys
         {
             try
             {
-                var connectionString = ConfigurationManager.ConnectionStrings["ADAConnectionString"].ConnectionString;
+                var connectionString = ConfigurationManager.ConnectionStrings[Constants.CONNECTIONSTRINGNAME].ConnectionString;
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
@@ -179,7 +180,7 @@ namespace adaOrderingSys
         {
             try
             {
-                var connectionString = ConfigurationManager.ConnectionStrings["ADAConnectionString"].ConnectionString;
+                var connectionString = ConfigurationManager.ConnectionStrings[Constants.CONNECTIONSTRINGNAME].ConnectionString;
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();

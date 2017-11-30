@@ -50,6 +50,13 @@ namespace adaOrderingSys.business_objects
             set { _additionals = value;} 
         }
 
+        private decimal _unitPrice;
+        public decimal unitPrice
+        {
+            set { _unitPrice = value; }
+            get { return _unitPrice; }
+        }
+
         private decimal _totalPrice;
         public decimal totalPrice
         {
@@ -75,88 +82,27 @@ namespace adaOrderingSys.business_objects
             this._additionals = additionals;
         }
 
+        public ItemsOrdered(string itemID, string itemName, int quantity, decimal unitPrice, decimal totalPrice, int additionals)
+        {
+            this._itemID = itemID;
+            this._itemName = itemName;
+            this._totalPrice = totalPrice;
+            this._qtyOrdered = quantity;
+            this._additionals = additionals;
+            this._unitPrice = unitPrice;
+        }
+
         public ItemsOrdered(String itemName, int quantity, int additionals)
         {
             this._itemName = itemName;
             this._qtyOrdered = quantity;
             this._additionals = additionals;
-        }
-            
-        // public int insertItemsOrdered(int orderID, List<string> itemID)
-        //{
-        //    var connectionString = ConfigurationManager.ConnectionStrings["ADAConnectionString"].ConnectionString;
-        //    using (SqlConnection conn = new SqlConnection(connectionString))
-        //    {
-        //        try
-        //        {
-        //            conn.Open();
-
-        //            string insertQuery = "INSERT INTO [dbo].[ordered_Items]  ([orderID], [itemID]) VALUES";
-        //            string values = "";
-
-        //            foreach (var i in itemID) {
-        //                values += String.Format("({0},{1}),", orderID, i); 
-        //            }
-        //            // Trim Trailing comma from query
-        //            values.TrimEnd(',');
-        //            insertQuery += values;
-
-        //            SqlCommand cmd = new SqlCommand(insertQuery, conn);
-
-        //            cmd.CommandType = CommandType.Text;
-
-        //            int returnVal = (Int32)cmd.ExecuteNonQuery();
-
-        //            return returnVal;
-        //        }
-        //        catch (Exception e)
-        //        {
-        //            logger.Error(e);
-        //            return -1;
-        //        }
-        //    }
-        //}
-
-        //public List<item> getItemsOrdered(int orderID)
-        //{
-        //    var connectionString = ConfigurationManager.ConnectionStrings["ADAConnectionString"].ConnectionString;
-        //    using (SqlConnection conn = new SqlConnection(connectionString))
-        //    {
-        //        try
-        //        {
-        //            conn.Open();
-
-        //            string selectQuery = "SELECT * FROM [dbo].[ordered_Items] WHERE [orderID] = " + orderID;
-        //            string values = "";
-
-        //            foreach (var i in itemID) {
-        //                values += String.Format("({0},{1}),", orderID, i); 
-        //            }
-        //            // Trim Trailing comma from query
-        //            values.TrimEnd(',');
-        //            insertQuery += values;
-
-        //            SqlCommand cmd = new SqlCommand(selectQuery, conn);
-
-        //            cmd.CommandType = CommandType.Text;
-
-        //            int returnVal = (Int32)cmd.ExecuteNonQuery();
-
-        //            return returnVal;
-        //        }
-        //        catch (Exception e)
-        //        {
-        //            logger.Error(e);
-        //            return -1;
-        //        }
-        //    }
-        //    return new List<item>();
-        //}
+        }      
 
         public int insertItemsOrdered(int custID, List<string>itemID, List<int>quantity, List<decimal>totalItemCost, Decimal totalCost, string location, List<int> additionals, int salesNo, int rowCount)
         {
             int orderID=0;
-            var connectionString = ConfigurationManager.ConnectionStrings["ADAConnectionString"].ConnectionString;
+            var connectionString = ConfigurationManager.ConnectionStrings[Constants.CONNECTIONSTRINGNAME].ConnectionString;
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 logger.Info("Attempting to create new order.");
@@ -262,7 +208,7 @@ namespace adaOrderingSys.business_objects
 
         public List<KeyValuePair<int, string>> getOrderedItemNameAndQuantity(int orderID)
         {
-            var connectionString = ConfigurationManager.ConnectionStrings["ADAConnectionString"].ConnectionString;
+            var connectionString = ConfigurationManager.ConnectionStrings[Constants.CONNECTIONSTRINGNAME].ConnectionString;
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 try
@@ -300,7 +246,7 @@ namespace adaOrderingSys.business_objects
 
         public List<ItemsOrdered> getOrderedItemsQuantityAndAdditionals(int orderID)
         {
-            var connectionString = ConfigurationManager.ConnectionStrings["ADAConnectionString"].ConnectionString;
+            var connectionString = ConfigurationManager.ConnectionStrings[Constants.CONNECTIONSTRINGNAME].ConnectionString;
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 try
@@ -327,7 +273,6 @@ namespace adaOrderingSys.business_objects
                                 ));
                         }
                     }
-                    logger.Info("Success"); 
                     return orderDetails;
                 }
                 catch (Exception e)
@@ -340,7 +285,7 @@ namespace adaOrderingSys.business_objects
 
         public List<ItemsOrdered> getItemsOrderedBasedonOrderID(int orderID)
         {
-            var connectionString = ConfigurationManager.ConnectionStrings["ADAConnectionString"].ConnectionString;
+            var connectionString = ConfigurationManager.ConnectionStrings[Constants.CONNECTIONSTRINGNAME].ConnectionString;
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 try
@@ -376,6 +321,46 @@ namespace adaOrderingSys.business_objects
                     return null;
                 }
             } 
+        }
+
+        public List<ItemsOrdered> getItemsOrderedWUPBasedonOrderID(int orderID)
+        {
+            var connectionString = ConfigurationManager.ConnectionStrings[Constants.CONNECTIONSTRINGNAME].ConnectionString;
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+
+                    string selectProcedure = "[dbo].[usp_GetOrderedItemsWithUPFromOrderID]";
+                    List<ItemsOrdered> itemsOrdered = new List<ItemsOrdered>();
+
+                    SqlCommand cmd = new SqlCommand(selectProcedure, conn);
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@orderID", orderID);
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            itemsOrdered.Add(new ItemsOrdered(
+                                dr.GetString(0),
+                                dr.GetString(1),
+                                dr.GetInt32(2),
+                                dr.GetDecimal(3),
+                                dr.GetInt32(4)
+                                ));
+                        }
+                    }
+                    return itemsOrdered;
+                }
+                catch (Exception e)
+                {
+                    logger.Error(e);
+                    return null;
+                }
+            }
         }
     }
 }

@@ -28,49 +28,63 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddNewItem));
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.ddlItemName = new System.Windows.Forms.ComboBox();
+            this.num_Quantity = new System.Windows.Forms.NumericUpDown();
+            this.num_SalesNo = new System.Windows.Forms.NumericUpDown();
+            this.num_Additionals = new System.Windows.Forms.NumericUpDown();
             this.lbl_Item = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            this.btn_Submit = new System.Windows.Forms.Button();
+            this.lbl_SalesNo = new System.Windows.Forms.Label();
+            this.lbl_Additionals = new System.Windows.Forms.Label();
+            this.lbl_Quantity = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.num_Quantity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_SalesNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_Additionals)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // ddlItemName
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(100, 17);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(158, 21);
-            this.comboBox1.TabIndex = 0;
+            this.ddlItemName.FormattingEnabled = true;
+            this.ddlItemName.Location = new System.Drawing.Point(100, 17);
+            this.ddlItemName.Name = "ddlItemName";
+            this.ddlItemName.Size = new System.Drawing.Size(158, 21);
+            this.ddlItemName.TabIndex = 0;
+            this.ddlItemName.SelectedIndexChanged += new System.EventHandler(this.ddlItemName_SelectedIndexChanged);
             // 
-            // numericUpDown1
+            // num_Quantity
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(100, 53);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(52, 20);
-            this.numericUpDown1.TabIndex = 1;
+            this.num_Quantity.Enabled = false;
+            this.num_Quantity.Location = new System.Drawing.Point(100, 53);
+            this.num_Quantity.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.num_Quantity.Name = "num_Quantity";
+            this.num_Quantity.Size = new System.Drawing.Size(52, 20);
+            this.num_Quantity.TabIndex = 1;
+            this.num_Quantity.ValueChanged += new System.EventHandler(this.num_Quantity_ValueChanged);
             // 
-            // numericUpDown2
+            // num_SalesNo
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(100, 136);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(52, 20);
-            this.numericUpDown2.TabIndex = 2;
+            this.num_SalesNo.Enabled = false;
+            this.num_SalesNo.Location = new System.Drawing.Point(100, 136);
+            this.num_SalesNo.Name = "num_SalesNo";
+            this.num_SalesNo.Size = new System.Drawing.Size(52, 20);
+            this.num_SalesNo.TabIndex = 2;
             // 
-            // numericUpDown3
+            // num_Additionals
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(100, 93);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(52, 20);
-            this.numericUpDown3.TabIndex = 3;
+            this.num_Additionals.Enabled = false;
+            this.num_Additionals.Location = new System.Drawing.Point(100, 93);
+            this.num_Additionals.Name = "num_Additionals";
+            this.num_Additionals.Size = new System.Drawing.Size(52, 20);
+            this.num_Additionals.TabIndex = 3;
+            this.num_Additionals.ValueChanged += new System.EventHandler(this.num_Additionals_ValueChanged);
             // 
             // lbl_Item
             // 
@@ -81,41 +95,46 @@
             this.lbl_Item.TabIndex = 4;
             this.lbl_Item.Text = "Item Name";
             // 
-            // button1
+            // btn_Submit
             // 
-            this.button1.Location = new System.Drawing.Point(88, 203);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 33);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Done";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_Submit.Location = new System.Drawing.Point(88, 203);
+            this.btn_Submit.Name = "btn_Submit";
+            this.btn_Submit.Size = new System.Drawing.Size(75, 33);
+            this.btn_Submit.TabIndex = 5;
+            this.btn_Submit.Text = "Done";
+            this.btn_Submit.UseVisualStyleBackColor = true;
+            this.btn_Submit.Click += new System.EventHandler(this.btn_Submit_Click);
             // 
-            // label1
+            // lbl_SalesNo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 138);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Sales No";
+            this.lbl_SalesNo.AutoSize = true;
+            this.lbl_SalesNo.Location = new System.Drawing.Point(17, 138);
+            this.lbl_SalesNo.Name = "lbl_SalesNo";
+            this.lbl_SalesNo.Size = new System.Drawing.Size(50, 13);
+            this.lbl_SalesNo.TabIndex = 6;
+            this.lbl_SalesNo.Text = "Sales No";
             // 
-            // label2
+            // lbl_Additionals
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 93);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Additionals";
+            this.lbl_Additionals.AutoSize = true;
+            this.lbl_Additionals.Location = new System.Drawing.Point(17, 93);
+            this.lbl_Additionals.Name = "lbl_Additionals";
+            this.lbl_Additionals.Size = new System.Drawing.Size(58, 13);
+            this.lbl_Additionals.TabIndex = 7;
+            this.lbl_Additionals.Text = "Additionals";
             // 
-            // label3
+            // lbl_Quantity
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 60);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Quantity";
+            this.lbl_Quantity.AutoSize = true;
+            this.lbl_Quantity.Location = new System.Drawing.Point(17, 60);
+            this.lbl_Quantity.Name = "lbl_Quantity";
+            this.lbl_Quantity.Size = new System.Drawing.Size(46, 13);
+            this.lbl_Quantity.TabIndex = 8;
+            this.lbl_Quantity.Text = "Quantity";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // AddNewItem
             // 
@@ -123,23 +142,25 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(278, 248);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.lbl_Quantity);
+            this.Controls.Add(this.lbl_Additionals);
+            this.Controls.Add(this.lbl_SalesNo);
+            this.Controls.Add(this.btn_Submit);
             this.Controls.Add(this.lbl_Item);
-            this.Controls.Add(this.numericUpDown3);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.num_Additionals);
+            this.Controls.Add(this.num_SalesNo);
+            this.Controls.Add(this.num_Quantity);
+            this.Controls.Add(this.ddlItemName);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AddNewItem";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddNewItem";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_Quantity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_SalesNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_Additionals)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,14 +168,15 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.ComboBox ddlItemName;
+        private System.Windows.Forms.NumericUpDown num_Quantity;
+        private System.Windows.Forms.NumericUpDown num_SalesNo;
+        private System.Windows.Forms.NumericUpDown num_Additionals;
         private System.Windows.Forms.Label lbl_Item;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btn_Submit;
+        private System.Windows.Forms.Label lbl_SalesNo;
+        private System.Windows.Forms.Label lbl_Additionals;
+        private System.Windows.Forms.Label lbl_Quantity;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

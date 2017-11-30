@@ -70,12 +70,12 @@ namespace adaOrderingSys
             this.btnDelete = new System.Windows.Forms.Button();
             this.customerTableAdapter = new adaOrderingSys.ADADataSetTableAdapters.customerTableAdapter();
             this.aDADataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnBack = new System.Windows.Forms.Button();
             this.itemTableAdapter = new adaOrderingSys.ADADataSet1TableAdapters.itemTableAdapter();
             this.ep_Quantity = new System.Windows.Forms.ErrorProvider(this.components);
             this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ep_Item = new System.Windows.Forms.ErrorProvider(this.components);
             this.ep_Customer = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnBack = new System.Windows.Forms.Button();
             this.pnlAddOrder.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numeric_SalesNo)).BeginInit();
@@ -446,20 +446,6 @@ namespace adaOrderingSys
             this.aDADataSetBindingSource.DataSource = this.aDADataSet;
             this.aDADataSetBindingSource.Position = 0;
             // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.Yellow;
-            this.btnBack.Location = new System.Drawing.Point(12, 12);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(113, 39);
-            this.btnBack.TabIndex = 6;
-            this.btnBack.Text = "◀ Back";
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
             // itemTableAdapter
             // 
             this.itemTableAdapter.ClearBeforeFill = true;
@@ -482,6 +468,20 @@ namespace adaOrderingSys
             // 
             this.ep_Customer.ContainerControl = this;
             // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.Yellow;
+            this.btnBack.Location = new System.Drawing.Point(12, 12);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(113, 39);
+            this.btnBack.TabIndex = 6;
+            this.btnBack.Text = "◀ Back";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // newOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -491,6 +491,7 @@ namespace adaOrderingSys
             this.Controls.Add(this.pnlAddOrder);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "newOrder";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "newOrder";
             this.Load += new System.EventHandler(this.newOrder_Load);
             this.pnlAddOrder.ResumeLayout(false);
@@ -536,7 +537,6 @@ namespace adaOrderingSys
         private TextBox txt_Quantity;
         private Label label1;
         private GroupBox groupBox3;
-        private Button btnBack;
         private ADADataSet1 aDADataSet1;
         private BindingSource itemBindingSource1;
         private ADADataSet1TableAdapters.itemTableAdapter itemTableAdapter;
@@ -563,5 +563,6 @@ namespace adaOrderingSys
         private DataGridViewTextBoxColumn clmn_TotalCost;
         private Button btn_Clear;
         private Button btn_Add;
+        private Button btnBack;
     }
 }

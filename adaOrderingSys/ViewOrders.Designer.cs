@@ -31,7 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewOrders));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_NewOrder = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.list_Orders = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbl_OrderID = new System.Windows.Forms.Label();
@@ -55,7 +56,8 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btn_NewOrder);
+            this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.list_Orders);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.label1);
@@ -69,14 +71,29 @@
             this.panel1.Size = new System.Drawing.Size(964, 554);
             this.panel1.TabIndex = 0;
             // 
-            // button1
+            // btn_NewOrder
             // 
-            this.button1.Location = new System.Drawing.Point(539, 494);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 37);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_NewOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_NewOrder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_NewOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_NewOrder.ForeColor = System.Drawing.Color.Yellow;
+            this.btn_NewOrder.Location = new System.Drawing.Point(796, 12);
+            this.btn_NewOrder.Name = "btn_NewOrder";
+            this.btn_NewOrder.Size = new System.Drawing.Size(113, 39);
+            this.btn_NewOrder.TabIndex = 15;
+            this.btn_NewOrder.Text = "New Order";
+            this.btn_NewOrder.UseVisualStyleBackColor = false;
+            this.btn_NewOrder.Click += new System.EventHandler(this.btn_NewOrder_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(539, 494);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 37);
+            this.btnAdd.TabIndex = 14;
+            this.btnAdd.Text = "Add Item";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // list_Orders
             // 
@@ -85,7 +102,9 @@
             this.list_Orders.Name = "list_Orders";
             this.list_Orders.Size = new System.Drawing.Size(168, 355);
             this.list_Orders.TabIndex = 13;
+            this.list_Orders.SelectedIndexChanged += new System.EventHandler(this.list_Orders_SelectedIndexChanged);
             this.list_Orders.DoubleClick += new System.EventHandler(this.list_Orders_DoubleClick);
+            this.list_Orders.MouseHover += new System.EventHandler(this.list_Orders_MouseHover);
             // 
             // groupBox1
             // 
@@ -136,34 +155,37 @@
             // 
             this.rtxtLocation.Location = new System.Drawing.Point(176, 61);
             this.rtxtLocation.Name = "rtxtLocation";
-            this.rtxtLocation.Size = new System.Drawing.Size(147, 38);
+            this.rtxtLocation.Size = new System.Drawing.Size(179, 49);
             this.rtxtLocation.TabIndex = 16;
             this.rtxtLocation.Text = "";
             // 
             // cb_Customer
             // 
+            this.cb_Customer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_Customer.FormattingEnabled = true;
             this.cb_Customer.Location = new System.Drawing.Point(176, 24);
             this.cb_Customer.Name = "cb_Customer";
-            this.cb_Customer.Size = new System.Drawing.Size(147, 21);
+            this.cb_Customer.Size = new System.Drawing.Size(179, 21);
             this.cb_Customer.TabIndex = 15;
-            this.cb_Customer.SelectedIndexChanged += new System.EventHandler(this.cb_Customer_SelectedIndexChanged);
+            this.cb_Customer.MouseHover += new System.EventHandler(this.cb_Customer_MouseHover);
             // 
             // lbl_Location
             // 
             this.lbl_Location.AutoSize = true;
-            this.lbl_Location.Location = new System.Drawing.Point(84, 76);
+            this.lbl_Location.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Location.Location = new System.Drawing.Point(87, 74);
             this.lbl_Location.Name = "lbl_Location";
-            this.lbl_Location.Size = new System.Drawing.Size(48, 13);
+            this.lbl_Location.Size = new System.Drawing.Size(62, 17);
             this.lbl_Location.TabIndex = 14;
             this.lbl_Location.Text = "Location";
             // 
             // lbl_Customer
             // 
             this.lbl_Customer.AutoSize = true;
+            this.lbl_Customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Customer.Location = new System.Drawing.Point(84, 27);
             this.lbl_Customer.Name = "lbl_Customer";
-            this.lbl_Customer.Size = new System.Drawing.Size(51, 13);
+            this.lbl_Customer.Size = new System.Drawing.Size(68, 17);
             this.lbl_Customer.TabIndex = 12;
             this.lbl_Customer.Text = "Customer";
             // 
@@ -178,6 +200,8 @@
             this.dgvItemsOrdered.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemsOrdered_CellValueChanged);
             this.dgvItemsOrdered.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvItemsOrdered_DataError);
             this.dgvItemsOrdered.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvItemsOrdered_RowsRemoved);
+            this.dgvItemsOrdered.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dgvItemsOrdered_UserDeletedRow);
+            this.dgvItemsOrdered.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgvItemsOrdered_UserDeletingRow);
             this.dgvItemsOrdered.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgvItemsOrdered_KeyPress);
             // 
             // label1
@@ -247,6 +271,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ViewOrders";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ViewOrders";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -276,6 +301,7 @@
         private System.Windows.Forms.ListBox list_Orders;
         private System.Windows.Forms.ToolTip ViewOrdersToolTip;
         private System.Windows.Forms.Label lbl_OrderID;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btn_NewOrder;
     }
 }

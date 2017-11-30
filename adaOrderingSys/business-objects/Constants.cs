@@ -16,16 +16,20 @@ namespace adaOrderingSys.business_objects
         public static string TOTALCOST_COLUMN = "totalCost";
         public static string ADDITIONALS_COLUMN = "additionals";
 
+        // Connection Strings
+        public static string CONNECTIONSTRINGNAME = "ADAConnectionString";
+
         //Stored Procedures
 
 
         //Loading Sheet
         public static int LOADING_SHEET_MAX = 100; //maximum number of lines in one loading sheet
-        public static int MAX_LOADING_SHEET_COLUMN = 48;
+        public static int MAX_LOADING_SHEET_COLUMN = 47;
         public static string LOADING_SHEET_HEADER = "LOADING SHEET";
         public static string LOADING_SHEET_SPACER = "   ";
 
         //Messages
         public static string OUT_OF_STOCK_MSG = "Out of stock";
+        public static string GENERIC_ERROR = "An error occured. Please try again";
     }
 }

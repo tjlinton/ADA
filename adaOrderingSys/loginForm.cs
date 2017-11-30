@@ -71,9 +71,13 @@ namespace adaOrderingSys
                         case -1:
                             logger.Warn("Unable to log in user " + txtUserName.Text + ". Incorrect credentials enterred");
                             MessageBox.Show("Incorrect credentials. Try Again");
+                            txtPassword.SelectAll();
+                            txtPassword.Focus();
                             break;
                         case 1:
                             MessageBox.Show("ERROR:" + "Please contact system admin");
+                            txtPassword.SelectAll();
+                            txtPassword.Focus();
                             break;
                     }
                 }

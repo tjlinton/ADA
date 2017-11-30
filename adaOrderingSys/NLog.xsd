@@ -782,7 +782,7 @@
           <xs:element name="dbPassword" minOccurs="0" maxOccurs="1" type="Layout" />
           <xs:element name="keepConnection" minOccurs="0" maxOccurs="1" type="xs:boolean" />
           <xs:element name="dbDatabase" minOccurs="0" maxOccurs="1" type="Layout" />
-          <xs:element name="connectionStringName" minOccurs="0" maxOccurs="1" type="xs:string" />
+          <xs:element name="Constants.CONNECTIONSTRINGNAME" minOccurs="0" maxOccurs="1" type="xs:string" />
           <xs:element name="connectionString" minOccurs="0" maxOccurs="1" type="Layout" />
           <xs:element name="dbHost" minOccurs="0" maxOccurs="1" type="Layout" />
           <xs:element name="installConnectionString" minOccurs="0" maxOccurs="1" type="Layout" />
@@ -828,7 +828,7 @@
             <xs:documentation>Database name. If the ConnectionString is not provided this value will be used to construct the "Database=" part of the connection string.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="connectionStringName" type="xs:string">
+        <xs:attribute name="Constants.CONNECTIONSTRINGNAME" type="xs:string">
           <xs:annotation>
             <xs:documentation>Name of the connection string (as specified in &lt;connectionStrings&gt; configuration section.</xs:documentation>
           </xs:annotation>

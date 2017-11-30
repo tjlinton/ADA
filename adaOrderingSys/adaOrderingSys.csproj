@@ -11,7 +11,8 @@
     <AssemblyName>adaOrderingSys</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <PublishUrl>publish\</PublishUrl>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Tajay\Documents\Tajay Docs\ADA\app\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -21,10 +22,10 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -45,6 +46,39 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>C5D9BFC968FE8C491C30B172732630703F0B0134</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>adaOrderingSys_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
@@ -73,6 +107,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ADADataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ADADataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ADADataSet2.xsd</DependentUpon>
     </Compile>
     <Compile Include="ADAItemDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -124,6 +163,18 @@
     <Compile Include="SummaryForm.Designer.cs">
       <DependentUpon>SummaryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewCustomers.Designer.cs">
+      <DependentUpon>ViewCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewLoadingSheets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewLoadingSheets.Designer.cs">
+      <DependentUpon>ViewLoadingSheets.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewOrders.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +211,12 @@
     <EmbeddedResource Include="SummaryForm.resx">
       <DependentUpon>SummaryForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ViewCustomers.resx">
+      <DependentUpon>ViewCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewLoadingSheets.resx">
+      <DependentUpon>ViewLoadingSheets.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewOrders.resx">
       <DependentUpon>ViewOrders.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,8 +225,8 @@
     </None>
     <None Include="ADADataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ADADataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>ADADataSet.Designer.cs</LastGenOutput>
     </None>
     <None Include="ADADataSet.xss">
       <DependentUpon>ADADataSet.xsd</DependentUpon>
@@ -179,23 +236,35 @@
     </None>
     <None Include="ADADataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ADADataSet1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>ADADataSet1.Designer.cs</LastGenOutput>
     </None>
     <None Include="ADADataSet1.xss">
       <DependentUpon>ADADataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ADADataSet2.xsc">
+      <DependentUpon>ADADataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="ADADataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ADADataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ADADataSet2.xss">
+      <DependentUpon>ADADataSet2.xsd</DependentUpon>
     </None>
     <None Include="ADAItemDataSet.xsc">
       <DependentUpon>ADAItemDataSet.xsd</DependentUpon>
     </None>
     <None Include="ADAItemDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ADAItemDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>ADAItemDataSet.Designer.cs</LastGenOutput>
     </None>
     <None Include="ADAItemDataSet.xss">
       <DependentUpon>ADAItemDataSet.xsd</DependentUpon>
     </None>
+    <None Include="adaOrderingSys_TemporaryKey.pfx" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>

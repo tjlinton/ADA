@@ -21,7 +21,7 @@ namespace adaOrderingSys.business_objects
 
         public int loginUser(string uName, string pword)
         {
-            var connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["ADAConnectionString"].ConnectionString;
+            var connectionString = System.Configuration.ConfigurationManager.ConnectionStrings[Constants.CONNECTIONSTRINGNAME].ConnectionString;
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 try

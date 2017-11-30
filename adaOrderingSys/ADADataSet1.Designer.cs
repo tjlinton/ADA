@@ -827,7 +827,6 @@ namespace adaOrderingSys.ADADataSet1TableAdapters {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             ADADataSet1.itemDataTable dataTable = new ADADataSet1.itemDataTable();
             this.Adapter.Fill(dataTable);
-            
             return dataTable;
         }
         
