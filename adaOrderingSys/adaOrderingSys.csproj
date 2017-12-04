@@ -163,11 +163,17 @@
     <Compile Include="SummaryForm.Designer.cs">
       <DependentUpon>SummaryForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewCustomers.cs">
+    <Compile Include="UserManagement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewCustomers.Designer.cs">
-      <DependentUpon>ViewCustomers.cs</DependentUpon>
+    <Compile Include="UserManagement.Designer.cs">
+      <DependentUpon>UserManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewCustomer.Designer.cs">
+      <DependentUpon>ViewCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewLoadingSheets.cs">
       <SubType>Form</SubType>
@@ -181,6 +187,7 @@
     <Compile Include="ViewOrders.Designer.cs">
       <DependentUpon>ViewOrders.cs</DependentUpon>
     </Compile>
+    <Content Include="users.png" />
     <EmbeddedResource Include="AddNewItem.resx">
       <DependentUpon>AddNewItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -205,14 +212,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Content Include="Image1.png" />
     <Content Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <EmbeddedResource Include="SummaryForm.resx">
       <DependentUpon>SummaryForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewCustomers.resx">
-      <DependentUpon>ViewCustomers.cs</DependentUpon>
+    <EmbeddedResource Include="UserManagement.resx">
+      <DependentUpon>UserManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewCustomer.resx">
+      <DependentUpon>ViewCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewLoadingSheets.resx">
       <DependentUpon>ViewLoadingSheets.cs</DependentUpon>

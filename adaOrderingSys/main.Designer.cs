@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
             this.btnNewOrder = new System.Windows.Forms.Button();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.pictureBox_UM = new System.Windows.Forms.PictureBox();
+            this.btn_ViewLoadingSheet = new System.Windows.Forms.Button();
             this.btnViewCustomers = new System.Windows.Forms.Button();
             this.btn_ViewOrders = new System.Windows.Forms.Button();
             this.btnCreateSummary = new System.Windows.Forms.Button();
@@ -86,6 +88,7 @@
             this.itemTableAdapter = new adaOrderingSys.ADAItemDataSetTableAdapters.itemTableAdapter();
             this.btn_Logout = new System.Windows.Forms.Button();
             this.pnlMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_UM)).BeginInit();
             this.pnlMainII.SuspendLayout();
             this.pnlCustInfo.SuspendLayout();
             this.pnlProductInfo.SuspendLayout();
@@ -114,16 +117,17 @@
             this.btnNewOrder.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNewOrder.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.btnNewOrder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnNewOrder.Location = new System.Drawing.Point(446, 224);
+            this.btnNewOrder.Location = new System.Drawing.Point(180, 19);
             this.btnNewOrder.Name = "btnNewOrder";
             this.btnNewOrder.Size = new System.Drawing.Size(212, 72);
             this.btnNewOrder.TabIndex = 4;
-            this.btnNewOrder.Text = "New order";
+            this.btnNewOrder.Text = "Add order";
             this.btnNewOrder.UseVisualStyleBackColor = false;
             this.btnNewOrder.Click += new System.EventHandler(this.btnNewOrder_Click);
             // 
             // pnlMain
             // 
+            this.pnlMain.Controls.Add(this.btn_ViewLoadingSheet);
             this.pnlMain.Controls.Add(this.btnViewCustomers);
             this.pnlMain.Controls.Add(this.btn_ViewOrders);
             this.pnlMain.Controls.Add(this.btnCreateSummary);
@@ -135,6 +139,38 @@
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(928, 416);
             this.pnlMain.TabIndex = 7;
+            // 
+            // pictureBox_UM
+            // 
+            this.pictureBox_UM.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_UM.Image")));
+            this.pictureBox_UM.Location = new System.Drawing.Point(989, 12);
+            this.pictureBox_UM.Name = "pictureBox_UM";
+            this.pictureBox_UM.Size = new System.Drawing.Size(73, 58);
+            this.pictureBox_UM.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox_UM.TabIndex = 14;
+            this.pictureBox_UM.TabStop = false;
+            this.pictureBox_UM.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox_UM.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
+            // 
+            // btn_ViewLoadingSheet
+            // 
+            this.btn_ViewLoadingSheet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_ViewLoadingSheet.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_ViewLoadingSheet.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btn_ViewLoadingSheet.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
+            this.btn_ViewLoadingSheet.FlatAppearance.BorderSize = 10;
+            this.btn_ViewLoadingSheet.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Yellow;
+            this.btn_ViewLoadingSheet.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
+            this.btn_ViewLoadingSheet.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_ViewLoadingSheet.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btn_ViewLoadingSheet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_ViewLoadingSheet.Location = new System.Drawing.Point(180, 119);
+            this.btn_ViewLoadingSheet.Name = "btn_ViewLoadingSheet";
+            this.btn_ViewLoadingSheet.Size = new System.Drawing.Size(212, 72);
+            this.btn_ViewLoadingSheet.TabIndex = 13;
+            this.btn_ViewLoadingSheet.Text = "View Loading Sheets";
+            this.btn_ViewLoadingSheet.UseVisualStyleBackColor = false;
+            this.btn_ViewLoadingSheet.Click += new System.EventHandler(this.btn_ViewLoadingSheet_Click);
             // 
             // btnViewCustomers
             // 
@@ -148,7 +184,7 @@
             this.btnViewCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnViewCustomers.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.btnViewCustomers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnViewCustomers.Location = new System.Drawing.Point(172, 315);
+            this.btnViewCustomers.Location = new System.Drawing.Point(180, 315);
             this.btnViewCustomers.Name = "btnViewCustomers";
             this.btnViewCustomers.Size = new System.Drawing.Size(212, 72);
             this.btnViewCustomers.TabIndex = 12;
@@ -168,7 +204,7 @@
             this.btn_ViewOrders.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_ViewOrders.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.btn_ViewOrders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btn_ViewOrders.Location = new System.Drawing.Point(172, 29);
+            this.btn_ViewOrders.Location = new System.Drawing.Point(454, 217);
             this.btn_ViewOrders.Name = "btn_ViewOrders";
             this.btn_ViewOrders.Size = new System.Drawing.Size(212, 72);
             this.btn_ViewOrders.TabIndex = 11;
@@ -188,7 +224,7 @@
             this.btnCreateSummary.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCreateSummary.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.btnCreateSummary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnCreateSummary.Location = new System.Drawing.Point(172, 224);
+            this.btnCreateSummary.Location = new System.Drawing.Point(454, 22);
             this.btnCreateSummary.Name = "btnCreateSummary";
             this.btnCreateSummary.Size = new System.Drawing.Size(212, 72);
             this.btnCreateSummary.TabIndex = 10;
@@ -208,11 +244,11 @@
             this.btnNewProduct.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNewProduct.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.btnNewProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnNewProduct.Location = new System.Drawing.Point(446, 130);
+            this.btnNewProduct.Location = new System.Drawing.Point(180, 217);
             this.btnNewProduct.Name = "btnNewProduct";
             this.btnNewProduct.Size = new System.Drawing.Size(212, 72);
             this.btnNewProduct.TabIndex = 9;
-            this.btnNewProduct.Text = "New Product";
+            this.btnNewProduct.Text = "Add Product";
             this.btnNewProduct.UseVisualStyleBackColor = false;
             this.btnNewProduct.Click += new System.EventHandler(this.btnNewProduct_Click);
             // 
@@ -228,7 +264,7 @@
             this.btnViewInventory.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnViewInventory.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.btnViewInventory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnViewInventory.Location = new System.Drawing.Point(172, 124);
+            this.btnViewInventory.Location = new System.Drawing.Point(454, 315);
             this.btnViewInventory.Name = "btnViewInventory";
             this.btnViewInventory.Size = new System.Drawing.Size(212, 72);
             this.btnViewInventory.TabIndex = 8;
@@ -248,7 +284,7 @@
             this.btnAddCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAddCustomer.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.btnAddCustomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnAddCustomer.Location = new System.Drawing.Point(446, 29);
+            this.btnAddCustomer.Location = new System.Drawing.Point(454, 122);
             this.btnAddCustomer.Name = "btnAddCustomer";
             this.btnAddCustomer.Size = new System.Drawing.Size(212, 72);
             this.btnAddCustomer.TabIndex = 7;
@@ -285,7 +321,7 @@
             this.pnlCustInfo.Font = new System.Drawing.Font("Verdana", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlCustInfo.Location = new System.Drawing.Point(204, 69);
             this.pnlCustInfo.Name = "pnlCustInfo";
-            this.pnlCustInfo.Size = new System.Drawing.Size(727, 384);
+            this.pnlCustInfo.Size = new System.Drawing.Size(727, 397);
             this.pnlCustInfo.TabIndex = 1;
             // 
             // btnClearCustomer
@@ -294,7 +330,7 @@
             this.btnClearCustomer.CausesValidation = false;
             this.btnClearCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClearCustomer.ForeColor = System.Drawing.Color.Gold;
-            this.btnClearCustomer.Location = new System.Drawing.Point(261, 323);
+            this.btnClearCustomer.Location = new System.Drawing.Point(316, 323);
             this.btnClearCustomer.Name = "btnClearCustomer";
             this.btnClearCustomer.Size = new System.Drawing.Size(101, 45);
             this.btnClearCustomer.TabIndex = 24;
@@ -307,7 +343,7 @@
             this.btnSubmitCust.BackColor = System.Drawing.Color.Green;
             this.btnSubmitCust.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSubmitCust.ForeColor = System.Drawing.Color.Gold;
-            this.btnSubmitCust.Location = new System.Drawing.Point(125, 323);
+            this.btnSubmitCust.Location = new System.Drawing.Point(180, 323);
             this.btnSubmitCust.Name = "btnSubmitCust";
             this.btnSubmitCust.Size = new System.Drawing.Size(101, 45);
             this.btnSubmitCust.TabIndex = 22;
@@ -317,7 +353,7 @@
             // 
             // txtContactPerson
             // 
-            this.txtContactPerson.Location = new System.Drawing.Point(223, 209);
+            this.txtContactPerson.Location = new System.Drawing.Point(291, 231);
             this.txtContactPerson.Name = "txtContactPerson";
             this.txtContactPerson.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtContactPerson.Size = new System.Drawing.Size(216, 30);
@@ -327,7 +363,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 207);
+            this.label2.Location = new System.Drawing.Point(86, 234);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(153, 23);
             this.label2.TabIndex = 19;
@@ -335,7 +371,7 @@
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(223, 94);
+            this.txtAddress.Location = new System.Drawing.Point(291, 116);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
             this.txtAddress.Size = new System.Drawing.Size(290, 96);
@@ -344,7 +380,7 @@
             // 
             // txtTelephoneNo
             // 
-            this.txtTelephoneNo.Location = new System.Drawing.Point(223, 53);
+            this.txtTelephoneNo.Location = new System.Drawing.Point(291, 75);
             this.txtTelephoneNo.Name = "txtTelephoneNo";
             this.txtTelephoneNo.Size = new System.Drawing.Size(216, 30);
             this.txtTelephoneNo.TabIndex = 17;
@@ -354,7 +390,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Verdana", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(18, 53);
+            this.label9.Location = new System.Drawing.Point(86, 75);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(140, 23);
             this.label9.TabIndex = 16;
@@ -364,7 +400,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Verdana", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(18, 136);
+            this.label8.Location = new System.Drawing.Point(86, 149);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(86, 23);
             this.label8.TabIndex = 14;
@@ -372,7 +408,7 @@
             // 
             // txtBusinessName
             // 
-            this.txtBusinessName.Location = new System.Drawing.Point(223, 14);
+            this.txtBusinessName.Location = new System.Drawing.Point(291, 36);
             this.txtBusinessName.Name = "txtBusinessName";
             this.txtBusinessName.Size = new System.Drawing.Size(216, 30);
             this.txtBusinessName.TabIndex = 1;
@@ -381,7 +417,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 8);
+            this.label1.Location = new System.Drawing.Point(86, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(155, 23);
             this.label1.TabIndex = 0;
@@ -413,7 +449,7 @@
             // 
             this.lblDollar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDollar.AutoSize = true;
-            this.lblDollar.Location = new System.Drawing.Point(221, 267);
+            this.lblDollar.Location = new System.Drawing.Point(207, 267);
             this.lblDollar.Name = "lblDollar";
             this.lblDollar.Size = new System.Drawing.Size(22, 23);
             this.lblDollar.TabIndex = 26;
@@ -421,10 +457,10 @@
             // 
             // txtUnitPrice
             // 
-            this.txtUnitPrice.Location = new System.Drawing.Point(223, 260);
+            this.txtUnitPrice.Location = new System.Drawing.Point(232, 264);
             this.txtUnitPrice.Name = "txtUnitPrice";
             this.txtUnitPrice.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtUnitPrice.Size = new System.Drawing.Size(75, 30);
+            this.txtUnitPrice.Size = new System.Drawing.Size(89, 30);
             this.txtUnitPrice.TabIndex = 21;
             this.txtUnitPrice.Text = "0.00";
             this.txtUnitPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUnitPrice_KeyPress);
@@ -469,7 +505,7 @@
             // 
             // txtQuantity
             // 
-            this.txtQuantity.Location = new System.Drawing.Point(223, 209);
+            this.txtQuantity.Location = new System.Drawing.Point(232, 213);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtQuantity.Size = new System.Drawing.Size(75, 30);
@@ -488,7 +524,7 @@
             // 
             // txtProductDescription
             // 
-            this.txtProductDescription.Location = new System.Drawing.Point(223, 94);
+            this.txtProductDescription.Location = new System.Drawing.Point(232, 94);
             this.txtProductDescription.Name = "txtProductDescription";
             this.txtProductDescription.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
             this.txtProductDescription.Size = new System.Drawing.Size(290, 96);
@@ -497,7 +533,7 @@
             // 
             // txtProductName
             // 
-            this.txtProductName.Location = new System.Drawing.Point(223, 53);
+            this.txtProductName.Location = new System.Drawing.Point(232, 54);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(216, 30);
             this.txtProductName.TabIndex = 17;
@@ -525,7 +561,7 @@
             // 
             // txtProductID
             // 
-            this.txtProductID.Location = new System.Drawing.Point(223, 14);
+            this.txtProductID.Location = new System.Drawing.Point(232, 15);
             this.txtProductID.Name = "txtProductID";
             this.txtProductID.Size = new System.Drawing.Size(216, 30);
             this.txtProductID.TabIndex = 1;
@@ -687,7 +723,7 @@
             this.btn_Logout.TabIndex = 11;
             this.btn_Logout.Text = "Logout";
             this.btn_Logout.UseVisualStyleBackColor = false;
-            this.btn_Logout.Click += new System.EventHandler(this.button1_Click);
+            this.btn_Logout.Click += new System.EventHandler(this.btn_Logout_Click);
             // 
             // main
             // 
@@ -695,6 +731,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1074, 493);
+            this.Controls.Add(this.pictureBox_UM);
             this.Controls.Add(this.btn_Logout);
             this.Controls.Add(this.pnlMainII);
             this.Controls.Add(this.pnlMain);
@@ -705,6 +742,7 @@
             this.Text = "- Inventory Management";
             this.Load += new System.EventHandler(this.main_Load);
             this.pnlMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_UM)).EndInit();
             this.pnlMainII.ResumeLayout(false);
             this.pnlCustInfo.ResumeLayout(false);
             this.pnlCustInfo.PerformLayout();
@@ -782,5 +820,7 @@
         private System.Windows.Forms.Button btn_SubmitItemChanges;
         private System.Windows.Forms.Button btn_Logout;
         private System.Windows.Forms.Button btnViewCustomers;
+        private System.Windows.Forms.Button btn_ViewLoadingSheet;
+        private System.Windows.Forms.PictureBox pictureBox_UM;
     }
 }

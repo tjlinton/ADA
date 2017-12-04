@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace adaOrderingSys.business_objects
@@ -31,5 +32,12 @@ namespace adaOrderingSys.business_objects
         //Messages
         public static string OUT_OF_STOCK_MSG = "Out of stock";
         public static string GENERIC_ERROR = "An error occured. Please try again";
+
+        //User Roles
+        public static string USER_ROLE_ADMIN = "Admin";
+        public static string USER_ROLE_STAFF = "Staff";
+
+        //Password regex
+        public static Regex strongRegex = new Regex(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{6,})");
     }
 }

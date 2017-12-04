@@ -20,7 +20,6 @@ namespace adaOrderingSys
         private SqlDataAdapter adapter { get; set; }
         private DataSet ds { get; set; }
         private DataTable dt { get; set; }
-        private SqlCommandBuilder cmbdbldr;
 
         private static string connectionString = ConfigurationManager.ConnectionStrings["ADAConnectionString"].ConnectionString;
         SqlConnection conn = new SqlConnection(connectionString);
@@ -44,14 +43,27 @@ namespace adaOrderingSys
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to go back?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            if (dgvItemsOrdered.Rows.Count > 0)
             {
-                this.Hide();
-                main mainForm = new main();
-                mainForm.Show();
+                if (MessageBox.Show("Are you sure you want to go back?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                {
+                    showMain();
+                }
             }
             
+            else
+            {
+                showMain();
+            }            
         }
+        
+        public void showMain()
+        {
+            this.Hide();
+            main mainForm = new main();
+            mainForm.Show();
+        }
+
         private void list_Orders_DoubleClick(object sender, EventArgs e)
         {
             if (this.list_Orders.SelectedIndex != -1)
@@ -127,7 +139,6 @@ namespace adaOrderingSys
                         {
                             if (adapter != null)
                             {
-                                cmbdbldr = new SqlCommandBuilder(adapter);
                                 adapter.Update(dt);
                             }
 

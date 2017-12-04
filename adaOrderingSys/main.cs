@@ -34,6 +34,13 @@ namespace adaOrderingSys
             this.pnlMain.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlMainII.Hide();
             this.btn_Logout.Show();
+
+            if (User.userRole != Constants.USER_ROLE_ADMIN)
+            {
+                this.btnNewProduct.Hide();
+                this.pictureBox_UM.Hide();
+                this.btnViewInventory.Hide();
+            }
         }
 
         //--------------------------------------------------------------------------
@@ -172,6 +179,7 @@ namespace adaOrderingSys
             this.pnlCustInfo.Hide();
             this.pnl_ViewInventory.Show();
             this.btn_Logout.Hide();
+            this.pictureBox_UM.Hide();
 
         }
 
@@ -191,6 +199,7 @@ namespace adaOrderingSys
             this.pnl_ViewInventory.Hide();
             this.pnlCustInfo.Show();
             this.btn_Logout.Hide();
+            this.pictureBox_UM.Hide();
         }
 
         private void btnNewProduct_Click(object sender, EventArgs e)
@@ -201,6 +210,7 @@ namespace adaOrderingSys
             this.pnl_ViewInventory.Hide();
             this.pnlCustInfo.Hide();
             this.btn_Logout.Hide();
+            this.pictureBox_UM.Hide();
         }
 
         private void btn_ViewOrders_Click(object sender, EventArgs e)
@@ -223,6 +233,7 @@ namespace adaOrderingSys
             this.pnlMainII.Hide();
             this.pnlMain.Show();
             this.btn_Logout.Show();
+            this.pictureBox_UM.Show();
         }
 
 
@@ -388,7 +399,7 @@ namespace adaOrderingSys
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_Logout_Click(object sender, EventArgs e)
         {
             for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
             {
@@ -405,8 +416,27 @@ namespace adaOrderingSys
         private void btnViewCustomers_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ViewCustomers viewCust = new ViewCustomers();
+            ViewCustomer viewCust = new ViewCustomer();
             viewCust.Show();
+        }
+
+        private void btn_ViewLoadingSheet_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ViewLoadingSheets viewSheets = new ViewLoadingSheets();
+            viewSheets.Show();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            UserManagement umForm = new UserManagement();
+            umForm.Show();
+        }
+
+        private void pictureBox1_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox_UM.Cursor = Cursors.Hand;
         }
     }
 }

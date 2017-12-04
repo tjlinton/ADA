@@ -58,26 +58,27 @@ namespace adaOrderingSys
                 else
                 {
                     User user = new User();
-                    int response = user.loginUser(txtUserName.Text, txtPassword.Text);
+                    string response = user.loginUser(txtUserName.Text, txtPassword.Text);
 
                     switch (response)
                     {
-                        case 0:
-                            logger.Info("User: " + txtUserName.Text + " successfully logged in");
-                            this.Hide();
-                            main objFormMain = new main();
-                            objFormMain.Show();
-                            break;
-                        case -1:
+                        case "-1":
                             logger.Warn("Unable to log in user " + txtUserName.Text + ". Incorrect credentials enterred");
                             MessageBox.Show("Incorrect credentials. Try Again");
                             txtPassword.SelectAll();
                             txtPassword.Focus();
                             break;
-                        case 1:
+                        case "1":
                             MessageBox.Show("ERROR:" + "Please contact system admin");
                             txtPassword.SelectAll();
                             txtPassword.Focus();
+                            break;
+
+                        default:
+                            logger.Info("User: " + txtUserName.Text + " successfully logged in");
+                            this.Hide();
+                            main objFormMain = new main();
+                            objFormMain.Show();
                             break;
                     }
                 }

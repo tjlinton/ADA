@@ -1,6 +1,6 @@
 ﻿namespace adaOrderingSys
 {
-    partial class ViewCustomers
+    partial class ViewCustomer
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewCustomer));
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btn_Submit = new System.Windows.Forms.Button();
+            this.dgv_Customers = new System.Windows.Forms.DataGridView();
             this.custIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.custNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.custAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,32 +42,67 @@
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.aDADataSet2 = new adaOrderingSys.ADADataSet2();
             this.customerTableAdapter = new adaOrderingSys.ADADataSet2TableAdapters.customerTableAdapter();
-            this.btnSubmit = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnBack = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Customers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aDADataSet2)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // panel1
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.panel1.Controls.Add(this.btnBack);
+            this.panel1.Controls.Add(this.btn_Submit);
+            this.panel1.Controls.Add(this.dgv_Customers);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(967, 525);
+            this.panel1.TabIndex = 0;
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.Yellow;
+            this.btnBack.Location = new System.Drawing.Point(12, 12);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(113, 39);
+            this.btnBack.TabIndex = 3;
+            this.btnBack.Text = "◀ Back";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // btn_Submit
+            // 
+            this.btn_Submit.Location = new System.Drawing.Point(462, 453);
+            this.btn_Submit.Name = "btn_Submit";
+            this.btn_Submit.Size = new System.Drawing.Size(75, 45);
+            this.btn_Submit.TabIndex = 1;
+            this.btn_Submit.Text = "Submit";
+            this.btn_Submit.UseVisualStyleBackColor = true;
+            this.btn_Submit.Click += new System.EventHandler(this.btnSubmit_Click);
+            // 
+            // dgv_Customers
+            // 
+            this.dgv_Customers.AutoGenerateColumns = false;
+            this.dgv_Customers.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgv_Customers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Customers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.custIDDataGridViewTextBoxColumn,
             this.custNameDataGridViewTextBoxColumn,
             this.custAddressDataGridViewTextBoxColumn,
             this.telephoneDataGridViewTextBoxColumn,
             this.contactPersonDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.customerBindingSource;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(906, 343);
-            this.dataGridView1.TabIndex = 0;
+            this.dgv_Customers.DataSource = this.customerBindingSource;
+            this.dgv_Customers.Location = new System.Drawing.Point(13, 109);
+            this.dgv_Customers.Margin = new System.Windows.Forms.Padding(4);
+            this.dgv_Customers.Name = "dgv_Customers";
+            this.dgv_Customers.Size = new System.Drawing.Size(938, 334);
+            this.dgv_Customers.TabIndex = 0;
+            this.dgv_Customers.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Customers_CellEndEdit);
+            this.dgv_Customers.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgv_Customers_DataError);
             // 
             // custIDDataGridViewTextBoxColumn
             // 
@@ -77,7 +116,7 @@
             this.custNameDataGridViewTextBoxColumn.DataPropertyName = "custName";
             this.custNameDataGridViewTextBoxColumn.HeaderText = "custName";
             this.custNameDataGridViewTextBoxColumn.Name = "custNameDataGridViewTextBoxColumn";
-            this.custNameDataGridViewTextBoxColumn.Width = 200;
+            this.custNameDataGridViewTextBoxColumn.Width = 180;
             // 
             // custAddressDataGridViewTextBoxColumn
             // 
@@ -91,15 +130,16 @@
             this.telephoneDataGridViewTextBoxColumn.DataPropertyName = "telephone";
             this.telephoneDataGridViewTextBoxColumn.HeaderText = "telephone";
             this.telephoneDataGridViewTextBoxColumn.Name = "telephoneDataGridViewTextBoxColumn";
+            this.telephoneDataGridViewTextBoxColumn.Width = 130;
             // 
             // contactPersonDataGridViewTextBoxColumn
             // 
             this.contactPersonDataGridViewTextBoxColumn.DataPropertyName = "contactPerson";
             this.contactPersonDataGridViewTextBoxColumn.HeaderText = "contactPerson";
             this.contactPersonDataGridViewTextBoxColumn.Name = "contactPersonDataGridViewTextBoxColumn";
-            this.contactPersonDataGridViewTextBoxColumn.Width = 130;
+            this.contactPersonDataGridViewTextBoxColumn.Width = 150;
             // 
-            // customerBindingSource1
+            // customerBindingSource
             // 
             this.customerBindingSource.DataMember = "customer";
             this.customerBindingSource.DataSource = this.aDADataSet2;
@@ -109,75 +149,43 @@
             this.aDADataSet2.DataSetName = "ADADataSet2";
             this.aDADataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // customerTableAdapter1
+            // customerTableAdapter
             // 
             this.customerTableAdapter.ClearBeforeFill = true;
             // 
-            // btnSubmit
-            // 
-            this.btnSubmit.Location = new System.Drawing.Point(436, 437);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(75, 41);
-            this.btnSubmit.TabIndex = 2;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Location = new System.Drawing.Point(12, 65);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(906, 343);
-            this.panel1.TabIndex = 3;
-            // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.Yellow;
-            this.btnBack.Location = new System.Drawing.Point(12, 12);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(113, 39);
-            this.btnBack.TabIndex = 7;
-            this.btnBack.Text = "◀ Back";
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // ViewCustomers
+            // ViewCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(930, 514);
-            this.Controls.Add(this.btnBack);
+            this.ClientSize = new System.Drawing.Size(967, 525);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnSubmit);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "ViewCustomers";
-            this.Text = "View Customers";
-            this.Load += new System.EventHandler(this.ViewCustomers_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Name = "ViewCustomer";
+            this.Text = "ViewCustomer";
+            this.Load += new System.EventHandler(this.ViewCustomer_Load);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Customers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aDADataSet2)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridView1;
+
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView dgv_Customers;
         private ADADataSet2 aDADataSet2;
         private System.Windows.Forms.BindingSource customerBindingSource;
         private ADADataSet2TableAdapters.customerTableAdapter customerTableAdapter;
+        private System.Windows.Forms.Button btn_Submit;
         private System.Windows.Forms.DataGridViewTextBoxColumn custIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn custNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn custAddressDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn telephoneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn contactPersonDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnBack;
     }
 }

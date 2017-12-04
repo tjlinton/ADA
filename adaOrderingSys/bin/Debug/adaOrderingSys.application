@@ -7,14 +7,14 @@
     <framework targetVersion="4.5" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="adaOrderingSys.exe.manifest" size="4545">
+    <dependentAssembly dependencyType="install" codebase="adaOrderingSys.exe.manifest" size="5321">
       <assemblyIdentity name="adaOrderingSys.exe" version="1.0.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>TmJgkeQcMAzYdHqp/47trw0BVVnHTOnM1ivl+1XOuiI=</dsig:DigestValue>
+        <dsig:DigestValue>ze7yTWftaz1SeTENYFr/e5zNBusPvbwBywmLv+WYyCk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -186,7 +186,7 @@ namespace adaOrderingSys
                         //TODO: think about making this less repetitive
                         if (count <= Constants.MAX_LOADING_SHEET_COLUMN)
                         {
-                            graphic.DrawString(details[0].Trim() + " " + details[1].Trim() + location, boldFont, new SolidBrush(Color.Black), startX, startY + offset);
+                            graphic.DrawString(details[1].Trim() + location, boldFont, new SolidBrush(Color.Black), startX, startY + offset);
                             offset += (int)fontHeight;
                             int length = itemQuantityAndAdditionals.Count;
                             for (int i = 0; i < length; i++)
@@ -222,7 +222,7 @@ namespace adaOrderingSys
                         }
                         else if (count <= (Constants.MAX_LOADING_SHEET_COLUMN * 2)) //Move over to middle of the page
                         {
-                            graphic.DrawString(details[0].Trim() + " " + details[1].Trim() + location, boldFont, new SolidBrush(Color.Black), middleX, startY + middleOffset);
+                            graphic.DrawString(details[1].Trim() + location, boldFont, new SolidBrush(Color.Black), middleX, startY + middleOffset);
                             middleOffset += (int)fontHeight;
                             int length = itemQuantityAndAdditionals.Count;
                             for (int i = 0; i < length; i++)
@@ -262,7 +262,7 @@ namespace adaOrderingSys
                         else if (count <= Constants.MAX_LOADING_SHEET_COLUMN * 3) //Move over to last column of the page
                         {
 
-                            graphic.DrawString(details[0].Trim() + " " +details[1].Trim() + location, boldFont, new SolidBrush(Color.Black), endX, startY + endOffset);
+                            graphic.DrawString(details[1].Trim() + location, boldFont, new SolidBrush(Color.Black), endX, startY + endOffset);
                             endOffset += (int)fontHeight;
                             int length = itemQuantityAndAdditionals.Count;
                             for (int i = 0; i < length; i++)

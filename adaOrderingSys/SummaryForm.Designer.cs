@@ -226,7 +226,7 @@
             this.ClientSize = new System.Drawing.Size(695, 518);
             this.Controls.Add(this.pnl_Step1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "SummaryForm";
+            this.Name = "ViewSummaryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Summary";
             this.pnl_Step1.ResumeLayout(false);
