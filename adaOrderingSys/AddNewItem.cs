@@ -18,6 +18,7 @@ namespace adaOrderingSys
     {
         private readonly Logger logger = LogManager.GetCurrentClassLogger();
         public List<string> addedItems = new List<string>();
+        private static string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings[Constants.CONNECTIONSTRINGNAME].ConnectionString;
 
         public AddNewItem(List<string> addedItems)
         {
@@ -40,8 +41,7 @@ namespace adaOrderingSys
 
         public List<KeyValuePair<string,string>> getDDLItems(List<string> items)
         {
-            var connectionString = ConfigurationManager.ConnectionStrings[Constants.CONNECTIONSTRINGNAME].ConnectionString;
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection conn = new SqlConnection(Constants.CONNECTIONSTRING))
             {
                 try
                 {
@@ -119,8 +119,7 @@ namespace adaOrderingSys
         {
             try
             {
-                var connectionString = ConfigurationManager.ConnectionStrings[Constants.CONNECTIONSTRINGNAME].ConnectionString;
-                using (SqlConnection conn = new SqlConnection(connectionString))
+                using (SqlConnection conn = new SqlConnection(Constants.CONNECTIONSTRING))
                 {
                     conn.Open();
 

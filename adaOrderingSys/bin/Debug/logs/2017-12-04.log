@@ -1,0 +1,67 @@
+2017-12-04 12:37:42.5617 ERROR System.TypeInitializationException: The type initializer for 'adaOrderingSys.business_objects.Constants' threw an exception. ---> System.ArgumentException: parsing "^(?=.*[A-Z])(?=.([a-z])(?=.*\d)[A-Za-z\d]{6,}$" - Not enough )'s.
+   at System.Text.RegularExpressions.RegexParser.ScanRegex()
+   at System.Text.RegularExpressions.RegexParser.Parse(String re, RegexOptions op)
+   at System.Text.RegularExpressions.Regex..ctor(String pattern, RegexOptions options, TimeSpan matchTimeout, Boolean useCache)
+   at System.Text.RegularExpressions.Regex..ctor(String pattern)
+   at adaOrderingSys.business_objects.Constants..cctor() in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\business-objects\Constants.cs:line 42
+   --- End of inner exception stack trace ---
+   at adaOrderingSys.business_objects.User.loginUser(String uName, String pword) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\business-objects\User.cs:line 24
+   at adaOrderingSys.loginForm.doLogin() in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\loginForm.cs:line 61
+2017-12-04 12:46:53.5277 ERROR System.TypeInitializationException: The type initializer for 'adaOrderingSys.business_objects.Constants' threw an exception. ---> System.ArgumentException: parsing "^(?=.*[A-Z])(?=.([a-z])(?=.*\d)[A-Za-z\d]{6,}$" - Not enough )'s.
+   at System.Text.RegularExpressions.RegexParser.ScanRegex()
+   at System.Text.RegularExpressions.RegexParser.Parse(String re, RegexOptions op)
+   at System.Text.RegularExpressions.Regex..ctor(String pattern, RegexOptions options, TimeSpan matchTimeout, Boolean useCache)
+   at System.Text.RegularExpressions.Regex..ctor(String pattern)
+   at adaOrderingSys.business_objects.Constants..cctor() in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\business-objects\Constants.cs:line 41
+   --- End of inner exception stack trace ---
+   at adaOrderingSys.business_objects.User.loginUser(String uName, String pword) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\business-objects\User.cs:line 24
+   at adaOrderingSys.loginForm.doLogin() in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\loginForm.cs:line 61
+2017-12-04 12:47:22.9989 ERROR System.TypeInitializationException: The type initializer for 'adaOrderingSys.business_objects.Constants' threw an exception. ---> System.ArgumentException: parsing "^(?=.*[A-Z])(?=.([a-z])(?=.*\d)[A-Za-z\d]{6,}$" - Not enough )'s.
+   at System.Text.RegularExpressions.RegexParser.ScanRegex()
+   at System.Text.RegularExpressions.RegexParser.Parse(String re, RegexOptions op)
+   at System.Text.RegularExpressions.Regex..ctor(String pattern, RegexOptions options, TimeSpan matchTimeout, Boolean useCache)
+   at System.Text.RegularExpressions.Regex..ctor(String pattern)
+   at adaOrderingSys.business_objects.Constants..cctor() in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\business-objects\Constants.cs:line 41
+   --- End of inner exception stack trace ---
+   at adaOrderingSys.business_objects.User.loginUser(String uName, String pword) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\business-objects\User.cs:line 24
+   at adaOrderingSys.loginForm.doLogin() in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\loginForm.cs:line 61
+2017-12-04 12:57:35.2769 INFO User: Tajay successfully logged in
+2017-12-04 12:57:49.7534 ERROR System.ArgumentException: parsing "^(?=.*[A-Z])(?=.([a-z])(?=.*\d)[A-Za-z\d]{6,}$" - Not enough )'s.
+   at System.Text.RegularExpressions.RegexParser.ScanRegex()
+   at System.Text.RegularExpressions.RegexParser.Parse(String re, RegexOptions op)
+   at System.Text.RegularExpressions.Regex..ctor(String pattern, RegexOptions options, TimeSpan matchTimeout, Boolean useCache)
+   at System.Text.RegularExpressions.Regex..ctor(String pattern)
+   at adaOrderingSys.changePassword.isPasswordValid(String password) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\changePassword.cs:line 38
+   at adaOrderingSys.changePassword.doChangePassword() in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\changePassword.cs:line 71
+2017-12-04 13:00:00.3913 INFO User: Tajay successfully logged in
+2017-12-04 13:01:10.1943 ERROR System.ArgumentException: parsing "^(?=.*[A-Z])(?=.([a-z])(?=.*\d)[A-Za-z\d]{6,}$" - Not enough )'s.
+   at System.Text.RegularExpressions.RegexParser.ScanRegex()
+   at System.Text.RegularExpressions.RegexParser.Parse(String re, RegexOptions op)
+   at System.Text.RegularExpressions.Regex..ctor(String pattern, RegexOptions options, TimeSpan matchTimeout, Boolean useCache)
+   at System.Text.RegularExpressions.Regex..ctor(String pattern)
+   at adaOrderingSys.changePassword.isPasswordValid(String password) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\changePassword.cs:line 38
+   at adaOrderingSys.changePassword.doChangePassword() in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\changePassword.cs:line 71
+2017-12-04 13:04:31.6265 INFO User: Tajay successfully logged in
+2017-12-04 13:04:45.2397 ERROR System.ArgumentException: parsing "^(?=.*[A-Z])(?=.[a-z])(?=.*\d)[A-Za-z\d$%^&*_-!@]{6,}$" - [x-y] range in reverse order.
+   at System.Text.RegularExpressions.RegexParser.ScanCharClass(Boolean caseInsensitive, Boolean scanOnly)
+   at System.Text.RegularExpressions.RegexParser.ScanRegex()
+   at System.Text.RegularExpressions.RegexParser.Parse(String re, RegexOptions op)
+   at System.Text.RegularExpressions.Regex..ctor(String pattern, RegexOptions options, TimeSpan matchTimeout, Boolean useCache)
+   at System.Text.RegularExpressions.Regex..ctor(String pattern)
+   at adaOrderingSys.changePassword.isPasswordValid(String password) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\changePassword.cs:line 38
+   at adaOrderingSys.changePassword.doChangePassword() in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\changePassword.cs:line 71
+2017-12-04 13:12:29.9145 INFO User: Tajay successfully logged in
+2017-12-04 20:34:24.3407 INFO User: Tajay successfully logged in
+2017-12-04 20:59:55.4091 INFO User: Tajay successfully logged in
+2017-12-04 21:10:51.7668 INFO User: Tajay successfully logged in
+2017-12-04 21:55:19.9230 INFO User: Tajay successfully logged in
+2017-12-04 21:56:45.5218 INFO User: Tajay successfully logged in
+2017-12-04 21:57:35.8523 INFO User: Tajay successfully logged in
+2017-12-04 21:57:35.9057 ERROR System.NullReferenceException: Object reference not set to an instance of an object.
+   at adaOrderingSys.changePassword..ctor(String username) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\changePassword.cs:line 28
+   at adaOrderingSys.loginForm.changePasswordDialog(String userName) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\loginForm.cs:line 102
+2017-12-04 21:57:55.5033 INFO User: Tajay successfully logged in
+2017-12-04 21:57:55.5313 ERROR System.NullReferenceException: Object reference not set to an instance of an object.
+   at adaOrderingSys.changePassword..ctor(String username) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\changePassword.cs:line 28
+   at adaOrderingSys.loginForm.changePasswordDialog(String userName) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\loginForm.cs:line 102
+2017-12-04 22:14:49.4018 INFO User: Tajay successfully logged in

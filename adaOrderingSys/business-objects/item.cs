@@ -28,8 +28,8 @@ namespace adaOrderingSys
 
         public int createItem(string pID, string pName, Decimal pPrice, string pDescription, int quantity)
         {
-            var connectionString = ConfigurationManager.ConnectionStrings[Constants.CONNECTIONSTRINGNAME].ConnectionString;
-            using (SqlConnection conn = new SqlConnection(connectionString))
+           
+            using (SqlConnection conn = new SqlConnection(Constants.CONNECTIONSTRING))
             {
                 try
                 {
@@ -62,8 +62,8 @@ namespace adaOrderingSys
 
         public string getItemName(int itemID)
         {
-            var connectionString = ConfigurationManager.ConnectionStrings[Constants.CONNECTIONSTRINGNAME].ConnectionString;
-            using (SqlConnection conn = new SqlConnection(connectionString)) {
+           
+            using (SqlConnection conn = new SqlConnection(Constants.CONNECTIONSTRING)) {
 
                 try
                 {
@@ -90,8 +90,8 @@ namespace adaOrderingSys
 
         public string getItemID(String itemName)
         {
-            var connectionString = ConfigurationManager.ConnectionStrings[Constants.CONNECTIONSTRINGNAME].ConnectionString;
-            using (SqlConnection conn = new SqlConnection(connectionString))
+           
+            using (SqlConnection conn = new SqlConnection(Constants.CONNECTIONSTRING))
             {
 
                 try
@@ -119,8 +119,8 @@ namespace adaOrderingSys
 
         public double getUnitPrice(String itemID)
         {
-            var connectionString = ConfigurationManager.ConnectionStrings[Constants.CONNECTIONSTRINGNAME].ConnectionString;
-            using (SqlConnection conn = new SqlConnection(connectionString))
+           
+            using (SqlConnection conn = new SqlConnection(Constants.CONNECTIONSTRING))
             {
 
                 try
@@ -153,8 +153,8 @@ namespace adaOrderingSys
         {
             try
             {
-                var connectionString = ConfigurationManager.ConnectionStrings[Constants.CONNECTIONSTRINGNAME].ConnectionString;
-                using (SqlConnection conn = new SqlConnection(connectionString))
+               
+                using (SqlConnection conn = new SqlConnection(Constants.CONNECTIONSTRING))
                 {
                     conn.Open();
 
@@ -180,8 +180,7 @@ namespace adaOrderingSys
         {
             try
             {
-                var connectionString = ConfigurationManager.ConnectionStrings[Constants.CONNECTIONSTRINGNAME].ConnectionString;
-                using (SqlConnection conn = new SqlConnection(connectionString))
+                using (SqlConnection conn = new SqlConnection(Constants.CONNECTIONSTRING))
                 {
                     conn.Open();
 

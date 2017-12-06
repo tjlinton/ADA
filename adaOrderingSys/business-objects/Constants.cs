@@ -19,9 +19,10 @@ namespace adaOrderingSys.business_objects
 
         // Connection Strings
         public static string CONNECTIONSTRINGNAME = "ADAConnectionString";
+        public static string CONNECTIONSTRING = System.Configuration.ConfigurationManager.ConnectionStrings[CONNECTIONSTRINGNAME].ConnectionString;
+
 
         //Stored Procedures
-
 
         //Loading Sheet
         public static int LOADING_SHEET_MAX = 100; //maximum number of lines in one loading sheet
@@ -33,11 +34,15 @@ namespace adaOrderingSys.business_objects
         public static string OUT_OF_STOCK_MSG = "Out of stock";
         public static string GENERIC_ERROR = "An error occured. Please try again";
 
-        //User Roles
+        //Users
         public static string USER_ROLE_ADMIN = "Admin";
         public static string USER_ROLE_STAFF = "Staff";
+        public static string DEFAULT_PASSWORD = "123456";
 
         //Password regex
-        public static Regex strongRegex = new Regex(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{6,})");
+        public static string STRONG_PASSWORD = (@"^(?=.*[A-Z])(?=.*\d)[A-Za-z\d-_$#@!*^%]{6,}$");
+        public static string PASSWORD_RQMNTS = "Password must contain atleast six letters, a number and an upper case letter\n eg: Adatest1";
+
+
     }
 }

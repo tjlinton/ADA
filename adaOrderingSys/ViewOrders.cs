@@ -21,8 +21,7 @@ namespace adaOrderingSys
         private DataSet ds { get; set; }
         private DataTable dt { get; set; }
 
-        private static string connectionString = ConfigurationManager.ConnectionStrings["ADAConnectionString"].ConnectionString;
-        SqlConnection conn = new SqlConnection(connectionString);
+        SqlConnection conn = new SqlConnection(Constants.CONNECTIONSTRING);
 
         private readonly Logger logger = LogManager.GetCurrentClassLogger();
 

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewLoadingSheets));
             this.btnBack = new System.Windows.Forms.Button();
+            this.btn_CreateNew = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnBack
@@ -46,12 +47,26 @@
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // btn_CreateNew
+            // 
+            this.btn_CreateNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_CreateNew.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_CreateNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_CreateNew.ForeColor = System.Drawing.Color.Yellow;
+            this.btn_CreateNew.Location = new System.Drawing.Point(570, 12);
+            this.btn_CreateNew.Name = "btn_CreateNew";
+            this.btn_CreateNew.Size = new System.Drawing.Size(113, 39);
+            this.btn_CreateNew.TabIndex = 10;
+            this.btn_CreateNew.Text = "New";
+            this.btn_CreateNew.UseVisualStyleBackColor = false;
+            // 
             // ViewLoadingSheets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(695, 518);
+            this.Controls.Add(this.btn_CreateNew);
             this.Controls.Add(this.btnBack);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ViewLoadingSheets";
@@ -65,5 +80,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btn_CreateNew;
     }
 }

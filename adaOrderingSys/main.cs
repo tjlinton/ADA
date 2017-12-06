@@ -17,7 +17,7 @@ namespace adaOrderingSys
 {
     public partial class main : Form
     {
-        
+
         private readonly Logger logger = LogManager.GetCurrentClassLogger();
 
         public main()
@@ -79,7 +79,7 @@ namespace adaOrderingSys
         }
 
         private void txtUnitPrice_Validating(object sender, CancelEventArgs e)
-        {   
+        {
             Regex priceReg = new Regex(@"^((\d+)|(\d+\.\d{2}))$");
             if (!priceReg.IsMatch(txtUnitPrice.Text))
             {
@@ -123,13 +123,13 @@ namespace adaOrderingSys
             if (!Char.IsDigit(ch) && !Char.IsControl(ch))
             {
                 e.Handled = true;
-            }       
+            }
         }
 
         private void txtUnitPrice_KeyPress(object sender, KeyPressEventArgs e)
         {
             char ch = e.KeyChar;
-            if (!char.IsControl(ch) && !char.IsDigit(ch) &&  (ch != '.'))
+            if (!char.IsControl(ch) && !char.IsDigit(ch) && (ch != '.'))
             {
                 e.Handled = true;
             }
@@ -218,7 +218,7 @@ namespace adaOrderingSys
             this.Hide();
             ViewOrders viewOrders = new ViewOrders();
             viewOrders.Show();
-           
+
         }
 
         private void btnCreateSummary_Click(object sender, EventArgs e)
@@ -244,45 +244,35 @@ namespace adaOrderingSys
         {
             try
             {
+                //bool isEmpty = areFieldsEmpty(this.pnlCustInfo.Controls); //Check if any textboxes on form are empty
+                string name, address, telephone, contactPerson;
+                Customer cust = new Customer();
 
-                bool isEmpty = areFieldsEmpty(this.pnlCustInfo.Controls); //Check if any textboxes on form are empty
+                name = txtBusinessName.Text;
+                address = txtAddress.Text;
+                telephone = txtTelephoneNo.Text;
+                contactPerson = txtContactPerson.Text;
 
-                if (!isEmpty)
+                int result = cust.createCustomer(name, address, telephone, contactPerson);
+
+                switch (result)
                 {
-                    string name, address, telephone, contactPerson;
-                    Customer cust = new Customer();
+                    case 0:
+                        MessageBox.Show("Customer added successfully.");
+                        clearForms(this.pnlCustInfo.Controls);
+                        break;
 
-                    name = txtBusinessName.Text;
-                    address = txtAddress.Text;
-                    telephone = txtTelephoneNo.Text;
-                    contactPerson = txtContactPerson.Text;
+                    case 1:
+                        MessageBox.Show("Customer already Exists!");
+                        break;
 
-                    int result = cust.createCustomer(name, address, telephone, contactPerson);
+                    case -1:
+                        MessageBox.Show("An error occured while trying to add customer. Please try again");
+                        break;
 
-                    switch (result)
-                    {
-                        case 0:
-                            MessageBox.Show("Customer added successfully.");
-                            clearForms(this.pnlCustInfo.Controls);
-                            break;
-
-                        case 1:
-                            MessageBox.Show("Customer already Exists!");
-                            break;
-
-                        case -1:
-                            MessageBox.Show("An error occured while trying to add customer. Please try again");
-                            break;
-
-                        default:
-                            MessageBox.Show("A fatal error occured. Please contact system administrator");
-                            break;
-
-                    }
-                }
-                else //One or more text boxes are empty
-                {
-                    MessageBox.Show("Please fill in all fields before submitting");
+                    default:
+                        MessageBox.Show("A fatal error occured. Please contact system administrator");
+                        break;
                 }
             }
             catch (Exception ex)

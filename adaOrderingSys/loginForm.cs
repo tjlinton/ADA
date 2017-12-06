@@ -77,8 +77,11 @@ namespace adaOrderingSys
                         default:
                             logger.Info("User: " + txtUserName.Text + " successfully logged in");
                             this.Hide();
-                            main objFormMain = new main();
-                            objFormMain.Show();
+                            if (!changePasswordDialog(txtUserName.Text)) {
+                                main objFormMain = new main();
+                                objFormMain.Show();
+                            }
+                            
                             break;
                     }
                 }
@@ -87,6 +90,27 @@ namespace adaOrderingSys
             {
                 logger.Error(ex);
                 MessageBox.Show("ERROR:" + "Please contact system admin");
+            }
+        }
+
+        private bool changePasswordDialog(string userName)
+        {
+            try
+            {
+                if (txtPassword.Text.Equals(Constants.DEFAULT_PASSWORD))
+                {
+                    changePassword passwordForm = new changePassword(userName);
+                    passwordForm.Show();
+                    return true;
+                }
+
+                return false;
+            }
+
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+                return false;
             }
         }
     }

@@ -27,8 +27,8 @@ namespace adaOrderingSys.business_objects
 
         public List<KeyValuePair<int, string>> getCustNameBasedOnOrderDate(DateTime orderDate)
         {
-            var connectionString = ConfigurationManager.ConnectionStrings[Constants.CONNECTIONSTRINGNAME].ConnectionString;
-            using (SqlConnection conn = new SqlConnection(connectionString))
+           
+            using (SqlConnection conn = new SqlConnection(Constants.CONNECTIONSTRING))
             {
                 try
                 {
@@ -66,8 +66,8 @@ namespace adaOrderingSys.business_objects
 
         public List<KeyValuePair<int, string>> getCustNameBasedOnOrderDate()
         {
-            var connectionString = ConfigurationManager.ConnectionStrings[Constants.CONNECTIONSTRINGNAME].ConnectionString;
-            using (SqlConnection conn = new SqlConnection(connectionString))
+           
+            using (SqlConnection conn = new SqlConnection(Constants.CONNECTIONSTRING))
             {
                 try
                 {
@@ -102,8 +102,8 @@ namespace adaOrderingSys.business_objects
 
         public string getOrderLocation(int orderID)
         {
-            var connectionString = ConfigurationManager.ConnectionStrings[Constants.CONNECTIONSTRINGNAME].ConnectionString;
-            using (SqlConnection conn = new SqlConnection(connectionString))
+           
+            using (SqlConnection conn = new SqlConnection(Constants.CONNECTIONSTRING))
             {
                 try
                 {
@@ -132,8 +132,8 @@ namespace adaOrderingSys.business_objects
         public int deleteOrder(int orderID)
         {
             int returnVal;
-            var connectionString = ConfigurationManager.ConnectionStrings[Constants.CONNECTIONSTRINGNAME].ConnectionString;
-            using (SqlConnection conn = new SqlConnection(connectionString))
+           
+            using (SqlConnection conn = new SqlConnection(Constants.CONNECTIONSTRING))
             {
                 try
                 {

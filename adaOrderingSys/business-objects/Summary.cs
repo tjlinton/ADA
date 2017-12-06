@@ -21,8 +21,8 @@ namespace adaOrderingSys.business_objects
 
         public int fulfillOrders(List<int> orderID, string licNo, string driver, DateTime date)
         {
-            var connectionString = ConfigurationManager.ConnectionStrings[Constants.CONNECTIONSTRINGNAME].ConnectionString;
-            using (SqlConnection conn = new SqlConnection(connectionString))
+           
+            using (SqlConnection conn = new SqlConnection(Constants.CONNECTIONSTRING))
             {
                 conn.Open();
 

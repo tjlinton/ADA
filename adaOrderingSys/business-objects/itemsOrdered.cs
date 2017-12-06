@@ -102,8 +102,8 @@ namespace adaOrderingSys.business_objects
         public int insertItemsOrdered(int custID, List<string>itemID, List<int>quantity, List<decimal>totalItemCost, Decimal totalCost, string location, List<int> additionals, int salesNo, int rowCount)
         {
             int orderID=0;
-            var connectionString = ConfigurationManager.ConnectionStrings[Constants.CONNECTIONSTRINGNAME].ConnectionString;
-            using (SqlConnection conn = new SqlConnection(connectionString))
+           
+            using (SqlConnection conn = new SqlConnection(Constants.CONNECTIONSTRING))
             {
                 logger.Info("Attempting to create new order.");
                 conn.Open();
@@ -208,8 +208,8 @@ namespace adaOrderingSys.business_objects
 
         public List<KeyValuePair<int, string>> getOrderedItemNameAndQuantity(int orderID)
         {
-            var connectionString = ConfigurationManager.ConnectionStrings[Constants.CONNECTIONSTRINGNAME].ConnectionString;
-            using (SqlConnection conn = new SqlConnection(connectionString))
+           
+            using (SqlConnection conn = new SqlConnection(Constants.CONNECTIONSTRING))
             {
                 try
                 {
@@ -246,8 +246,8 @@ namespace adaOrderingSys.business_objects
 
         public List<ItemsOrdered> getOrderedItemsQuantityAndAdditionals(int orderID)
         {
-            var connectionString = ConfigurationManager.ConnectionStrings[Constants.CONNECTIONSTRINGNAME].ConnectionString;
-            using (SqlConnection conn = new SqlConnection(connectionString))
+           
+            using (SqlConnection conn = new SqlConnection(Constants.CONNECTIONSTRING))
             {
                 try
                 {
@@ -285,8 +285,8 @@ namespace adaOrderingSys.business_objects
 
         public List<ItemsOrdered> getItemsOrderedBasedonOrderID(int orderID)
         {
-            var connectionString = ConfigurationManager.ConnectionStrings[Constants.CONNECTIONSTRINGNAME].ConnectionString;
-            using (SqlConnection conn = new SqlConnection(connectionString))
+           
+            using (SqlConnection conn = new SqlConnection(Constants.CONNECTIONSTRING))
             {
                 try
                 {
@@ -325,8 +325,8 @@ namespace adaOrderingSys.business_objects
 
         public List<ItemsOrdered> getItemsOrderedWUPBasedonOrderID(int orderID)
         {
-            var connectionString = ConfigurationManager.ConnectionStrings[Constants.CONNECTIONSTRINGNAME].ConnectionString;
-            using (SqlConnection conn = new SqlConnection(connectionString))
+           
+            using (SqlConnection conn = new SqlConnection(Constants.CONNECTIONSTRING))
             {
                 try
                 {

@@ -12,6 +12,7 @@ namespace adaOrderingSys.business_objects
     class User
     {
         private readonly Logger logger = LogManager.GetCurrentClassLogger();
+
         private int userID { get; set; }
         public static string userName { get; set; }
         private string password { get; set; }
@@ -19,11 +20,9 @@ namespace adaOrderingSys.business_objects
 
         public User() { }
 
-        
         public string loginUser(string uName, string pword)
         {
-            var connectionString = System.Configuration.ConfigurationManager.ConnectionStrings[Constants.CONNECTIONSTRINGNAME].ConnectionString;
-            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlConnection con = new SqlConnection(Constants.CONNECTIONSTRING))
             {
                 try
                 {
@@ -58,10 +57,9 @@ namespace adaOrderingSys.business_objects
             }
         }
 
-        private string addUser(string userName, string password, string userRole)
+        public string addUser(string userName, string password, string userRole)
         {
-            var connectionString = System.Configuration.ConfigurationManager.ConnectionStrings[Constants.CONNECTIONSTRINGNAME].ConnectionString;
-            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlConnection con = new SqlConnection(Constants.CONNECTIONSTRING))
             {
                 try
                 {
@@ -89,16 +87,15 @@ namespace adaOrderingSys.business_objects
             }
         }
         
-        private int changePassword(string uName, string newPassword)
+        public int changePassword(string uName, string newPassword)
         {
-            var connectionString = System.Configuration.ConfigurationManager.ConnectionStrings[Constants.CONNECTIONSTRINGNAME].ConnectionString;
-            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlConnection con = new SqlConnection(Constants.CONNECTIONSTRING))
             {
                 try
                 {
                     int returnVal;
                     SqlCommand cmd = new SqlCommand();
-                    cmd.Parameters.AddWithValue("@userID", userID);
+                    cmd.Parameters.AddWithValue("@userName", uName);
                     cmd.Parameters.AddWithValue("@newPassword", newPassword);
                     cmd.Parameters.Add("@returnVal ", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.CommandText = "[dbo].[usp_changeUserPassword]";
@@ -117,13 +114,40 @@ namespace adaOrderingSys.business_objects
                     return -1;
                 }
             }
-        } 
+        }
+
+        public int changePassword(string uName)
+        {
+            using (SqlConnection con = new SqlConnection(Constants.CONNECTIONSTRING))
+            {
+                try
+                {
+                    int returnVal;
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Parameters.AddWithValue("@userID", userID);
+                    cmd.Parameters.Add("@returnVal ", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.CommandText = "[dbo].[usp_changeUserPassword]";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Connection = con;
+
+                    con.Open();
+
+                    returnVal = (int)cmd.ExecuteScalar();
+
+                    return returnVal;
+                }
+                catch (Exception e)
+                {
+                    logger.Error(e);
+                    return -1;
+                }
+            }
+        }
 
         public List<KeyValuePair<string, string>> getUsers()
         {
             List<KeyValuePair<string, string>> users = new List<KeyValuePair<string, string>>();
-            var connectionString = System.Configuration.ConfigurationManager.ConnectionStrings[Constants.CONNECTIONSTRINGNAME].ConnectionString;
-            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlConnection con = new SqlConnection(Constants.CONNECTIONSTRING))
             {
                 try
                 {

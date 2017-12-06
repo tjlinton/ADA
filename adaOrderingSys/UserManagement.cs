@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using adaOrderingSys.business_objects;
+using System.Data.SqlClient;
 
 namespace adaOrderingSys
 {
@@ -17,6 +18,8 @@ namespace adaOrderingSys
     {
         private readonly Logger logger = LogManager.GetCurrentClassLogger();
         private DataTable dt;
+
+        private string username { get; set; }
         public UserManagement()
         {
             InitializeComponent();
@@ -31,7 +34,7 @@ namespace adaOrderingSys
             roles.Add("");
 
             clmn_Role.Items.AddRange(roles.ToArray());
-            for (int i=0; i < users.Count ; i++)
+            for (int i = 0; i < users.Count; i++)
             {
                 dataGridView1.Rows.Add();
                 dataGridView1.Rows[i].Cells["clmn_userName"].Value = users[i].Key;
@@ -41,19 +44,31 @@ namespace adaOrderingSys
 
         private void resetPasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            try {
-                
+            try
+            {
+
+                int result = new User().changePassword(this.username);
+
+                switch (result) {
+                    case 1:
+                        MessageBox.Show("Password successfully reset for " + username);
+                        break;
+
+                    case -1:
+                    case 0:
+                        MessageBox.Show("Could'nt reset password please try again");
+                        break;
+                    default:
+                        MessageBox.Show("A fatal error occured. Please contact system admin");
+                        break;
+                }
+
             }
 
             catch (Exception ex)
             {
                 logger.Error(ex);
             }
-        }
-
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
         }
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -63,6 +78,7 @@ namespace adaOrderingSys
                 try
                 {
                     contextMenuStrip1.Show(dataGridView1, new Point(e.X, e.Y));
+                    this.username = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
                 }
 
                 catch (Exception ex)
