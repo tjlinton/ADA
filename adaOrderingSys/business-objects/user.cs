@@ -13,12 +13,21 @@ namespace adaOrderingSys.business_objects
     {
         private readonly Logger logger = LogManager.GetCurrentClassLogger();
 
-        private int userID { get; set; }
+        public int userID { get; set; }
         public static string userName { get; set; }
+        public string loginName { get; set; }
         private string password { get; set; }
+        public string role { get; set; }
         public static string userRole { get; set; }
 
         public User() { }
+
+        public User(int userID, string username, string role)
+        {
+            this.userID = userID;
+            this.loginName = username;
+            this.role = role;
+        }
 
         public string loginUser(string uName, string pword)
         {
@@ -124,7 +133,7 @@ namespace adaOrderingSys.business_objects
                 {
                     int returnVal;
                     SqlCommand cmd = new SqlCommand();
-                    cmd.Parameters.AddWithValue("@userID", userID);
+                    cmd.Parameters.AddWithValue("@userName", uName);
                     cmd.Parameters.Add("@returnVal ", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.CommandText = "[dbo].[usp_changeUserPassword]";
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -144,15 +153,15 @@ namespace adaOrderingSys.business_objects
             }
         }
 
-        public List<KeyValuePair<string, string>> getUsers()
+        public List<User> getUsers()
         {
-            List<KeyValuePair<string, string>> users = new List<KeyValuePair<string, string>>();
+            List<User> users = new List<User>();
             using (SqlConnection con = new SqlConnection(Constants.CONNECTIONSTRING))
             {
                 try
                 {
                     con.Open();
-                    string selectQuery = "SELECT userName, userRole from [dbo].[user]";
+                    string selectQuery = "SELECT userID, userName, userRole from [dbo].[user]";
                     SqlCommand cmd = new SqlCommand(selectQuery,con);
                     cmd.CommandType = CommandType.Text;
 
@@ -160,8 +169,7 @@ namespace adaOrderingSys.business_objects
                     {
                         while (dr.Read())
                         {
-                            users.Add(
-                                new KeyValuePair<string, string>(dr.GetString(0), dr.GetString(1))
+                            users.Add(new User(dr.GetInt32(0), dr.GetString(1), dr.GetString(2))
                                 );
                         }
                     }

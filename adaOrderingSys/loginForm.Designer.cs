@@ -86,7 +86,6 @@
             this.txtUserName.Size = new System.Drawing.Size(100, 20);
             this.txtUserName.TabIndex = 4;
             this.txtUserName.WordWrap = false;
-            this.txtUserName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CheckEnter);
             // 
             // txtPassword
             // 
@@ -95,10 +94,10 @@
             this.txtPassword.PasswordChar = 'x';
             this.txtPassword.Size = new System.Drawing.Size(100, 20);
             this.txtPassword.TabIndex = 5;
-            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CheckEnter);
             // 
             // loginForm
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.CancelButton = this.btnClear;
             this.ClientSize = new System.Drawing.Size(284, 176);

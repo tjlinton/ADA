@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
             this.btnNewOrder = new System.Windows.Forms.Button();
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.pictureBox_UM = new System.Windows.Forms.PictureBox();
             this.btn_ViewLoadingSheet = new System.Windows.Forms.Button();
             this.btnViewCustomers = new System.Windows.Forms.Button();
             this.btn_ViewOrders = new System.Windows.Forms.Button();
@@ -40,6 +39,7 @@
             this.btnNewProduct = new System.Windows.Forms.Button();
             this.btnViewInventory = new System.Windows.Forms.Button();
             this.btnAddCustomer = new System.Windows.Forms.Button();
+            this.pictureBox_UM = new System.Windows.Forms.PictureBox();
             this.pnlMainII = new System.Windows.Forms.Panel();
             this.pnlCustInfo = new System.Windows.Forms.Panel();
             this.btnClearCustomer = new System.Windows.Forms.Button();
@@ -87,6 +87,7 @@
             this.errorProviderProductName = new System.Windows.Forms.ErrorProvider(this.components);
             this.itemTableAdapter = new adaOrderingSys.ADAItemDataSetTableAdapters.itemTableAdapter();
             this.btn_Logout = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pnlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_UM)).BeginInit();
             this.pnlMainII.SuspendLayout();
@@ -139,18 +140,6 @@
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(928, 416);
             this.pnlMain.TabIndex = 7;
-            // 
-            // pictureBox_UM
-            // 
-            this.pictureBox_UM.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_UM.Image")));
-            this.pictureBox_UM.Location = new System.Drawing.Point(989, 12);
-            this.pictureBox_UM.Name = "pictureBox_UM";
-            this.pictureBox_UM.Size = new System.Drawing.Size(73, 58);
-            this.pictureBox_UM.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox_UM.TabIndex = 14;
-            this.pictureBox_UM.TabStop = false;
-            this.pictureBox_UM.Click += new System.EventHandler(this.pictureBox1_Click);
-            this.pictureBox_UM.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
             // 
             // btn_ViewLoadingSheet
             // 
@@ -291,6 +280,18 @@
             this.btnAddCustomer.Text = "Add Customer";
             this.btnAddCustomer.UseVisualStyleBackColor = false;
             this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
+            // 
+            // pictureBox_UM
+            // 
+            this.pictureBox_UM.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_UM.Image")));
+            this.pictureBox_UM.Location = new System.Drawing.Point(989, 12);
+            this.pictureBox_UM.Name = "pictureBox_UM";
+            this.pictureBox_UM.Size = new System.Drawing.Size(73, 58);
+            this.pictureBox_UM.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox_UM.TabIndex = 14;
+            this.pictureBox_UM.TabStop = false;
+            this.pictureBox_UM.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox_UM.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
             // 
             // pnlMainII
             // 
@@ -822,5 +823,6 @@
         private System.Windows.Forms.Button btnViewCustomers;
         private System.Windows.Forms.Button btn_ViewLoadingSheet;
         private System.Windows.Forms.PictureBox pictureBox_UM;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

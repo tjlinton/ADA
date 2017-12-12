@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="adaOrderingSys.exe" size="244672">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="adaOrderingSys.exe" size="252864">
       <assemblyIdentity name="adaOrderingSys" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>tVR+Aoxtu9xnSXP+Gx0MJrNEB+wW8BC9ugcYoNet5ak=</dsig:DigestValue>
+        <dsig:DigestValue>2FearVFoQ8EDwmeHRKyGt+Cayho0YMdtXJINTNhVLFE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -83,13 +83,13 @@
       <dsig:DigestValue>uRuiGS7og4Uhno9eXt5VfEZkpnGFpuf36kxUam5cu1Y=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="NLog.config" size="1522">
+  <file name="NLog.config" size="1547">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>V1KLH6u/0P48CdcOUwAoN3EthA4VSgktHc7dfKKSeQo=</dsig:DigestValue>
+      <dsig:DigestValue>ei6VfkHE0vg8Lyr4dWCpLyjXmsxxynNOFpbpp2xZmL0=</dsig:DigestValue>
     </hash>
   </file>
   <file name="users.png" size="31295">

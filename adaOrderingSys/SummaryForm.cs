@@ -371,7 +371,7 @@ namespace adaOrderingSys
             catch (Exception ex)
             {
                 logger.Error(ex);
-                MessageBox.Show("An error occured. Please contact system administrator.");
+                MessageBox.Show(Constants.CONTACT_SYSTEMADMIN);
             }
         }
 
@@ -398,7 +398,7 @@ namespace adaOrderingSys
             catch (Exception ex)
             {
                 logger.Error(ex);
-                MessageBox.Show("An error occured. Please contact system administrator.");
+                MessageBox.Show(Constants.CONTACT_SYSTEMADMIN);
             }
         }
 

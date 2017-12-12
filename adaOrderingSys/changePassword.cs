@@ -103,7 +103,7 @@ namespace adaOrderingSys
                         break;
 
                     default:
-                        MessageBox.Show("An unexpedted error occured. Contact system administrator");
+                        MessageBox.Show(Constants.CONTACT_SYSTEMADMIN);
                         this.Close();
                         break;
                 }

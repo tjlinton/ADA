@@ -31,8 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserManagement));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Update = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.clmn_userID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmn_Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmn_Role = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.btnBack = new System.Windows.Forms.Button();
@@ -45,7 +46,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btn_Update);
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.btnBack);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -54,19 +55,21 @@
             this.panel1.Size = new System.Drawing.Size(341, 483);
             this.panel1.TabIndex = 0;
             // 
-            // button1
+            // btn_Update
             // 
-            this.button1.Location = new System.Drawing.Point(121, 411);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 33);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Update";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_Update.Location = new System.Drawing.Point(126, 411);
+            this.btn_Update.Name = "btn_Update";
+            this.btn_Update.Size = new System.Drawing.Size(75, 33);
+            this.btn_Update.TabIndex = 10;
+            this.btn_Update.Text = "Update";
+            this.btn_Update.UseVisualStyleBackColor = true;
+            this.btn_Update.Click += new System.EventHandler(this.btn_Submit_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmn_userID,
             this.clmn_Username,
             this.clmn_Role});
             this.dataGridView1.Location = new System.Drawing.Point(12, 84);
@@ -74,7 +77,16 @@
             this.dataGridView1.Size = new System.Drawing.Size(294, 307);
             this.dataGridView1.TabIndex = 9;
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
+            this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
+            this.dataGridView1.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dataGridView1_UserDeletingRow);
+            // 
+            // clmn_userID
+            // 
+            this.clmn_userID.HeaderText = "User ID";
+            this.clmn_userID.Name = "clmn_userID";
+            this.clmn_userID.ReadOnly = true;
+            this.clmn_userID.Visible = false;
             // 
             // clmn_Username
             // 
@@ -137,10 +149,11 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmn_Username;
-        private System.Windows.Forms.DataGridViewComboBoxColumn clmn_Role;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem resetPasswordToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_Update;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmn_userID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmn_Username;
+        private System.Windows.Forms.DataGridViewComboBoxColumn clmn_Role;
     }
 }

@@ -9,13 +9,21 @@ namespace adaOrderingSys.business_objects
 {
     public static class Constants
     {
-        // Column Names
+        // View Items Column Names
         public static string QUANTITY_COLUMN = "quantity";
         public static string ITEMID_COLUMN = "itemID";
         public static string ITEMNAME_COLUMN = "itemName";
         public static string UNITPRICE_COLUMN = "unitPrice";
         public static string TOTALCOST_COLUMN = "totalCost";
         public static string ADDITIONALS_COLUMN = "additionals";
+
+        // Summary Form Column Names
+        public static string SUMMARYID = "summaryID";
+        public static string SUMMARYDATE = "summaryDate";
+        public static string CREATEDBY = "createdBy";
+        public static string LICENSENO = "licenseNo";
+        public static string DRIVER = "driver";
+
 
         // Connection Strings
         public static string CONNECTIONSTRINGNAME = "ADAConnectionString";
@@ -33,6 +41,7 @@ namespace adaOrderingSys.business_objects
         //Messages
         public static string OUT_OF_STOCK_MSG = "Out of stock";
         public static string GENERIC_ERROR = "An error occured. Please try again";
+        public static string CONTACT_SYSTEMADMIN = "A fatal error occured. Please contact system admin";
 
         //Users
         public static string USER_ROLE_ADMIN = "Admin";

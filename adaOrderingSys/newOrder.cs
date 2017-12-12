@@ -100,7 +100,7 @@ namespace adaOrderingSys
                         MessageBox.Show("There was an error adding this order. Please try again.");
                         break;
                     case -2:
-                        MessageBox.Show("A critical error occured. please contact system administrator");
+                        MessageBox.Show(Constants.CONTACT_SYSTEMADMIN);
                         break;
                 }
             }
@@ -309,7 +309,7 @@ namespace adaOrderingSys
             catch (Exception e)
             {
                 logger.Error(e);
-                MessageBox.Show("An error orccured. Please contact system admin");
+                MessageBox.Show(Constants.CONTACT_SYSTEMADMIN);
                 clearInput();
                 return false;
             }

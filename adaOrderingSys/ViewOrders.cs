@@ -21,7 +21,7 @@ namespace adaOrderingSys
         private DataSet ds { get; set; }
         private DataTable dt { get; set; }
 
-        SqlConnection conn = new SqlConnection(Constants.CONNECTIONSTRING);
+        private SqlConnection conn = new SqlConnection(Constants.CONNECTIONSTRING);
 
         private readonly Logger logger = LogManager.GetCurrentClassLogger();
 
@@ -49,13 +49,13 @@ namespace adaOrderingSys
                     showMain();
                 }
             }
-            
+
             else
             {
                 showMain();
-            }            
+            }
         }
-        
+
         public void showMain()
         {
             this.Hide();
@@ -82,7 +82,7 @@ namespace adaOrderingSys
                     //validate customers and location
                     if (customers == null || !customers.Any() || location == null)
                     {
-                        MessageBox.Show("Something went wrong. Please contact system admin.");
+                        MessageBox.Show(Constants.CONTACT_SYSTEMADMIN);
                         return;
                     }
 
@@ -129,44 +129,40 @@ namespace adaOrderingSys
 
         private void btn_UpdateOrder_Click(object sender, EventArgs e)
         {
-            if (adapter.DeleteCommand == null && adapter.UpdateCommand == null && adapter.InsertCommand == null) {
+            if (adapter.DeleteCommand != null || adapter.UpdateCommand != null || adapter.InsertCommand == null)
+            {
                 if (lbl_OrderID.Text != null)
                 {
-                    if (dgvItemsOrdered.Rows.Count > 1)
+                    try
                     {
-                        try
+                        if (adapter != null)
                         {
-                            if (adapter != null)
-                            {
-                                adapter.Update(dt);
-                            }
-
+                            adapter.Update(dt);
                             logger.Info("Updated order " + lbl_OrderID.Text);
                             MessageBox.Show("Update successful");
-
-                        }
-                        catch (Exception ex)
-                        {
-                            logger.Error(ex);
-                            MessageBox.Show("Something went wrong, we could not update this order");
                         }
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        if (MessageBox.Show("Table is empty, do you wish to delete this order?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-                        {
-                            deleteOrder();
-                        }
-
-                        return;
+                        logger.Error(ex);
+                        MessageBox.Show("Something went wrong, we could not update this order");
                     }
+                }
+                else
+                {
+                    if (MessageBox.Show("Table is empty, do you wish to delete this order?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                    {
+                        deleteOrder();
+                    }
+
+                    return;
                 }
             }
         }
 
         private void btn_DeleteOrder_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to delete this order?", 
+            if (MessageBox.Show("Are you sure you want to delete this order?",
                 "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
                 deleteOrder();
@@ -185,7 +181,7 @@ namespace adaOrderingSys
         }
         private void dgvItemsOrdered_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
-            
+
             setGrandTotal();
         }
 
@@ -195,7 +191,7 @@ namespace adaOrderingSys
             try
             {
                 string changedValue;
-                int totalQuantity=0, quantity;
+                int totalQuantity = 0, quantity;
                 string itemID = dgvItemsOrdered.Rows[e.RowIndex].Cells[Constants.ITEMID_COLUMN].Value.ToString();
 
                 if (e.ColumnIndex == dgvItemsOrdered.Columns[Constants.QUANTITY_COLUMN].Index)
@@ -208,8 +204,8 @@ namespace adaOrderingSys
                 {
                     column = Constants.ADDITIONALS_COLUMN;
                     changedValue = dgvItemsOrdered.Rows[e.RowIndex].Cells[Constants.ADDITIONALS_COLUMN].Value.ToString();
-                    int  cellValue = Convert.ToInt32(changedValue);
-                    totalQuantity = cellValue +  Convert.ToInt32(dgvItemsOrdered.Rows[e.RowIndex].Cells[Constants.QUANTITY_COLUMN].Value);
+                    int cellValue = Convert.ToInt32(changedValue);
+                    totalQuantity = cellValue + Convert.ToInt32(dgvItemsOrdered.Rows[e.RowIndex].Cells[Constants.QUANTITY_COLUMN].Value);
                 }
 
                 if (column != "")
@@ -328,25 +324,25 @@ namespace adaOrderingSys
         }
 
         private void setDeleteCmd(string itemID, int orderID)
-        { 
+        {
             try
             {
-                SqlCommand cmd = new SqlCommand(@"DELETE FROM ordered_Items WHERE orderID = @orderID and itemID = @itemID",conn);
-                cmd.Parameters.AddWithValue("orderID", orderID);
-                cmd.Parameters.AddWithValue("itemID", itemID);
+                SqlCommand cmd = new SqlCommand(@"DELETE FROM ordered_Items WHERE orderID = @orderID and itemID = @itemID", conn);
+                cmd.Parameters.AddWithValue("@orderID", orderID);
+                cmd.Parameters.AddWithValue("@itemID", itemID);
 
                 adapter.DeleteCommand = cmd;
 
                 dt.AcceptChanges();
                 adapter.Fill(dt);
-                
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(Constants.GENERIC_ERROR);
                 logger.Error(ex);
             }
-        } 
+        }
 
         private DataTable populateDataTable(int orderID)
         {
@@ -400,7 +396,7 @@ namespace adaOrderingSys
                             break;
 
                         case -2: //Error occured and rollback was unsuccessful
-                            MessageBox.Show("A critical error occured. Please contact system admin.");
+                            MessageBox.Show(Constants.CONTACT_SYSTEMADMIN);
                             break;
 
                         default: //Rowcount will be returned if order was successful. This could be any positive integer
@@ -485,7 +481,7 @@ namespace adaOrderingSys
 
         private void dgvItemsOrdered_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
         {
-            
+
         }
 
         private void dgvItemsOrdered_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
@@ -498,7 +494,7 @@ namespace adaOrderingSys
                     int orderID = Convert.ToInt32(lbl_OrderID.Text);
                     setDeleteCmd(itemID, orderID);
 
-                    logger.Info("Successfully deleted " + itemID);
+                    logger.Info("Set to delete item: " + itemID);
                 }
 
                 catch (Exception ex)
@@ -547,7 +543,7 @@ namespace adaOrderingSys
                 {
                     List<string> addedItems = new List<string>();
 
-                    for (int i=0; i < dgvItemsOrdered.Rows.Count -1; i++)
+                    for (int i = 0; i < dgvItemsOrdered.Rows.Count - 1; i++)
                     {
                         addedItems.Add(dgvItemsOrdered.Rows[i].Cells[Constants.ITEMID_COLUMN].Value.ToString());
                     }

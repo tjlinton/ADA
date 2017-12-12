@@ -40,13 +40,13 @@ namespace adaOrderingSys
             txtPassword.Text = null;
         }
 
-        private void CheckEnter(object sender, System.Windows.Forms.KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                doLogin();
-            }
-        }
+        //private void CheckEnter(object sender, System.Windows.Forms.KeyPressEventArgs e)
+        //{
+        //    if (e.KeyChar == (char)13)
+        //    {
+        //        doLogin();
+        //    }
+        //}
 
         private void doLogin() {
             try
@@ -69,7 +69,7 @@ namespace adaOrderingSys
                             txtPassword.Focus();
                             break;
                         case "1":
-                            MessageBox.Show("ERROR:" + "Please contact system admin");
+                            MessageBox.Show(Constants.CONTACT_SYSTEMADMIN);
                             txtPassword.SelectAll();
                             txtPassword.Focus();
                             break;
@@ -89,7 +89,7 @@ namespace adaOrderingSys
             catch (Exception ex)
             {
                 logger.Error(ex);
-                MessageBox.Show("ERROR:" + "Please contact system admin");
+                MessageBox.Show(Constants.CONTACT_SYSTEMADMIN);
             }
         }
 

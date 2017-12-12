@@ -271,7 +271,7 @@ namespace adaOrderingSys
                         break;
 
                     default:
-                        MessageBox.Show("A fatal error occured. Please contact system administrator");
+                        MessageBox.Show(Constants.CONTACT_SYSTEMADMIN);
                         break;
                 }
             }
@@ -334,7 +334,7 @@ namespace adaOrderingSys
                             break;
 
                         default:
-                            MessageBox.Show("A fatal error occured. Please contact system administrator");
+                            MessageBox.Show(Constants.CONTACT_SYSTEMADMIN);
                             break;
                     }
                 }
@@ -427,6 +427,7 @@ namespace adaOrderingSys
         private void pictureBox1_MouseHover(object sender, EventArgs e)
         {
             pictureBox_UM.Cursor = Cursors.Hand;
+            toolTip1.Show("User Management", pictureBox_UM);
         }
     }
 }

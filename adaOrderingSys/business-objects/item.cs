@@ -88,7 +88,7 @@ namespace adaOrderingSys
             }
         }
 
-        public string getItemID(String itemName)
+        public string getItemID(string itemName)
         {
            
             using (SqlConnection conn = new SqlConnection(Constants.CONNECTIONSTRING))
@@ -117,7 +117,7 @@ namespace adaOrderingSys
             }
         }
 
-        public double getUnitPrice(String itemID)
+        public double getUnitPrice(string itemID)
         {
            
             using (SqlConnection conn = new SqlConnection(Constants.CONNECTIONSTRING))

@@ -47,7 +47,7 @@ namespace adaOrderingSys.business_objects
 
                     if (summaryID <= 0) //Once a summary is created in the db, the ID is more than 0
                     {
-                        throw new Exception("Database Error occured. Please contact system administrator");
+                        throw new Exception(Constants.CONTACT_SYSTEMADMIN);
                     }
 
                     int updateReturnedVal = 0;
