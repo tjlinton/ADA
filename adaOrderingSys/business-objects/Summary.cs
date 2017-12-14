@@ -11,15 +11,31 @@ using System.Data;
 
 namespace adaOrderingSys.business_objects
 {
-    class Summary
+    public class Summary
     {
         private readonly Logger logger = LogManager.GetCurrentClassLogger();
 
         public int summaryID { get; private set; }
         private List<Order> orders { get; set; }
         private DateTime date { get; set; }
+        private string driver { get; set; }
+        private string createdBy { get; set; }
 
-        public int fulfillOrders(List<int> orderID, string licNo, string driver, DateTime date)
+        private string licenseNo { get; set; }
+        private string location { get; set; }
+
+        public Summary() { }
+
+        public Summary(int id, DateTime date, string driver, string createdBy, string licenseNo, string location)
+        {
+            this.summaryID = id;
+            this.date = date;
+            this.driver = driver;
+            this.location = location;
+            this.createdBy = createdBy;
+            this.licenseNo = licenseNo;
+        }
+        public int fulfillOrders(List<int> orderID, string licNo, string driver, DateTime date,string location, string createdBy)
         {
            
             using (SqlConnection conn = new SqlConnection(Constants.CONNECTIONSTRING))
@@ -38,9 +54,12 @@ namespace adaOrderingSys.business_objects
                     createSummaryCmd.CommandType = CommandType.StoredProcedure;
                     updateCmd.CommandType = CommandType.StoredProcedure;
 
+                    // Specify all stored procedure parameters - createSummary
                     createSummaryCmd.Parameters.AddWithValue("@licenseNo", licNo);
                     createSummaryCmd.Parameters.AddWithValue("@driver", driver);
                     createSummaryCmd.Parameters.AddWithValue("@summaryDate", date);
+                    createSummaryCmd.Parameters.AddWithValue("@createdBy", createdBy);
+                    createSummaryCmd.Parameters.AddWithValue("@location", location);
                     
 
                     int summaryID = (int)createSummaryCmd.ExecuteScalar();
@@ -54,11 +73,12 @@ namespace adaOrderingSys.business_objects
                     int listSize = orderID.Count;
                     for (int i = 0; i < listSize; i++)
                     {
+                        // Specify all stored procedure parameters - Fullfill orders
                         updateCmd.Parameters.AddWithValue("@orderID", orderID[i]);
                         updateCmd.Parameters.AddWithValue("@summaryID", summaryID);
                         updateReturnedVal = (Int32)updateCmd.ExecuteScalar();
 
-                        if (updateReturnedVal <= 0)
+                        if (updateReturnedVal <= 0) // Number of rows affected should be returned. Can't be equal or less than zero
                         {
                             throw new Exception("An error occured inside database");
                         }

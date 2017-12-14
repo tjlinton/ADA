@@ -1,17 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using adaOrderingSys.business_objects;
 using NLog;
 using System.Drawing.Printing;
-using static System.Windows.Forms.CheckedListBox;
-//using Microsoft.Office.Interop.Word;
 
 namespace adaOrderingSys
 {
@@ -22,11 +15,25 @@ namespace adaOrderingSys
         private bool lastPage;
         private int pageNo;
         List<KeyValuePair<int, string>> summaryList = null;
+        private Summary summary { get; set; }
+
         public SummaryForm()
         {
             InitializeComponent();
             setItems();
         }
+
+        public SummaryForm(Summary summ)
+        {
+            this.summary = summ;
+            InitializeComponent();
+            setItems(this.summary);
+        }
+
+        private void setItems(Summary summ)
+        {
+
+        } 
 
         private void setItems()
         {
@@ -99,13 +106,15 @@ namespace adaOrderingSys
                             }
 
                             DateTime datetime = dateTimePicker1.Value;
-                            int submitResponse = summary.fulfillOrders(orderIDList, txtLicenseNo.Text, txtDriver.Text, datetime);
+                            int submitResponse = summary.fulfillOrders(orderIDList, txtLicenseNo.Text, txtDriver.Text, datetime,txtLocation.Text,User.userName);
                             if (submitResponse < 0)
                             {
                                 throw new Exception("Error submitting Loading sheet");
                             }
 
                             printDocument.Print(); //Go ahead and print the doc
+
+                            MessageBox.Show("Success");
 
                             setItems();
                         }

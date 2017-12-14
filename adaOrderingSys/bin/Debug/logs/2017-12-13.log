@@ -1,0 +1,284 @@
+2017-12-13 06:31:40.4655 INFO User: Tajay successfully logged in
+2017-12-13 07:16:28.3877 INFO User: Tajay successfully logged in
+2017-12-13 07:20:39.2680 INFO User: Tajay successfully logged in
+2017-12-13 07:20:48.2645 ERROR System.NullReferenceException: Object reference not set to an instance of an object.
+   at adaOrderingSys.UserManagement.dataGridView1_UserAddedRow(Object sender, DataGridViewRowEventArgs e) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\UserManagement.cs:line 167
+2017-12-13 07:20:48.7253 INFO Update command set for: Mary
+2017-12-13 07:20:54.7843 INFO Update command set for: Mary
+2017-12-13 07:21:22.4009 INFO Updates have been performed on users table
+2017-12-13 07:22:10.5543 INFO User: Tajay successfully logged in
+2017-12-13 07:22:17.5416 ERROR System.NullReferenceException: Object reference not set to an instance of an object.
+   at adaOrderingSys.UserManagement.dataGridView1_UserAddedRow(Object sender, DataGridViewRowEventArgs e) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\UserManagement.cs:line 167
+2017-12-13 07:22:18.3833 INFO Update command set for: Mary
+2017-12-13 07:22:24.4370 INFO Update command set for: Mary
+2017-12-13 07:22:59.4824 INFO User: Tajay successfully logged in
+2017-12-13 07:23:20.2765 ERROR System.NullReferenceException: Object reference not set to an instance of an object.
+   at adaOrderingSys.UserManagement.dataGridView1_UserAddedRow(Object sender, DataGridViewRowEventArgs e) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\UserManagement.cs:line 167
+2017-12-13 07:23:47.3060 INFO Update command set for: Mary
+2017-12-13 07:24:01.1853 INFO Update command set for: Mary
+2017-12-13 07:24:17.5580 INFO Update command set for: Tajay
+2017-12-13 07:24:25.6165 INFO Delete command issued for: Mary
+2017-12-13 07:24:25.7237 INFO set to delete user: Mary
+2017-12-13 07:24:29.2552 INFO Updates have been performed on users table
+2017-12-13 07:45:58.8137 INFO User: Tajay successfully logged in
+2017-12-13 07:46:02.8648 ERROR System.IndexOutOfRangeException: There is no row at position -1.
+   at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at adaOrderingSys.UserManagement.dataGridView1_CellValueChanged(Object sender, DataGridViewCellEventArgs e) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\UserManagement.cs:line 291
+2017-12-13 07:46:04.2740 ERROR System.IndexOutOfRangeException: There is no row at position -1.
+   at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at adaOrderingSys.UserManagement.dataGridView1_CellValueChanged(Object sender, DataGridViewCellEventArgs e) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\UserManagement.cs:line 291
+2017-12-13 07:46:05.3477 ERROR System.IndexOutOfRangeException: There is no row at position -1.
+   at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at adaOrderingSys.UserManagement.dataGridView1_CellValueChanged(Object sender, DataGridViewCellEventArgs e) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\UserManagement.cs:line 291
+2017-12-13 07:46:05.9978 ERROR System.IndexOutOfRangeException: Cannot find column 2.
+   at System.Data.DataColumnCollection.get_Item(Int32 index)
+   at System.Data.DataRow.set_Item(Int32 columnIndex, Object value)
+   at adaOrderingSys.UserManagement.dataGridView1_CellValueChanged(Object sender, DataGridViewCellEventArgs e) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\UserManagement.cs:line 291
+2017-12-13 07:47:00.2611 INFO User: Tajay successfully logged in
+2017-12-13 07:47:17.3493 INFO Update command set for: TLinton
+2017-12-13 07:47:22.4653 INFO Updates have been performed on users table
+2017-12-13 07:56:56.8672 WARN Unable to log in user Tajay. Incorrect credentials enterred
+2017-12-13 07:57:08.2770 INFO User: TLinton successfully logged in
+2017-12-13 07:57:28.0530 INFO Update command set for: Mary
+2017-12-13 07:57:31.5378 ERROR System.IndexOutOfRangeException: Cannot find column 2.
+   at System.Data.DataColumnCollection.get_Item(Int32 index)
+   at System.Data.DataRow.set_Item(Int32 columnIndex, Object value)
+   at adaOrderingSys.UserManagement.dataGridView1_CellValueChanged(Object sender, DataGridViewCellEventArgs e) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\UserManagement.cs:line 313
+2017-12-13 19:08:52.4921 INFO User: TLinton successfully logged in
+2017-12-13 19:09:16.1591 INFO Insert set for user: hChin
+2017-12-13 19:09:27.7503 ERROR System.IndexOutOfRangeException: Cannot find column 2.
+   at System.Data.DataColumnCollection.get_Item(Int32 index)
+   at System.Data.DataRow.set_Item(Int32 columnIndex, Object value)
+   at adaOrderingSys.UserManagement.dataGridView1_CellValueChanged(Object sender, DataGridViewCellEventArgs e) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\UserManagement.cs:line 313
+2017-12-13 19:11:59.2484 INFO User: TLinton successfully logged in
+2017-12-13 19:12:38.0543 INFO Insert set for user: HChin
+2017-12-13 19:13:01.6629 ERROR System.IndexOutOfRangeException: Cannot find column 2.
+   at System.Data.DataColumnCollection.get_Item(Int32 index)
+   at System.Data.DataRow.set_Item(Int32 columnIndex, Object value)
+   at adaOrderingSys.UserManagement.dataGridView1_CellValueChanged(Object sender, DataGridViewCellEventArgs e) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\UserManagement.cs:line 314
+2017-12-13 19:14:21.6528 INFO User: TLinton successfully logged in
+2017-12-13 19:14:39.0899 INFO Insert set for user: HChin
+2017-12-13 19:15:03.9758 ERROR System.IndexOutOfRangeException: Cannot find column 2.
+   at System.Data.DataColumnCollection.get_Item(Int32 index)
+   at System.Data.DataRow.set_Item(Int32 columnIndex, Object value)
+   at adaOrderingSys.UserManagement.dataGridView1_CellValueChanged(Object sender, DataGridViewCellEventArgs e) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\UserManagement.cs:line 314
+2017-12-13 19:18:49.6571 INFO User: TLinton successfully logged in
+2017-12-13 19:19:13.7889 INFO Insert set for user: HChin
+2017-12-13 19:19:36.6333 INFO Update command set for: HChin
+2017-12-13 19:20:31.6361 ERROR System.Data.DBConcurrencyException: Concurrency violation: the UpdateCommand affected 0 of the expected 1 records.
+   at System.Data.Common.DbDataAdapter.UpdatedRowStatusErrors(RowUpdatedEventArgs rowUpdatedEvent, BatchCommandInfo[] batchCommands, Int32 commandCount)
+   at System.Data.Common.DbDataAdapter.UpdatedRowStatus(RowUpdatedEventArgs rowUpdatedEvent, BatchCommandInfo[] batchCommands, Int32 commandCount)
+   at System.Data.Common.DbDataAdapter.Update(DataRow[] dataRows, DataTableMapping tableMapping)
+   at System.Data.Common.DbDataAdapter.UpdateFromDataTable(DataTable dataTable, DataTableMapping tableMapping)
+   at System.Data.Common.DbDataAdapter.Update(DataTable dataTable)
+   at adaOrderingSys.UserManagement.btn_Submit_Click(Object sender, EventArgs e) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\UserManagement.cs:line 134
+2017-12-13 19:23:44.8024 ERROR System.Data.DBConcurrencyException: Concurrency violation: the UpdateCommand affected 0 of the expected 1 records.
+   at System.Data.Common.DbDataAdapter.UpdatedRowStatusErrors(RowUpdatedEventArgs rowUpdatedEvent, BatchCommandInfo[] batchCommands, Int32 commandCount)
+   at System.Data.Common.DbDataAdapter.UpdatedRowStatus(RowUpdatedEventArgs rowUpdatedEvent, BatchCommandInfo[] batchCommands, Int32 commandCount)
+   at System.Data.Common.DbDataAdapter.Update(DataRow[] dataRows, DataTableMapping tableMapping)
+   at System.Data.Common.DbDataAdapter.UpdateFromDataTable(DataTable dataTable, DataTableMapping tableMapping)
+   at System.Data.Common.DbDataAdapter.Update(DataTable dataTable)
+   at adaOrderingSys.UserManagement.btn_Submit_Click(Object sender, EventArgs e) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\UserManagement.cs:line 134
+2017-12-13 19:32:38.3694 INFO User: TLinton successfully logged in
+2017-12-13 19:34:49.9474 INFO Insert set for user: HChin
+2017-12-13 19:34:57.4967 INFO Update command set for: HChin
+2017-12-13 19:35:04.2176 ERROR System.Data.SqlClient.SqlException (0x80131904): Procedure or function 'usp_AddUser' expects parameter '@responseMessage', which was not supplied.
+   at System.Data.Common.DbDataAdapter.UpdatedRowStatusErrors(RowUpdatedEventArgs rowUpdatedEvent, BatchCommandInfo[] batchCommands, Int32 commandCount)
+   at System.Data.Common.DbDataAdapter.UpdatedRowStatus(RowUpdatedEventArgs rowUpdatedEvent, BatchCommandInfo[] batchCommands, Int32 commandCount)
+   at System.Data.Common.DbDataAdapter.Update(DataRow[] dataRows, DataTableMapping tableMapping)
+   at System.Data.Common.DbDataAdapter.UpdateFromDataTable(DataTable dataTable, DataTableMapping tableMapping)
+   at System.Data.Common.DbDataAdapter.Update(DataTable dataTable)
+   at adaOrderingSys.UserManagement.btn_Submit_Click(Object sender, EventArgs e) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\UserManagement.cs:line 134
+ClientConnectionId:a6c4b890-c4d2-4d9d-a80f-e6108c767c7e
+Error Number:201,State:4,Class:16
+2017-12-13 19:44:46.6884 INFO User: TLinton successfully logged in
+2017-12-13 19:44:56.3294 INFO Insert set for user: HChin
+2017-12-13 19:45:02.7439 INFO Update command set for: HChin
+2017-12-13 19:45:05.0313 INFO Updates have been performed on users table
+2017-12-13 19:45:16.6346 INFO Update command set for: HChin
+2017-12-13 19:45:18.3384 INFO Updates have been performed on users table
+2017-12-13 19:46:07.2737 INFO Insert set for user: adauser
+2017-12-13 19:46:12.5846 INFO Update command set for: adauser
+2017-12-13 19:46:15.4825 INFO Updates have been performed on users table
+2017-12-13 19:46:31.1753 INFO Updates have been performed on users table
+2017-12-13 19:47:28.7872 INFO User: TLinton successfully logged in
+2017-12-13 19:47:36.0940 INFO Delete command issued for: adauser
+2017-12-13 19:47:36.1080 INFO set to delete user: adauser
+2017-12-13 19:47:38.8006 INFO Updates have been performed on users table
+2017-12-13 19:47:49.1865 INFO Delete command issued for: adauser
+2017-12-13 19:47:49.2055 INFO set to delete user: adauser
+2017-12-13 19:47:52.4706 INFO Updates have been performed on users table
+2017-12-13 19:48:27.6273 WARN Unable to log in user Tajay. Incorrect credentials enterred
+2017-12-13 19:48:32.9754 INFO User: TLinton successfully logged in
+2017-12-13 19:48:38.4534 INFO Delete command issued for: adauser
+2017-12-13 19:48:38.4715 INFO set to delete user: adauser
+2017-12-13 19:48:40.9651 INFO Updates have been performed on users table
+2017-12-13 19:49:20.0442 INFO Delete command issued for: adauser
+2017-12-13 19:49:40.3491 INFO User: TLinton successfully logged in
+2017-12-13 19:49:46.4829 INFO Delete command issued for: adauser
+2017-12-13 19:49:46.4919 INFO set to delete user: adauser
+2017-12-13 19:49:49.9195 INFO Updates have been performed on users table
+2017-12-13 19:50:03.1999 INFO Insert set for user: adauser
+2017-12-13 19:50:07.1397 INFO Update command set for: adauser
+2017-12-13 19:50:10.5353 INFO Updates have been performed on users table
+2017-12-13 20:04:05.6458 WARN Unable to log in user Tajay. Incorrect credentials enterred
+2017-12-13 20:04:16.7443 INFO User: HChin successfully logged in
+2017-12-13 20:04:48.7543 INFO User: adauser successfully logged in
+2017-12-13 20:05:17.8858 INFO User: adauser successfully logged in
+2017-12-13 21:00:38.9484 INFO User: adauser successfully logged in
+2017-12-13 21:01:56.8790 INFO User: TLinton successfully logged in
+2017-12-13 21:02:04.6413 INFO Update command set for: adauser
+2017-12-13 21:02:05.7468 INFO Updates have been performed on users table
+2017-12-13 21:11:14.1570 INFO Updates have been performed on users table
+2017-12-13 21:11:26.8086 INFO User: adauser successfully logged in
+2017-12-13 23:17:36.8281 INFO User: TLinton successfully logged in
+2017-12-13 23:18:02.1169 INFO Retrieving order location
+2017-12-13 23:18:02.1169 INFO Location successfully retrieved
+2017-12-13 23:18:02.1349 INFO Getting customer names
+2017-12-13 23:18:02.1349 INFO Names successfully receieved
+2017-12-13 23:20:28.3881 INFO  Getting item name, quantity and additionals from 67
+2017-12-13 23:20:28.4161 INFO Retrieving order location
+2017-12-13 23:20:28.4321 INFO Location successfully retrieved
+2017-12-13 23:20:28.4431 INFO  Getting item name, quantity and additionals from 68
+2017-12-13 23:20:28.4431 INFO Retrieving order location
+2017-12-13 23:20:28.4631 INFO Location successfully retrieved
+2017-12-13 23:20:34.2713 INFO  Getting item name, quantity and additionals from 67
+2017-12-13 23:20:34.2713 INFO Retrieving order location
+2017-12-13 23:20:34.2883 INFO Location successfully retrieved
+2017-12-13 23:20:34.2883 INFO  Getting item name, quantity and additionals from 68
+2017-12-13 23:20:34.2883 INFO Retrieving order location
+2017-12-13 23:20:34.3124 INFO Location successfully retrieved
+2017-12-13 23:20:48.8767 INFO  Getting item name, quantity and additionals from 67
+2017-12-13 23:20:48.8907 INFO Retrieving order location
+2017-12-13 23:20:48.9047 INFO Location successfully retrieved
+2017-12-13 23:20:48.9177 INFO  Getting item name, quantity and additionals from 68
+2017-12-13 23:20:48.9177 INFO Retrieving order location
+2017-12-13 23:20:48.9327 INFO Location successfully retrieved
+2017-12-13 23:21:12.0761 ERROR System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.Collections.ArrayList.get_Item(Int32 index)
+   at System.Windows.Forms.DataGridViewSelectedRowCollection.get_Item(Int32 index)
+   at adaOrderingSys.ViewLoadingSheets.contextMenuStrip1_ItemClicked(Object sender, ToolStripItemClickedEventArgs e) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\ViewLoadingSheets.cs:line 160
+   at System.Windows.Forms.ToolStrip.OnItemClicked(ToolStripItemClickedEventArgs e)
+   at System.Windows.Forms.ToolStripDropDown.OnItemClicked(ToolStripItemClickedEventArgs e)
+   at System.Windows.Forms.ToolStrip.HandleItemClick(ToolStripItem dismissingItem)
+   at System.Windows.Forms.ToolStripItem.HandleClick(EventArgs e)
+   at System.Windows.Forms.ToolStripItem.HandleMouseUp(MouseEventArgs e)
+   at System.Windows.Forms.ToolStripItem.FireEventInteractive(EventArgs e, ToolStripItemEventType met)
+   at System.Windows.Forms.ToolStripItem.FireEvent(EventArgs e, ToolStripItemEventType met)
+   at System.Windows.Forms.ToolStrip.OnMouseUp(MouseEventArgs mea)
+   at System.Windows.Forms.ToolStripDropDown.OnMouseUp(MouseEventArgs mea)
+   at System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   at System.Windows.Forms.ToolStrip.WndProc(Message& m)
+   at System.Windows.Forms.ToolStripDropDown.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.DebuggableCallback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG& msg)
+   at System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   at System.Windows.Forms.Application.Run(Form mainForm)
+   at adaOrderingSys.Program.Main() in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\Program.cs:line 25
+2017-12-13 23:25:57.1947 INFO User: TLinton successfully logged in
+2017-12-13 23:27:14.7032 ERROR System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.Collections.ArrayList.get_Item(Int32 index)
+   at System.Windows.Forms.DataGridViewSelectedRowCollection.get_Item(Int32 index)
+   at adaOrderingSys.ViewLoadingSheets.contextMenuStrip1_ItemClicked(Object sender, ToolStripItemClickedEventArgs e) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\ViewLoadingSheets.cs:line 160
+   at System.Windows.Forms.ToolStrip.OnItemClicked(ToolStripItemClickedEventArgs e)
+   at System.Windows.Forms.ToolStripDropDown.OnItemClicked(ToolStripItemClickedEventArgs e)
+   at System.Windows.Forms.ToolStrip.HandleItemClick(ToolStripItem dismissingItem)
+   at System.Windows.Forms.ToolStripItem.HandleClick(EventArgs e)
+   at System.Windows.Forms.ToolStripItem.HandleMouseUp(MouseEventArgs e)
+   at System.Windows.Forms.ToolStripItem.FireEventInteractive(EventArgs e, ToolStripItemEventType met)
+   at System.Windows.Forms.ToolStripItem.FireEvent(EventArgs e, ToolStripItemEventType met)
+   at System.Windows.Forms.ToolStrip.OnMouseUp(MouseEventArgs mea)
+   at System.Windows.Forms.ToolStripDropDown.OnMouseUp(MouseEventArgs mea)
+   at System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   at System.Windows.Forms.ToolStrip.WndProc(Message& m)
+   at System.Windows.Forms.ToolStripDropDown.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.DebuggableCallback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG& msg)
+   at System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   at System.Windows.Forms.Application.Run(Form mainForm)
+   at adaOrderingSys.Program.Main() in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\Program.cs:line 25
+2017-12-13 23:27:39.4944 INFO User: TLinton successfully logged in
+2017-12-13 23:27:43.5304 ERROR System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.Collections.ArrayList.get_Item(Int32 index)
+   at System.Windows.Forms.DataGridViewSelectedRowCollection.get_Item(Int32 index)
+   at adaOrderingSys.ViewLoadingSheets.contextMenuStrip1_ItemClicked(Object sender, ToolStripItemClickedEventArgs e) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\ViewLoadingSheets.cs:line 160
+   at System.Windows.Forms.ToolStrip.OnItemClicked(ToolStripItemClickedEventArgs e)
+   at System.Windows.Forms.ToolStripDropDown.OnItemClicked(ToolStripItemClickedEventArgs e)
+   at System.Windows.Forms.ToolStrip.HandleItemClick(ToolStripItem dismissingItem)
+   at System.Windows.Forms.ToolStripItem.HandleClick(EventArgs e)
+   at System.Windows.Forms.ToolStripItem.HandleMouseUp(MouseEventArgs e)
+   at System.Windows.Forms.ToolStripItem.FireEventInteractive(EventArgs e, ToolStripItemEventType met)
+   at System.Windows.Forms.ToolStripItem.FireEvent(EventArgs e, ToolStripItemEventType met)
+   at System.Windows.Forms.ToolStrip.OnMouseUp(MouseEventArgs mea)
+   at System.Windows.Forms.ToolStripDropDown.OnMouseUp(MouseEventArgs mea)
+   at System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   at System.Windows.Forms.ToolStrip.WndProc(Message& m)
+   at System.Windows.Forms.ToolStripDropDown.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.DebuggableCallback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG& msg)
+   at System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   at System.Windows.Forms.Application.Run(Form mainForm)
+   at adaOrderingSys.Program.Main() in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\Program.cs:line 25
+2017-12-13 23:28:10.2596 INFO User: TLinton successfully logged in
+2017-12-13 23:42:32.1114 INFO User: TLinton successfully logged in
+2017-12-13 23:42:58.7324 ERROR System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.Collections.ArrayList.get_Item(Int32 index)
+   at System.Windows.Forms.DataGridViewSelectedRowCollection.get_Item(Int32 index)
+   at adaOrderingSys.ViewLoadingSheets.contextMenuStrip1_ItemClicked(Object sender, ToolStripItemClickedEventArgs e) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\ViewLoadingSheets.cs:line 162
+2017-12-13 23:43:20.3194 ERROR System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.Collections.ArrayList.get_Item(Int32 index)
+   at System.Windows.Forms.DataGridViewSelectedRowCollection.get_Item(Int32 index)
+   at adaOrderingSys.ViewLoadingSheets.contextMenuStrip1_ItemClicked(Object sender, ToolStripItemClickedEventArgs e) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\ViewLoadingSheets.cs:line 162
+2017-12-13 23:44:18.0434 INFO User: TLinton successfully logged in
+2017-12-13 23:44:21.9838 ERROR System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.Collections.ArrayList.get_Item(Int32 index)
+   at System.Windows.Forms.DataGridViewSelectedRowCollection.get_Item(Int32 index)
+   at adaOrderingSys.ViewLoadingSheets.contextMenuStrip1_ItemClicked(Object sender, ToolStripItemClickedEventArgs e) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\ViewLoadingSheets.cs:line 162
+2017-12-13 23:44:42.0253 INFO Updates made to summary by 
+2017-12-13 23:56:55.9007 INFO User: TLinton successfully logged in
+2017-12-13 23:57:08.6398 INFO  Getting item name, quantity and additionals from 67
+2017-12-13 23:57:08.6508 INFO Retrieving order location
+2017-12-13 23:57:08.6508 INFO Location successfully retrieved
+2017-12-13 23:57:08.6698 INFO  Getting item name, quantity and additionals from 68
+2017-12-13 23:57:08.6698 INFO Retrieving order location
+2017-12-13 23:57:08.6878 INFO Location successfully retrieved
+2017-12-13 23:57:17.5614 INFO  Getting item name, quantity and additionals from 67
+2017-12-13 23:57:17.5694 INFO Retrieving order location
+2017-12-13 23:57:17.5694 INFO Location successfully retrieved
+2017-12-13 23:57:17.5884 INFO  Getting item name, quantity and additionals from 68
+2017-12-13 23:57:17.5884 INFO Retrieving order location
+2017-12-13 23:57:17.6314 INFO Location successfully retrieved
+2017-12-13 23:58:02.5464 INFO Updates made to summary by 
+2017-12-13 23:58:40.5987 INFO  Getting item name, quantity and additionals from 67
+2017-12-13 23:58:40.6097 INFO Retrieving order location
+2017-12-13 23:58:40.6197 INFO Location successfully retrieved
+2017-12-13 23:58:40.6327 INFO  Getting item name, quantity and additionals from 68
+2017-12-13 23:58:40.6327 INFO Retrieving order location
+2017-12-13 23:58:40.6488 INFO Location successfully retrieved

@@ -23,6 +23,7 @@ namespace adaOrderingSys.business_objects
         public static string CREATEDBY = "createdBy";
         public static string LICENSENO = "licenseNo";
         public static string DRIVER = "driver";
+        public static string LOCATION = "location";
 
 
         // Connection Strings

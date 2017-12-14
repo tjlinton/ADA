@@ -23,6 +23,8 @@ namespace adaOrderingSys
 
         private SqlConnection conn = new SqlConnection(Constants.CONNECTIONSTRING);
 
+        private bool newRow = false;
+
         private string username { get; set; }
 
         private bool initialLoad { get; set; }
@@ -63,7 +65,8 @@ namespace adaOrderingSys
             {
                 int result = new User().changePassword(this.username);
 
-                switch (result) {
+                switch (result)
+                {
                     case 1:
                         MessageBox.Show("Password successfully reset for " + username);
                         break;
@@ -128,6 +131,9 @@ namespace adaOrderingSys
                 {
                     if (adapter != null && adapter.UpdateCommand != null || adapter.DeleteCommand != null || adapter.InsertCommand != null)
                     {
+                        //dt.AcceptChanges();
+
+                        //adapter.Fill(dt);
                         adapter.Update(dt);
 
                         logger.Info("Updates have been performed on users table");
@@ -164,10 +170,7 @@ namespace adaOrderingSys
             {
                 if (!initialLoad)
                 {
-                    string username = dataGridView1.Rows[e.Row.Index].Cells["clmn_Username"].Value.ToString();
-                    string role = dataGridView1.Rows[e.Row.Index].Cells["clmn_Role"].Value.ToString();
-
-                    setInsertCmd(username, role);
+                    newRow = true;
                 }
             }
             catch (Exception ex)
@@ -181,18 +184,15 @@ namespace adaOrderingSys
             try
             {
                 string query = "[dbo].[usp_AddUser]";
-                SqlCommand cmd = new SqlCommand(query,conn);
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@username", username);
                 cmd.Parameters.AddWithValue("@puserRole", role);
 
                 adapter.InsertCommand = cmd;
 
-                dt.AcceptChanges();
-
-                adapter.Fill(dt);
-
                 logger.Info("Insert set for user: " + username);
-                
+
             }
             catch (Exception ex)
             {
@@ -210,8 +210,8 @@ namespace adaOrderingSys
                 cmd.Parameters.AddWithValue("@userName", username);
                 adapter.DeleteCommand = cmd;
 
-                dt.AcceptChanges();
-                adapter.Fill(dt);
+                //dt.AcceptChanges();
+                //adapter.Fill(dt);
 
                 logger.Info("Delete command issued for: " + username);
             }
@@ -232,8 +232,8 @@ namespace adaOrderingSys
                 cmd.Parameters.AddWithValue("@role", role);
                 cmd.Parameters.AddWithValue("@userID", userID);
                 adapter.UpdateCommand = cmd;
-                dt.AcceptChanges();
-                adapter.Fill(dt);
+                //dt.AcceptChanges();
+                //adapter.Fill(dt);
 
                 logger.Info("Update command set for: " + username);
             }
@@ -271,6 +271,8 @@ namespace adaOrderingSys
         {
             try
             {
+                dt.Rows[e.Row.Index].Delete();
+
                 string username = dataGridView1.Rows[e.Row.Index].Cells["clmn_Username"].Value.ToString();
                 setDeleteCmd(username);
 
@@ -286,14 +288,16 @@ namespace adaOrderingSys
         {
             try
             {
+
                 if (dataGridView1.RowCount > 1 && !initialLoad)
                 {
+
                     int userID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["clmn_userID"].Value);
 
-                    string username = dataGridView1.Rows[e.RowIndex].Cells["clmn_Username"].Value == null? "" :
+                    string username = dataGridView1.Rows[e.RowIndex].Cells["clmn_Username"].Value == null ? "" :
                         dataGridView1.Rows[e.RowIndex].Cells["clmn_Username"].Value.ToString();
 
-                    string role = dataGridView1.Rows[e.RowIndex].Cells["clmn_Role"].Value == null? "" :
+                    string role = dataGridView1.Rows[e.RowIndex].Cells["clmn_Role"].Value == null ? "" :
                        dataGridView1.Rows[e.RowIndex].Cells["clmn_Role"].Value.ToString();
 
                     Regex userRegex = new Regex(@"^[a-zA-Z0-9]+([_-]?[a-zA-Z0-9])*$");
@@ -304,7 +308,20 @@ namespace adaOrderingSys
                         return;
                     }
 
-                    setUpdateCmd(userID, username, role);
+                    if (!newRow)
+                    {
+                        dt.Rows[e.RowIndex][e.ColumnIndex-1] = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+                        setUpdateCmd(userID, username, role);
+
+                    }
+                    else
+                    {
+                        dt.Rows.Add();
+                        dt.Rows[e.RowIndex][e.ColumnIndex] = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+                        newRow = false;
+                        setInsertCmd(username, role);
+                    }
+
                 }
 
             }

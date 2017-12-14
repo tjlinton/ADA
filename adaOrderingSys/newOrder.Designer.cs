@@ -177,6 +177,7 @@ namespace adaOrderingSys
             this.ddl_Customer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.ddl_Customer.DataSource = this.customerBindingSource;
             this.ddl_Customer.DisplayMember = "custName";
+            this.ddl_Customer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddl_Customer.FormattingEnabled = true;
             this.ddl_Customer.Location = new System.Drawing.Point(103, 19);
             this.ddl_Customer.Name = "ddl_Customer";

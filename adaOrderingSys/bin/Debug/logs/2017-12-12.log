@@ -38,3 +38,78 @@ Error Number:201,State:4,Class:16
 2017-12-12 02:18:02.5008 INFO Location successfully retrieved
 2017-12-12 02:18:02.5108 INFO Getting customer names
 2017-12-12 02:18:02.5108 INFO Names successfully receieved
+2017-12-12 06:20:27.4859 WARN Unable to log in user Tajay. Incorrect credentials enterred
+2017-12-12 06:20:57.5855 INFO User: Tajay successfully logged in
+2017-12-12 06:40:22.4263 INFO User: Tajay successfully logged in
+2017-12-12 06:40:30.6944 ERROR System.NullReferenceException: Object reference not set to an instance of an object.
+   at adaOrderingSys.UserManagement.dataGridView1_UserAddedRow(Object sender, DataGridViewRowEventArgs e) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\UserManagement.cs:line 167
+2017-12-12 06:40:32.5954 INFO Update command set for: adauser
+2017-12-12 06:40:39.0086 INFO Update command set for: adauser
+2017-12-12 06:40:42.7223 INFO Updates have been performed on users table
+2017-12-12 07:19:45.1930 WARN Unable to log in user Tajay. Incorrect credentials enterred
+2017-12-12 07:19:49.5652 WARN Unable to log in user Tajay. Incorrect credentials enterred
+2017-12-12 07:19:53.7828 WARN Unable to log in user Tajay. Incorrect credentials enterred
+2017-12-12 07:19:58.2817 WARN Unable to log in user Tajay. Incorrect credentials enterred
+2017-12-12 07:20:04.6376 INFO User: Tajay successfully logged in
+2017-12-12 07:20:45.8179 INFO Attempting to create new order.
+2017-12-12 07:20:45.9099 INFO New orderd created successfully with ID 68
+2017-12-12 07:22:36.8846 INFO  Getting item name, quantity and additionals from 68
+2017-12-12 07:22:36.9396 INFO Retrieving order location
+2017-12-12 07:22:36.9576 INFO Location successfully retrieved
+2017-12-12 07:23:17.1489 INFO  Getting item name, quantity and additionals from 68
+2017-12-12 07:23:17.1709 INFO Retrieving order location
+2017-12-12 07:23:17.1979 INFO Location successfully retrieved
+2017-12-12 07:24:52.7500 WARN Unable to log in user Tajay. Incorrect credentials enterred
+2017-12-12 07:24:56.1921 INFO User: Tajay successfully logged in
+2017-12-12 07:43:16.1154 INFO User: Tajay successfully logged in
+2017-12-12 07:57:46.9214 INFO User: Tajay successfully logged in
+2017-12-12 08:11:31.1721 INFO User: Tajay successfully logged in
+2017-12-12 08:33:52.3380 INFO User: Tajay successfully logged in
+2017-12-12 08:35:50.0243 INFO User: Tajay successfully logged in
+2017-12-12 08:42:01.2077 INFO User: Tajay successfully logged in
+2017-12-12 08:44:37.2444 INFO User: Tajay successfully logged in
+2017-12-12 17:57:23.9717 INFO User: Tajay successfully logged in
+2017-12-12 18:02:59.9144 INFO User: Tajay successfully logged in
+2017-12-12 18:04:01.5655 INFO User: Tajay successfully logged in
+2017-12-12 18:05:06.6220 INFO User: Tajay successfully logged in
+2017-12-12 18:06:59.7981 INFO User: Tajay successfully logged in
+2017-12-12 18:17:10.5954 INFO User: Tajay successfully logged in
+2017-12-12 18:17:15.7932 INFO Updates made to summary by 
+2017-12-12 18:18:08.9878 WARN Unable to log in user Tajay. Incorrect credentials enterred
+2017-12-12 18:18:25.8640 INFO User: Tajay successfully logged in
+2017-12-12 18:18:33.3404 INFO Updates made to summary by 
+2017-12-12 18:20:08.6806 INFO User: Tajay successfully logged in
+2017-12-12 18:25:01.1934 INFO User: Tajay successfully logged in
+2017-12-12 18:25:20.3590 INFO Updates made to summary by 
+2017-12-12 18:25:36.5571 ERROR System.Data.SqlClient.SqlException (0x80131904): Procedure or function 'usp_RemoveSummary' expects parameter '@summaryID', which was not supplied.
+   at System.Data.Common.DbDataAdapter.UpdatedRowStatusErrors(RowUpdatedEventArgs rowUpdatedEvent, BatchCommandInfo[] batchCommands, Int32 commandCount)
+   at System.Data.Common.DbDataAdapter.UpdatedRowStatus(RowUpdatedEventArgs rowUpdatedEvent, BatchCommandInfo[] batchCommands, Int32 commandCount)
+   at System.Data.Common.DbDataAdapter.Update(DataRow[] dataRows, DataTableMapping tableMapping)
+   at System.Data.Common.DbDataAdapter.UpdateFromDataTable(DataTable dataTable, DataTableMapping tableMapping)
+   at System.Data.Common.DbDataAdapter.Update(DataTable dataTable)
+   at adaOrderingSys.ViewLoadingSheets.button1_Click(Object sender, EventArgs e) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\ViewLoadingSheets.cs:line 78
+ClientConnectionId:2d75da96-3667-4522-b017-6be65bca024a
+Error Number:201,State:4,Class:16
+2017-12-12 18:31:48.8214 INFO User: Tajay successfully logged in
+2017-12-12 18:32:25.7352 ERROR System.Data.SqlClient.SqlException (0x80131904): Procedure or function 'usp_RemoveSummary' expects parameter '@summaryID', which was not supplied.
+   at System.Data.Common.DbDataAdapter.UpdatedRowStatusErrors(RowUpdatedEventArgs rowUpdatedEvent, BatchCommandInfo[] batchCommands, Int32 commandCount)
+   at System.Data.Common.DbDataAdapter.UpdatedRowStatus(RowUpdatedEventArgs rowUpdatedEvent, BatchCommandInfo[] batchCommands, Int32 commandCount)
+   at System.Data.Common.DbDataAdapter.Update(DataRow[] dataRows, DataTableMapping tableMapping)
+   at System.Data.Common.DbDataAdapter.UpdateFromDataTable(DataTable dataTable, DataTableMapping tableMapping)
+   at System.Data.Common.DbDataAdapter.Update(DataTable dataTable)
+   at adaOrderingSys.ViewLoadingSheets.button1_Click(Object sender, EventArgs e) in C:\Users\Tajay\Documents\Visual Studio 2013\Projects\ADA\adaOrderingSys\adaOrderingSys\ViewLoadingSheets.cs:line 78
+ClientConnectionId:c10d6daf-9ffb-4c36-8c75-848aeecf9762
+Error Number:201,State:4,Class:16
+2017-12-12 18:36:15.1978 INFO User: Tajay successfully logged in
+2017-12-12 18:36:22.7308 INFO Updates made to summary by 
+2017-12-12 18:39:50.4229 INFO User: Tajay successfully logged in
+2017-12-12 18:41:11.2856 INFO  Getting item name, quantity and additionals from 67
+2017-12-12 18:41:11.2966 INFO Retrieving order location
+2017-12-12 18:41:11.3086 INFO Location successfully retrieved
+2017-12-12 18:41:11.3186 INFO  Getting item name, quantity and additionals from 68
+2017-12-12 18:41:11.3186 INFO Retrieving order location
+2017-12-12 18:41:11.3186 INFO Location successfully retrieved
+2017-12-12 18:41:30.4837 INFO Updates made to summary by 
+2017-12-12 22:18:08.3728 INFO User: Tajay successfully logged in
+2017-12-12 22:19:36.6412 INFO User: Tajay successfully logged in
+2017-12-12 22:21:18.7900 INFO User: Tajay successfully logged in
