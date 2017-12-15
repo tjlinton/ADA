@@ -41,7 +41,7 @@
             this.btnSelectAll = new System.Windows.Forms.Button();
             this.lbl_OrderList = new System.Windows.Forms.Label();
             this.lbl_Driver = new System.Windows.Forms.Label();
-            this.btnSubmitCust = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.txtDriver = new System.Windows.Forms.TextBox();
             this.lbl_LicenseNo = new System.Windows.Forms.Label();
@@ -95,7 +95,7 @@
             this.groupBox1.Controls.Add(this.btnSelectAll);
             this.groupBox1.Controls.Add(this.lbl_OrderList);
             this.groupBox1.Controls.Add(this.lbl_Driver);
-            this.groupBox1.Controls.Add(this.btnSubmitCust);
+            this.groupBox1.Controls.Add(this.btnPrint);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.txtDriver);
             this.groupBox1.Controls.Add(this.lbl_LicenseNo);
@@ -174,18 +174,18 @@
             this.lbl_Driver.TabIndex = 7;
             this.lbl_Driver.Text = "Driver: ";
             // 
-            // btnSubmitCust
+            // btnPrint
             // 
-            this.btnSubmitCust.BackColor = System.Drawing.Color.Green;
-            this.btnSubmitCust.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSubmitCust.ForeColor = System.Drawing.Color.Gold;
-            this.btnSubmitCust.Location = new System.Drawing.Point(393, 277);
-            this.btnSubmitCust.Name = "btnSubmitCust";
-            this.btnSubmitCust.Size = new System.Drawing.Size(92, 45);
-            this.btnSubmitCust.TabIndex = 23;
-            this.btnSubmitCust.Text = "PRINT";
-            this.btnSubmitCust.UseVisualStyleBackColor = false;
-            this.btnSubmitCust.Click += new System.EventHandler(this.btnSubmitCust_Click);
+            this.btnPrint.BackColor = System.Drawing.Color.Green;
+            this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrint.ForeColor = System.Drawing.Color.Gold;
+            this.btnPrint.Location = new System.Drawing.Point(393, 277);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(92, 45);
+            this.btnPrint.TabIndex = 23;
+            this.btnPrint.Text = "PRINT";
+            this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // dateTimePicker1
             // 
@@ -226,7 +226,7 @@
             this.ClientSize = new System.Drawing.Size(695, 518);
             this.Controls.Add(this.pnl_Step1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "ViewSummaryForm";
+            this.Name = "SummaryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Summary";
             this.pnl_Step1.ResumeLayout(false);
@@ -241,7 +241,7 @@
         private System.Windows.Forms.CheckedListBox cbl_Orders;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Panel pnl_Step1;
-        private System.Windows.Forms.Button btnSubmitCust;
+        private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lbl_Driver;

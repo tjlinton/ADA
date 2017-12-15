@@ -19,9 +19,12 @@ namespace adaOrderingSys
         private readonly Logger logger = LogManager.GetCurrentClassLogger();
         public List<string> addedItems = new List<string>();
         private static string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings[Constants.CONNECTIONSTRINGNAME].ConnectionString;
+        public static string itemID;
+        public ViewOrders viewOrders { get; set; }
 
-        public AddNewItem(List<string> addedItems)
+        public AddNewItem(ViewOrders viewOrders,List<string> addedItems)
         {
+            this.viewOrders = viewOrders;
             InitializeComponent();
             this.addedItems = addedItems;
 
@@ -32,6 +35,7 @@ namespace adaOrderingSys
             ddlItemName.DataSource = new BindingSource(getDDLItems(addedItems), null);
             ddlItemName.SelectedIndex = -1;
             enableItems(false);
+
         }
 
         public AddNewItem()
@@ -147,6 +151,7 @@ namespace adaOrderingSys
         {
             if (ddlItemName.SelectedIndex != -1 && ddlItemName.DataSource != null)
             {
+                lbl_UnitPrice.Text = new Item().getUnitPriceOfItem(ddlItemName.SelectedValue.ToString()).ToString();
                 enableItems(true);
             }
         }
@@ -165,7 +170,26 @@ namespace adaOrderingSys
 
         private void btn_Submit_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string itemID = ddlItemName.SelectedValue.ToString(),
+                        itemName = ddlItemName.Text.ToString();
 
+                int quantity = Convert.ToInt32(num_Quantity.Value),
+                        additions = Convert.ToInt32(num_Additionals.Value);
+                decimal unitPrice = Convert.ToDecimal(lbl_UnitPrice.Text),
+                        totalCost = quantity * unitPrice;
+
+                this.viewOrders.dt.Rows.Add(itemID, itemName, quantity, unitPrice, totalCost, additions);
+                this.viewOrders.setInsertCmd(itemID, quantity, additions, totalCost);
+                this.Close();
+            }
+
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+                MessageBox.Show(Constants.GENERIC_ERROR);
+            }
         }
     }
 }

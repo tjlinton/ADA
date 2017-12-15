@@ -288,7 +288,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button btn_DeleteOrder;
         private System.Windows.Forms.Button btn_UpdateOrder;
-        private System.Windows.Forms.DataGridView dgvItemsOrdered;
+        public System.Windows.Forms.DataGridView dgvItemsOrdered;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;

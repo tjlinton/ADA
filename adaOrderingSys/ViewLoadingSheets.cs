@@ -162,12 +162,13 @@ namespace adaOrderingSys
             {
                 if (e.ClickedItem.Text.Trim().Equals("Edit"))
                 {
-                    int summaryID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[Constants.SUMMARYID].Value);
-                    DateTime date = Convert.ToDateTime(dataGridView1.SelectedRows[0].Cells[Constants.SUMMARYDATE].Value);
-                    string createdBy = dataGridView1.SelectedRows[0].Cells[Constants.CREATEDBY].Value.ToString();
-                    string driver = dataGridView1.SelectedRows[0].Cells[Constants.DRIVER].Value.ToString();
-                    string licenseNo = dataGridView1.SelectedRows[0].Cells[Constants.LICENSENO].Value.ToString();
-                    string location = dataGridView1.SelectedRows[0].Cells[Constants.LOCATION].Value.ToString();
+                    int index = dataGridView1.SelectedCells[0].RowIndex;
+                    int summaryID = Convert.ToInt32(dataGridView1.Rows[index].Cells[Constants.SUMMARYID].Value);
+                    DateTime date = Convert.ToDateTime(dataGridView1.Rows[index].Cells[Constants.SUMMARYDATE].Value);
+                    string createdBy = dataGridView1.Rows[index].Cells[Constants.CREATEDBY].Value.ToString();
+                    string driver = dataGridView1.Rows[index].Cells[Constants.DRIVER].Value.ToString();
+                    string licenseNo = dataGridView1.Rows[index].Cells[Constants.LICENSENO].Value.ToString();
+                    string location = dataGridView1.Rows[index].Cells[Constants.LOCATION].Value.ToString();
 
                     Summary summary = new Summary(summaryID, date, driver, createdBy, licenseNo, location);
                     this.Hide();

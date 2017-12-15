@@ -19,7 +19,7 @@ namespace adaOrderingSys
     {
         private SqlDataAdapter adapter { get; set; }
         private DataSet ds { get; set; }
-        private DataTable dt { get; set; }
+        public DataTable dt { get; set; }
 
         private SqlConnection conn = new SqlConnection(Constants.CONNECTIONSTRING);
 
@@ -129,7 +129,11 @@ namespace adaOrderingSys
 
         private void btn_UpdateOrder_Click(object sender, EventArgs e)
         {
-            if (adapter.DeleteCommand != null || adapter.UpdateCommand != null || adapter.InsertCommand == null)
+            if (HasErrorText())
+            {
+                return;
+            }
+            if (adapter.DeleteCommand != null || adapter.UpdateCommand != null || adapter.InsertCommand != null)
             {
                 if (lbl_OrderID.Text != null)
                 {
@@ -344,6 +348,28 @@ namespace adaOrderingSys
             }
         }
 
+        public void setInsertCmd(string itemID, int quantity, int additionals, decimal totalCost)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("[dbo].[sp_addItemsOnOrder]", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@itemID", itemID);
+                cmd.Parameters.AddWithValue("@orderID", Convert.ToInt32(lbl_OrderID.Text));
+                cmd.Parameters.AddWithValue("@quantity", quantity);
+                cmd.Parameters.AddWithValue("@totalCost", totalCost);
+                cmd.Parameters.AddWithValue("@additionals", additionals);
+
+                adapter.InsertCommand = cmd;
+                setGrandTotal();
+
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+            }
+        }
+
         private DataTable populateDataTable(int orderID)
         {
             try
@@ -548,7 +574,7 @@ namespace adaOrderingSys
                         addedItems.Add(dgvItemsOrdered.Rows[i].Cells[Constants.ITEMID_COLUMN].Value.ToString());
                     }
 
-                    using (AddNewItem newItem = new AddNewItem(addedItems))
+                    using (AddNewItem newItem = new AddNewItem(this,addedItems))
                     {
                         if (newItem.ShowDialog() == DialogResult.OK)
                         {

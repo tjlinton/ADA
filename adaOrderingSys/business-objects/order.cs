@@ -25,6 +25,42 @@ namespace adaOrderingSys.business_objects
         private string location { get; set; }
         private int additionals { get; set; }
 
+        public List<KeyValuePair<int, string>> getOrdersBasedOnSummaryID(int summaryID)
+        {
+            using (SqlConnection conn = new SqlConnection(Constants.CONNECTIONSTRING))
+            {
+                try
+                {
+                    conn.Open();
+
+                    string selectProcedure = "[dbo].[usp_CustNameBasedOnSummaryID]";
+                    List<KeyValuePair<int, string>> orderDetails = new List<KeyValuePair<int, string>>();
+
+                    SqlCommand cmd = new SqlCommand(selectProcedure, conn);
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@summaryID", summaryID);
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            orderDetails.Add(
+                                new KeyValuePair<int, string>(dr.GetInt32(0), dr.GetString(1))
+                                );
+                        }
+                    }
+
+                    return orderDetails;
+                }
+                catch (Exception e)
+                {
+                    logger.Error(e);
+                    return null;
+                }
+            }
+        }
+
         public List<KeyValuePair<int, string>> getCustNameBasedOnOrderDate(DateTime orderDate)
         {
            

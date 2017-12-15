@@ -169,7 +169,7 @@ namespace adaOrderingSys
                     string itemID = (string)this.ddl_Item.SelectedValue;
                     double unitPrice = item.getUnitPrice(itemID);
                     string itemName = this.ddl_Item.Text;
-                    int quantity = Convert.ToInt32(this.txt_Quantity.Text);
+                    int quantity = Convert.ToInt32(this.txt_Quantity.Text) + Convert.ToInt32(numeric_Additionals.Value);
                     double totalCost = quantity * unitPrice;
                     string salesNo = numeric_SalesNo.Value == 0 ? "" : numeric_SalesNo.Value.ToString();
                     int additionals = Convert.ToInt32(numeric_Additionals.Value);
@@ -300,8 +300,11 @@ namespace adaOrderingSys
                         }
                         else
                         {
-                            //Show the number of items left
-                            ep_Quantity.SetError(txt_Quantity, "Only " + returnValue + " items remaining");
+                            if (numeric_Additionals.Value == 0)
+                                //Show the number of items left
+                                ep_Quantity.SetError(txt_Quantity, "Only " + returnValue + " items remaining");
+                            else
+                                ep_Quantity.SetError(numeric_Additionals, "Only " + returnValue + " items remaining");
                         }
                         return false;
                 }
@@ -410,6 +413,11 @@ namespace adaOrderingSys
                     setGrandTotal();
                 }
             }
+        }
+
+        private void numeric_Additionals_ValueChanged(object sender, EventArgs e)
+        {
+            //int quantity = 
         }
     }
 }

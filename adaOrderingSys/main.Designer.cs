@@ -233,7 +233,7 @@
             this.btnNewProduct.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNewProduct.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.btnNewProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnNewProduct.Location = new System.Drawing.Point(180, 321);
+            this.btnNewProduct.Location = new System.Drawing.Point(180, 315);
             this.btnNewProduct.Name = "btnNewProduct";
             this.btnNewProduct.Size = new System.Drawing.Size(212, 72);
             this.btnNewProduct.TabIndex = 9;

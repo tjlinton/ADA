@@ -34,14 +34,14 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.btn_Submit = new System.Windows.Forms.Button();
             this.dgv_Customers = new System.Windows.Forms.DataGridView();
+            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.aDADataSet2 = new adaOrderingSys.ADADataSet2();
+            this.customerTableAdapter = new adaOrderingSys.ADADataSet2TableAdapters.customerTableAdapter();
             this.custIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.custNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.custAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telephoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contactPersonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.aDADataSet2 = new adaOrderingSys.ADADataSet2();
-            this.customerTableAdapter = new adaOrderingSys.ADADataSet2TableAdapters.customerTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Customers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
@@ -104,12 +104,27 @@
             this.dgv_Customers.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Customers_CellEndEdit);
             this.dgv_Customers.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgv_Customers_DataError);
             // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataMember = "customer";
+            this.customerBindingSource.DataSource = this.aDADataSet2;
+            // 
+            // aDADataSet2
+            // 
+            this.aDADataSet2.DataSetName = "ADADataSet2";
+            this.aDADataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // customerTableAdapter
+            // 
+            this.customerTableAdapter.ClearBeforeFill = true;
+            // 
             // custIDDataGridViewTextBoxColumn
             // 
             this.custIDDataGridViewTextBoxColumn.DataPropertyName = "custID";
             this.custIDDataGridViewTextBoxColumn.HeaderText = "custID";
             this.custIDDataGridViewTextBoxColumn.Name = "custIDDataGridViewTextBoxColumn";
             this.custIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.custIDDataGridViewTextBoxColumn.Visible = false;
             // 
             // custNameDataGridViewTextBoxColumn
             // 
@@ -139,20 +154,6 @@
             this.contactPersonDataGridViewTextBoxColumn.Name = "contactPersonDataGridViewTextBoxColumn";
             this.contactPersonDataGridViewTextBoxColumn.Width = 150;
             // 
-            // customerBindingSource
-            // 
-            this.customerBindingSource.DataMember = "customer";
-            this.customerBindingSource.DataSource = this.aDADataSet2;
-            // 
-            // aDADataSet2
-            // 
-            this.aDADataSet2.DataSetName = "ADADataSet2";
-            this.aDADataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // customerTableAdapter
-            // 
-            this.customerTableAdapter.ClearBeforeFill = true;
-            // 
             // ViewCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -181,11 +182,11 @@
         private System.Windows.Forms.BindingSource customerBindingSource;
         private ADADataSet2TableAdapters.customerTableAdapter customerTableAdapter;
         private System.Windows.Forms.Button btn_Submit;
+        private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.DataGridViewTextBoxColumn custIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn custNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn custAddressDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn telephoneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn contactPersonDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button btnBack;
     }
 }

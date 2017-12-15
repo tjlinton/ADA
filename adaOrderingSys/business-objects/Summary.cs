@@ -35,9 +35,9 @@ namespace adaOrderingSys.business_objects
             this.createdBy = createdBy;
             this.licenseNo = licenseNo;
         }
-        public int fulfillOrders(List<int> orderID, string licNo, string driver, DateTime date,string location, string createdBy)
+        public int fulfillOrders(List<int> orderID, string licNo, string driver, DateTime date, string location, string createdBy)
         {
-           
+
             using (SqlConnection conn = new SqlConnection(Constants.CONNECTIONSTRING))
             {
                 conn.Open();
@@ -60,7 +60,7 @@ namespace adaOrderingSys.business_objects
                     createSummaryCmd.Parameters.AddWithValue("@summaryDate", date);
                     createSummaryCmd.Parameters.AddWithValue("@createdBy", createdBy);
                     createSummaryCmd.Parameters.AddWithValue("@location", location);
-                    
+
 
                     int summaryID = (int)createSummaryCmd.ExecuteScalar();
 
@@ -113,6 +113,104 @@ namespace adaOrderingSys.business_objects
                     }
                 }
             }
+        }
+
+        public int fulfillOrders(int summaryID, List<int> orderID, string licNo, string driver, DateTime date, string location, string createdBy)
+        {
+
+            using (SqlConnection conn = new SqlConnection(Constants.CONNECTIONSTRING))
+            {
+                conn.Open();
+
+                SqlTransaction transaction = conn.BeginTransaction(); //Start the transaction
+                try
+                {
+                    string updateQuery = "[dbo].[usp_fulfillOrders]";
+
+                    SqlCommand updateCmd = new SqlCommand(updateQuery, conn, transaction);
+
+                    updateCmd.CommandType = CommandType.StoredProcedure;
+
+                    if (summaryID <= 0) //Once a summary is created in the db, the ID is more than 0
+                    {
+                        throw new Exception("Summary ID can't be zero or less");
+                    }
+
+                    int updateReturnedVal = 0;
+                    int listSize = orderID.Count;
+                    for (int i = 0; i < listSize; i++)
+                    {
+                        // Specify all stored procedure parameters - Fullfill orders
+                        updateCmd.Parameters.AddWithValue("@orderID", orderID[i]);
+                        updateCmd.Parameters.AddWithValue("@summaryID", summaryID);
+                        updateReturnedVal = (Int32)updateCmd.ExecuteScalar();
+
+                        if (updateReturnedVal <= 0) // Number of rows affected should be returned. Can't be equal or less than zero
+                        {
+                            throw new Exception("An error occured inside database");
+                        }
+                        updateCmd.Parameters.Clear();
+
+                    }
+
+                    transaction.Commit();
+
+                    return 0;
+
+                }
+                catch (Exception ex)
+                {
+                    logger.Error(ex);
+                    try
+                    {
+                        transaction.Rollback(); //Rollback the transaction
+                        logger.Info("Rollback successful");
+                        return -1;
+                    }
+                    catch (Exception ex2)
+                    {
+                        // This catch block will handle any errors that may have occurred
+                        // on the server that would cause the rollback to fail, such as
+                        // a closed connection.
+
+                        logger.Info("Rollback Exception Type: {0}", ex2.GetType());
+                        logger.Error("  Message: {0}", ex2.Message);
+
+                        return -2;
+                    }
+                }
+            }
+        }
+
+        public int unfulfillOrders(List<int> orderIDs)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Constants.CONNECTIONSTRING))
+                {
+                    conn.Open();
+
+                    string updateQuery = "Update [dbo].[order] SET summaryID = NULL, isFullFilled = 0 WHERE";
+
+                    foreach (int id in orderIDs)
+                    {
+                        updateQuery += " orderID = " + id + " AND";
+                    }
+
+                    updateQuery = updateQuery.Substring(0, updateQuery.Length - 4); //Remove trailing " AND" 
+
+                    SqlCommand cmd = new SqlCommand(updateQuery, conn);
+                    cmd.CommandType = CommandType.Text;
+
+                    return cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+                return -1;
+            }
+
         }
     }
 }

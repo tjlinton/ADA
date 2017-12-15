@@ -202,5 +202,33 @@ namespace adaOrderingSys
                 return 1;
             }
         }
+
+        public decimal getUnitPriceOfItem(string itemID)
+        {
+            using (SqlConnection conn = new SqlConnection(Constants.CONNECTIONSTRING))
+            {
+
+                try
+                {
+                    conn.Open();
+
+                    string selectQuery = "SELECT price from item where itemID = @itemID";
+                    decimal returnVal;
+
+                    SqlCommand cmd = new SqlCommand(selectQuery, conn);
+                    cmd.Parameters.AddWithValue("@itemID", itemID);
+                    cmd.CommandType = CommandType.Text;
+
+                    returnVal = (decimal)cmd.ExecuteScalar();
+
+                    return returnVal;
+                }
+                catch (Exception e)
+                {
+                    logger.Error(e);
+                    return -1;
+                }
+            }
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderedItemsPopUp));
             this.dgv_ItemsOrdered = new System.Windows.Forms.DataGridView();
             this.clmn_itemID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmn_ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -91,6 +92,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(543, 333);
             this.Controls.Add(this.dgv_ItemsOrdered);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "OrderedItemsPopUp";

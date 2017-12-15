@@ -248,6 +248,7 @@ namespace adaOrderingSys
             this.numeric_Additionals.Name = "numeric_Additionals";
             this.numeric_Additionals.Size = new System.Drawing.Size(48, 20);
             this.numeric_Additionals.TabIndex = 5;
+            this.numeric_Additionals.ValueChanged += new System.EventHandler(this.numeric_Additionals_ValueChanged);
             // 
             // lbl_Additionals
             // 

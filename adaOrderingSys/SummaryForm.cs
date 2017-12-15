@@ -32,7 +32,33 @@ namespace adaOrderingSys
 
         private void setItems(Summary summ)
         {
+            try
+            {
+                List<KeyValuePair<int, string>> listItems = new Order().getOrdersBasedOnSummaryID(summ.summaryID);
+                List<KeyValuePair<int, string>> uncheckedItems = new Order().getCustNameBasedOnOrderDate();
+                cbl_Orders.Items.Clear();
 
+                if (listItems != null)
+                {
+                    foreach (KeyValuePair<int, string> item in listItems)
+                    {
+                        string value = item.Key + " | " + item.Value;
+                        cbl_Orders.Items.Add(value);
+                        cbl_Orders.SetItemChecked(cbl_Orders.Items.Count - 1, true);
+                    }
+
+                    foreach (KeyValuePair<int, string> item in uncheckedItems)
+                    {
+                        string value = item.Key + " | " + item.Value;
+                        cbl_Orders.Items.Add(value);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+                MessageBox.Show(Constants.GENERIC_ERROR);
+            }
         } 
 
         private void setItems()
@@ -57,7 +83,7 @@ namespace adaOrderingSys
             mainForm.Show();
         }
 
-        private void btnSubmitCust_Click(object sender, EventArgs e)
+        private void btnPrint_Click(object sender, EventArgs e)
         {
             try
             {
@@ -106,13 +132,45 @@ namespace adaOrderingSys
                             }
 
                             DateTime datetime = dateTimePicker1.Value;
-                            int submitResponse = summary.fulfillOrders(orderIDList, txtLicenseNo.Text, txtDriver.Text, datetime,txtLocation.Text,User.userName);
+
+                            int submitResponse=-1;
+                            if (this.summary == null)
+                            {
+                                submitResponse = summary.fulfillOrders(orderIDList, txtLicenseNo.Text, txtDriver.Text, datetime, txtLocation.Text, User.userName);
+                            }
+                            else if (this.summary.summaryID !=0 )
+                            {
+                                List<int> uncheckedOrderIDs = new List<int>();
+                                submitResponse = summary.fulfillOrders(this.summary.summaryID, orderIDList, txtLicenseNo.Text, txtDriver.Text, datetime, txtLocation.Text, User.userName);
+                                for (int i = cbl_Orders.Items.Count - 1; i >= 0; i--)
+                                {
+                                    if (!cbl_Orders.GetItemChecked(i))
+                                    {
+                                        string[] order = (cbl_Orders.Items[i].ToString().Split('|'));
+                                        int id = Convert.ToInt32(order[0].Trim());
+                                        uncheckedOrderIDs.Add(id);
+                                    }
+                                }
+
+                                int numUnfullfills = uncheckedOrderIDs.Count == 0 ? 0 : new Summary().unfulfillOrders(uncheckedOrderIDs);
+                                if (numUnfullfills< 0)
+                                {
+                                    MessageBox.Show("An error occured.");
+                                    return;
+                                }
+                            }
+
                             if (submitResponse < 0)
                             {
                                 throw new Exception("Error submitting Loading sheet");
                             }
 
                             printDocument.Print(); //Go ahead and print the doc
+
+                            if (this.WindowState == FormWindowState.Minimized)
+                            {
+                                this.WindowState = FormWindowState.Normal;
+                            }
 
                             MessageBox.Show("Success");
 
@@ -126,8 +184,9 @@ namespace adaOrderingSys
                     return;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                logger.Error(ex);
                 MessageBox.Show("ERROR: Could not create loading sheet. try again");
             }
         }

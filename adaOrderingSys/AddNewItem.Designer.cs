@@ -40,6 +40,7 @@
             this.lbl_Additionals = new System.Windows.Forms.Label();
             this.lbl_Quantity = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lbl_UnitPrice = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.num_Quantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_SalesNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_Additionals)).BeginInit();
@@ -48,6 +49,7 @@
             // 
             // ddlItemName
             // 
+            this.ddlItemName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlItemName.FormattingEnabled = true;
             this.ddlItemName.Location = new System.Drawing.Point(100, 17);
             this.ddlItemName.Name = "ddlItemName";
@@ -136,12 +138,22 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // lbl_UnitPrice
+            // 
+            this.lbl_UnitPrice.AutoSize = true;
+            this.lbl_UnitPrice.Location = new System.Drawing.Point(211, 213);
+            this.lbl_UnitPrice.Name = "lbl_UnitPrice";
+            this.lbl_UnitPrice.Size = new System.Drawing.Size(0, 13);
+            this.lbl_UnitPrice.TabIndex = 9;
+            this.lbl_UnitPrice.Visible = false;
+            // 
             // AddNewItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(278, 248);
+            this.Controls.Add(this.lbl_UnitPrice);
             this.Controls.Add(this.lbl_Quantity);
             this.Controls.Add(this.lbl_Additionals);
             this.Controls.Add(this.lbl_SalesNo);
@@ -178,5 +190,6 @@
         private System.Windows.Forms.Label lbl_Additionals;
         private System.Windows.Forms.Label lbl_Quantity;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label lbl_UnitPrice;
     }
 }
