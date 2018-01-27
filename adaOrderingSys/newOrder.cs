@@ -169,7 +169,7 @@ namespace adaOrderingSys
                     string itemID = (string)this.ddl_Item.SelectedValue;
                     double unitPrice = item.getUnitPrice(itemID);
                     string itemName = this.ddl_Item.Text;
-                    int quantity = Convert.ToInt32(this.txt_Quantity.Text) + Convert.ToInt32(numeric_Additionals.Value);
+                    int quantity = Convert.ToInt32(this.txt_Quantity.Text);
                     double totalCost = quantity * unitPrice;
                     string salesNo = numeric_SalesNo.Value == 0 ? "" : numeric_SalesNo.Value.ToString();
                     int additionals = Convert.ToInt32(numeric_Additionals.Value);
@@ -177,7 +177,7 @@ namespace adaOrderingSys
 
                     string[] row = { itemID, itemName, customer, location, salesNo, quantity.ToString(), additionals.ToString(), unitPrice.ToString(), totalCost.ToString() };
 
-                    if (!isQuantityEnough(quantity, itemID))
+                    if (!isQuantityEnough((quantity+additionals), itemID))
                     {
                         return;
                     }
@@ -311,7 +311,7 @@ namespace adaOrderingSys
             }
             catch (Exception e)
             {
-                logger.Error(e);
+                logger.Error(e.ToString);
                 MessageBox.Show(Constants.CONTACT_SYSTEMADMIN);
                 clearInput();
                 return false;
@@ -418,6 +418,11 @@ namespace adaOrderingSys
         private void numeric_Additionals_ValueChanged(object sender, EventArgs e)
         {
             //int quantity = 
+        }
+
+        private void newOrder_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -47,6 +47,7 @@
             this.lbl_LicenseNo = new System.Windows.Forms.Label();
             this.txtLicenseNo = new System.Windows.Forms.TextBox();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.pnl_Step1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -88,6 +89,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.btnDown);
             this.groupBox1.Controls.Add(this.btnUp);
             this.groupBox1.Controls.Add(this.lblLocation);
@@ -179,7 +181,7 @@
             this.btnPrint.BackColor = System.Drawing.Color.Green;
             this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPrint.ForeColor = System.Drawing.Color.Gold;
-            this.btnPrint.Location = new System.Drawing.Point(393, 277);
+            this.btnPrint.Location = new System.Drawing.Point(447, 279);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(92, 45);
             this.btnPrint.TabIndex = 23;
@@ -219,6 +221,19 @@
             this.txtLicenseNo.Size = new System.Drawing.Size(76, 20);
             this.txtLicenseNo.TabIndex = 4;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.ForeColor = System.Drawing.Color.Gold;
+            this.button1.Location = new System.Drawing.Point(339, 279);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(92, 45);
+            this.button1.TabIndex = 31;
+            this.button1.Text = "PREVIEW";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // SummaryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -229,6 +244,7 @@
             this.Name = "SummaryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Summary";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SummaryForm_FormClosed);
             this.pnl_Step1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -255,5 +271,6 @@
         private System.Windows.Forms.Button btnDown;
         private System.Windows.Forms.Button btnUp;
         private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.Button button1;
     }
 }

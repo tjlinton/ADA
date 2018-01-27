@@ -44,9 +44,14 @@ namespace adaOrderingSys
             }
             catch (Exception e)
             {
-                logger.Error(e);
+                logger.Error(e.ToString);
                 MessageBox.Show("An error occured retrieving ordered items");
             }
         }
+
+        //private void OrderedItemsPopUp_FormClosed(object sender, FormClosedEventArgs e)
+        //{
+        //    Application.Exit();
+        //}
     }
 }

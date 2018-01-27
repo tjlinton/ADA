@@ -42,7 +42,7 @@ namespace adaOrderingSys.business_objects
         //Messages
         public static string OUT_OF_STOCK_MSG = "Out of stock";
         public static string GENERIC_ERROR = "An error occured. Please try again";
-        public static string CONTACT_SYSTEMADMIN = "A fatal error occured. Please contact system admin";
+        public static string CONTACT_SYSTEMADMIN = "An error occured. Please contact system admin";
 
         //Users
         public static string USER_ROLE_ADMIN = "Admin";

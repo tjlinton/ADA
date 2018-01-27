@@ -54,7 +54,7 @@ namespace adaOrderingSys
                 }
                 catch (Exception e)
                 {
-                    logger.Error(e);
+                    logger.Error(e.ToString);
                     return -1;
                 }
             }
@@ -82,7 +82,7 @@ namespace adaOrderingSys
                 }
                 catch (Exception e)
                 {
-                    logger.Error(e);
+                    logger.Error(e.ToString);
                     return "-1";
                 }
             }
@@ -111,7 +111,7 @@ namespace adaOrderingSys
                 }
                 catch (Exception e)
                 {
-                    logger.Error(e);
+                    logger.Error(e.ToString);
                     return "-1";
                 }
             }
@@ -143,7 +143,7 @@ namespace adaOrderingSys
                 }
                 catch (Exception e)
                 {
-                    logger.Error(e);
+                    logger.Error(e.ToString);
                     return -1;
                 }
             }
@@ -171,7 +171,7 @@ namespace adaOrderingSys
             }
             catch (Exception e)
             {
-                logger.Error(e);
+                logger.Error(e.ToString);
                 return -2;
             }
         }
@@ -198,7 +198,7 @@ namespace adaOrderingSys
             }
             catch (Exception e)
             {
-                logger.Error(e);
+                logger.Error(e.ToString);
                 return 1;
             }
         }
@@ -225,7 +225,7 @@ namespace adaOrderingSys
                 }
                 catch (Exception e)
                 {
-                    logger.Error(e);
+                    logger.Error(e.ToString);
                     return -1;
                 }
             }

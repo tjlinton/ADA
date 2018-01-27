@@ -256,9 +256,9 @@ namespace adaOrderingSys
             this.lbl_Additionals.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Additionals.Location = new System.Drawing.Point(6, 94);
             this.lbl_Additionals.Name = "lbl_Additionals";
-            this.lbl_Additionals.Size = new System.Drawing.Size(102, 24);
+            this.lbl_Additionals.Size = new System.Drawing.Size(88, 24);
             this.lbl_Additionals.TabIndex = 16;
-            this.lbl_Additionals.Text = "Additionals";
+            this.lbl_Additionals.Text = "Additions";
             // 
             // txt_Quantity
             // 
@@ -495,6 +495,7 @@ namespace adaOrderingSys
             this.Name = "newOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "newOrder";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.newOrder_FormClosed);
             this.Load += new System.EventHandler(this.newOrder_Load);
             this.pnlAddOrder.ResumeLayout(false);
             this.pnlAddOrder.PerformLayout();

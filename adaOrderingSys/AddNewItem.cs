@@ -22,7 +22,7 @@ namespace adaOrderingSys
         public static string itemID;
         public ViewOrders viewOrders { get; set; }
 
-        public AddNewItem(ViewOrders viewOrders,List<string> addedItems)
+        public AddNewItem(ViewOrders viewOrders, List<string> addedItems)
         {
             this.viewOrders = viewOrders;
             InitializeComponent();
@@ -43,12 +43,13 @@ namespace adaOrderingSys
             InitializeComponent();
         }
 
-        public List<KeyValuePair<string,string>> getDDLItems(List<string> items)
+        public List<KeyValuePair<string, string>> getDDLItems(List<string> items)
         {
-            using (SqlConnection conn = new SqlConnection(Constants.CONNECTIONSTRING))
+            try
             {
-                try
+                using (SqlConnection conn = new SqlConnection(Constants.CONNECTIONSTRING))
                 {
+
                     conn.Open();
                     string selectProcedure = "SELECT itemID, itemName from item where ";
 
@@ -57,7 +58,7 @@ namespace adaOrderingSys
                         selectProcedure += "itemID != '" + itemID + "' AND ";
                     }
 
-                    selectProcedure = selectProcedure.Substring(0, selectProcedure.Length-4);
+                    selectProcedure = selectProcedure.Substring(0, selectProcedure.Length - 4);
                     List<KeyValuePair<string, string>> newItems = new List<KeyValuePair<string, string>>();
 
                     SqlCommand cmd = new SqlCommand(selectProcedure, conn);
@@ -74,11 +75,11 @@ namespace adaOrderingSys
 
                     return newItems;
                 }
-                catch (Exception e)
-                {
-                    logger.Error(e);
-                    return null;
-                }
+            }
+            catch (Exception e)
+            {
+                logger.Error(e.ToString);
+                return null;
             }
 
         }
@@ -142,7 +143,7 @@ namespace adaOrderingSys
             }
             catch (Exception e)
             {
-                logger.Error(e);
+                logger.Error(e.ToString);
                 return -2;
             }
         }
@@ -187,9 +188,14 @@ namespace adaOrderingSys
 
             catch (Exception ex)
             {
-                logger.Error(ex);
+                logger.Error(ex.ToString);
                 MessageBox.Show(Constants.GENERIC_ERROR);
             }
+        }
+
+        private void AddNewItem_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

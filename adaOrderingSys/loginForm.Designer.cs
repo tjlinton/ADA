@@ -114,6 +114,7 @@
             this.Name = "loginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ADA Ordering System";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.loginForm_FormClosed);
             this.Load += new System.EventHandler(this.login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

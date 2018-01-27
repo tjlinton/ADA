@@ -111,7 +111,7 @@ namespace adaOrderingSys
 
             catch (Exception ex)
             {
-                logger.Error(ex);
+                logger.Error(ex.ToString);
                 MessageBox.Show("There was an error trying to change your password");
             }
         }
@@ -128,6 +128,11 @@ namespace adaOrderingSys
         {
             txtPassword.Focus();
 
+        }
+
+        private void changePassword_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

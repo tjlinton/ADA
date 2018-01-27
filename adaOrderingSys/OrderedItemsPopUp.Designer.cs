@@ -98,6 +98,7 @@
             this.Name = "OrderedItemsPopUp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "OrderedItemsPopUp";
+            //this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OrderedItemsPopUp_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ItemsOrdered)).EndInit();
             this.ResumeLayout(false);
 

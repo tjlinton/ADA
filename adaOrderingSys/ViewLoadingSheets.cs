@@ -60,7 +60,7 @@ namespace adaOrderingSys
             }
             catch (Exception ex)
             {
-                logger.Error(ex);
+                logger.Error(ex.ToString);
             }
         }
 
@@ -87,7 +87,7 @@ namespace adaOrderingSys
             catch(Exception ex)
             {
                 MessageBox.Show("Could not make changes");
-                logger.Error(ex);
+                logger.Error(ex.ToString);
             } 
         }
 
@@ -100,7 +100,7 @@ namespace adaOrderingSys
             }
             catch (Exception ex)
             {
-                logger.Error(ex);
+                logger.Error(ex.ToString);
                 MessageBox.Show("Error occured. Can't display new Summary Form");
             }
         }
@@ -124,7 +124,7 @@ namespace adaOrderingSys
             }
             catch (Exception ex)
             {
-                logger.Error(ex);
+                logger.Error(ex.ToString);
             }
         }
 
@@ -144,7 +144,7 @@ namespace adaOrderingSys
         //    catch (Exception ex)
         //    {
         //        MessageBox.Show(Constants.GENERIC_ERROR);
-        //        logger.Error(ex);
+        //        logger.Error(ex.ToString);
         //    }
         //}
 
@@ -178,7 +178,7 @@ namespace adaOrderingSys
             catch (Exception ex)
             {
                 contextMenuStrip1.Hide();
-                logger.Error(ex);
+                logger.Error(ex.ToString);
                 MessageBox.Show(Constants.GENERIC_ERROR);
             }
         }
@@ -221,12 +221,14 @@ namespace adaOrderingSys
             }
             catch (Exception ex)
             {
-                logger.Error(ex);
+                logger.Error(ex.ToString);
                 MessageBox.Show("There was an error updating the cell: " + ex.Message);
             }
         }
 
-
-        
+        private void ViewLoadingSheets_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

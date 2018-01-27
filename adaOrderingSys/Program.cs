@@ -20,6 +20,7 @@ namespace adaOrderingSys
         {
             try
             {
+
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new loginForm());
@@ -28,7 +29,7 @@ namespace adaOrderingSys
 
             catch (Exception e)
             {
-                logger.Error(e);
+                logger.Error(e.ToString);
             }
         }
     }

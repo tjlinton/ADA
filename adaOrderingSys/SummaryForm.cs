@@ -56,7 +56,7 @@ namespace adaOrderingSys
             }
             catch (Exception ex)
             {
-                logger.Error(ex);
+                logger.Error(ex.ToString);
                 MessageBox.Show(Constants.GENERIC_ERROR);
             }
         } 
@@ -90,8 +90,9 @@ namespace adaOrderingSys
                 if (cbl_Orders.CheckedItems.Count != 0)
                 {
                     PrintDialog printDialog = new PrintDialog();
-                    PrintPreviewDialog printPrvDlg = new PrintPreviewDialog();
                     PrintDocument printDocument = new PrintDocument();
+
+                    checkedItems = new List<string>();
 
                     for (int i = cbl_Orders.CheckedItems.Count-1;  i >= 0; i--)
                     {
@@ -101,14 +102,10 @@ namespace adaOrderingSys
                     lastPage = false;
                     summaryList = new List<KeyValuePair<int, string>>();
                     printDialog.Document = printDocument;
-                    printPrvDlg.Document = printDocument;
                     //add an event handler that will do the printing
                     printDocument.PrintPage += new PrintPageEventHandler(createLoadingSheet);
-                    if (MessageBox.Show("Show preview?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("Are you sure you want to print?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                     {
-                        printPrvDlg.PrintPreviewControl.Zoom = 100 / 100f; //Zoom is calculated as a ratio
-                        ((Form)printPrvDlg).WindowState = FormWindowState.Maximized;
-                        printPrvDlg.ShowDialog();
                         return;
                     }
                     else
@@ -186,7 +183,7 @@ namespace adaOrderingSys
             }
             catch (Exception ex)
             {
-                logger.Error(ex);
+                logger.Error(ex.ToString);
                 MessageBox.Show("ERROR: Could not create loading sheet. try again");
             }
         }
@@ -396,7 +393,7 @@ namespace adaOrderingSys
             }
             catch (Exception ex)
             {
-                logger.Error(ex);
+                logger.Error(ex.ToString);
                 MessageBox.Show("There was an error creating loading sheet please contact system administrator");
                 return;
             }
@@ -438,7 +435,7 @@ namespace adaOrderingSys
             }
             catch (Exception ex)
             {
-                logger.Error(ex);
+                logger.Error(ex.ToString);
                 MessageBox.Show(Constants.CONTACT_SYSTEMADMIN);
             }
         }
@@ -465,7 +462,7 @@ namespace adaOrderingSys
             }
             catch (Exception ex)
             {
-                logger.Error(ex);
+                logger.Error(ex.ToString);
                 MessageBox.Show(Constants.CONTACT_SYSTEMADMIN);
             }
         }
@@ -500,7 +497,7 @@ namespace adaOrderingSys
             }
             catch ( Exception ex)
             {
-                logger.Error(ex);
+                logger.Error(ex.ToString);
             }
         }
 
@@ -528,7 +525,7 @@ namespace adaOrderingSys
             }
             catch (Exception ex)
             {
-                logger.Error(ex);
+                logger.Error(ex.ToString);
             }
         }
 
@@ -554,6 +551,36 @@ namespace adaOrderingSys
         private void btnDown_MouseHover(object sender, EventArgs e)
         {
             toolTip.SetToolTip(btnDown, "Move selected item down in the list");
+        }
+
+        private void SummaryForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            PrintPreviewDialog printPrvDlg = new PrintPreviewDialog();
+            PrintDocument printDocument = new PrintDocument();
+
+            checkedItems = new List<string>();
+
+            for (int i = cbl_Orders.CheckedItems.Count - 1; i >= 0; i--)
+            {
+                checkedItems.Add(cbl_Orders.CheckedItems[i].ToString());
+            }
+            pageNo = 1;
+            lastPage = false;
+            summaryList = new List<KeyValuePair<int, string>>();
+
+            printPrvDlg.Document = printDocument;
+            printDocument.PrintPage += new PrintPageEventHandler(createLoadingSheet);
+
+            printPrvDlg.PrintPreviewControl.Zoom = 100 / 100f; //Zoom is calculated as a ratio
+            ((Form)printPrvDlg).WindowState = FormWindowState.Maximized;
+            printPrvDlg.ShowDialog();
+            
+            return;
         }
     }
 }

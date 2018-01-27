@@ -244,6 +244,14 @@ namespace adaOrderingSys
         {
             try
             {
+                if (txtBusinessName.Text.Equals("")) {
+                    errorProviderBusninessName.SetError(txtBusinessName,"Business Name cannot be empty");
+                    return;
+                }
+
+                //if (!errorProviderTelephone.GetError(txtTelephoneNo).Equals("")) //Check if there's an error on the telephone txt box
+                //    return;
+
                 //bool isEmpty = areFieldsEmpty(this.pnlCustInfo.Controls); //Check if any textboxes on form are empty
                 string name, address, telephone, contactPerson;
                 Customer cust = new Customer();
@@ -277,7 +285,7 @@ namespace adaOrderingSys
             }
             catch (Exception ex)
             {
-                logger.Error(ex);
+                logger.Error(ex.ToString);
                 MessageBox.Show("An error occured. Please try again");
             }
         }
@@ -346,7 +354,7 @@ namespace adaOrderingSys
             }
             catch (Exception ex)
             {
-                logger.Error(ex);
+                logger.Error(ex.ToString);
                 MessageBox.Show("An error occured. Please try again.");
             }
         }
@@ -384,7 +392,7 @@ namespace adaOrderingSys
 
             catch (Exception ex)
             {
-                logger.Error(ex);
+                logger.Error(ex.ToString);
                 MessageBox.Show("There has been an error updating items. Please try again.");
             }
         }
@@ -428,6 +436,69 @@ namespace adaOrderingSys
         {
             pictureBox_UM.Cursor = Cursors.Hand;
             toolTip1.Show("User Management", pictureBox_UM);
+        }
+
+        private void main_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void txtAddress_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                AddContextMenu(txtAddress);
+            }
+        }
+
+        public static void AddContextMenu(RichTextBox rtb)
+        {
+            if (rtb.ContextMenuStrip == null)
+            {
+                ContextMenuStrip cms = new ContextMenuStrip { ShowImageMargin = false };
+                ToolStripMenuItem tsmiCut = new ToolStripMenuItem("Cut");
+                tsmiCut.Click += (sender, e) => rtb.Cut();
+                cms.Items.Add(tsmiCut);
+                ToolStripMenuItem tsmiCopy = new ToolStripMenuItem("Copy");
+                tsmiCopy.Click += (sender, e) => rtb.Copy();
+                cms.Items.Add(tsmiCopy);
+                ToolStripMenuItem tsmiPaste = new ToolStripMenuItem("Paste");
+                tsmiPaste.Click += (sender, e) => rtb.Paste();
+                cms.Items.Add(tsmiPaste);
+                rtb.ContextMenuStrip = cms;
+            }
+        }
+
+        private void txtProductDescription_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                AddContextMenu(txtProductDescription);
+            }
+        }
+
+        private void txtBusinessName_TextChanged(object sender, EventArgs e)
+        {
+            if (!txtBusinessName.Text.Equals(""))
+            {
+                errorProviderBusninessName.SetError(txtBusinessName, "");
+            }
+        }
+
+        private void dgv_Items_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            //Add context menu if user right clicked
+            if (e.Button == MouseButtons.Right && e.RowIndex > -1)
+            {
+                //if (dgv_Items.Rows[e.RowIndex].ContextMenuStrip == null)
+                //{
+                    ContextMenuStrip cms = new ContextMenuStrip { ShowImageMargin = false };
+                    ToolStripMenuItem tsmiDelete = new ToolStripMenuItem("Delete");
+                    tsmiDelete.Click += (sender1, e1) => dgv_Items.Rows.RemoveAt(e.RowIndex);
+                    cms.Items.Add(tsmiDelete);
+                    dgv_Items.Rows[e.RowIndex].ContextMenuStrip = cms;
+                //}
+            }
         }
     }
 }

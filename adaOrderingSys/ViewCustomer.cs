@@ -41,7 +41,7 @@ namespace adaOrderingSys
 
             catch (Exception ex)
             {
-                logger.Error(ex);
+                logger.Error(ex.ToString);
                 MessageBox.Show("There has been an error updating items. Please try again.");
             }
         }
@@ -65,7 +65,7 @@ namespace adaOrderingSys
 
             catch (Exception ex)
             {
-                logger.Error(ex);
+                logger.Error(ex.ToString);
             }
         }
 
@@ -91,7 +91,7 @@ namespace adaOrderingSys
             }
             catch (Exception ex)
             {
-                logger.Error(ex);
+                logger.Error(ex.ToString);
             }
         }
 
@@ -107,6 +107,11 @@ namespace adaOrderingSys
             }
 
             return true;
+        }
+
+        private void ViewCustomer_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

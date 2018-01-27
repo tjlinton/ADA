@@ -120,7 +120,7 @@ namespace adaOrderingSys
 
                 catch (Exception ex)
                 {
-                    this.logger.Error(ex);
+                    this.logger.Error(ex.ToString);
                     MessageBox.Show("An error occured displaying the items for the selected order.");
                     return;
                 }
@@ -148,7 +148,7 @@ namespace adaOrderingSys
                     }
                     catch (Exception ex)
                     {
-                        logger.Error(ex);
+                        logger.Error(ex.ToString);
                         MessageBox.Show("Something went wrong, we could not update this order");
                     }
                 }
@@ -179,13 +179,19 @@ namespace adaOrderingSys
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            clearControls(); //Empty previous values
-            setItems(); //Set the new ones based on date picked
-            ViewOrdersToolTip.RemoveAll();
+            try
+            {
+                clearControls(); //Empty previous values
+                setItems(); //Set the new ones based on date picked
+                ViewOrdersToolTip.RemoveAll();
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex.ToString);
+            }
         }
         private void dgvItemsOrdered_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
-
             setGrandTotal();
         }
 
@@ -231,7 +237,7 @@ namespace adaOrderingSys
             }
             catch (Exception ex)
             {
-                logger.Error(ex);
+                logger.Error(ex.ToString);
                 MessageBox.Show("An unexpected error occured.");
             }
         }
@@ -322,7 +328,7 @@ namespace adaOrderingSys
             }
             catch (Exception ex)
             {
-                logger.Error(ex);
+                logger.Error(ex.ToString);
                 MessageBox.Show(Constants.GENERIC_ERROR);
             }
         }
@@ -344,7 +350,7 @@ namespace adaOrderingSys
             catch (Exception ex)
             {
                 MessageBox.Show(Constants.GENERIC_ERROR);
-                logger.Error(ex);
+                logger.Error(ex.ToString);
             }
         }
 
@@ -366,7 +372,7 @@ namespace adaOrderingSys
             }
             catch (Exception ex)
             {
-                logger.Error(ex);
+                logger.Error(ex.ToString);
             }
         }
 
@@ -395,7 +401,7 @@ namespace adaOrderingSys
             }
             catch (Exception ex)
             {
-                logger.Error(ex);
+                logger.Error(ex.ToString);
                 return null;
             }
         }
@@ -435,7 +441,7 @@ namespace adaOrderingSys
                 }
                 catch (Exception ex)
                 {
-                    logger.Error(ex);
+                    logger.Error(ex.ToString);
                     MessageBox.Show("An error occured. Please Try again");
                 }
             }
@@ -525,7 +531,7 @@ namespace adaOrderingSys
 
                 catch (Exception ex)
                 {
-                    logger.Error(ex);
+                    logger.Error(ex.ToString);
                 }
             }
             else
@@ -574,7 +580,7 @@ namespace adaOrderingSys
                         addedItems.Add(dgvItemsOrdered.Rows[i].Cells[Constants.ITEMID_COLUMN].Value.ToString());
                     }
 
-                    using (AddNewItem newItem = new AddNewItem(this,addedItems))
+                    using (AddNewItem newItem = new AddNewItem(this, addedItems))
                     {
                         if (newItem.ShowDialog() == DialogResult.OK)
                         {
@@ -585,7 +591,7 @@ namespace adaOrderingSys
             }
             catch (Exception ex)
             {
-                logger.Error(ex);
+                logger.Error(ex.ToString);
                 MessageBox.Show("An error occured. Please try again");
             }
         }
@@ -595,6 +601,11 @@ namespace adaOrderingSys
             this.Hide();
             newOrder order = new newOrder();
             order.Show();
+        }
+
+        private void ViewOrders_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

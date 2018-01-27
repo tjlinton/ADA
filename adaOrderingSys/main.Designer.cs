@@ -378,6 +378,7 @@
             this.txtAddress.Size = new System.Drawing.Size(290, 96);
             this.txtAddress.TabIndex = 18;
             this.txtAddress.Text = "";
+            this.txtAddress.MouseUp += new System.Windows.Forms.MouseEventHandler(this.txtAddress_MouseUp);
             // 
             // txtTelephoneNo
             // 
@@ -413,6 +414,7 @@
             this.txtBusinessName.Name = "txtBusinessName";
             this.txtBusinessName.Size = new System.Drawing.Size(216, 30);
             this.txtBusinessName.TabIndex = 1;
+            this.txtBusinessName.TextChanged += new System.EventHandler(this.txtBusinessName_TextChanged);
             // 
             // label1
             // 
@@ -531,6 +533,7 @@
             this.txtProductDescription.Size = new System.Drawing.Size(290, 96);
             this.txtProductDescription.TabIndex = 18;
             this.txtProductDescription.Text = "";
+            this.txtProductDescription.MouseUp += new System.Windows.Forms.MouseEventHandler(this.txtProductDescription_MouseUp);
             // 
             // txtProductName
             // 
@@ -616,6 +619,7 @@
             this.dgv_Items.Name = "dgv_Items";
             this.dgv_Items.Size = new System.Drawing.Size(720, 332);
             this.dgv_Items.TabIndex = 0;
+            this.dgv_Items.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_Items_CellMouseClick);
             // 
             // clmn_ItemID
             // 
@@ -741,6 +745,7 @@
             this.Name = "main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "- Inventory Management";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.main_FormClosed);
             this.Load += new System.EventHandler(this.main_Load);
             this.pnlMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_UM)).EndInit();

@@ -32,6 +32,7 @@ namespace adaOrderingSys
         private void btnLogin_Click(object sender, EventArgs e)
         {
             doLogin();
+            //MessageBox.Show(AppDomain.CurrentDomain.BaseDirectory);
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -88,7 +89,7 @@ namespace adaOrderingSys
             }
             catch (Exception ex)
             {
-                logger.Error(ex);
+                logger.Error(ex.ToString);
                 MessageBox.Show(Constants.CONTACT_SYSTEMADMIN);
             }
         }
@@ -109,9 +110,14 @@ namespace adaOrderingSys
 
             catch (Exception ex)
             {
-                logger.Error(ex);
+                logger.Error(ex.ToString);
                 return false;
             }
+        }
+
+        private void loginForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

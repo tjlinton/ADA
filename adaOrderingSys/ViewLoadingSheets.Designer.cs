@@ -122,6 +122,7 @@
             this.Name = "ViewLoadingSheets";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ViewLoadingSheets";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ViewLoadingSheets_FormClosed);
             this.Load += new System.EventHandler(this.ViewLoadingSheets_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.summaryBindingSource)).EndInit();

@@ -34,14 +34,14 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.btn_Submit = new System.Windows.Forms.Button();
             this.dgv_Customers = new System.Windows.Forms.DataGridView();
-            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.aDADataSet2 = new adaOrderingSys.ADADataSet2();
-            this.customerTableAdapter = new adaOrderingSys.ADADataSet2TableAdapters.customerTableAdapter();
             this.custIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.custNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.custAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telephoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contactPersonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.aDADataSet2 = new adaOrderingSys.ADADataSet2();
+            this.customerTableAdapter = new adaOrderingSys.ADADataSet2TableAdapters.customerTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Customers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
@@ -104,20 +104,6 @@
             this.dgv_Customers.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Customers_CellEndEdit);
             this.dgv_Customers.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgv_Customers_DataError);
             // 
-            // customerBindingSource
-            // 
-            this.customerBindingSource.DataMember = "customer";
-            this.customerBindingSource.DataSource = this.aDADataSet2;
-            // 
-            // aDADataSet2
-            // 
-            this.aDADataSet2.DataSetName = "ADADataSet2";
-            this.aDADataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // customerTableAdapter
-            // 
-            this.customerTableAdapter.ClearBeforeFill = true;
-            // 
             // custIDDataGridViewTextBoxColumn
             // 
             this.custIDDataGridViewTextBoxColumn.DataPropertyName = "custID";
@@ -154,6 +140,20 @@
             this.contactPersonDataGridViewTextBoxColumn.Name = "contactPersonDataGridViewTextBoxColumn";
             this.contactPersonDataGridViewTextBoxColumn.Width = 150;
             // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataMember = "customer";
+            this.customerBindingSource.DataSource = this.aDADataSet2;
+            // 
+            // aDADataSet2
+            // 
+            this.aDADataSet2.DataSetName = "ADADataSet2";
+            this.aDADataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // customerTableAdapter
+            // 
+            this.customerTableAdapter.ClearBeforeFill = true;
+            // 
             // ViewCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -165,6 +165,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ViewCustomer";
             this.Text = "ViewCustomer";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ViewCustomer_FormClosed);
             this.Load += new System.EventHandler(this.ViewCustomer_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Customers)).EndInit();

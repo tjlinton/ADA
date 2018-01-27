@@ -31,10 +31,11 @@ namespace adaOrderingSys.business_objects
 
         public string loginUser(string uName, string pword)
         {
-            using (SqlConnection con = new SqlConnection(Constants.CONNECTIONSTRING))
+            try
             {
-                try
+                using (SqlConnection con = new SqlConnection(Constants.CONNECTIONSTRING))
                 {
+
                     string returnVal;
                     SqlCommand cmd = new SqlCommand();
                     cmd.Parameters.AddWithValue("@pLoginName", uName);
@@ -48,7 +49,8 @@ namespace adaOrderingSys.business_objects
 
                     returnVal = (string)cmd.ExecuteScalar();
 
-                    if (returnVal.Equals(Constants.USER_ROLE_ADMIN)) {
+                    if (returnVal.Equals(Constants.USER_ROLE_ADMIN))
+                    {
                         userRole = Constants.USER_ROLE_ADMIN;
                     }
                     else
@@ -58,11 +60,11 @@ namespace adaOrderingSys.business_objects
 
                     return returnVal;
                 }
-                catch (Exception e)
-                {
-                    logger.Error(e);
-                    return "1";
-                }
+            }
+            catch (Exception e)
+            {
+                logger.Error(e.ToString);
+                return "1";
             }
         }
 
@@ -90,7 +92,7 @@ namespace adaOrderingSys.business_objects
                 }
                 catch (Exception e)
                 {
-                    logger.Error(e);
+                    logger.Error(e.ToString);
                     return "1";
                 }
             }
@@ -119,7 +121,7 @@ namespace adaOrderingSys.business_objects
                 }
                 catch (Exception e)
                 {
-                    logger.Error(e);
+                    logger.Error(e.ToString);
                     return -1;
                 }
             }
@@ -147,7 +149,7 @@ namespace adaOrderingSys.business_objects
                 }
                 catch (Exception e)
                 {
-                    logger.Error(e);
+                    logger.Error(e.ToString);
                     return -1;
                 }
             }
@@ -178,7 +180,7 @@ namespace adaOrderingSys.business_objects
                 }
                 catch (Exception e)
                 {
-                    logger.Error(e);
+                    logger.Error(e.ToString);
                     return null;
                 }
             }

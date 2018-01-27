@@ -42,36 +42,36 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="adaOrderingSys.exe" size="262080">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="adaOrderingSys.exe" size="266688">
       <assemblyIdentity name="adaOrderingSys" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>BoSSJxWmlDajRoaMnWaWXjiR5DFFYff+chgYtHcTw/o=</dsig:DigestValue>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>8LZrGP2LPclvoHUq0Xywah+Hc5g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NLog.dll" size="612352">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NLog.dll" size="604672">
       <assemblyIdentity name="NLog" version="4.0.0.0" publicKeyToken="5120E14C03D0593C" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>S4OZ82oKvr2LKg3FivXYPzpq5fIiisSeH+n3BJeXVjU=</dsig:DigestValue>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>Kg2a/0oLOo4TrQ4/PWWRlOnTvHI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="adaOrderingSys.exe.config" size="749">
+  <file name="adaOrderingSys.exe.config" size="705">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>iMoATxWPzDjcyZPrB6yw6mSfi5TiwLF8DAz4FGitEyM=</dsig:DigestValue>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>U5+FLeKV/DV2rlj9fYgg5LP6VKo=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Image1.png" size="9757">
@@ -79,17 +79,17 @@
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>uRuiGS7og4Uhno9eXt5VfEZkpnGFpuf36kxUam5cu1Y=</dsig:DigestValue>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>j7nMHXf8cEDMx4Jkuk/uzMQLlKI=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="NLog.config" size="1511">
+  <file name="NLog.config" size="1685">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>2CHJR2KKBbDsBlifJsib1SKc4Jvkn6qwfJzdxvk5WXk=</dsig:DigestValue>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>sFs0g21hFy8YkDjze/DXIB5UNJM=</dsig:DigestValue>
     </hash>
   </file>
   <file name="users.png" size="31295">
@@ -97,8 +97,8 @@
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>Vuhbga6LLl3oXkWRVA7bCVOVNue4PzFfEZhHmj8EHIo=</dsig:DigestValue>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>9O9TzfC56VB7CxQLa38Q1ew4jd8=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

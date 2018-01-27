@@ -47,7 +47,7 @@ namespace adaOrderingSys.business_objects
                 }
                 catch (Exception e)
                 {
-                    logger.Error(e);
+                    logger.Error(e.ToString);
 
                     return -1;
                 }
@@ -84,7 +84,7 @@ namespace adaOrderingSys.business_objects
                 }
                 catch (Exception e)
                 {
-                    logger.Error(e);
+                    logger.Error(e.ToString);
                     return null;
                 }
             }
@@ -116,7 +116,7 @@ namespace adaOrderingSys.business_objects
                 }
                 catch (Exception e)
                 {
-                    logger.Error(e);
+                    logger.Error(e.ToString);
 
                     return "";
                 }
