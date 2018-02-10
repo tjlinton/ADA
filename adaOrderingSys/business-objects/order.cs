@@ -165,6 +165,35 @@ namespace adaOrderingSys.business_objects
             }
         }
 
+        public int getOrderSalesNo(int orderID)
+        {
+
+            using (SqlConnection conn = new SqlConnection(Constants.CONNECTIONSTRING))
+            {
+                try
+                {
+                    logger.Info("Retrieving order SalesNo");
+                    conn.Open();
+
+                    string selectProcedure = "[dbo].[usp_GetSalesNumFromOrderID]";
+                    int salesNo;
+
+                    SqlCommand cmd = new SqlCommand(selectProcedure, conn);
+                    cmd.Parameters.AddWithValue("@orderID", orderID);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    salesNo = Convert.ToInt32(cmd.ExecuteScalar());
+                    logger.Info("Sales Number successfully retrieved");
+                    return salesNo;
+                }
+                catch (Exception e)
+                {
+                    logger.Error("Could not retrieve order location: " + e);
+                    return -1;
+                }
+            }
+        }
+
         public int deleteOrder(int orderID)
         {
             int returnVal;

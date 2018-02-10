@@ -20,6 +20,8 @@ namespace adaOrderingSys
         private DataSet ds { get; set; }
         private SqlDataAdapter adapter { get; set; }
 
+        private bool unsubmittedChanges { get; set; } = false;
+
         private SqlConnection conn = new SqlConnection(Constants.CONNECTIONSTRING);
 
         public ViewLoadingSheets()
@@ -66,29 +68,34 @@ namespace adaOrderingSys
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Unsubmitted changes won't be saved, go back?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            if (unsubmittedChanges)
             {
-                this.Hide();
-                new main().Show();
+                if (MessageBox.Show(Constants.CONFIRM_GOBACK, "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.No)
+                {
+                    return;
+                }
             }
+            this.Hide();
+            new main().Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_Submit_Click(object sender, EventArgs e)
         {
             try
             {
                 if (adapter.DeleteCommand != null || adapter.UpdateCommand != null)
                 {
                     adapter.Update(dt);
+                    unsubmittedChanges = false;
                     logger.Info("Updates made to summary by " + User.userName);
                     MessageBox.Show("Successfully updated");
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Could not make changes");
                 logger.Error(ex.ToString);
-            } 
+            }
         }
 
         private void btn_CreateNew_Click(object sender, EventArgs e)
@@ -114,13 +121,15 @@ namespace adaOrderingSys
 
                 int summaryID = Convert.ToInt32(dataGridView1.Rows[e.Row.Index].Cells[Constants.SUMMARYID].Value);
 
-                SqlCommand cmd = new SqlCommand("[dbo].[usp_RemoveSummary]",conn);
+                SqlCommand cmd = new SqlCommand("[dbo].[usp_RemoveSummary]", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@summaryID", summaryID);
                 adapter.DeleteCommand = cmd;
 
                 dt.AcceptChanges();
                 adapter.Fill(dt);
+
+                unsubmittedChanges = true;
             }
             catch (Exception ex)
             {
@@ -216,8 +225,8 @@ namespace adaOrderingSys
                 cmd.Parameters.AddWithValue("@summaryID", summaryID);
                 cmd.Connection = conn;
                 adapter.UpdateCommand = cmd;
-                //dt.AcceptChanges();
-                //adapter.Fill(dt);
+
+                unsubmittedChanges = true;
             }
             catch (Exception ex)
             {

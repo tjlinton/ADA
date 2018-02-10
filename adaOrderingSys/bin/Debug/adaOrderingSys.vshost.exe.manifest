@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="adaOrderingSys.exe" size="266688">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="adaOrderingSys.exe" size="269248">
       <assemblyIdentity name="adaOrderingSys" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>8LZrGP2LPclvoHUq0Xywah+Hc5g=</dsig:DigestValue>
+        <dsig:DigestValue>nliaFCOJ15/gV8S2wE/7y4j289w=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using adaOrderingSys.business_objects;
 using NLog;
 using System.Drawing.Printing;
+using System.Linq;
 
 namespace adaOrderingSys
 {
@@ -14,6 +15,7 @@ namespace adaOrderingSys
         private List<string> checkedItems = new List<string>();
         private bool lastPage;
         private int pageNo;
+        private bool summaryPrinted;
         List<KeyValuePair<int, string>> summaryList = null;
         private Summary summary { get; set; }
 
@@ -59,7 +61,7 @@ namespace adaOrderingSys
                 logger.Error(ex.ToString);
                 MessageBox.Show(Constants.GENERIC_ERROR);
             }
-        } 
+        }
 
         private void setItems()
         {
@@ -79,8 +81,14 @@ namespace adaOrderingSys
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            main mainForm = new main();
-            mainForm.Show();
+            if (this.summary == null)
+            {
+                new main().Show();
+            }
+            else
+            {
+                new ViewLoadingSheets().Show();
+            }
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
@@ -94,7 +102,7 @@ namespace adaOrderingSys
 
                     checkedItems = new List<string>();
 
-                    for (int i = cbl_Orders.CheckedItems.Count-1;  i >= 0; i--)
+                    for (int i = cbl_Orders.CheckedItems.Count - 1; i >= 0; i--)
                     {
                         checkedItems.Add(cbl_Orders.CheckedItems[i].ToString());
                     }
@@ -130,12 +138,12 @@ namespace adaOrderingSys
 
                             DateTime datetime = dateTimePicker1.Value;
 
-                            int submitResponse=-1;
+                            int submitResponse = -1;
                             if (this.summary == null)
                             {
                                 submitResponse = summary.fulfillOrders(orderIDList, txtLicenseNo.Text, txtDriver.Text, datetime, txtLocation.Text, User.userName);
                             }
-                            else if (this.summary.summaryID !=0 )
+                            else if (this.summary.summaryID != 0)
                             {
                                 List<int> uncheckedOrderIDs = new List<int>();
                                 submitResponse = summary.fulfillOrders(this.summary.summaryID, orderIDList, txtLicenseNo.Text, txtDriver.Text, datetime, txtLocation.Text, User.userName);
@@ -150,7 +158,7 @@ namespace adaOrderingSys
                                 }
 
                                 int numUnfullfills = uncheckedOrderIDs.Count == 0 ? 0 : new Summary().unfulfillOrders(uncheckedOrderIDs);
-                                if (numUnfullfills< 0)
+                                if (numUnfullfills < 0)
                                 {
                                     MessageBox.Show("An error occured.");
                                     return;
@@ -195,13 +203,13 @@ namespace adaOrderingSys
             {
                 Graphics graphic = e.Graphics;
                 //must use a mono spaced font as the spaces need to line up
-                Font topFont = new Font("Courier New", 11); //Font for first line of loading sheet
-                Font font = new Font("Courier New", 9); //Font for the body of the loading sheet
+                Font topFont = new Font("Courier New", 10); //Font for first line of loading sheet
+                Font font = new Font("Courier New", 8); //Font for the body of the loading sheet
                 Font headerFont = new Font("Courier New", 24, FontStyle.Bold);
                 Font boldFont = new Font("Courier New", 10, FontStyle.Bold);
                 float fontHeight = topFont.GetHeight();
 
-                int startX = 5, middleX = 300, endX = 580,
+                int startX = 5, middleX = 300, endX = 620,
                     startY = 10, offset = 40, middleOffset, endOffset;
 
                 if (pageNo == 1)
@@ -217,7 +225,7 @@ namespace adaOrderingSys
                         "Location:" + txtLocation.Text + Constants.LOADING_SHEET_SPACER; //Location to be delivered to 
 
                     graphic.DrawString(top, topFont, new SolidBrush(Color.Black), startX, startY + (offset + 10));
-                    offset = offset + (int)headerFont.GetHeight() + 10; //make the spacing consistent
+                    offset = offset + (int)topFont.Height * 2; //make the spacing consistent
 
                 }
                 middleOffset = offset;
@@ -232,29 +240,53 @@ namespace adaOrderingSys
                     for (int l = checkedItems.Count - 1; l >= 0; l--)
                     {
                         string order = checkedItems[l];
-                        checkedItems.RemoveAt(l);
                         //Add each customer's order to the List
                         string[] details = order.Split('|');
                         int id = Convert.ToInt32(details[0].Trim());
                         List<ItemsOrdered> itemQuantityAndAdditionals = new ItemsOrdered().getOrderedItemsQuantityAndAdditionals(id);
                         string location = new Order().getOrderLocation(id);
-                        if (location != null && location != "")
+                        int salesNo = new Order().getOrderSalesNo(id);
+                        string salesNum = salesNo > 0 ? " #" + salesNo.ToString() : "";
+                        // Apply appropriate line breaks to location
+                        if (location != null && !location.Equals(""))
                         {
-                            location = " - " + location;
-                            if (location.Length > 12)
+                            location = " - " + location.Trim().TrimEnd('\n', '\r');
+                            if (location.Length > 25 && location.IndexOf("\n") == -1)
                             {
-                                location = location.Substring(0, 12).Trim();
-                                location += "...";
+                                string locationA = location.Substring(0, 25);
+                                string locationB = location.Substring(25, location.Length - 25);
+
+                                if (locationB.IndexOf(" ") == 0)
+                                {
+                                    location = locationA + "\n" + locationB;
+                                }
+                                else
+                                {
+                                    int spaceIndex = locationA.LastIndexOf(" ");
+                                    locationB = locationA.Substring(spaceIndex, locationA.Length - spaceIndex) + locationB;
+                                    locationA = locationA.Substring(0, locationA.LastIndexOf(" "));
+                                    location = locationA + '\n' + locationB;
+                                }
                             }
                         }
+                        int numLines = location.Split('\n').Length;
+                        int tempCount = itemQuantityAndAdditionals.Count + 1 + numLines;
+                        count += tempCount;
 
                         //TODO: think about making this less repetitive
-                        if (count <= Constants.MAX_LOADING_SHEET_COLUMN)
+
+                        /**********************************************************************************************************************
+                         *                                          COLUMN 1
+                         ***********************************************************************************************************************/
+                        if (count <= Constants.MAX_LINES)
                         {
-                            graphic.DrawString(details[1].Trim() + location, boldFont, new SolidBrush(Color.Black), startX, startY + offset);
-                            offset += (int)fontHeight;
-                            int length = itemQuantityAndAdditionals.Count;
-                            for (int i = 0; i < length; i++)
+                            graphic.DrawString(details[1].Trim() + salesNum, boldFont, new SolidBrush(Color.Black), startX, startY + offset);
+                            offset += (int)topFont.Height;
+
+                            graphic.DrawString(location, boldFont, new SolidBrush(Color.Black), startX, startY + offset);
+                            offset += numLines == 0 ? topFont.Height : topFont.Height * numLines;
+
+                            for (int i = 0; i < itemQuantityAndAdditionals.Count; i++)
                             {
                                 string quantity = itemQuantityAndAdditionals[i].qtyOrdered.ToString();
                                 string item = itemQuantityAndAdditionals[i].itemName;
@@ -262,8 +294,7 @@ namespace adaOrderingSys
                                 string drawItem = additionals == 0 ? "  " + quantity + " " + item :
                                     "  " + quantity + "+" + additionals + " " + item;
                                 graphic.DrawString(drawItem, font, new SolidBrush(Color.Black), startX, startY + offset);
-                                count++;
-                                offset += (int)fontHeight;
+                                offset += (int)topFont.Height;
                                 int index = isItemInList(summaryList, itemQuantityAndAdditionals[i].itemName);
                                 //Add to the summary list
                                 if (summaryList.Count > 0 && index >= 0)
@@ -282,15 +313,22 @@ namespace adaOrderingSys
                                     summaryList.Add(new KeyValuePair<int, string>(thisQuantity, itemQuantityAndAdditionals[i].itemName));
                                 }
                             }
-                            offset += 15;
-                            count++;
+                            offset += 5;
+                            checkedItems.RemoveAt(l);
                         }
-                        else if (count <= (Constants.MAX_LOADING_SHEET_COLUMN * 2)) //Move over to middle of the page
+                        /***********************************************************************************************************************
+                         *                                              COLUMN 2
+                         ***********************************************************************************************************************/
+                        else if (count <= (Constants.MAX_LINES * 2)) //Move over to middle of the page
                         {
-                            graphic.DrawString(details[1].Trim() + location, boldFont, new SolidBrush(Color.Black), middleX, startY + middleOffset);
-                            middleOffset += (int)fontHeight;
-                            int length = itemQuantityAndAdditionals.Count;
-                            for (int i = 0; i < length; i++)
+                            //count = Constants.MAX_LINES + tempCount;
+                            graphic.DrawString(details[1].Trim() + salesNum, boldFont, new SolidBrush(Color.Black), middleX, startY + middleOffset);
+                            middleOffset += (int)topFont.Height;
+                            
+                            graphic.DrawString(location, boldFont, new SolidBrush(Color.Black), middleX, startY + middleOffset);
+                            middleOffset += numLines == 0 ? (int)topFont.Height : (int)topFont.Height * numLines;
+
+                            for (int i = 0; i < itemQuantityAndAdditionals.Count; i++)
                             {
                                 string quantity = itemQuantityAndAdditionals[i].qtyOrdered.ToString();
                                 string item = itemQuantityAndAdditionals[i].itemName;
@@ -299,8 +337,7 @@ namespace adaOrderingSys
                                     "  " + quantity + "+" + additionals + " " + item;
                                 graphic.DrawString(drawItem, font,
                                     new SolidBrush(Color.Black), middleX, startY + middleOffset);
-                                count++;
-                                middleOffset += (int)fontHeight;
+                                middleOffset += (int)topFont.Height;
 
                                 int index = isItemInList(summaryList, itemQuantityAndAdditionals[i].itemName);
 
@@ -321,16 +358,22 @@ namespace adaOrderingSys
                                     summaryList.Add(new KeyValuePair<int, string>(thisQuantity, itemQuantityAndAdditionals[i].itemName));
                                 }
                             }
-                            middleOffset += 15;
-                            count++;
+                            middleOffset += 5;
+                            checkedItems.RemoveAt(l);
                         }
-                        else if (count <= Constants.MAX_LOADING_SHEET_COLUMN * 3) //Move over to last column of the page
+                        /***************************************************************************************************************************
+                         *                                                  COLUMN 3
+                         ***************************************************************************************************************************/
+                        else if (count <= Constants.MAX_LINES * 3)  //Move over to last column of the page
                         {
+                           // count = (Constants.MAX_LINES * 2) + tempCount;
+                            graphic.DrawString(details[1].Trim() + salesNum, boldFont, new SolidBrush(Color.Black), endX, startY + endOffset);
+                            endOffset += (int)topFont.Height;
+                            
+                            graphic.DrawString(location, boldFont, new SolidBrush(Color.Black), endX, startY + endOffset);
+                            endOffset += numLines == 0 ? (int)topFont.Height : (int)topFont.Height * numLines;
 
-                            graphic.DrawString(details[1].Trim() + location, boldFont, new SolidBrush(Color.Black), endX, startY + endOffset);
-                            endOffset += (int)fontHeight;
-                            int length = itemQuantityAndAdditionals.Count;
-                            for (int i = 0; i < length; i++)
+                            for (int i = 0; i < itemQuantityAndAdditionals.Count; i++)
                             {
                                 string quantity = itemQuantityAndAdditionals[i].qtyOrdered.ToString();
                                 string item = itemQuantityAndAdditionals[i].itemName;
@@ -338,8 +381,7 @@ namespace adaOrderingSys
                                 string drawItem = additionals == 0 ? "  " + quantity + " " + item :
                                     "  " + quantity + "+" + additionals + " " + item;
                                 graphic.DrawString(drawItem, font, new SolidBrush(Color.Black), endX, startY + endOffset);
-                                count++;
-                                endOffset += (int)fontHeight;
+                                endOffset += (int)topFont.Height;
 
                                 int index = isItemInList(summaryList, itemQuantityAndAdditionals[i].itemName);
 
@@ -360,8 +402,8 @@ namespace adaOrderingSys
                                     summaryList.Add(new KeyValuePair<int, string>(thisQuantity, itemQuantityAndAdditionals[i].itemName));
                                 }
                             }
-                            endOffset += 15;
-                            count++;
+                            endOffset += 5;
+                            checkedItems.RemoveAt(l);
                         }
                         else
                         {
@@ -371,24 +413,73 @@ namespace adaOrderingSys
                         }
                     }
                 }
-
-                //Summary statement.
-                if ((count +summaryList.Count) > (Constants.MAX_LOADING_SHEET_COLUMN * 3))
+                if (!summaryPrinted)
                 {
-                    e.HasMorePages = true;
-                    pageNo++;
-                    lastPage = true;
-                    return;
+                    //Summary statement.
+                    if ((count + summaryList.Count) > (Constants.MAX_LOADING_SHEET_COLUMN * 3) && !summaryPrinted)
+                    {
+                        e.HasMorePages = true;
+                        pageNo++;
+                        lastPage = true;
+                        return;
+                    }
+
+                    int currentX = lastPage ? startX : endX;
+
+
+                    graphic.DrawString("Summary", boldFont, new SolidBrush(Color.Black), currentX, startY + endOffset);
+
+                    endOffset += (int)topFont.Height;
+
+                    summaryList = summaryList.OrderBy(kvp => kvp.Value).ToList(); //Sort the list in alphabetical order
+
+                    for (int j = 0; j < summaryList.Count; j++)
+                    {
+                        string summaryItem = summaryList[j].Key + " " + summaryList[j].Value;
+                        graphic.DrawString(summaryItem, font, new SolidBrush(Color.Black), currentX, startY + endOffset);
+                        endOffset += (int)topFont.Height;
+                    }
+
+                    endOffset += (int)topFont.Height * 2;
+                    summaryPrinted = true;
+
+                    if (summaryList.Count >= Constants.MAX_LOADING_SHEET_COLUMN)
+                    {
+                        if (currentX == startX)
+                        {
+                            currentX = endX;
+                            endOffset = middleOffset;
+                        }
+                        else
+                        {
+                            e.HasMorePages = true;
+                            lastPage = true;
+                        }
+                    }
+                    graphic.DrawString(Constants.PACKER_NAME, font, new SolidBrush(Color.Black), currentX, startY + endOffset);
+                    endOffset += (int)topFont.Height + 10;
+                    graphic.DrawString(Constants.PACKER_SIG, font, new SolidBrush(Color.Black), currentX, startY + endOffset);
+                    endOffset += ((int)topFont.Height * 2) + 10;
+                    graphic.DrawString(Constants.WS_SUP_SIG, font, new SolidBrush(Color.Black), currentX, startY + endOffset);
+                    endOffset += ((int)topFont.Height * 2) + 10;
+                    graphic.DrawString(Constants.MGMT_SIG, font, new SolidBrush(Color.Black), currentX, startY + endOffset);
+                    endOffset += ((int)topFont.Height * 2) + 10;
+                    graphic.DrawString(Constants.ASSIGNEE, font, new SolidBrush(Color.Black), currentX, startY + endOffset);
                 }
-                int currentX = lastPage ? startX : endX; 
-                graphic.DrawString("Summary", boldFont, new SolidBrush(Color.Black), currentX, startY + endOffset);
-                endOffset += (int)fontHeight;
-
-                for (int j = 0; j < summaryList.Count; j++)
+                else
                 {
-                    string summaryItem = summaryList[j].Key + " " + summaryList[j].Value;
-                    graphic.DrawString(summaryItem, topFont, new SolidBrush(Color.Black), currentX, startY + endOffset);
-                    endOffset += (int)fontHeight;
+                    int currentX = endX;
+                    endOffset = startY;
+                    graphic.DrawString(Constants.PACKER_NAME, font, new SolidBrush(Color.Black), currentX, startY);
+                    endOffset += (int)topFont.Height + 10;
+                    graphic.DrawString(Constants.PACKER_SIG, font, new SolidBrush(Color.Black), currentX, startY + endOffset);
+                    endOffset += ((int)topFont.Height * 2) + 10;
+                    graphic.DrawString(Constants.WS_SUP_SIG, font, new SolidBrush(Color.Black), currentX, startY + endOffset);
+                    endOffset += ((int)topFont.Height * 2) + 10;
+                    graphic.DrawString(Constants.MGMT_SIG, font, new SolidBrush(Color.Black), currentX, startY + endOffset);
+                    endOffset += ((int)topFont.Height * 2) + 10;
+                    graphic.DrawString(Constants.ASSIGNEE, font, new SolidBrush(Color.Black), currentX, startY + endOffset);
+                    return;
                 }
             }
             catch (Exception ex)
@@ -398,6 +489,8 @@ namespace adaOrderingSys
                 return;
             }
         }
+
+        private void drawSignatures() { }
 
         private int isItemInList(List<KeyValuePair<int, string>> list, string comparedItem)
         {
@@ -495,7 +588,7 @@ namespace adaOrderingSys
                     cbl_Orders.SetItemChecked(prevIndex, true);
                 }
             }
-            catch ( Exception ex)
+            catch (Exception ex)
             {
                 logger.Error(ex.ToString);
             }
@@ -531,7 +624,7 @@ namespace adaOrderingSys
 
         private void cbl_Orders_MouseClick(object sender, MouseEventArgs e)
         {
-            
+
         }
 
         private void cbl_Orders_MouseUp(object sender, MouseEventArgs e)
@@ -558,8 +651,10 @@ namespace adaOrderingSys
             Application.Exit();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_Preview_Click(object sender, EventArgs e)
         {
+            summaryPrinted = false;
+
             PrintPreviewDialog printPrvDlg = new PrintPreviewDialog();
             PrintDocument printDocument = new PrintDocument();
 
@@ -579,7 +674,7 @@ namespace adaOrderingSys
             printPrvDlg.PrintPreviewControl.Zoom = 100 / 100f; //Zoom is calculated as a ratio
             ((Form)printPrvDlg).WindowState = FormWindowState.Maximized;
             printPrvDlg.ShowDialog();
-            
+
             return;
         }
     }

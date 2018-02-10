@@ -34,15 +34,21 @@ namespace adaOrderingSys.business_objects
         //Stored Procedures
 
         //Loading Sheet
-        public static int LOADING_SHEET_MAX = 100; //maximum number of lines in one loading sheet
-        public static int MAX_LOADING_SHEET_COLUMN = 47;
+        public static int MAX_LOADING_SHEET_COLUMN = 40;
+        public static int MAX_LINES = 60;
         public static string LOADING_SHEET_HEADER = "LOADING SHEET";
         public static string LOADING_SHEET_SPACER = "   ";
+        public static string PACKER_NAME = "Packer Name: ______________";
+        public static string PACKER_SIG = "Packer" + System.Environment.NewLine + "Singature: ________________";
+        public static string WS_SUP_SIG = "Supervisor" + System.Environment.NewLine + "Signature: ________________";
+        public static string MGMT_SIG = "Management Personnel" + System.Environment.NewLine + "Signature: ________________";
+        public static string ASSIGNEE = "Assignees: ________________";
 
         //Messages
         public static string OUT_OF_STOCK_MSG = "Out of stock";
         public static string GENERIC_ERROR = "An error occured. Please try again";
         public static string CONTACT_SYSTEMADMIN = "An error occured. Please contact system admin";
+        public static string CONFIRM_GOBACK = "Unsubmitted changes won't be saved, go back?";
 
         //Users
         public static string USER_ROLE_ADMIN = "Admin";
@@ -52,7 +58,5 @@ namespace adaOrderingSys.business_objects
         //Password regex
         public static string STRONG_PASSWORD = (@"^(?=.*[A-Z])(?=.*\d)[A-Za-z\d-_$#@!*^%]{6,}$");
         public static string PASSWORD_RQMNTS = "Password must contain atleast six letters, a number and an upper case letter\n eg: Adatest1";
-
-
     }
 }

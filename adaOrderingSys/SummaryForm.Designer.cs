@@ -47,7 +47,7 @@
             this.lbl_LicenseNo = new System.Windows.Forms.Label();
             this.txtLicenseNo = new System.Windows.Forms.TextBox();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Preview = new System.Windows.Forms.Button();
             this.pnl_Step1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -89,7 +89,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btn_Preview);
             this.groupBox1.Controls.Add(this.btnDown);
             this.groupBox1.Controls.Add(this.btnUp);
             this.groupBox1.Controls.Add(this.lblLocation);
@@ -223,16 +223,16 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.ForeColor = System.Drawing.Color.Gold;
-            this.button1.Location = new System.Drawing.Point(339, 279);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 45);
-            this.button1.TabIndex = 31;
-            this.button1.Text = "PREVIEW";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_Preview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_Preview.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Preview.ForeColor = System.Drawing.Color.Gold;
+            this.btn_Preview.Location = new System.Drawing.Point(339, 279);
+            this.btn_Preview.Name = "button1";
+            this.btn_Preview.Size = new System.Drawing.Size(92, 45);
+            this.btn_Preview.TabIndex = 31;
+            this.btn_Preview.Text = "PREVIEW";
+            this.btn_Preview.UseVisualStyleBackColor = false;
+            this.btn_Preview.Click += new System.EventHandler(this.btn_Preview_Click);
             // 
             // SummaryForm
             // 
@@ -271,6 +271,6 @@
         private System.Windows.Forms.Button btnDown;
         private System.Windows.Forms.Button btnUp;
         private System.Windows.Forms.ToolTip toolTip;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_Preview;
     }
 }

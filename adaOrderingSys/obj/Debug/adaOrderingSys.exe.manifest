@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="adaOrderingSys.exe" size="266688">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="adaOrderingSys.exe" size="269248">
       <assemblyIdentity name="adaOrderingSys" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>8LZrGP2LPclvoHUq0Xywah+Hc5g=</dsig:DigestValue>
+        <dsig:DigestValue>PurrWun4b5/Gmkk0LztuzJ3wAhw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -65,13 +65,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="adaOrderingSys.exe.config" size="705">
+  <file name="adaOrderingSys.exe.config" size="681">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>U5+FLeKV/DV2rlj9fYgg5LP6VKo=</dsig:DigestValue>
+      <dsig:DigestValue>zLz0dckj7Vlya6Kn+iRG937DCeE=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Image1.png" size="9757">

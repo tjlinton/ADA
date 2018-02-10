@@ -183,7 +183,7 @@ namespace adaOrderingSys
 
                 this.viewOrders.dt.Rows.Add(itemID, itemName, quantity, unitPrice, totalCost, additions);
                 this.viewOrders.setInsertCmd(itemID, quantity, additions, totalCost);
-                this.Close();
+                this.Hide();
             }
 
             catch (Exception ex)
@@ -195,7 +195,7 @@ namespace adaOrderingSys
 
         private void AddNewItem_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+                Application.Exit();
         }
     }
 }
