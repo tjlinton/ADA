@@ -1,6 +1,6 @@
 ﻿namespace adaOrderingSys
 {
-    partial class SummaryForm
+    partial class SummaryFormCopy
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SummaryForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SummaryFormCopy));
             this.cbl_Orders = new System.Windows.Forms.CheckedListBox();
             this.btnBack = new System.Windows.Forms.Button();
             this.pnl_Step1 = new System.Windows.Forms.Panel();

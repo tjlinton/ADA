@@ -103,7 +103,7 @@ namespace adaOrderingSys
             try
             {
                 this.Hide();
-                new SummaryForm().Show();
+                new SummaryFormCopy().Show();
             }
             catch (Exception ex)
             {
@@ -181,7 +181,7 @@ namespace adaOrderingSys
 
                     Summary summary = new Summary(summaryID, date, driver, createdBy, licenseNo, location);
                     this.Hide();
-                    new SummaryForm(summary).Show();
+                    new SummaryFormCopy(summary).Show();
                 }
             }
             catch (Exception ex)

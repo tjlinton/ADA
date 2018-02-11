@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace adaOrderingSys
 {
-    public partial class SummaryForm : Form
+    public partial class SummaryFormCopy : Form
     {
         private readonly Logger logger = LogManager.GetCurrentClassLogger();
         private List<string> checkedItems = new List<string>();
@@ -19,13 +19,13 @@ namespace adaOrderingSys
         List<KeyValuePair<int, string>> summaryList = null;
         private Summary summary { get; set; }
 
-        public SummaryForm()
+        public SummaryFormCopy()
         {
             InitializeComponent();
             setItems();
         }
 
-        public SummaryForm(Summary summ)
+        public SummaryFormCopy(Summary summ)
         {
             this.summary = summ;
             InitializeComponent();
@@ -234,6 +234,8 @@ namespace adaOrderingSys
                 int initalOffset = offset;
 
                 int count = 0;
+                int linesInSecondCol=0, lineInLastCol=0;
+                bool in2ndCol = false, in3rdCol = false;
 
                 if (!lastPage)
                 {
@@ -272,11 +274,10 @@ namespace adaOrderingSys
                         int numLines = location.Split('\n').Length;
                         int tempCount = itemQuantityAndAdditionals.Count + 1 + numLines;
                         count += tempCount;
-
                         //TODO: think about making this less repetitive
 
                         /**********************************************************************************************************************
-                         *                                          COLUMN 1
+                         *                                                  COLUMN 1
                          ***********************************************************************************************************************/
                         if (count <= Constants.MAX_LINES)
                         {
@@ -319,9 +320,10 @@ namespace adaOrderingSys
                         /***********************************************************************************************************************
                          *                                              COLUMN 2
                          ***********************************************************************************************************************/
-                        else if (count <= (Constants.MAX_LINES * 2)) //Move over to middle of the page
+                        else if (count <= (Constants.MAX_LINES * 2) ) //Move over to middle of the page
                         {
-                            //count = Constants.MAX_LINES + tempCount;
+                            in2ndCol = true;
+                            linesInSecondCol += tempCount;
                             graphic.DrawString(details[1].Trim() + salesNum, boldFont, new SolidBrush(Color.Black), middleX, startY + middleOffset);
                             middleOffset += (int)topFont.Height;
                             
