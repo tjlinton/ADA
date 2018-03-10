@@ -224,7 +224,7 @@ namespace adaOrderingSys
         private void btnCreateSummary_Click(object sender, EventArgs e)
         {
             this.Hide();
-            SummaryFormCopy summary = new SummaryFormCopy();
+            SummaryForm summary = new SummaryForm();
             summary.Show();
         }
 

@@ -34,7 +34,7 @@ namespace adaOrderingSys.business_objects
         //Stored Procedures
 
         //Loading Sheet
-        public static int MAX_LOADING_SHEET_COLUMN = 40;
+        public static int MAX_LOADING_SHEET_COLUMN = 45;
         public static int MAX_LINES = 60;
         public static string LOADING_SHEET_HEADER = "LOADING SHEET";
         public static string LOADING_SHEET_SPACER = "   ";

@@ -169,7 +169,6 @@
             this.Name = "AddNewItem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddNewItem";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddNewItem_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.num_Quantity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_SalesNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_Additionals)).EndInit();

@@ -59,6 +59,7 @@ namespace adaOrderingSys
                     }
 
                     selectProcedure = selectProcedure.Substring(0, selectProcedure.Length - 4);
+                    selectProcedure += " order by [itemName]";
                     List<KeyValuePair<string, string>> newItems = new List<KeyValuePair<string, string>>();
 
                     SqlCommand cmd = new SqlCommand(selectProcedure, conn);
@@ -193,9 +194,9 @@ namespace adaOrderingSys
             }
         }
 
-        private void AddNewItem_FormClosed(object sender, FormClosedEventArgs e)
-        {
-                Application.Exit();
-        }
+        //private void AddNewItem_FormClosed(object sender, FormClosedEventArgs e)
+        //{
+        //        Application.Exit();
+        //}
     }
 }

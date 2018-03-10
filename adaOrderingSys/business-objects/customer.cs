@@ -65,7 +65,7 @@ namespace adaOrderingSys.business_objects
                     logger.Info("Getting customer names");
                     conn.Open();
 
-                    string selectProcedure = "SELECT custName FROM [dbo].[customer]";
+                    string selectProcedure = "SELECT custName FROM [dbo].[customer] ORDER BY [custName] asc";
                     List<string> customers = new List<string>();
 
                     SqlCommand cmd = new SqlCommand(selectProcedure, conn);

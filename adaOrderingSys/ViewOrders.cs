@@ -71,7 +71,7 @@ namespace adaOrderingSys
                 {
                     string[] order = this.list_Orders.SelectedItem.ToString().Split('|'); // Split id from customer name
                     int orderID = Convert.ToInt32(order[0]);
-                    string customer = order[1].ToString().Trim();
+                    string customer = order[1].ToString().TrimStart();
                     string location = new Order().getOrderLocation(orderID);
                     List<string> customers = new Customer().getCustomerNames(); // Get all customers to bind combobox to
                     double grandTotal = 0.0;

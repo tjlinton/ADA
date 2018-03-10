@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace adaOrderingSys
 {
-    public partial class SummaryFormCopy : Form
+    public partial class SummaryForm : Form
     {
         private readonly Logger logger = LogManager.GetCurrentClassLogger();
         private List<string> checkedItems = new List<string>();
@@ -19,13 +19,13 @@ namespace adaOrderingSys
         List<KeyValuePair<int, string>> summaryList = null;
         private Summary summary { get; set; }
 
-        public SummaryFormCopy()
+        public SummaryForm()
         {
             InitializeComponent();
             setItems();
         }
 
-        public SummaryFormCopy(Summary summ)
+        public SummaryForm(Summary summ)
         {
             this.summary = summ;
             InitializeComponent();
@@ -95,6 +95,9 @@ namespace adaOrderingSys
         {
             try
             {
+                this.summaryPrinted = false;
+                this.lastPage = false;
+                this.pageNo = 0;
                 if (cbl_Orders.CheckedItems.Count != 0)
                 {
                     PrintDialog printDialog = new PrintDialog();
@@ -204,13 +207,20 @@ namespace adaOrderingSys
                 Graphics graphic = e.Graphics;
                 //must use a mono spaced font as the spaces need to line up
                 Font topFont = new Font("Courier New", 10); //Font for first line of loading sheet
-                Font font = new Font("Courier New", 8); //Font for the body of the loading sheet
-                Font headerFont = new Font("Courier New", 24, FontStyle.Bold);
+                Font font = new Font("Courier New", 9); //Font for the body of the loading sheet
+                Font headerFont = new Font("Courier New", 20, FontStyle.Bold);
+                Font summaryFont = new Font("Courier New", 9, FontStyle.Bold);
                 Font boldFont = new Font("Courier New", 10, FontStyle.Bold);
                 float fontHeight = topFont.GetHeight();
 
-                int startX = 5, middleX = 300, endX = 620,
-                    startY = 10, offset = 40, middleOffset, endOffset;
+                bool firstInColumn1 = true,
+                     firstInColumn2 = true,
+                     firstInColumn3 = true;
+
+                int x = 0, startX = 5, middleX = 300, endX = 620;
+                int startY = 10, offset, initialOffset = 40, middleOffset, endOffset;
+
+                bool isLastColumn = false ;
 
                 if (pageNo == 1)
                 {
@@ -224,18 +234,17 @@ namespace adaOrderingSys
                     top += txtLocation.Text == "" ? "Location:_____________" + Constants.LOADING_SHEET_SPACER :
                         "Location:" + txtLocation.Text + Constants.LOADING_SHEET_SPACER; //Location to be delivered to 
 
-                    graphic.DrawString(top, topFont, new SolidBrush(Color.Black), startX, startY + (offset + 10));
-                    offset = offset + (int)topFont.Height * 2; //make the spacing consistent
+                    graphic.DrawString(top, topFont, new SolidBrush(Color.Black), startX, startY + (initialOffset + 10));
+                    initialOffset = initialOffset + (int)topFont.Height * 2; //make the spacing consistent
 
                 }
-                middleOffset = offset;
-                endOffset = offset;
+                offset = initialOffset;
+                middleOffset = initialOffset;
+                endOffset = initialOffset;
 
-                int initalOffset = offset;
+                int initalOffset = initialOffset;
 
                 int count = 0;
-                int linesInSecondCol=0, lineInLastCol=0;
-                bool in2ndCol = false, in3rdCol = false;
 
                 if (!lastPage)
                 {
@@ -249,163 +258,74 @@ namespace adaOrderingSys
                         string location = new Order().getOrderLocation(id);
                         int salesNo = new Order().getOrderSalesNo(id);
                         string salesNum = salesNo > 0 ? " #" + salesNo.ToString() : "";
+
+                        if (details[1].Length >= 23)
+                        {
+                            details[1] = createNewLines(details[1]);
+                        }
+
+                        int detailLines = details[1].IndexOf('\n') == -1? 1: details[1].Split('\n').Length;
+
                         // Apply appropriate line breaks to location
                         if (location != null && !location.Equals(""))
                         {
                             location = " - " + location.Trim().TrimEnd('\n', '\r');
-                            if (location.Length > 25 && location.IndexOf("\n") == -1)
+                            location = location.Replace("\n", " ");
+                            if (location.Length > 22)
                             {
-                                string locationA = location.Substring(0, 25);
-                                string locationB = location.Substring(25, location.Length - 25);
-
-                                if (locationB.IndexOf(" ") == 0)
-                                {
-                                    location = locationA + "\n" + locationB;
-                                }
-                                else
-                                {
-                                    int spaceIndex = locationA.LastIndexOf(" ");
-                                    locationB = locationA.Substring(spaceIndex, locationA.Length - spaceIndex) + locationB;
-                                    locationA = locationA.Substring(0, locationA.LastIndexOf(" "));
-                                    location = locationA + '\n' + locationB;
-                                }
+                                location = createNewLines(location);
                             }
                         }
                         int numLines = location.Split('\n').Length;
-                        int tempCount = itemQuantityAndAdditionals.Count + 1 + numLines;
-                        count += tempCount;
-                        //TODO: think about making this less repetitive
+                        int tempCount = itemQuantityAndAdditionals.Count + detailLines + numLines;
+                        
+                        //This prevents overflowing in the column
+                        if ((count + tempCount) > Constants.MAX_LINES && count < Constants.MAX_LINES)
+                        {
+                            //Set count to max lines figure to prevent overflowing in second column
+                            count = Constants.MAX_LINES;
+                        }
 
-                        /**********************************************************************************************************************
-                         *                                                  COLUMN 1
-                         ***********************************************************************************************************************/
+
+                        int doubleMaxLines = Constants.MAX_LINES * 2;
+                        if ((count + tempCount) > doubleMaxLines && count < doubleMaxLines)
+                        {
+                            //Set count to double the max lines figure to prevent overflowing in the second column
+                            count = doubleMaxLines;
+                        }
+
+                        //Increment count
+                        count += tempCount;
+
+                        //Determine which column the item should be printed in. 1st, 2nd or 3rd
                         if (count <= Constants.MAX_LINES)
                         {
-                            graphic.DrawString(details[1].Trim() + salesNum, boldFont, new SolidBrush(Color.Black), startX, startY + offset);
-                            offset += (int)topFont.Height;
-
-                            graphic.DrawString(location, boldFont, new SolidBrush(Color.Black), startX, startY + offset);
-                            offset += numLines == 0 ? topFont.Height : topFont.Height * numLines;
-
-                            for (int i = 0; i < itemQuantityAndAdditionals.Count; i++)
+                            x = startX;
+                            if (firstInColumn1)
                             {
-                                string quantity = itemQuantityAndAdditionals[i].qtyOrdered.ToString();
-                                string item = itemQuantityAndAdditionals[i].itemName;
-                                int additionals = itemQuantityAndAdditionals[i].additionals;
-                                string drawItem = additionals == 0 ? "  " + quantity + " " + item :
-                                    "  " + quantity + "+" + additionals + " " + item;
-                                graphic.DrawString(drawItem, font, new SolidBrush(Color.Black), startX, startY + offset);
-                                offset += (int)topFont.Height;
-                                int index = isItemInList(summaryList, itemQuantityAndAdditionals[i].itemName);
-                                //Add to the summary list
-                                if (summaryList.Count > 0 && index >= 0)
-                                {
-                                    int thisQuantity = itemQuantityAndAdditionals[i].qtyOrdered +
-                                                       itemQuantityAndAdditionals[i].additionals +
-                                                       summaryList[index].Key;
-
-                                    string thisItem = itemQuantityAndAdditionals[i].itemName;
-                                    summaryList[index] = new KeyValuePair<int, string>(thisQuantity, thisItem);
-
-                                }
-                                else
-                                {
-                                    int thisQuantity = itemQuantityAndAdditionals[i].qtyOrdered + itemQuantityAndAdditionals[i].additionals;
-                                    summaryList.Add(new KeyValuePair<int, string>(thisQuantity, itemQuantityAndAdditionals[i].itemName));
-                                }
+                                //Reset the offset figure
+                                offset = initalOffset;
+                                firstInColumn1 = false; //The next time this if statement is hit, firstInColumn should be false
                             }
-                            offset += 5;
-                            checkedItems.RemoveAt(l);
                         }
-                        /***********************************************************************************************************************
-                         *                                              COLUMN 2
-                         ***********************************************************************************************************************/
-                        else if (count <= (Constants.MAX_LINES * 2) ) //Move over to middle of the page
+                        else if (count <= Constants.MAX_LINES * 2)
                         {
-                            in2ndCol = true;
-                            linesInSecondCol += tempCount;
-                            graphic.DrawString(details[1].Trim() + salesNum, boldFont, new SolidBrush(Color.Black), middleX, startY + middleOffset);
-                            middleOffset += (int)topFont.Height;
-                            
-                            graphic.DrawString(location, boldFont, new SolidBrush(Color.Black), middleX, startY + middleOffset);
-                            middleOffset += numLines == 0 ? (int)topFont.Height : (int)topFont.Height * numLines;
-
-                            for (int i = 0; i < itemQuantityAndAdditionals.Count; i++)
+                            x = middleX;
+                            if (firstInColumn2)
                             {
-                                string quantity = itemQuantityAndAdditionals[i].qtyOrdered.ToString();
-                                string item = itemQuantityAndAdditionals[i].itemName;
-                                int additionals = itemQuantityAndAdditionals[i].additionals;
-                                string drawItem = additionals == 0 ? "  " + quantity + " " + item :
-                                    "  " + quantity + "+" + additionals + " " + item;
-                                graphic.DrawString(drawItem, font,
-                                    new SolidBrush(Color.Black), middleX, startY + middleOffset);
-                                middleOffset += (int)topFont.Height;
-
-                                int index = isItemInList(summaryList, itemQuantityAndAdditionals[i].itemName);
-
-                                //Add to the summary list
-                                if (summaryList.Count > 0 && index >= 0)
-                                {
-                                    int thisQuantity = itemQuantityAndAdditionals[i].qtyOrdered +
-                                                       itemQuantityAndAdditionals[i].additionals +
-                                                       summaryList[index].Key;
-
-                                    string thisItem = itemQuantityAndAdditionals[i].itemName;
-                                    summaryList[index] = new KeyValuePair<int, string>(thisQuantity, thisItem);
-
-                                }
-                                else
-                                {
-                                    int thisQuantity = itemQuantityAndAdditionals[i].qtyOrdered + itemQuantityAndAdditionals[i].additionals;
-                                    summaryList.Add(new KeyValuePair<int, string>(thisQuantity, itemQuantityAndAdditionals[i].itemName));
-                                }
+                                offset = middleOffset;
+                                firstInColumn2 = false;
                             }
-                            middleOffset += 5;
-                            checkedItems.RemoveAt(l);
                         }
-                        /***************************************************************************************************************************
-                         *                                                  COLUMN 3
-                         ***************************************************************************************************************************/
-                        else if (count <= Constants.MAX_LINES * 3)  //Move over to last column of the page
+                        else if (count <= Constants.MAX_LINES * 3)
                         {
-                           // count = (Constants.MAX_LINES * 2) + tempCount;
-                            graphic.DrawString(details[1].Trim() + salesNum, boldFont, new SolidBrush(Color.Black), endX, startY + endOffset);
-                            endOffset += (int)topFont.Height;
-                            
-                            graphic.DrawString(location, boldFont, new SolidBrush(Color.Black), endX, startY + endOffset);
-                            endOffset += numLines == 0 ? (int)topFont.Height : (int)topFont.Height * numLines;
-
-                            for (int i = 0; i < itemQuantityAndAdditionals.Count; i++)
+                            x = endX;
+                            if (firstInColumn3)
                             {
-                                string quantity = itemQuantityAndAdditionals[i].qtyOrdered.ToString();
-                                string item = itemQuantityAndAdditionals[i].itemName;
-                                int additionals = itemQuantityAndAdditionals[i].additionals;
-                                string drawItem = additionals == 0 ? "  " + quantity + " " + item :
-                                    "  " + quantity + "+" + additionals + " " + item;
-                                graphic.DrawString(drawItem, font, new SolidBrush(Color.Black), endX, startY + endOffset);
-                                endOffset += (int)topFont.Height;
-
-                                int index = isItemInList(summaryList, itemQuantityAndAdditionals[i].itemName);
-
-                                //Add to the summary list
-                                if (summaryList.Count > 0 && index >= 0)
-                                {
-                                    int thisQuantity = itemQuantityAndAdditionals[i].qtyOrdered +
-                                                       itemQuantityAndAdditionals[i].additionals +
-                                                       summaryList[index].Key;
-
-                                    string thisItem = itemQuantityAndAdditionals[i].itemName;
-                                    summaryList[index] = new KeyValuePair<int, string>(thisQuantity, thisItem);
-
-                                }
-                                else
-                                {
-                                    int thisQuantity = itemQuantityAndAdditionals[i].qtyOrdered + itemQuantityAndAdditionals[i].additionals;
-                                    summaryList.Add(new KeyValuePair<int, string>(thisQuantity, itemQuantityAndAdditionals[i].itemName));
-                                }
+                                offset = endOffset;
+                                firstInColumn3 = false;
                             }
-                            endOffset += 5;
-                            checkedItems.RemoveAt(l);
+                            isLastColumn = true;
                         }
                         else
                         {
@@ -413,12 +333,55 @@ namespace adaOrderingSys
                             pageNo++;
                             return;
                         }
+
+                        //Customer details
+                        graphic.DrawString(details[1].Trim() + salesNum, boldFont, new SolidBrush(Color.Black), x, startY + offset);
+                        offset += (int)topFont.Height * detailLines;
+
+                        //location
+                        if (!location.Equals("") && location != null)
+                        {
+                            graphic.DrawString(location, boldFont, new SolidBrush(Color.Black), x, startY + offset);
+                            offset += numLines == 0 ? topFont.Height : topFont.Height * numLines;
+                        }
+
+                        //Print each item
+                        for (int i = 0; i < itemQuantityAndAdditionals.Count; i++)
+                        {
+                            string quantity = itemQuantityAndAdditionals[i].qtyOrdered.ToString();
+                            string item = itemQuantityAndAdditionals[i].itemName;
+                            int additionals = itemQuantityAndAdditionals[i].additionals;
+                            string drawItem = additionals == 0 ? "  " + quantity + " " + item :
+                                "  " + quantity + "+" + additionals + " " + item;
+                            graphic.DrawString(drawItem, font, new SolidBrush(Color.Black), x, startY + offset);
+                            offset += (int)topFont.Height;
+                            int index = isItemInList(summaryList, itemQuantityAndAdditionals[i].itemName);
+                            //Add to the summary list
+                            if (summaryList.Count > 0 && index >= 0)
+                            {
+                                int thisQuantity = itemQuantityAndAdditionals[i].qtyOrdered +
+                                                    itemQuantityAndAdditionals[i].additionals +
+                                                    summaryList[index].Key;
+
+                                string thisItem = itemQuantityAndAdditionals[i].itemName;
+                                summaryList[index] = new KeyValuePair<int, string>(thisQuantity, thisItem);
+
+                            }
+                            else
+                            {
+                                int thisQuantity = itemQuantityAndAdditionals[i].qtyOrdered + itemQuantityAndAdditionals[i].additionals;
+                                summaryList.Add(new KeyValuePair<int, string>(thisQuantity, itemQuantityAndAdditionals[i].itemName));
+                            }
+                        }
+                        offset += 5;
+                        checkedItems.RemoveAt(l);
                     }
                 }
                 if (!summaryPrinted)
                 {
+                    int linesAvailable = isLastColumn ? (Constants.MAX_LINES * 3) - count : Constants.MAX_LINES;
                     //Summary statement.
-                    if ((count + summaryList.Count) > (Constants.MAX_LOADING_SHEET_COLUMN * 3) && !summaryPrinted)
+                    if ((summaryList.Count) > (linesAvailable) && !lastPage)
                     {
                         e.HasMorePages = true;
                         pageNo++;
@@ -427,7 +390,8 @@ namespace adaOrderingSys
                     }
 
                     int currentX = lastPage ? startX : endX;
-
+                    if (currentX == endX && endOffset!=offset && isLastColumn)
+                        endOffset = offset;
 
                     graphic.DrawString("Summary", boldFont, new SolidBrush(Color.Black), currentX, startY + endOffset);
 
@@ -437,27 +401,32 @@ namespace adaOrderingSys
 
                     for (int j = 0; j < summaryList.Count; j++)
                     {
+                        if (j == Constants.MAX_LINES)
+                        {
+                            endOffset = middleOffset;
+                            currentX = middleX;
+                        }
+
                         string summaryItem = summaryList[j].Key + " " + summaryList[j].Value;
-                        graphic.DrawString(summaryItem, font, new SolidBrush(Color.Black), currentX, startY + endOffset);
+                        graphic.DrawString(summaryItem, summaryFont, new SolidBrush(Color.Black), currentX, startY + endOffset);
                         endOffset += (int)topFont.Height;
                     }
 
                     endOffset += (int)topFont.Height * 2;
                     summaryPrinted = true;
 
-                    if (summaryList.Count >= Constants.MAX_LOADING_SHEET_COLUMN)
+                    if (summaryList.Count + 9 > Constants.MAX_LINES && currentX == endX)
                     {
-                        if (currentX == startX)
-                        {
-                            currentX = endX;
-                            endOffset = middleOffset;
-                        }
-                        else
-                        {
-                            e.HasMorePages = true;
-                            lastPage = true;
-                        }
+                        e.HasMorePages = true;
+                        lastPage = true;
+                        return;
                     }
+                    else if (currentX == startX && (summaryList.Count + 9) > Constants.MAX_LINES )
+                    {
+                        currentX = endX;
+                        endOffset = middleOffset;
+                    }
+
                     graphic.DrawString(Constants.PACKER_NAME, font, new SolidBrush(Color.Black), currentX, startY + endOffset);
                     endOffset += (int)topFont.Height + 10;
                     graphic.DrawString(Constants.PACKER_SIG, font, new SolidBrush(Color.Black), currentX, startY + endOffset);
@@ -470,7 +439,7 @@ namespace adaOrderingSys
                 }
                 else
                 {
-                    int currentX = endX;
+                    int currentX = startX;
                     endOffset = startY;
                     graphic.DrawString(Constants.PACKER_NAME, font, new SolidBrush(Color.Black), currentX, startY);
                     endOffset += (int)topFont.Height + 10;
@@ -481,7 +450,6 @@ namespace adaOrderingSys
                     graphic.DrawString(Constants.MGMT_SIG, font, new SolidBrush(Color.Black), currentX, startY + endOffset);
                     endOffset += ((int)topFont.Height * 2) + 10;
                     graphic.DrawString(Constants.ASSIGNEE, font, new SolidBrush(Color.Black), currentX, startY + endOffset);
-                    return;
                 }
             }
             catch (Exception ex)
@@ -492,7 +460,24 @@ namespace adaOrderingSys
             }
         }
 
-        private void drawSignatures() { }
+        private string createNewLines(string sourceString) {
+            string string1 = sourceString.Substring(0, 23);
+            string string2 = sourceString.Substring(23, sourceString.Length - 23);
+
+            if (string2.IndexOf(" ") == 0)
+            {
+                sourceString = string1 + "\n" + string2;
+            }
+            else
+            {
+                int spaceIndex = string1.LastIndexOf(" ");
+                string2 = string1.Substring(spaceIndex, string1.Length - spaceIndex) + string2;
+                string1 = string1.Substring(0, string1.LastIndexOf(" "));
+                sourceString = string1 + '\n' + string2;
+            }
+
+            return sourceString;
+        }
 
         private int isItemInList(List<KeyValuePair<int, string>> list, string comparedItem)
         {
@@ -656,7 +641,8 @@ namespace adaOrderingSys
         private void btn_Preview_Click(object sender, EventArgs e)
         {
             summaryPrinted = false;
-
+            lastPage = false;
+            pageNo = 0;
             PrintPreviewDialog printPrvDlg = new PrintPreviewDialog();
             PrintDocument printDocument = new PrintDocument();
 
